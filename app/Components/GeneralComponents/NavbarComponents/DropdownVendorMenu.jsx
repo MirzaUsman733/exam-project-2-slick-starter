@@ -36,7 +36,7 @@ export default function DropdownMenu({ title, vendors }) {
           e.preventDefault();
           toggleDropdown();
         }}
-        className="inline-flex items-center text-gray-700 hover:text-yellow-500 focus:text-yellow-500 font-medium cursor-pointer"
+        className="inline-flex items-center text-gray-700 hover:text-green-500 focus:text-green-500 font-medium cursor-pointer"
       >
         {title}  {isOpen ? <DropupIcon /> : <DropdownIcon /> } 
       </Link>

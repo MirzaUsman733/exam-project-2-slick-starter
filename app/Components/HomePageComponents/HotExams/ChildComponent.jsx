@@ -5,7 +5,7 @@ const ChildComponent = ({hotExams}) => {
   return (
     <div>
       <section className="bg-coolGray-50 py-4">
-        <div className="container lg:max-w-[80%] mx-auto">
+        <div className="container mx-auto">
           <div className="pt-6 bg-white overflow-hidden border border-coolGray-100 rounded-md shadow-dashboard">
             <h2 className="px-6 mb-4 text-lg text-coolGray-900 font-semibold">
               Hot Exams

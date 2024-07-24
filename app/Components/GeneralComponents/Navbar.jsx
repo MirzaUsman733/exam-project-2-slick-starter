@@ -14,7 +14,7 @@
 //           </Link>
 //           <ul className="ml-16 lg:w-auto lg:space-x-12">
 //             <li className="relative group" x-data="{ dropdown: false }" @mouseover="dropdown = true" @mouseleave="dropdown = false">
-//               <a className="inline-flex items-center text-yellow-500 font-medium" href="#">
+//               <a className="inline-flex items-center text-green-500 font-medium" href="#">
 //                 <span className="mr-3">Why Vendia?</span>
 //                 <span :className="{'rotate-180': !dropdown, 'rotate-0': dropdown}" className="block transform rotate-180 transition-transform duration-200">
 //                   <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,27 +24,27 @@
 //               </a>
 //               <DropdownMenu />
 //             </li>
-//             <li><a className="inline-block text-gray-50 hover:text-yellow-500 font-medium" href="#">Browse</a></li>
-//             <li><a className="inline-block text-gray-50 hover:text-yellow-500 font-medium" href="#">Resources</a></li>
-//             <li><a className="inline-block text-gray-50 hover:text-yellow-500 font-medium" href="#">Brands</a></li>
+//             <li><a className="inline-block text-gray-50 hover:text-green-500 font-medium" href="#">Browse</a></li>
+//             <li><a className="inline-block text-gray-50 hover:text-green-500 font-medium" href="#">Resources</a></li>
+//             <li><a className="inline-block text-gray-50 hover:text-green-500 font-medium" href="#">Brands</a></li>
 //           </ul>
 //           <div className="ml-auto flex items-center">
-//             <a className="inline-block mr-8 text-white hover:text-yellow-500" href="#">
+//             <a className="inline-block mr-8 text-white hover:text-green-500" href="#">
 //               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 //                 <path d="M16.5 16.5L11.5 11.5M13.1667 7.33333C13.1667 10.555 10.555 13.1667 7.33333 13.1667C4.11167 13.1667 1.5 10.555 1.5 7.33333C1.5 4.11167 4.11167 1.5 7.33333 1.5C10.555 1.5 13.1667 4.11167 13.1667 7.33333Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 //               </svg>
 //             </a>
 //             <a className="mr-8 group inline-flex items-center" href="#">
-//               <span className="text-white group-hover:text-yellow-500">
+//               <span className="text-white group-hover:text-green-500">
 //                 <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 //                   <path d="M11.3334 8.16667V4.83333C11.3334 2.99238 9.84099 1.5 8.00004 1.5C6.15909 1.5 4.66671 2.99238 4.66671 4.83333V8.16667M2.16671 6.5H13.8334L14.6667 16.5H1.33337L2.16671 6.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 //                 </svg>
 //               </span>
-//               <span className="-ml-2 flex items-center justify-center h-6 w-6 border-2 border-blueGray-800 bg-yellow-500 group-hover:bg-yellow-400 rounded-full">
+//               <span className="-ml-2 flex items-center justify-center h-6 w-6 border-2 border-blueGray-800 bg-green-500 group-hover:bg-yellow-400 rounded-full">
 //                 <span className="text-xs font-bold text-black">3</span>
 //               </span>
 //             </a>
-//             <a className="inline-flex items-center font-medium text-white hover:text-yellow-500" href="#">
+//             <a className="inline-flex items-center font-medium text-white hover:text-green-500" href="#">
 //               <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 //                 <path d="M7 6C8.65685 6 10 4.65685 10 3C10 1.34315 8.65685 0 7 0C5.34315 0 4 1.34315 4 3C4 4.65685 5.34315 6 7 6Z" fill="currentColor"></path>
 //                 <path d="M0 15C0 11.134 3.13401 8 7 8C10.866 8 14 11.134 14 15H0Z" fill="currentColor"></path>
@@ -67,7 +67,7 @@
 //             </a>
 //           </Link>
 //           <div className="ml-auto">
-//             <button @click="mobileNavOpen = !mobileNavOpen" className="flex items-center p-3 text-white hover:text-yellow-500">
+//             <button @click="mobileNavOpen = !mobileNavOpen" className="flex items-center p-3 text-white hover:text-green-500">
 //               <svg className="block h-4 w-4" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 //                 <title>Mobile menu</title>
 //                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -99,7 +99,7 @@
 //             <div className="mt-auto">
 //               <div className="pt-6">
 //                 <a className="block mb-2 py-3 text-sm text-center border border-gray-200 hover:border-gray-400 font-bold" href="#">Login</a>
-//                 <a className="block py-3 text-sm text-center text-black bg-yellow-500 hover:bg-yellow-600 font-bold transition duration-200" href="#">Sign In</a>
+//                 <a className="block py-3 text-sm text-center text-black bg-green-500 hover:bg-yellow-600 font-bold transition duration-200" href="#">Sign In</a>
 //               </div>
 //             </div>
 //           </nav>
@@ -153,7 +153,7 @@ export default async function Navbar() {
           <ul className="flex space-x-12">
             <li>
               <Link
-                className="text-gray-700 hover:text-yellow-500 font-medium"
+                className="text-gray-700 hover:text-green-500 font-medium"
                 href="#"
               >
                 Home
@@ -166,7 +166,7 @@ export default async function Navbar() {
             />
             <li>
               <Link
-                className="text-gray-700 hover:text-yellow-500 font-medium"
+                className="text-gray-700 hover:text-green-500 font-medium"
                 href="#"
               >
                 Video Courses
@@ -174,7 +174,7 @@ export default async function Navbar() {
             </li>
             <li>
               <Link
-                className="text-gray-700 hover:text-yellow-500 font-medium"
+                className="text-gray-700 hover:text-green-500 font-medium"
                 href="#"
               >
                 Unlimited Access
@@ -184,7 +184,7 @@ export default async function Navbar() {
           <div className="flex items-center space-x-8">
             <div className="ml-auto flex items-center">
               <a
-                className="inline-block mr-8 text-gray-700 hover:text-yellow-500"
+                className="inline-block mr-8 text-gray-700 hover:text-green-500"
                 href="#"
               >
                 <svg
@@ -204,7 +204,7 @@ export default async function Navbar() {
                 </svg>
               </a>
               <a className="mr-8 group inline-flex items-center" href="#">
-                <span className="text-gray-700 group-hover:text-yellow-500">
+                <span className="text-gray-700 group-hover:text-green-500">
                   <svg
                     width="16"
                     height="18"
@@ -221,7 +221,7 @@ export default async function Navbar() {
                     ></path>
                   </svg>
                 </span>
-                <span className="-ml-2 flex items-center justify-center h-6 w-6 border-2 border-blueGray-800 bg-yellow-500 group-hover:bg-yellow-400 rounded-full">
+                <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-green-500 group-hover:bg-green-400 rounded-full">
                   <span className="text-xs font-bold text-black">3</span>
                 </span>
               </a>
@@ -270,7 +270,7 @@ export default async function Navbar() {
             </div>
             {/* <div className="px-6 py-6 border-t border-gray-200 mt-auto">
               <Link
-                className="block py-3 text-center text-black bg-yellow-500 hover:bg-yellow-600 font-bold transition duration-200"
+                className="block py-3 text-center text-black bg-green-500 hover:bg-yellow-600 font-bold transition duration-200"
                 href="#"
               >
                 Sign In
