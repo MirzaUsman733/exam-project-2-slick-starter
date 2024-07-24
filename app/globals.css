@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vendor-link-header {
+  position: relative;
+  /* display: inline-block; */
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.vendor-link-header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.vendor-link-header:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.animate-dropdown {
+  display: block;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideDownFadeIn 1.10s forwards;
+}
+
+@keyframes slideDownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

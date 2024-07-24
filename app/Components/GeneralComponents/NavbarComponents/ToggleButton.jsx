@@ -1,0 +1,25 @@
+"use client";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
+function ToggleButton() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    const drawer = document.getElementById("drawer");
+    drawer.classList.toggle("hidden");
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <button onClick={toggleDrawer} className="text-white flex items-center">
+      {isOpen ? (
+      <FaBars className="inline-block mr-1" size={20} />
+      ) : (
+        <FaTimes className="inline-block mr-1" size={20} />
+      )}
+    </button>
+  );
+}
+
+export default ToggleButton;
