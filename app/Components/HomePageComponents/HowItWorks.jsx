@@ -9,7 +9,7 @@ const HowItWorks = () => {
       <div class="max-w-4xl mb-24">
         <span class="inline-flex items-center h-6 mb-4 px-2 text-xs uppercase font-medium text-white bg-green-800 rounded-full">HOW IT WORKS</span>
         <h1 class="font-heading tracking-tight text-4xl sm:text-5xl font-bold text-white mb-4">We revolutionized the way we manage digital content</h1>
-        <p class="text-lg text-gray-200">Using our platform is easy and straightforward. Here's how it works:</p>
+        <p class="text-lg text-gray-200">Using our platform is easy and straightforward. Here is how it works:</p>
       </div>
       <div class="flex flex-wrap items-center">
         <div class="w-full md:w-1/3 md:pr-4 mb-4 md:mb-0">
