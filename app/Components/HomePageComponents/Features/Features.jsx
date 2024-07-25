@@ -281,9 +281,6 @@ const Features = () => {
   return (
     <div className="relative overflow-hidden">
       {/* <img className="hidden lg:block absolute inset-0 w-full z-0" src="/home-feature-background.png" alt=""/> */}
-      {/* <img className="hidden lg:block absolute inset-0 w-full opacity-10 z-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfhGzc7Cx7J9heuY0Ma81Ec6u41GK8YgtZjQ&s" alt=""/> */}
-      {/* <img className="hidden lg:block absolute inset-0 w-full opacity-10 z-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQue0ApKZ48QLdXzLcOHCkDqWRS-7gveQH5NA&s" alt=""/> */}
-      {/* <img className="hidden lg:block absolute inset-0 w-full opacity-10 z-0 h-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvzygSZuZFt_afhNGMJ8pvYGYifGv3FhUtsQ&s" alt=""/> */}
       <section className="skewed-bottom-right bg-white">
         <div className="pt-12 lg:pt-20 pb-20 radius-for-skewed">
           <div className="container mx-auto p-6">
