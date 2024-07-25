@@ -40,7 +40,7 @@
 //                   <path d="M11.3334 8.16667V4.83333C11.3334 2.99238 9.84099 1.5 8.00004 1.5C6.15909 1.5 4.66671 2.99238 4.66671 4.83333V8.16667M2.16671 6.5H13.8334L14.6667 16.5H1.33337L2.16671 6.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 //                 </svg>
 //               </span>
-//               <span className="-ml-2 flex items-center justify-center h-6 w-6 border-2 border-blueGray-800 bg-green-500 group-hover:bg-yellow-400 rounded-full">
+//               <span className="-ml-2 flex items-center justify-center h-6 w-6 border-2 border-blueGray-800 bg-yellow-500 group-hover:bg-yellow-400 rounded-full">
 //                 <span className="text-xs font-bold text-black">3</span>
 //               </span>
 //             </a>
@@ -99,7 +99,7 @@
 //             <div className="mt-auto">
 //               <div className="pt-6">
 //                 <a className="block mb-2 py-3 text-sm text-center border border-gray-200 hover:border-gray-400 font-bold" href="#">Login</a>
-//                 <a className="block py-3 text-sm text-center text-black bg-green-500 hover:bg-yellow-600 font-bold transition duration-200" href="#">Sign In</a>
+//                 <a className="block py-3 text-sm text-center text-black bg-yellow-500 hover:bg-yellow-600 font-bold transition duration-200" href="#">Sign In</a>
 //               </div>
 //             </div>
 //           </nav>
@@ -139,7 +139,8 @@ export default async function Navbar() {
   const certifications = await certRes.json();
   return (
     <section>
-      <nav className="relative px-6 py-0 lg:px-16 lg:py-9 bg-white ">
+      <nav className="relative px-6 py-0 lg:px-16 lg:py-9">
+        
         {/* Desktop View */}
         <div className="hidden lg:flex items-center justify-between">
           <Link href="#">
@@ -153,7 +154,7 @@ export default async function Navbar() {
           <ul className="flex space-x-12">
             <li>
               <Link
-                className="text-gray-700 hover:text-green-500 font-medium"
+                className="text-gray-700 hover:text-green-500 header-link font-medium"
                 href="#"
               >
                 Home
@@ -166,7 +167,7 @@ export default async function Navbar() {
             />
             <li>
               <Link
-                className="text-gray-700 hover:text-green-500 font-medium"
+                className="text-gray-700 hover:text-green-500 header-link font-medium"
                 href="#"
               >
                 Video Courses
@@ -174,7 +175,7 @@ export default async function Navbar() {
             </li>
             <li>
               <Link
-                className="text-gray-700 hover:text-green-500 font-medium"
+                className="text-gray-700 hover:text-green-500 header-link font-medium"
                 href="#"
               >
                 Unlimited Access
@@ -184,7 +185,7 @@ export default async function Navbar() {
           <div className="flex items-center space-x-8">
             <div className="ml-auto flex items-center">
               <a
-                className="inline-block mr-8 text-gray-700 hover:text-green-500"
+                className="inline-block mr-8 text-gray-700 hover:text-green-500 header-link"
                 href="#"
               >
                 <svg
@@ -221,7 +222,7 @@ export default async function Navbar() {
                     ></path>
                   </svg>
                 </span>
-                <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-green-500 group-hover:bg-green-400 rounded-full">
+                <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-green-500 group-hover:bg-green-500 rounded-full">
                   <span className="text-xs font-bold text-black">3</span>
                 </span>
               </a>
@@ -270,7 +271,7 @@ export default async function Navbar() {
             </div>
             {/* <div className="px-6 py-6 border-t border-gray-200 mt-auto">
               <Link
-                className="block py-3 text-center text-black bg-green-500 hover:bg-yellow-600 font-bold transition duration-200"
+                className="block py-3 text-center text-black bg-yellow-500 hover:bg-yellow-600 font-bold transition duration-200"
                 href="#"
               >
                 Sign In
