@@ -126,43 +126,43 @@
 // const Stats = () => {
 //     return (
 //         <div>
-//             <section class="py-24 bg-white relative">
-//                 {/* <img class="absolute top-0 left-0 w-full h-full opacity-50" src="pstls-assets/images/features/features-16-shadow.png" /> */}
-//                 <div class="container px-4 mx-auto relative">
-//                     <div class="flex flex-wrap -mx-4 items-center">
-//                         <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
-//                             <div class="flex w-full items-center justify-center relative">
-//                                 <img class="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle4.png" />
-//                                 <div class="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-//                                     <p class="text-sm text-indigo-200 font-bold mb-2">Subscribers Rate</p>
-//                                     <h2 class="text-4xl font-heading text-white">75%</h2>
+//             <section className="py-24 bg-white relative">
+//                 {/* <img className="absolute top-0 left-0 w-full h-full opacity-50" src="pstls-assets/images/features/features-16-shadow.png" /> */}
+//                 <div className="container px-4 mx-auto relative">
+//                     <div className="flex flex-wrap -mx-4 items-center">
+//                         <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+//                             <div className="flex w-full items-center justify-center relative">
+//                                 <img className="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle4.png" />
+//                                 <div className="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+//                                     <p className="text-sm text-indigo-200 font-bold mb-2">Subscribers Rate</p>
+//                                     <h2 className="text-4xl font-heading text-white">75%</h2>
 //                                 </div>
 //                             </div>
 //                         </div>
-//                         <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
-//                             <div class="flex w-full items-center justify-center relative">
-//                                 <img class="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle3.png" />
-//                                 <div class="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-//                                     <p class="text-sm text-pink-400 font-bold mb-2">Subscribers Rate</p>
-//                                     <h2 class="text-4xl font-heading text-white">50%</h2>
+//                         <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+//                             <div className="flex w-full items-center justify-center relative">
+//                                 <img className="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle3.png" />
+//                                 <div className="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+//                                     <p className="text-sm text-pink-400 font-bold mb-2">Subscribers Rate</p>
+//                                     <h2 className="text-4xl font-heading text-white">50%</h2>
 //                                 </div>
 //                             </div>
 //                         </div>
-//                         <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
-//                             <div class="flex w-full items-center justify-center relative">
-//                                 <img class="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle2.png" />
-//                                 <div class="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-//                                     <p class="text-sm text-pink-400 font-bold mb-2">Subscribers Rate</p>
-//                                     <h2 class="text-4xl font-heading text-white">65%</h2>
+//                         <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+//                             <div className="flex w-full items-center justify-center relative">
+//                                 <img className="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle2.png" />
+//                                 <div className="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+//                                     <p className="text-sm text-pink-400 font-bold mb-2">Subscribers Rate</p>
+//                                     <h2 className="text-4xl font-heading text-white">65%</h2>
 //                                 </div>
 //                             </div>
 //                         </div>
-//                         <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
-//                             <div class="flex w-full items-center justify-center relative">
-//                                 <img class="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle1.png" />
-//                                 <div class="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-//                                     <p class="text-sm text-pink-400 font-bold mb-2">Subscribers Rate</p>
-//                                     <h2 class="text-4xl font-heading text-white">43%</h2>
+//                         <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+//                             <div className="flex w-full items-center justify-center relative">
+//                                 <img className="block h-52 object-contain" src="https://static.shuffle.dev/components/preview/f84fdd48-b58b-484e-a42d-767e9351ba00/assets/public/pstls-assets/images/stats/stat-circle1.png" />
+//                                 <div className="text-center absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+//                                     <p className="text-sm text-pink-400 font-bold mb-2">Subscribers Rate</p>
+//                                     <h2 className="text-4xl font-heading text-white">43%</h2>
 //                                 </div>
 //                             </div>
 //                         </div>
@@ -182,55 +182,55 @@
 // const Stats = () => {
 //   return (
 //     <div>
-//         <section class="py-20 lg:py-40">
-//   <div class="container px-4 mx-auto">
-//     <div class="max-w-2xs mx-auto sm:max-w-none">
-//       <div class="flex flex-wrap -mx-4">
-//         <div class="w-full lg:w-1/3 px-4 mb-20 lg:mb-0">
-//           <h1 class="text-5xl sm:text-7xl font-heading font-semibold">Big results</h1>
+//         <section className="py-20 lg:py-40">
+//   <div className="container px-4 mx-auto">
+//     <div className="max-w-2xs mx-auto sm:max-w-none">
+//       <div className="flex flex-wrap -mx-4">
+//         <div className="w-full lg:w-1/3 px-4 mb-20 lg:mb-0">
+//           <h1 className="text-5xl sm:text-7xl font-heading font-semibold">Big results</h1>
 //         </div>
-//         <div class="w-full lg:w-2/3 px-4 lg:pl-20">
-//           <div class="flex flex-wrap -mx-4 -mb-17">
-//             <div class="w-full sm:w-1/2 px-4 mb-17">
-//               <div class="w-64">
-//                 <div class="relative mb-8">
-//                   <h4 class="relative z-10 text-7xl md:text-10xl font-heading font-medium">43</h4>
-//                   <div class="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-blue-300"></div>
+//         <div className="w-full lg:w-2/3 px-4 lg:pl-20">
+//           <div className="flex flex-wrap -mx-4 -mb-17">
+//             <div className="w-full sm:w-1/2 px-4 mb-17">
+//               <div className="w-64">
+//                 <div className="relative mb-8">
+//                   <h4 className="relative z-10 text-7xl md:text-10xl font-heading font-medium">43</h4>
+//                   <div className="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-blue-300"></div>
 //                 </div>
-//                 <p class="text-xl">really, like a sense of truth that comes from within.</p>
+//                 <p className="text-xl">really, like a sense of truth that comes from within.</p>
 //               </div>
 //             </div>
-//             <div class="w-full sm:w-1/2 px-4 mb-17">
-//               <div class="w-64">
-//                 <div class="relative mb-8">
-//                   <h4 class="relative z-10 font-heading font-medium">
-//                     <span class="text-7xl md:text-10xl">80</span>
-//                     <span class="text-5xl md:text-7xl">%</span>
+//             <div className="w-full sm:w-1/2 px-4 mb-17">
+//               <div className="w-64">
+//                 <div className="relative mb-8">
+//                   <h4 className="relative z-10 font-heading font-medium">
+//                     <span className="text-7xl md:text-10xl">80</span>
+//                     <span className="text-5xl md:text-7xl">%</span>
 //                   </h4>
-//                   <div class="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-yellow-200"></div>
+//                   <div className="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-yellow-200"></div>
 //                 </div>
-//                 <p class="text-xl">happy, really happy customers</p>
+//                 <p className="text-xl">happy, really happy customers</p>
 //               </div>
 //             </div>
-//             <div class="w-full sm:w-1/2 px-4 mb-17">
-//               <div class="w-64">
-//                 <div class="relative mb-8">
-//                   <h4 class="relative z-10 text-7xl md:text-10xl font-heading font-medium">
-//                     <span class="text-7xl md:text-10xl">78</span>
-//                     <span class="text-5xl md:text-7xl">%</span>
+//             <div className="w-full sm:w-1/2 px-4 mb-17">
+//               <div className="w-64">
+//                 <div className="relative mb-8">
+//                   <h4 className="relative z-10 text-7xl md:text-10xl font-heading font-medium">
+//                     <span className="text-7xl md:text-10xl">78</span>
+//                     <span className="text-5xl md:text-7xl">%</span>
 //                   </h4>
-//                   <div class="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-gray-300"></div>
+//                   <div className="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-gray-300"></div>
 //                 </div>
-//                 <p class="text-xl">happy, really happy customers</p>
+//                 <p className="text-xl">happy, really happy customers</p>
 //               </div>
 //             </div>
-//             <div class="w-full sm:w-1/2 px-4 mb-17">
-//               <div class="w-64">
-//                 <div class="relative mb-8">
-//                   <h4 class="relative z-10 text-7xl md:text-10xl font-heading font-medium">43</h4>
-//                   <div class="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-indigo-300"></div>
+//             <div className="w-full sm:w-1/2 px-4 mb-17">
+//               <div className="w-64">
+//                 <div className="relative mb-8">
+//                   <h4 className="relative z-10 text-7xl md:text-10xl font-heading font-medium">43</h4>
+//                   <div className="absolute bottom-0 left-0 right-[0%] top-[80%] -mb-2 w-32 h-4 bg-indigo-300"></div>
 //                 </div>
-//                 <p class="text-xl">really, like a sense of truth that comes from within.</p>
+//                 <p className="text-xl">really, like a sense of truth that comes from within.</p>
 //               </div>
 //             </div>
 //           </div>
@@ -256,10 +256,11 @@ const Stats = () => {
         <div>
             <section className="py-8 bg-blueGray-50">
                 <div className="container px-4 mx-auto">
+                <h2 className="text-center text-3xl font-[lato] font-extrabold mb-6">Grow fast, with us</h2>
                     <div className="flex flex-wrap -mx-3">
                         <div className="w-full md:w-1/4 px-3 mb-6">
                             <div className="pt-12 pb-20 px-8 md:px-12 lg:px-16 bg-white rounded-3xl">
-                                <h3 className="mb-8 text-xl font-heading text-center font-medium">Exams Available</h3>
+                                <h3 className="mb-4 text-xl font-heading text-center font-bold" style={{fontFamily:"Helvetica, Arial, sans-serif"}}>Exams Available</h3>
                                 <div className="chart" data-type="radial-bar-subscriptions" style={{ height: '150px' }}>
                                     <div id="apexchartssk6cfsso" className="apexcharts-canvas apexchartssk6cfsso apexcharts-theme-" style={{ width: '100%', height: '229px' }}>
                                         <svg id="SvgjsSvg1006" height="229" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.dev" className="apexcharts-svg" xmlnsData="ApexChartsNS" transform="translate(0, 0)">
@@ -311,7 +312,7 @@ const Stats = () => {
                         </div>
                         <div className="w-full md:w-1/4 px-3 mb-6">
                             <div className="pt-12 pb-20 px-8 md:px-12 lg:px-16 bg-white rounded-3xl">
-                                <h3 className="mb-8 text-xl font-heading font-medium text-center">Courses</h3>
+                                <h3 className="mb-4 text-xl font-heading text-center font-bold" style={{fontFamily:"Helvetica, Arial, sans-serif"}}>Courses</h3>
                                 <div className="chart" data-type="radial-bar-payments" style={{ height: '150px' }}>
                                     <div id="apexchartsryal48i" className="apexcharts-canvas apexchartsryal48i apexcharts-theme-" style={{ width: '100%', height: '229px' }}>
                                         <svg id="SvgjsSvg1026" height="229" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.dev" className="apexcharts-svg" xmlnsData="ApexChartsNS" transform="translate(0, 0)">
@@ -363,7 +364,7 @@ const Stats = () => {
                         </div>
                         <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
                             <div className="pt-12 pb-20 px-8 md:px-12 lg:px-16 bg-white rounded-3xl">
-                                <h3 className="mb-8 text-xl font-heading font-medium text-center">Students</h3>
+                                <h3 className="mb-4 text-xl font-heading text-center font-bold" style={{fontFamily:"Helvetica, Arial, sans-serif"}}>Students</h3>
                                 <div className="chart" data-type="radial-bar-inventory" style={{ height: '150px' }}>
                                     <div id="apexchartsnnwzppt1" className="apexcharts-canvas apexchartsnnwzppt1 apexcharts-theme-" style={{ width: '100%', height: '229px' }}>
                                         <svg id="SvgjsSvg1046" height="229" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.dev" className="apexcharts-svg" xmlnsData="ApexChartsNS" transform="translate(0, 0)">
@@ -415,7 +416,7 @@ const Stats = () => {
                         </div>
                         <div className="w-full md:w-1/4 px-3">
                             <div className="pt-12 pb-20 px-8 md:px-12 lg:px-16 bg-white rounded-3xl">
-                                <h3 className="mb-8 text-xl font-heading font-medium text-center">Users</h3>
+                                <h3 className="mb-4 text-xl font-heading text-center font-bold" style={{fontFamily:"Helvetica, Arial, sans-serif"}}>Users</h3>
                                 <div className="chart" data-type="radial-bar-sales" style={{ height: '150px' }}>
                                     <div id="apexchartsyoj9mxs1" className="apexcharts-canvas apexchartsyoj9mxs1 apexcharts-theme-" style={{ width: '100%', height: '229px' }}>
                                         <svg id="SvgjsSvg1066" height="229" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.dev" className="apexcharts-svg" xmlnsData="ApexChartsNS" transform="translate(0, 0)">

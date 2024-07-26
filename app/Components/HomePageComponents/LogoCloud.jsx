@@ -82,7 +82,7 @@ const LogoCloud = () => {
         {/* <img className="absolute top-0 right-0 w-1/2 md:h-full" src="https://static.shuffle.dev/components/preview/1e2964f9-c424-4ff6-bd7b-63756d5060ca/assets/public/nigodo-assets/background-elements/pattern-dots-2-indigo-light-right.svg" alt="" />
         <img className="absolute top-0 left-0 w-1/2 md:h-full" src="https://static.shuffle.dev/components/preview/1e2964f9-c424-4ff6-bd7b-63756d5060ca/assets/public/nigodo-assets/background-elements/pattern-dots-2-indigo-light-left.svg" alt="" /> */}
         <div className="container p-6 py-10 mx-auto relative">
-          <h2 className="text-center text-2xl font-[poppins] font-extrabold mb-6">Trusted by the top companies in this industry</h2>
+          <h2 className="text-center text-3xl font-[lato] font-extrabold mb-6">Trusted by popular marketing brands</h2>
           <div className="flex flex-wrap -mx-4 -mb-8">
             <div className="w-full md:w-1/2 lg:w-1/6 px-2 mb-8">
               <div className="flex items-center justify-center h-32 py-6 px-2 md:px-6 bg-white border rounded-2xl">

@@ -36,13 +36,13 @@ const ChildComponent = ({ hotExams }) => {
               </h2>
               <div className="flex items-center gap-3 me-5">
                 <button
-                  className={`bg-green-500 text-white px-3 py-1 font-bold rounded-lg ${selectedTab === 'week' ? 'bg-green-700' : ''}`}
+                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${selectedTab === 'week' ? 'bg-green-900' : ''}`}
                   onClick={() => handleTabChange('week')}
                 >
                   Weekly
                 </button>
                 <button
-                  className={`bg-green-500 text-white px-3 py-1 font-bold rounded-lg ${selectedTab === 'month' ? 'bg-green-700' : ''}`}
+                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${selectedTab === 'month' ? 'bg-green-900' : ''}`}
                   onClick={() => handleTabChange('month')}
                 >
                   Monthly
@@ -101,7 +101,7 @@ const ChildComponent = ({ hotExams }) => {
                       </th>
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 z-0 text-left">
                         <Link
-                          className="font-medium text-green-500 hotExam-link z-0"
+                          className="font-medium text-green-600 hotExam-link z-0"
                           href={`/exam-providers/${hotExam?.vendor_perma}`}
                         >
                           {hotExam?.vendor_title}
@@ -136,9 +136,9 @@ const ChildComponent = ({ hotExams }) => {
                           </svg> <span> 4.5  </span>
                         </div>
                       </th>
-                      <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-green-500  text-left">
+                      <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-green-600  text-left">
                       <Link
-                        className="bg-green-500 border-0 hover:bg-white hover:border hover:border-green-500 hover:text-green-500 text-white font-bold py-1 px-3 rounded"
+                        className="bg-green-600 border-0 hover:bg-white hover:border hover:border-green-600 hover:text-green-600 text-white font-bold py-1 px-3 rounded"
                         href={`/exam-questions/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
                       >
                         Buy
@@ -198,8 +198,8 @@ const ChildComponent = ({ hotExams }) => {
                       key={index}
                       className={`${
                         currentPage === index + 1
-                          ? "bg-green-500 text-white"
-                          : "bg-white text-green-500 border border-green-500"
+                          ? "bg-green-600 text-white"
+                          : "bg-white text-green-600 border border-green-600"
                       } px-4 py-1 rounded-md`}
                       onClick={() => handlePageChange(index + 1)}
                     >
