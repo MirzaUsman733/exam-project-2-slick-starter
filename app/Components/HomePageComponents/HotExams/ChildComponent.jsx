@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const ChildComponent = ({ hotExams }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [selectedTab, setSelectedTab] = useState('week');
+  const [selectedTab, setSelectedTab] = useState("week");
 
   const paginate = (exams, pageNumber) => {
     const startIndex = (pageNumber - 1) * itemsPerPage;
@@ -23,61 +23,70 @@ const ChildComponent = ({ hotExams }) => {
   };
 
   const paginatedExams = paginate(hotExams[selectedTab] || [], currentPage);
-  const totalPages = Math.ceil((hotExams[selectedTab]?.length || 0) / itemsPerPage);
+  const totalPages = Math.ceil(
+    (hotExams[selectedTab]?.length || 0) / itemsPerPage
+  );
 
   return (
     <div>
       <section className="bg-coolGray-50 p-6">
         <div className="container mx-auto">
-          <div className="pt-6 bg-white overflow-hidden border border-coolGray-100 rounded-md shadow-dashboard">
+          <div className="pt-6 bg-white overflow-hidden rounded-md shadow-dashboard">
             <div className="flex justify-between">
-              <h2 className="px-6 mb-4 text-lg text-coolGray-900 font-semibold">
+              <h2 className="px-6 mb-4 text-xl text-coolGray-900 font-bold">
                 Hot Exams
               </h2>
               <div className="flex items-center gap-3 me-5">
                 <button
-                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${selectedTab === 'week' ? 'bg-green-900' : ''}`}
-                  onClick={() => handleTabChange('week')}
+                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${
+                    selectedTab === "week" ? "bg-green-900" : ""
+                  }`}
+                  onClick={() => handleTabChange("week")}
                 >
                   Weekly
                 </button>
                 <button
-                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${selectedTab === 'month' ? 'bg-green-900' : ''}`}
-                  onClick={() => handleTabChange('month')}
+                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${
+                    selectedTab === "month" ? "bg-green-900" : ""
+                  }`}
+                  onClick={() => handleTabChange("month")}
                 >
                   Monthly
                 </button>
               </div>
             </div>
-            <div className="px-6 overflow-x-auto h-[70vh]">
+            <div className="px-6">
               <table className="w-full">
                 <tbody>
                   <tr className="whitespace-nowrap h-11 bg-coolGray-50 sticky top-0 bg-white z-100">
                     <th className="px-4 font-semibold text-xs text-coolGray-500 uppercase text-left rounded-l-md">
                       <p>Exam Title</p>
                     </th>
-                    <th className="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
                       Vendor
                     </th>
-                    <th className="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
                       Exam Code
                     </th>
-                    <th className="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
                       Top country
                     </th>
-                    <th className="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
                       Rating
                     </th>
-                    <th className="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-left rounded-r-md">
+                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left rounded-r-md">
                       Buy Now
                     </th>
                   </tr>
                   {paginatedExams.map((hotExam) => (
-                    <tr key={hotExam?.exam_id} className="h-18 border-b border-coolGray-100">
-                      <th className="whitespace-nowrap px-4 bg-white text-left">
+                    <tr
+                      key={hotExam?.exam_id}
+                      className="h-18 border-b border-coolGray-100"
+                    >
+                      <th className="whitespace-nowrap px-4 py-3 bg-white text-left">
                         <div className="flex items-center -m-2">
                           <div className="w-auto p-2">
-                            <div className="flex items-center justify-center w-10 h-10 text-base font-medium bg-green-500 rounded-md">
+                            <div className="flex items-center justify-center  w-10 h-10 text-base font-medium bg-green-500 rounded-md">
                               <svg
                                 width="24"
                                 height="24"
@@ -133,16 +142,17 @@ const ChildComponent = ({ hotExams }) => {
                               fill="#f4b400"
                               d="M95.28 71.51L114.9 56.2c.97-.81 2.72-2.1 1.32-3.57c-1.11-1.16-4.11.51-4.11.51l-17.17 6.71c-5.12 1.77-8.52 4.39-8.82 7.69c-.39 4.4 3.56 7.79 9.16 3.97"
                             />
-                          </svg> <span> 4.5  </span>
+                          </svg>{" "}
+                          <span> 4.5 </span>
                         </div>
                       </th>
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-green-600  text-left">
-                      <Link
-                        className="bg-green-600 border-0 hover:bg-white hover:border hover:border-green-600 hover:text-green-600 text-white font-bold py-1 px-3 rounded"
-                        href={`/exam-questions/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
-                      >
-                        Buy
-                      </Link>
+                        <Link
+                          className="bg-green-600 border-0 hover:bg-white hover:border hover:border-green-600 hover:text-green-600 text-white font-bold py-1 px-3 rounded"
+                          href={`/exam-questions/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
+                        >
+                          Buy
+                        </Link>
                       </th>
                     </tr>
                   ))}
@@ -152,7 +162,12 @@ const ChildComponent = ({ hotExams }) => {
             <div className="flex flex-wrap items-center justify-between w-full lg:w-1/2 py-4 px-6 -m-2">
               <div className="w-auto p-2">
                 <p className="text-sm font-semibold text-coolGray-500">
-                  Showing {(currentPage - 1) * itemsPerPage + 1} to {Math.min(currentPage * itemsPerPage, hotExams[selectedTab]?.length || 0)} of {hotExams[selectedTab]?.length} results
+                  Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
+                  {Math.min(
+                    currentPage * itemsPerPage,
+                    hotExams[selectedTab]?.length || 0
+                  )}{" "}
+                  of {hotExams[selectedTab]?.length} results
                 </p>
               </div>
               <div className="w-auto p-2">
@@ -187,7 +202,9 @@ const ChildComponent = ({ hotExams }) => {
                     </div>
                   </div>
                   <div className="w-auto">
-                    <p className="text-sm text-coolGray-500 font-medium">per page</p>
+                    <p className="text-sm text-coolGray-500 font-medium">
+                      per page
+                    </p>
                   </div>
                 </div>
               </div>

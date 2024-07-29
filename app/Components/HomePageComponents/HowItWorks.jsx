@@ -18,7 +18,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="relative h-screen">
+    <div className="relative my-10">
       <section className="py-12 md:pt-24 md:pb-0 relative z-10">
         <div className="container px-4 mx-auto">
           <div className="text-black">
