@@ -1,18 +1,31 @@
-import React from "react";
+import Link from "next/link";
 
-const HeaderCard = () => {
+const HeaderCard = ({
+  examTitle,
+  examCode,
+  lastUpdate,
+  examQuestions,
+  examVendorTitle,
+  examVendorPerma,
+  examPrices,
+  examCerts,
+}) => {
+  console.log(examTitle, examCode, lastUpdate, examQuestions);
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-4 gap-10">
-        <div className="col-span-1">
+      <div className="grid grid-cols-5 gap-10">
+        <div className="col-span-2">
           <div className="flex justify-center mb-4">
             <img
-              src="https://www.marks4sure.com/img/demo-image1.png"
+              src="https://exam-hero.netlify.app/product2.png"
               alt="Marks4Sure"
-              className="w-40 h-auto"
+              className="w-80 h-96"
             />
           </div>
 
+          <p className="text-center text-lg font-bold mb-5">
+            {examQuestions} Questions Answers with Explanation
+          </p>
           <div className="flex justify-center mb-4">
             <button className="bg-blue-600 text-white px-4 py-2 rounded flex items-center">
               <span className="mr-2">DOWNLOAD DEMO</span>
@@ -36,60 +49,72 @@ const HeaderCard = () => {
 
         <div className="col-span-3">
           <div className="mb-4">
-            <h1 className="text-4xl font-semibold mb-5">
-              Cisco 200-301 Dumps Questions Answers
+            <h1 className="text-3xl font-semibold mb-5">
+              {/* Cisco 200-301 Dumps Questions Answers */}
+              {examTitle} - ({examCode}) - Questions Answers
             </h1>
-            <p className="border-b text-md">
-                <div className="w-1/2 flex justify-between">
-              <span> Exam Code: </span> <span className="font-semibold">200-301</span>
-                </div>
-            </p>
-            <p>
-              Exam Name:
-              <a href="#" className="text-blue-600 underline">
-                Cisco Certified Network Associate
-              </a>
-            </p>
-            <p>Last Update: Jul 22, 2024</p>
-            <p>
-              970 Questions Answers with Explanation
-              <a href="#" className="text-blue-600 underline">
-                Detail
-              </a>
-            </p>
+            <div className="border-b text-lg flex py-2">
+              <div className="w-1/2">
+                <span> Exam Code: </span>
+              </div>{" "}
+              <div className="w-1/2">
+                {" "}
+                <span className="font-semibold text-start">{examCode}</span>
+              </div>
+            </div>
+            <div className="border-b text-lg flex py-2">
+              <div className="w-1/2">
+                <span> Exam Provider Name: </span>{" "}
+              </div>
+              <div className="w-1/2">
+                <span className="font-semibold">
+                  <Link
+                    href={examVendorPerma}
+                    className="text-blue-600 underline"
+                  >
+                    {examVendorTitle}
+                  </Link>
+                </span>
+              </div>
+            </div>
+            <div className="border-b text-lg flex py-2">
+              <div className="w-1/2">Last Update: </div>{" "}
+              <div className="w-1/2 font-semibold"> {lastUpdate} </div>{" "}
+            </div>
+            <div className="border-b text-lg flex py-2">
+              <div className="w-1/2">Exam Certifications:</div>
+              <div className="w-1/2">
+                {examCerts?.map((cert) => (
+                  <span key={cert?.cert_id}>{cert.cert_name}, </span>
+                ))}
+              </div>
+            </div>
+            {/* <p className="border-b text-lg flex py-2">
+              <div className="w-1/2">Questions Answers with Explanation</div>
+              <div className="w-1/2">{examQuestions}</div>
+            </p> */}
           </div>
 
-          <div className="bg-white shadow-md rounded-md p-4">
-            {[
-              {
-                type: "PDF + Testing Engine",
-                price: 70,
-                originalPrice: 174.99,
-              },
-              {
-                type: "Testing Engine (only)",
-                price: 54,
-                originalPrice: 134.99,
-              },
-              { type: "PDF (only)", price: 48, originalPrice: 119.99 },
-            ].map((item, index) => (
+          <div className="bg-white border shadow-md rounded-md p-5">
+            {examPrices?.map((item) => (
               <div
-                key={index}
-                className="flex items-center justify-between border-b py-2"
+                key={item.type}
+                className="flex items-center justify-between border-b py-2 text-lg"
               >
-                <div>
-                  <p className="font-semibold">{item.type}</p>
+                <div className="flex gap-3">
+                  <p className="font-semibold">{item.title}</p>
+                  <div className="bg-gray-100 px-3 py-1 text-xs">
+                    {item.off}% Off
+                  </div>
                 </div>
                 <div className="flex items-center">
                   <input type="checkbox" className="mr-2" />
                   <label className="mr-4">Include Study Guide</label>
                   <p className="text-red-600 line-through mr-2">
-                    ${item.originalPrice.toFixed(2)}
+                    ${item.full_price}
                   </p>
-                  <p className="text-blue-600 font-bold">
-                    ${item.price.toFixed(2)}
-                  </p>
-                  <button className="bg-blue-600 text-white px-4 py-2 ml-4 rounded">
+                  <p className="text-blue-600 font-bold">${item.price}</p>
+                  <button className="bg-blue-600 text-white text-xs px-4 py-2 ml-4 rounded">
                     ADD TO CART
                   </button>
                 </div>

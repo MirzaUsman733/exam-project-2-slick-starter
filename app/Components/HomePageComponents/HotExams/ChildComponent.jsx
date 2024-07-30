@@ -39,7 +39,7 @@ const ChildComponent = ({ hotExams }) => {
               <div className="flex items-center gap-3 me-5">
                 <button
                   className={`bg-blue-500 text-white px-3 py-1 font-bold rounded-lg ${
-                    selectedTab === "week" ? "bg-green-900" : ""
+                    selectedTab === "week" ? "bg-blue-700" : ""
                   }`}
                   onClick={() => handleTabChange("week")}
                 >
@@ -47,7 +47,7 @@ const ChildComponent = ({ hotExams }) => {
                 </button>
                 <button
                   className={`bg-blue-500 text-white px-3 py-1 font-bold rounded-lg ${
-                    selectedTab === "month" ? "bg-green-900" : ""
+                    selectedTab === "month" ? "bg-blue-700" : ""
                   }`}
                   onClick={() => handleTabChange("month")}
                 >
@@ -148,7 +148,7 @@ const ChildComponent = ({ hotExams }) => {
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-blue-500  text-left">
                         <Link
                           className="bg-blue-500 border-0 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 text-white font-bold py-1 px-3 rounded"
-                          href={`/exam-questions/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
+                          href={`/exam-details/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
                         >
                           Buy
                         </Link>

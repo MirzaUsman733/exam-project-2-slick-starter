@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="bg-white">
-            <div className="container mx-auto">
+            <div className="container mx-auto p-6">
                
                 <div className="py-16">
                     <div className="grid grid-cols-3 gap-10">
@@ -28,7 +28,7 @@ const Footer = () => {
                             <div className="mb-10 text-center">
                                 <h3 className="text-black text-xl font-semibold mb-10 relative">Useful Links</h3>
                             </div>
-                            <div className='flex justify-center gap-10'>
+                            <div className='flex justify-center gap-16'>
                             <ul className="list-none m-0 p-0">
                                 <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Home</a></li>
                                 <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Vendors</a></li>
