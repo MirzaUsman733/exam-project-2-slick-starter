@@ -3,7 +3,9 @@ import ExamBanner from '@/app/Components/ExamDetails/ExamBanner';
 import HeaderCard from '@/app/Components/ExamDetails/HeaderCard';
 import React from 'react'
 
-const Page = () => {
+const Page = ({ params }) => {
+  const vendor_perma = params.vendor;
+  const exam_perma = params.exam;
   const breadcrumbData = [
     { label: 'Home', path: '/' },
     { label: 'Cisco', path: '/cisco' },

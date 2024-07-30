@@ -45,14 +45,14 @@ const HeaderCard = () => {
                 </div>
             </p>
             <p>
-              Exam Name:{" "}
+              Exam Name:
               <a href="#" className="text-blue-600 underline">
                 Cisco Certified Network Associate
               </a>
             </p>
             <p>Last Update: Jul 22, 2024</p>
             <p>
-              970 Questions Answers with Explanation{" "}
+              970 Questions Answers with Explanation
               <a href="#" className="text-blue-600 underline">
                 Detail
               </a>
