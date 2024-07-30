@@ -15,6 +15,7 @@ export default function Home() {
       <Features />
       <hr className=" border-gray-300 mx-auto" />
       <LogoCloud />
+      <hr className=" border-gray-300 mx-auto" />
       <RecentlyUpdated />
       <hr className=" border-gray-300 mx-auto" />
       <HotExam />

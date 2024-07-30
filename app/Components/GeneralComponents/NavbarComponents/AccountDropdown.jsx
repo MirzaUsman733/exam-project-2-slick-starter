@@ -30,7 +30,7 @@ function AccountDropdown() {
     return (
         <div className="relative">
             <button
-                className="text-gray-700 hover:text-green-500 font-medium flex items-center"
+                className="text-gray-700 hover:text-blue-500 font-medium flex items-center"
                 onClick={(e) => {
                     e.preventDefault();
                     toggleDropdown();

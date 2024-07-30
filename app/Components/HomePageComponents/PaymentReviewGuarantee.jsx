@@ -19,8 +19,8 @@ export default function PaymentReviewGuarantee() {
           <div className="flex items-center gap-2">
             <Image src="/customer.jpg" alt="Romona Kearns" width={64} height={64} className="rounded-full" />
             <div>
-              <p className="text-green-600 font-semibold">Romona Kearns</p>
-              <p className="text-green-500">Happy Customer</p>
+              <p className="text-blue-500 font-semibold">Romona Kearns</p>
+              <p className="text-blue-500">Happy Customer</p>
             </div>
           </div>
         </div>

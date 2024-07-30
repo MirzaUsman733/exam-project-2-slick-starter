@@ -38,7 +38,7 @@ const ChildComponent = ({ hotExams }) => {
               </h2>
               <div className="flex items-center gap-3 me-5">
                 <button
-                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${
+                  className={`bg-blue-500 text-white px-3 py-1 font-bold rounded-lg ${
                     selectedTab === "week" ? "bg-green-900" : ""
                   }`}
                   onClick={() => handleTabChange("week")}
@@ -46,7 +46,7 @@ const ChildComponent = ({ hotExams }) => {
                   Weekly
                 </button>
                 <button
-                  className={`bg-green-600 text-white px-3 py-1 font-bold rounded-lg ${
+                  className={`bg-blue-500 text-white px-3 py-1 font-bold rounded-lg ${
                     selectedTab === "month" ? "bg-green-900" : ""
                   }`}
                   onClick={() => handleTabChange("month")}
@@ -55,7 +55,7 @@ const ChildComponent = ({ hotExams }) => {
                 </button>
               </div>
             </div>
-            <div className="px-6">
+            <div>
               <table className="w-full">
                 <tbody>
                   <tr className="whitespace-nowrap h-11 bg-coolGray-50 sticky top-0 bg-white z-100">
@@ -78,15 +78,14 @@ const ChildComponent = ({ hotExams }) => {
                       Buy Now
                     </th>
                   </tr>
-                  {paginatedExams.map((hotExam) => (
+                  {paginatedExams.map((hotExam, index) => (
                     <tr
-                      key={hotExam?.exam_id}
-                      className="h-18 border-b border-coolGray-100"
+                    key={hotExam?.exam_id} className={`h-18 border-b border-coolGray-100 ${index % 2 ? 'bg-gray-100' : 'bg-white'}`}
                     >
                       <th className="whitespace-nowrap px-4 py-3 bg-white text-left">
                         <div className="flex items-center -m-2">
                           <div className="w-auto p-2">
-                            <div className="flex items-center justify-center  w-10 h-10 text-base font-medium bg-green-500 rounded-md">
+                            <div className="flex items-center justify-center w-9 h-9 text-base font-medium bg-blue-500 rounded-md">
                               <svg
                                 width="24"
                                 height="24"
@@ -110,7 +109,7 @@ const ChildComponent = ({ hotExams }) => {
                       </th>
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 z-0 text-left">
                         <Link
-                          className="font-medium text-green-600 hotExam-link z-0"
+                          className="font-medium text-blue-500 hotExam-link z-0"
                           href={`/exam-providers/${hotExam?.vendor_perma}`}
                         >
                           {hotExam?.vendor_title}
@@ -146,9 +145,9 @@ const ChildComponent = ({ hotExams }) => {
                           <span> 4.5 </span>
                         </div>
                       </th>
-                      <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-green-600  text-left">
+                      <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-blue-500  text-left">
                         <Link
-                          className="bg-green-600 border-0 hover:bg-white hover:border hover:border-green-600 hover:text-green-600 text-white font-bold py-1 px-3 rounded"
+                          className="bg-blue-500 border-0 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 text-white font-bold py-1 px-3 rounded"
                           href={`/exam-questions/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
                         >
                           Buy
@@ -215,8 +214,8 @@ const ChildComponent = ({ hotExams }) => {
                       key={index}
                       className={`${
                         currentPage === index + 1
-                          ? "bg-green-600 text-white"
-                          : "bg-white text-green-600 border border-green-600"
+                          ? "bg-blue-500 text-white"
+                          : "bg-white text-blue-500 border border-blue-500"
                       } px-4 py-1 rounded-md`}
                       onClick={() => handlePageChange(index + 1)}
                     >

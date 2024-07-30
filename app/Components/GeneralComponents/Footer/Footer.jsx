@@ -30,17 +30,17 @@ const Footer = () => {
                             </div>
                             <div className='flex justify-center gap-10'>
                             <ul className="list-none m-0 p-0">
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Home</a></li>
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Vendors</a></li>
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Certifications</a></li>
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Unlimited Access</a></li>
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Video Courses</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Home</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Vendors</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Certifications</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Unlimited Access</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Video Courses</a></li>
                            </ul>
                            <ul>
-                           <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Test Engine Player</a></li>
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">FAQ</a></li>
-                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Refund Exam</a></li>
-                                {/* <li className="mb-3"><a href="#" className="text-[#878787] hover:text-green-500">Latest News</a></li> */}
+                           <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Test Engine Player</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">FAQ</a></li>
+                                <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Refund Exam</a></li>
+                                {/* <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Latest News</a></li> */}
                           
                            </ul>
                            </div>
@@ -53,7 +53,7 @@ const Footer = () => {
                             <div className="relative">
                                 <form action="#" className="flex">
                                     <input type="text" placeholder="Email Address" className="w-full py-3 px-5 bg-white border border-gray-200 text-black focus:outline-none" />
-                                    <button type="submit" className="bg-green-500 py-3 px-5 border border-green-500 absolute right-0 top-0"><i className="fab fa-telegram-plane text-white text-xl"></i></button>
+                                    <button type="submit" className="bg-blue-500 py-3 px-5 border border-blue-500 absolute right-0 top-0"><i className="fab fa-telegram-plane text-white text-xl"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -69,11 +69,11 @@ const Footer = () => {
                     </div>
                     <div className="hidden lg:block">
                         <ul className="flex">
-                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-green-500 text-base">Home</a></li>
-                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-green-500 text-base">Terms</a></li>
-                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-green-500 text-base">Privacy</a></li>
-                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-green-500 text-base">Policy</a></li>
-                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-green-500 text-base">Contact</a></li>
+                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-blue-500 text-base">Home</a></li>
+                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-blue-500 text-base">Terms</a></li>
+                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-blue-500 text-base">Privacy</a></li>
+                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-blue-500 text-base">Policy</a></li>
+                            <li className="ml-5"><a href="#" className="text-[#878787] hover:text-blue-500 text-base">Contact</a></li>
                         </ul>
                     </div>
                 </div>

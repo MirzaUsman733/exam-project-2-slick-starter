@@ -109,7 +109,7 @@
 //               </div>
 //               <div className="w-full md:w-1/2 px-8 pt-8 pb-0 items-center">
 //                 <div className="md:max-w-md">
-//                   <span className="inline-block mb-5 text-sm  text-green-500 font-bold uppercase tracking-widest">
+//                   <span className="inline-block mb-5 text-sm  text-blue-500 font-bold uppercase tracking-widest">
 //                     Build You Career
 //                   </span>
 //                   <h2 className="font-heading mb-4 text-4xl text-gray-900 font-extrabold tracking-tight">
@@ -123,7 +123,7 @@
 //                   <div className="flex flex-wrap -m-2">
 //                     <div className="w-auto p-2">
 //                       <div className="flex flex-wrap px-3 py-2 bg-gray-100 rounded-full">
-//                         <div className="w-auto mr-2 pt-1  text-green-500">
+//                         <div className="w-auto mr-2 pt-1  text-blue-500">
 //                           <svg
 //                             width="13"
 //                             height="13"
@@ -146,7 +146,7 @@
 //                     </div>
 //                     <div className="w-auto p-2">
 //                       <div className="flex flex-wrap px-3 py-2 bg-gray-100 rounded-full">
-//                         <div className="w-auto mr-2 pt-1  text-green-500">
+//                         <div className="w-auto mr-2 pt-1  text-blue-500">
 //                           <svg
 //                             width="13"
 //                             height="13"
@@ -169,7 +169,7 @@
 //                     </div>
 //                     <div className="w-auto p-2">
 //                       <div className="flex flex-wrap px-3 py-2 bg-gray-100 rounded-full">
-//                         <div className="w-auto mr-2 pt-1  text-green-500">
+//                         <div className="w-auto mr-2 pt-1  text-blue-500">
 //                           <svg
 //                             width="13"
 //                             height="13"
@@ -192,7 +192,7 @@
 //                     </div>
 //                     <div className="w-auto p-2">
 //                       <div className="flex flex-wrap px-3 py-2 bg-gray-100 rounded-full">
-//                         <div className="w-auto mr-2 pt-1  text-green-500">
+//                         <div className="w-auto mr-2 pt-1  text-blue-500">
 //                           <svg
 //                             width="13"
 //                             height="13"
@@ -215,7 +215,7 @@
 //                     </div>
 //                     <div className="w-auto p-2">
 //                       <div className="flex flex-wrap px-3 py-2 bg-gray-100 rounded-full">
-//                         <div className="w-auto mr-2 pt-1  text-green-500">
+//                         <div className="w-auto mr-2 pt-1  text-blue-500">
 //                           <svg
 //                             width="13"
 //                             height="13"
@@ -238,7 +238,7 @@
 //                     </div>
 //                     <div className="w-auto p-2">
 //                       <div className="flex flex-wrap px-3 py-2 bg-gray-100 rounded-full">
-//                         <div className="w-auto mr-2 pt-1  text-green-500">
+//                         <div className="w-auto mr-2 pt-1  text-blue-500">
 //                           <svg
 //                             width="13"
 //                             height="13"
@@ -300,7 +300,7 @@ const Features = () => {
                       <div className="flex flex-wrap -m-2">
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1 text-green-500">
+                            <div className="w-auto mr-2 pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -323,7 +323,7 @@ const Features = () => {
                         </div>
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-green-500">
+                            <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -346,7 +346,7 @@ const Features = () => {
                         </div>
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-green-500">
+                            <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -369,7 +369,7 @@ const Features = () => {
                         </div>
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-green-500">
+                            <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -392,7 +392,7 @@ const Features = () => {
                         </div>
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-green-500">
+                            <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -415,7 +415,7 @@ const Features = () => {
                         </div>
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-green-500">
+                            <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -443,9 +443,9 @@ const Features = () => {
               </div>
               <div className="w-full lg:w-1/2 px-4 flex items-center justify-center">
                 <div className="relative" style={{ zIndex: 0 }}>
-                  <img className="h-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none" src="https://images.unsplash.com/photo-1462826303086-329426d1aef5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="" />
+                  <img className="h-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none shadow-xl" src="https://images.unsplash.com/photo-1462826303086-329426d1aef5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="" />
                   <img className="hidden md:block absolute" style={{ top: "3rem", right: "-3rem", zIndex: -1 }} src="https://static.shuffle.dev/components/preview/04b4abd6-b3ad-4449-877f-d64a25c8c911/assets/public/atis-assets/elements/bullets-gray-left.svg" alt="" />
-                  <img className="hidden md:block absolute" style={{ bottom: "2.5rem", left: "-4.5rem", zIndex: -1 }} src="https://static.shuffle.dev/components/preview/04b4abd6-b3ad-4449-877f-d64a25c8c911/assets/public/atis-assets/elements/bullets-gray-left.svg" alt="" />
+                  <img className="hidden md:block absolute" style={{ bottom: "2.5rem", left: "-3rem", zIndex: -1 }} src="https://static.shuffle.dev/components/preview/04b4abd6-b3ad-4449-877f-d64a25c8c911/assets/public/atis-assets/elements/bullets-gray-left.svg" alt="" />
                 </div>
               </div>
             </div>

@@ -114,7 +114,7 @@ const ExamCard = ({ recentlyUpdated }) => {
         //   const formattedDate = exam?.exam_update_date?.substring(0, 10);
           return (
             <div key={exam?.exam_code} className="bg-white shadow-lg rounded-lg overflow-hidden my-5 hover:translate-y-[-5px] transition-transform duration-300">
-            <div className="p-4 bg-green-500 clip-path-polygon">
+            <div className="p-4 bg-blue-500 clip-path-polygon">
               <h3 className="text-white text-lg font-semibold">{exam.exam_title}</h3>
               <p className="text-white mt-2">Code: {exam.exam_code}</p>
             </div>

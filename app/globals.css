@@ -18,7 +18,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #22C55E;
+  background-color: #3B82F6;
   transform-origin: bottom right;
   transition: transform 0.50s ease-out;
 }
@@ -33,7 +33,7 @@
 .hotExam-link {
   position: relative;
   /* display: inline-block; */
-  color: #22C55E;
+  color: #3B82F6;
   text-decoration: none;
   padding-bottom: 2px;
 }
@@ -46,7 +46,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #22C55E;
+  background-color: #3B82F6;
   /* transform-origin: bottom right; */
   transition: transform 0.50s ease-out;
 }
@@ -155,9 +155,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #16A34A; /* Green color */
+  background: #3B82F6; 
   clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
-  z-index: -1; /* Ensures it's behind the content */
+  z-index: -1; 
 }
 
 .card {
