@@ -142,7 +142,7 @@ export default async function Navbar() {
       <nav className="relative px-6 py-0 lg:px-16 lg:py-9">
         
         {/* Desktop View */}
-        <div className="hidden lg:flex items-center justify-between">
+        <div className="hidden md:flex items-center justify-between">
           <Link href="#">
             <img
               className="h-6"
@@ -232,13 +232,13 @@ export default async function Navbar() {
         </div>
       </nav>
       {/* Mobile View */}
-      <div className="lg:hidden">
+      <div className="md:hidden">
         {/* Mobile Menu */}
-        <nav className="lg:hidden relative px-6 py-5 bg-white flex items-center justify-between">
+        <nav className="md:hidden relative px-6 py-5 bg-white flex items-center justify-between">
           <Link href="#">
             <img
               className="h-6"
-              src="/examprince_dark_svg.svg" // Update this path if needed
+              src="/examprince_dark_svg.svg"
               alt="Logo"
               width="auto"
             />

@@ -12,9 +12,9 @@ function ToggleButton() {
   };
 
   return (
-    <button onClick={toggleDrawer} className="text-white flex items-center">
+    <button onClick={toggleDrawer} className="text-black flex items-center">
       {isOpen ? (
-      <FaBars className="inline-block mr-1" size={20} />
+        <FaBars className="inline-block mr-1" size={20} />
       ) : (
         <FaTimes className="inline-block mr-1" size={20} />
       )}
