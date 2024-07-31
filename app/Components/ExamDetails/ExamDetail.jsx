@@ -3,6 +3,7 @@ import ExamBanner from "./ExamBanner";
 import HeaderCard from "./HeaderCard";
 import LastWeekResults from "./LastWeekResults";
 import LimitedOfferCountdown from "./LimitedOfferCountdown";
+import RelatedAndPremium from "./RelatedAndPremium";
 import TopicsCovered from "./TopicsCovered";
 
 const ExamDetail = ({
@@ -42,6 +43,8 @@ const ExamDetail = ({
       />
       <hr className="my-4 container mx-auto" />
       <LimitedOfferCountdown />
+      <hr className="my-4 container mx-auto" />
+      <RelatedAndPremium questionTypes={examData?.question_types} />
     </div>
   );
 };

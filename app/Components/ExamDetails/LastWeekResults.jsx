@@ -10,7 +10,7 @@ const LastWeekResults = ({
   return (
     <div className="backgroundResultBlue text-black text-center mb-20">
       <div className="container mx-auto">
-        <h1 className="text-gray-900 font-bold text-4xl mb-6">
+        <h1 className="text-gray-900 font-bold text-4xl mb-10 mt-10">
           {examVendorTitle} {examCode} Last Week Results!
         </h1>
         <div className="stats flex justify-around">
