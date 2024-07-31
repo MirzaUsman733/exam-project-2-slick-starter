@@ -169,13 +169,13 @@ const RelatedAndPremium = ({ questionTypes }) => {
     <div className="container mx-auto p-6">
       <div className="grid grid-cols-3 gap-10">
         <div className="bg-blue-200 border-blue-300 p-5 rounded-lg shadow-lg col-span-1 transform hover:scale-105 transition-transform duration-500">
-          <h2 className="mt-0 text-3xl font-bold text-blue-700 mb-5">200-301 Q&A's Detail</h2>
+          <h2 className="mt-0 text-3xl font-bold text-blue-700 mb-5">200-301 Q&A Detail</h2>
           <ul className="list-none p-0">
             <li className="mb-2 text-gray-700">
               <strong>Exam Code:</strong> 200-301
             </li>
             <li className="mb-2 text-gray-700">
-              <strong>Total Questions:</strong> 970 Q&A's
+              <strong>Total Questions:</strong> 970 Q&A s
             </li>
             {questionTypes?.map((questionType) => (
               <li
