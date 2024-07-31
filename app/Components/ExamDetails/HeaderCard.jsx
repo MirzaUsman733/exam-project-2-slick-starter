@@ -81,26 +81,37 @@ const HeaderCard = ({
             </div>
           </div>
 
-          <div className="bg-white border shadow-md rounded-md p-5">
+          <div className="bg-blue-50 border rounded-2xl p-5">
             {examPrices?.map((item, index) => (
               <div
                 key={item.type}
-                className={`flex items-center justify-between py-2 text-lg ${
-                  index !== examPrices.length - 1 ? "border-b" : ""
-                }`}
+                className={`flex items-center justify-between py-2 text-lg 
+                   ${
+                     index !== examPrices.length - 1
+                       ? //  "border-b border-blue-300"
+                         ""
+                       : ""
+                   }
+                `}
               >
                 <div className="flex gap-3">
                   <p className="font-semibold">{item.title}</p>
-                  <div className="bg-gray-100 px-3 py-1 text-xs">
+                  <div
+                    className={`bg-gray-100 py-1 text-sm font-bold ${
+                      item.off >= 70
+                        ? "text-red-800 bg-red-200 rounded-3xl px-2"
+                        : "text-blue-500 bg-blue-200 rounded-3xl px-2"
+                    } `}
+                  >
                     {item.off}% Off
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <p className="text-red-600 line-through mr-2">
+                  <p className="text-blue-600 font-bold mr-2">${item.price}</p>
+                  <p className="text-red-600 text-sm line-through">
                     ${item.full_price}
                   </p>
-                  <p className="text-blue-600 font-bold">${item.price}</p>
-                  <button className="bg-blue-600 text-white text-xs px-4 py-2 ml-4 rounded">
+                  <button className="bg-green-500 text-white text-xs px-4 py-2 ml-4 rounded">
                     ADD TO CART
                   </button>
                 </div>

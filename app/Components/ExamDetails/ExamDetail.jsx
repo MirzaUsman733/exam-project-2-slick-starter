@@ -1,8 +1,10 @@
+import HotExam from "../HomePageComponents/HotExams/HotExam";
 import Breadcrumbs from "./Breadcrumbs";
 import ExamBanner from "./ExamBanner";
 import HeaderCard from "./HeaderCard";
 import LastWeekResults from "./LastWeekResults";
 import LimitedOfferCountdown from "./LimitedOfferCountdown";
+import OtherRelatedExam from "./OtherRelatedExam";
 import RelatedAndPremium from "./RelatedAndPremium";
 import TopicsCovered from "./TopicsCovered";
 
@@ -36,15 +38,18 @@ const ExamDetail = ({
         examVendorTitle={examData?.exam_vendor_title}
         examCode={examData?.exam_code}
       />
+        <LimitedOfferCountdown />
+      <hr className="my-4 container mx-auto" />
+      <HotExam />
+      <hr className="my-4 container mx-auto" />
+      {/* <RelatedAndPremium questionTypes={examData?.question_types} /> */}
       <TopicsCovered
         examTopics={examData?.exam_topics}
         examVendorTitle={examData?.exam_vendor_title}
         examCode={examData?.exam_code}
       />
-      <hr className="my-4 container mx-auto" />
-      <LimitedOfferCountdown />
-      <hr className="my-4 container mx-auto" />
-      <RelatedAndPremium questionTypes={examData?.question_types} />
+      <hr />
+      <OtherRelatedExam vendorPerma={examData?.exam_vendor_perma} />
     </div>
   );
 };

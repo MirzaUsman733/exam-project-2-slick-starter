@@ -12,13 +12,13 @@ const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
           {examTopics.map((topic, index) => (
             <div
               key={index}
-              className="flex justify-between items-center border-b border-blue-600 p-4 last:border-b-0"
+              className="flex justify-between items-center border-b py-4 last:border-b-0"
             >
-              <div className="bg-blue-600 text-white px-5 py-2 rounded-md mr-4 text-lg font-bold">
+              <div className="bg-blue-100 border border-blue-500 text-blue-600 px-5 py-1 rounded-md mr-4 text-lg font-bold">
                 {index + 1}
               </div>
               <div className="flex-grow text-lg">{topic.topic}</div>
-              <div className="bg-gray-200 px-5 py-2 rounded-md text-lg font-bold">
+              <div className="bg-gray-200 px-5 py-2 rounded-md text-lg font-bold italic text-gray-700">
                 {topic.topic_questions} Questions
               </div>
             </div>

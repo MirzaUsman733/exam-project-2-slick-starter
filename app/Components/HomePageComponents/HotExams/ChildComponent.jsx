@@ -29,11 +29,11 @@ const ChildComponent = ({ hotExams }) => {
 
   return (
     <div>
-      <section className="bg-coolGray-50 p-6">
-        <div className="container mx-auto">
+      <section className="bg-coolGray-50">
+        <div className="container mx-auto p-6">
           <div className="pt-6 bg-white overflow-hidden rounded-md shadow-dashboard">
-            <div className="flex justify-between">
-              <h2 className="px-6 mb-4 text-xl text-coolGray-900 font-bold">
+            <div className="flex justify-between items-center pb-3 border-b">
+              <h2 className="px-6 text-xl text-coolGray-900 font-bold">
                 Hot Exams
               </h2>
               <div className="flex items-center gap-3 me-5">
@@ -59,28 +59,31 @@ const ChildComponent = ({ hotExams }) => {
               <table className="w-full">
                 <tbody>
                   <tr className="whitespace-nowrap h-11 bg-coolGray-50 sticky top-0 bg-white z-100">
-                    <th className="px-4 font-semibold text-xs text-coolGray-500 uppercase text-left rounded-l-md">
+                    <th className="px-4 font-semibold text-sm text-coolGray-500 uppercase text-left rounded-l-md">
                       <p>Exam Title</p>
                     </th>
-                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left">
                       Vendor
                     </th>
-                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left">
                       Exam Code
                     </th>
-                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left">
                       Top country
                     </th>
-                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left">
+                    <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left">
                       Rating
                     </th>
-                    <th className="whitespace-nowrap px-4 font-bold text-xs text-coolGray-500 uppercase text-left rounded-r-md">
+                    <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left rounded-r-md">
                       Buy Now
                     </th>
                   </tr>
                   {paginatedExams.map((hotExam, index) => (
                     <tr
-                    key={hotExam?.exam_id} className={`h-18 border-b border-coolGray-100 ${index % 2 ? 'bg-gray-100' : 'bg-white'}`}
+                      key={hotExam?.exam_id}
+                      className={`h-18 border-b border-coolGray-100 ${
+                        index % 2 ? "bg-gray-100" : "bg-white"
+                      }`}
                     >
                       <th className="whitespace-nowrap px-4 py-3 bg-white text-left">
                         <div className="flex items-center -m-2">

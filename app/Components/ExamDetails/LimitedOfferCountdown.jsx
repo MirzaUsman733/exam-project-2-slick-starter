@@ -78,7 +78,7 @@ const LimitedOfferCountdown = () => {
           </div>
           <a
             href="#"
-            className="inline-block bg-blue-500 text-white py-3 px-10 rounded-full text-lg font-bold hover:bg-orange-600"
+            className="inline-block bg-blue-500 text-white py-3 px-10 rounded-full text-lg font-bold hover:bg-blue-600"
           >
             Get Special Offers
           </a>
