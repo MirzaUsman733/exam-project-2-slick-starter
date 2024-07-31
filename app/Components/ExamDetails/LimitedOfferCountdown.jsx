@@ -33,9 +33,9 @@ const LimitedOfferCountdown = () => {
     };
 
     const intervalId = setInterval(countdown, 1000);
-    countdown(); // Initialize the countdown immediately
+    countdown();
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

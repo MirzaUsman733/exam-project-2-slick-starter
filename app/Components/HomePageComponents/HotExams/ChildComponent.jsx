@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [selectedTab, setSelectedTab] = useState('week'); // Initialize with 'week' as the default tab
+  const [selectedTab, setSelectedTab] = useState("week");
 
   const paginate = (exams, pageNumber) => {
     const startIndex = (pageNumber - 1) * itemsPerPage;
@@ -19,11 +19,10 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
 
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
-    setCurrentPage(1); // Reset to the first page when tab changes
+    setCurrentPage(1);
   };
 
-  // Determine which set of exams to display based on the selected tab
-  const currentExams = selectedTab === 'week' ? hotExamsWeek : hotExamMonthly;
+  const currentExams = selectedTab === "week" ? hotExamsWeek : hotExamMonthly;
   const paginatedExams = paginate(currentExams || [], currentPage);
   const totalPages = Math.ceil((currentExams?.length || 0) / itemsPerPage);
   return (

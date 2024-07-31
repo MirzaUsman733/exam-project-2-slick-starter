@@ -1,28 +1,25 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import DropdownIcon from "./DropdownIcon";
-import DropupIcon from './DropupIcon';
+import DropupIcon from "./DropupIcon";
 
 export default function DropdownMenu({ title, vendors }) {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      // Ensure the menu is open and the click is outside the dropdown element
-      if (!event.target.closest('.dropdown-menu') && isOpen) {
+      if (!event.target.closest(".dropdown-menu") && isOpen) {
         setIsOpen(false);
       }
     };
 
-    // Attach the event listener to the document
-    document.addEventListener('click', handleOutsideClick);
+    document.addEventListener("click", handleOutsideClick);
 
     return () => {
-      // Clean up the event listener when the component unmounts
-      document.removeEventListener('click', handleOutsideClick);
+      document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isOpen]); // Only re-run the effect if isOpen changes
+  }, [isOpen]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -38,11 +35,11 @@ export default function DropdownMenu({ title, vendors }) {
         }}
         className="inline-flex items-center text-gray-700 hover:text-blue-500 focus:text-blue-500 font-medium cursor-pointer"
       >
-        {title}  {isOpen ? <DropupIcon /> : <DropdownIcon /> } 
+        {title} {isOpen ? <DropupIcon /> : <DropdownIcon />}
       </Link>
       <div
         className={`absolute top-full left-16 bg-white min-w-max z-50 border shadow-xl rounded-lg overflow-hidden py-2
-          ${isOpen ? 'block' : 'hidden'}`}
+          ${isOpen ? "block" : "hidden"}`}
         style={{ transition: "opacity 0.3s ease-out, transform 0.3s ease-out" }}
       >
         {Array.isArray(vendors) &&

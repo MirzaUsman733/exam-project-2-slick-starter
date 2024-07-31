@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 const shuffleArray = (array) => {
   let shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -155,7 +154,9 @@ const OtherRelatedExam = async ({ vendorPerma }) => {
                     &nbsp; <span className="text-xs"> (4.5) </span>
                   </div>
                   <div className="flex justify-end">
-                    <button className="border bg-blue-500 text-white px-2 py-1 rounded-md">Buy Now</button>
+                    <button className="border bg-blue-500 text-white px-2 py-1 rounded-md">
+                      Buy Now
+                    </button>
                   </div>
                 </div>
               </div>

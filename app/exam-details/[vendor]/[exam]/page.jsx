@@ -1,8 +1,4 @@
-import Breadcrumbs from "@/app/Components/ExamDetails/Breadcrumbs";
-import ExamBanner from "@/app/Components/ExamDetails/ExamBanner";
 import ExamDetail from "@/app/Components/ExamDetails/ExamDetail";
-import HeaderCard from "@/app/Components/ExamDetails/HeaderCard";
-import React from "react";
 
 const Page = ({ params }) => {
   const vendor_perma = params.vendor;
@@ -33,7 +29,6 @@ const Page = ({ params }) => {
     const breadcrumbData = [
       { label: "Home", path: "/" },
       { label: `${examData?.exam_vendor_title}`, path: `/${vendor_perma}` },
-      // { label: `${examData?.exam_code}`, path: `/${vendor_perma}/${exam_perma}` },
       {
         label: `${examData?.exam_code} - ${examData?.exam_title}`,
         path: `/${examData?.exam_vendor_title}/${examData?.exam_code}`,

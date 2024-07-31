@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Breadcrumbs = ({ breadcrumbData }) => {
   return (
@@ -6,9 +6,7 @@ const Breadcrumbs = ({ breadcrumbData }) => {
       <ul className="flex">
         {breadcrumbData?.map((crumb, index) => (
           <li key={index} className="flex items-center">
-            {index !== 0 && (
-              <span className="mx-2">/</span>
-            )}
+            {index !== 0 && <span className="mx-2">/</span>}
             <Link className="hover:text-blue-500" href={crumb.path}>
               {crumb.label}
             </Link>

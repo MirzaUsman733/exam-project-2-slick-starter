@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function PaymentReviewGuarantee() {
   return (
@@ -14,10 +14,22 @@ export default function PaymentReviewGuarantee() {
 
         {/* Customer Review */}
         <div className="bg-white p-4 border-2 shadow-lg rounded-lg">
-          <h2 className="text-green-700 text-xl font-bold mb-4">Customer Review</h2>
-          <p className="text-green-700 italic mb-4">Hi this is Romona Kearns from Holland and I would like to tell you that I passed my exam with the use of your test engine software. I will recommend your site to all my friends for sure.</p>
+          <h2 className="text-green-700 text-xl font-bold mb-4">
+            Customer Review
+          </h2>
+          <p className="text-green-700 italic mb-4">
+            Hi this is Romona Kearns from Holland and I would like to tell you
+            that I passed my exam with the use of your test engine software. I
+            will recommend your site to all my friends for sure.
+          </p>
           <div className="flex items-center gap-2">
-            <Image src="/customer.jpg" alt="Romona Kearns" width={64} height={64} className="rounded-full" />
+            <Image
+              src="/customer.jpg"
+              alt="Romona Kearns"
+              width={64}
+              height={64}
+              className="rounded-full"
+            />
             <div>
               <p className="text-blue-500 font-semibold">Romona Kearns</p>
               <p className="text-blue-500">Happy Customer</p>
@@ -27,8 +39,16 @@ export default function PaymentReviewGuarantee() {
 
         {/* Money Back Guarantee */}
         <div className="bg-white p-4 border-2 shadow-lg rounded-lg">
-          <h2 className="text-green-700 text-xl font-bold mb-4">Money Back Guarantee</h2>
-          <p className="text-green-700">Our all material is important and it will be handy for you. If you have short time for exam so, we are sure with the use of it you will pass it easily with good marks. If you will not pass so, you could feel free to claim your refund. We will give 100% money back guarantee if our customers are not satisfied with our products.</p>
+          <h2 className="text-green-700 text-xl font-bold mb-4">
+            Money Back Guarantee
+          </h2>
+          <p className="text-green-700">
+            Our all material is important and it will be handy for you. If you
+            have short time for exam so, we are sure with the use of it you will
+            pass it easily with good marks. If you will not pass so, you could
+            feel free to claim your refund. We will give 100% money back
+            guarantee if our customers are not satisfied with our products.
+          </p>
         </div>
       </div>
     </div>

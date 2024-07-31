@@ -7,16 +7,10 @@ import LastWeekResults from "./LastWeekResults";
 import LimitedOfferCountdown from "./LimitedOfferCountdown";
 import OtherRelatedExam from "./OtherRelatedExam";
 import RelatedAndPremium from "./RelatedAndPremium";
+import RelatedExams from "./RelatedExams";
 import TopicsCovered from "./TopicsCovered";
 
-const ExamDetail = ({
-  examData,
-  formattedDate,
-  vendorPerma,
-  examPerma,
-  breadcrumbData,
-}) => {
-  console.log(breadcrumbData);
+const ExamDetail = ({ examData, formattedDate, breadcrumbData }) => {
   return (
     <div>
       <Breadcrumbs breadcrumbData={breadcrumbData} />
@@ -43,8 +37,6 @@ const ExamDetail = ({
       <hr className="my-4 container mx-auto" />
       <HotExam />
       <hr className="my-4 container mx-auto" />
-
-      {/* <RelatedAndPremium questionTypes={examData?.question_types} /> */}
       <TopicsCovered
         examTopics={examData?.exam_topics}
         examVendorTitle={examData?.exam_vendor_title}
@@ -63,6 +55,7 @@ const ExamDetail = ({
               questionTypes={examData?.question_types}
               examCode={examData?.exam_code}
             />
+            <RelatedExams vendorPerma={examData?.exam_vendor_perma} />
           </div>
         </div>
       </div>

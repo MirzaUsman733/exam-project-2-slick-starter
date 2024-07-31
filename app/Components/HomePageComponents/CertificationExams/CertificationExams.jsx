@@ -274,7 +274,6 @@ const CertificationExams = () => {
     setSelectedVendor(vendor);
   };
 
-  // Get unique vendor names
   const uniqueVendors = [...new Set(examsData.map((exam) => exam.vendor))];
 
   return (

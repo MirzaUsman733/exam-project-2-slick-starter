@@ -1,5 +1,3 @@
-import React from "react";
-
 const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
   return (
     <div className="container mx-auto p-6">

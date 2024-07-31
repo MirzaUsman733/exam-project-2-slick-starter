@@ -1,5 +1,3 @@
-import React from "react";
-
 const LastWeekResults = ({
   exam_last_week_passed,
   exam_last_week_average_score,

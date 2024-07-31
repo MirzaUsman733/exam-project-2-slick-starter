@@ -161,7 +161,6 @@
 // export default Review
 
 "use client";
-import React from "react";
 
 const reviews = [
   {
