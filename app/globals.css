@@ -183,10 +183,10 @@
 
 
 
-.backgroundResultBlue {
+/* .backgroundResultBlue {
   position: relative;
-  overflow: hidden; /* Ensures no overflow outside the component bounds */
-  color: white; /* Text color */
+  overflow: hidden; 
+  color: white;
 }
 
 .backgroundResultBlue::before {
@@ -199,4 +199,4 @@
   background: #3B82F6; 
   clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
   z-index: -1; 
-}
+} */

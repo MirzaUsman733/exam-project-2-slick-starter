@@ -50,56 +50,44 @@ const HeaderCard = ({
         <div className="col-span-3">
           <div className="mb-4">
             <h1 className="text-3xl font-semibold mb-5">
-              {/* Cisco 200-301 Dumps Questions Answers */}
               {examTitle} - ({examCode}) - Questions Answers
             </h1>
-            <div className="border-b text-lg flex py-2">
-              <div className="w-1/2">
-                <span> Exam Code: </span>
-              </div>{" "}
-              <div className="w-1/2">
-                {" "}
-                <span className="font-semibold text-start">{examCode}</span>
-              </div>
+            <div className="text-lg flex py-1">
+              <span className="mr-3"> Exam Code: </span>{" "}
+              <span className="font-semibold text-start">{examCode}</span>
             </div>
-            <div className="border-b text-lg flex py-2">
-              <div className="w-1/2">
-                <span> Exam Provider Name: </span>{" "}
-              </div>
-              <div className="w-1/2">
-                <span className="font-semibold">
-                  <Link
-                    href={examVendorPerma}
-                    className="text-blue-600 underline"
-                  >
-                    {examVendorTitle}
-                  </Link>
-                </span>
-              </div>
+            <div className="text-lg flex py-1">
+              <span className="mr-3"> Exam Provider Name: </span>
+              <span className="font-semibold">
+                <Link
+                  href={examVendorPerma}
+                  className="text-blue-600 underline"
+                >
+                  {examVendorTitle}
+                </Link>
+              </span>
             </div>
-            <div className="border-b text-lg flex py-2">
-              <div className="w-1/2">Last Update: </div>{" "}
-              <div className="w-1/2 font-semibold"> {lastUpdate} </div>{" "}
+            <div className="text-lg flex py-1">
+              <div className="mr-3">Last Update: </div>{" "}
+              <div> {lastUpdate} </div>{" "}
             </div>
-            <div className="border-b text-lg flex py-2">
-              <div className="w-1/2">Exam Certifications:</div>
-              <div className="w-1/2">
+            <div className="text-lg flex py-1">
+              <div className="mr-3">Exam Certifications:</div>
+              <div>
                 {examCerts?.map((cert) => (
                   <span key={cert?.cert_id}>{cert.cert_name}, </span>
                 ))}
               </div>
             </div>
-            {/* <p className="border-b text-lg flex py-2">
-              <div className="w-1/2">Questions Answers with Explanation</div>
-              <div className="w-1/2">{examQuestions}</div>
-            </p> */}
           </div>
 
           <div className="bg-white border shadow-md rounded-md p-5">
-            {examPrices?.map((item) => (
+            {examPrices?.map((item, index) => (
               <div
                 key={item.type}
-                className="flex items-center justify-between border-b py-2 text-lg"
+                className={`flex items-center justify-between py-2 text-lg ${
+                  index !== examPrices.length - 1 ? "border-b" : ""
+                }`}
               >
                 <div className="flex gap-3">
                   <p className="font-semibold">{item.title}</p>
@@ -108,8 +96,6 @@ const HeaderCard = ({
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <input type="checkbox" className="mr-2" />
-                  <label className="mr-4">Include Study Guide</label>
                   <p className="text-red-600 line-through mr-2">
                     ${item.full_price}
                   </p>
