@@ -23,9 +23,10 @@ const HotExam = async () => {
         }
       };
       const hotExams = await fetchData();
+      console.log(hotExams)
   return (
     <div>
-    <ChildComponent hotExams={hotExams} />
+    <ChildComponent hotExamsWeek={hotExams.week} hotExamMonthly={hotExams.month} />
     </div>
   );
 };

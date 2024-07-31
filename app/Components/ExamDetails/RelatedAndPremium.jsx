@@ -164,28 +164,16 @@
 
 import React from "react";
 
-const RelatedAndPremium = ({ questionTypes }) => {
+const RelatedAndPremium = ({ questionTypes,examCode }) => {
   return (
-    <div className="container mx-auto p-6">
-      <div className="grid grid-cols-3 gap-10">
+      <div>
         <div className="py-5 border rounded-lg col-span-1 transform hover:scale-105 transition-transform duration-500">
-          <h2 className="mt-0 text-3xl font-extrabold text-gray-700 text-center pb-1 font-[lato]"> 200-301 Premium Detail</h2>
-          <hr className="border-4 border-blue-500 mb-5 w-[50%] mx-auto"/>
+          <h2 className="mt-0 text-2xl font-extrabold text-gray-700 text-center pb-2 font-[lato]"> {examCode} Premium Detail</h2>
+          <hr className="border-4 border-blue-500 mb-7 w-[40%] rounded-xl mx-auto"/>
           <ul className="list-none p-0">
-            {/* <li className="mb-2 text-gray-700">
-              <strong>Exam Code:</strong> 200-301
-            </li>
-            <li className="mb-2 text-gray-700">
-              <strong>Total Questions:</strong> 970 Q&A s
-            </li> */}
-            {questionTypes?.map((questionType) => (
+            {questionTypes?.map((questionType, index) => (
               <li
-                className={`flex px-5 items-center py-2 border-b${
-                    index !== examPrices.length - 1
-                      ? //  "border-b border-blue-300"
-                        ""
-                      : ""
-                  }`}
+                className={`flex px-5 items-center py-2 border-b last:border-b-0`}
                 key={questionType?.question_type}
               >
                 <div className="flex justify-between items-center gap-1 w-full">
@@ -199,7 +187,6 @@ const RelatedAndPremium = ({ questionTypes }) => {
           </ul>
         </div>
       </div>
-    </div>
   );
 };
 

@@ -2,10 +2,10 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-const ChildComponent = ({ hotExams }) => {
+const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [selectedTab, setSelectedTab] = useState("week");
+  const [selectedTab, setSelectedTab] = useState('week'); // Initialize with 'week' as the default tab
 
   const paginate = (exams, pageNumber) => {
     const startIndex = (pageNumber - 1) * itemsPerPage;
@@ -19,14 +19,13 @@ const ChildComponent = ({ hotExams }) => {
 
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
-    setCurrentPage(1); // Reset to first page when tab changes
+    setCurrentPage(1); // Reset to the first page when tab changes
   };
 
-  const paginatedExams = paginate(hotExams[selectedTab] || [], currentPage);
-  const totalPages = Math.ceil(
-    (hotExams[selectedTab]?.length || 0) / itemsPerPage
-  );
-
+  // Determine which set of exams to display based on the selected tab
+  const currentExams = selectedTab === 'week' ? hotExamsWeek : hotExamMonthly;
+  const paginatedExams = paginate(currentExams || [], currentPage);
+  const totalPages = Math.ceil((currentExams?.length || 0) / itemsPerPage);
   return (
     <div>
       <section className="bg-coolGray-50">
@@ -167,9 +166,9 @@ const ChildComponent = ({ hotExams }) => {
                   Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
                   {Math.min(
                     currentPage * itemsPerPage,
-                    hotExams[selectedTab]?.length || 0
+                    [selectedTab]?.length || 0
                   )}{" "}
-                  of {hotExams[selectedTab]?.length} results
+                  of {[selectedTab]?.length} results
                 </p>
               </div>
               <div className="w-auto p-2">

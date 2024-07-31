@@ -28,7 +28,7 @@ export default function Home() {
       <hr className="lg:max-w-[75%] border-gray-300 my-5 mx-auto" />
       {/* <Review /> */}
       <hr />
-      <Footer />
+      
     </main>
   );
 }
