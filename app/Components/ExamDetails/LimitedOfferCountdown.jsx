@@ -11,7 +11,7 @@ const LimitedOfferCountdown = () => {
 
   useEffect(() => {
     const countdown = () => {
-      const endDate = new Date("July 31, 2024 23:59:59").getTime();
+      const endDate = new Date("August 31, 2024 23:59:59").getTime();
       const now = new Date().getTime();
       const timeRemaining = endDate - now;
 

@@ -75,16 +75,18 @@
   min-height: 120px;
   clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 100%);
 }
-
+.clip-path-polygon-vendorDetails{
+  min-height: 120px;
+  clip-path: polygon(0 0, 100% 0%, 100% 65%, 0 100%);
+}
 .clip-path-polygon-howItWorks{
   padding-top: 10%;
   clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .clip-polygon-exam-provider{
-  /* clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%); */
   position: relative;
-  overflow: hidden; /* Ensures no overflow outside the component bounds */
+  overflow: hidden;
   color: black; 
 }
 .clip-polygon-exam-provider::before {
@@ -98,7 +100,6 @@
   clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
   z-index: -1; 
 }
-
 
 
 /* Review */

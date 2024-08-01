@@ -22,7 +22,6 @@ const HotExam = async () => {
     }
   };
   const hotExams = await fetchData();
-  console.log(hotExams);
   return (
     <div>
       <ChildComponent
