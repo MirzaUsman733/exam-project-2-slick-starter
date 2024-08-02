@@ -136,30 +136,36 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
         {/* Grid 2 */}
         <div className="col-span-1">
           <div className="border">
-          <h2 className="bg-blue-500 text-white p-5 mb-3 text-center text-3xl font-semibold">
-            Certifications
-          </h2>
-          <ul className="list-none p-1 m-0">
-            {[
-              ...new Map(
-                vendorData?.vendor_certs?.map((certs) => [certs.cert_id, certs])
-              ).values(),
-            ].map((certs) => (
-              <li key={certs.cert_id} className="mx-3 py-3 border-b last:border-b-0">
-                <Link
-                  href={`/vendor-exam-questions/${vendorPerma}/${certs.cert_perma}`}
-                  className="flex"
+            <h2 className="bg-blue-500 text-white p-5 mb-3 text-center text-3xl font-semibold">
+              Certifications
+            </h2>
+            <ul className="list-none p-1 m-0">
+              {[
+                ...new Map(
+                  vendorData?.vendor_certs?.map((certs) => [
+                    certs.cert_id,
+                    certs,
+                  ])
+                ).values(),
+              ].map((certs) => (
+                <li
+                  key={certs.cert_id}
+                  className="mx-3 py-3 border-b last:border-b-0"
                 >
-                  <span className="text-blue-500 mr-1.5">▶</span>
-                  {certs.cert_title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <Link
+                    href={`/vendor-exam-questions/${vendorPerma}/${certs.cert_perma}`}
+                    className="flex"
+                  >
+                    <span className="text-blue-500 mr-1.5">▶</span>
+                    {certs.cert_title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-     </div>
   );
 };
 
