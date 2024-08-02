@@ -1,55 +1,25 @@
 import React from "react";
 import ExamProvider from "../Components/exam-provider-components/ExamProvider";
+import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 const Page = async () => {
-  const fetchVendorData = async () => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendors`,
-        {
-          headers: {
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        }
-      );
-      if (!res.ok) {
-        throw new Error(`Failed to fetch data: ${res.status}`);
-      }
-      const relatedExamData = await res.json();
-      return relatedExamData;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      return [];
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendors`,
+    {
+      headers: {
+        "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+      },
     }
-  };
-
-
-  const fetchCertificationData = async () => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendors`,
-        {
-          headers: {
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        }
-      );
-      if (!res.ok) {
-        throw new Error(`Failed to fetch data: ${res.status}`);
-      }
-      const relatedExamData = await res.json();
-      return relatedExamData;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      return [];
-    }
-  };
-
-
-  const vendors = await fetchVendorData();
-  const certifications = await fetchCertificationData();
+  );
+  if (!res.ok) {
+    throw new Error(`Failed to fetch data: ${res.status}`);
+  }
+  const vendors = await res.json();
   return (
     <>
-      <ExamProvider vendors={vendors} certifications={certifications} />
+      <ExamProvider vendors={vendors} />
+      <div className="mt-10">
+        <HotExam />
+      </div>
     </>
   );
 };

@@ -1,11 +1,13 @@
+import CertificationDetails from "@/app/Components/certifications-components/CertificationDetails";
 import React from "react";
-import CertificationsComponent from "../Components/certifications-components/CertificationsComponent";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
-const Page = async () => {
-  const fetchCertificationData = async () => {
+
+const Page = async ({ params }) => {
+  const vendor_perma = params.vendor;
+  const cert_perma = params.cert;
+  const fetchRelatedExamData = async () => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/certifications`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/certification/${cert_perma}`,
         {
           headers: {
             "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
@@ -22,15 +24,14 @@ const Page = async () => {
       return [];
     }
   };
-
-
-  const certifications = await fetchCertificationData();
+  const certData = await fetchRelatedExamData();
   return (
     <>
-      <CertificationsComponent certifications={certifications} />
-      <div className="mt-10">
-        <HotExam />
-      </div>
+      <CertificationDetails
+        certData={certData}
+        vendorPerma={vendor_perma}
+        certPerma={cert_perma}
+      />
     </>
   );
 };

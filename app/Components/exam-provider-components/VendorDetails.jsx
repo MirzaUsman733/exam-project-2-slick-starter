@@ -9,7 +9,7 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
     <div className="container mx-auto font-[Lato] p-6 mt-10">
       <div className="grid grid-cols-3 gap-10">
         {/* Grid 1 */}
-        <div className="border-b-2 col-span-2">
+        <div className="col-span-2">
           <h2 className="bg-blue-500 text-white p-5 mb-3 text-center text-3xl font-semibold">
             Exams
           </h2>
@@ -160,10 +160,11 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
           </ul>
         </div>
       </div>
+    </div>
+    <hr className="mt-10" />
       <div className="mt-10">
         <HotExam />
       </div>
-    </div>
      </div>
   );
 };
