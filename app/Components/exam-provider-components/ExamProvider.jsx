@@ -41,12 +41,22 @@ const ExamProvider = ({ vendors }) => {
             <div key={vendor?.vendor_id}>
               <Link
                 href={`/exam-providers/${vendor?.vendor_perma}`}
-                className="flex flex-col p-3 border border-gray-200 clip-polygon-exam-provider"
+                // className="flex flex-col p-3 border border-gray-200 clip-polygon-exam-provider"
+                className="flex flex-col p-3 border border-gray-200"
               >
-                <p className="font-bold">{vendor?.vendor_title}</p>
-                <p className="text-end text-white">
-                  Exams ({vendor?.vendor_exams})
-                </p>
+                 <div
+                  className="relative bg-white rounded-lg p-6 flex-1 min-w-[calc(33.333%-20px)] shadow-lg transition-all duration-300 ease-in-out overflow-hidden hover:before:top-[-30%] hover:before:left-[-30%]"
+                >
+                  <div className="absolute left-[65%] w-full h-full bg-gradient-to-br from-blue-500 to-teal-500 z-0 transition-all duration-300 ease-in-out transform rotate-45 rounded-full before:content-[''] before:absolute before:top-0 before:left-0"></div>
+                  <div className="relative z-10 text-gray-800">
+                    <h2 className="text-xl font-semibold mb-2 text-blue-500">
+                      {vendor?.vendor_title}
+                    </h2>
+                    <p className="text-lg font-medium text-gray-600">
+                      Exams ({vendor?.vendor_exams})
+                    </p>
+                  </div>
+                </div>
               </Link>
             </div>
           ))}

@@ -3,7 +3,6 @@ import React from "react";
 import HotExam from "../homePageComponents/hotExams/HotExam";
 
 const VendorDetails = ({ vendorData, vendorPerma }) => {
-  console.log(vendorData);
   return (
     // <div>
     <div className="container mx-auto font-[Lato] p-6 mt-10">
@@ -17,7 +16,7 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
             {vendorData?.vendor_exams?.map((vendor) => (
               <div key={vendor?.exam_id}>
                 <Link
-                  href={`/exam-providers/${vendor?.exam_perma}`}
+                  href={`/exam-details/${vendorPerma}/${vendor?.exam_perma}`}
                   className="block border rounded-xl hover:border-b-2"
                 >
                   <div className="p-4 bg-blue-500 clip-path-polygon-vendorDetails rounded-t-xl">
