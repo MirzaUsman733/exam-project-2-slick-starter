@@ -32,6 +32,7 @@ const Page = async ({ params }) => {
         vendorPerma={vendor_perma}
         certPerma={cert_perma}
       />
+      <hr />
     </>
   );
 };

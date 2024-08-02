@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import HotExam from "../homePageComponents/hotExams/HotExam";
 
 const VendorDetails = ({ vendorData, vendorPerma }) => {
   return (
@@ -160,10 +159,6 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
         </div>
       </div>
     </div>
-    <hr className="mt-10" />
-      <div className="mt-10">
-        <HotExam />
-      </div>
      </div>
   );
 };

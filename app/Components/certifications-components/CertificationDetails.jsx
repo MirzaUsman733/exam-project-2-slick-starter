@@ -3,24 +3,31 @@ import React from "react";
 
 function CertificationDetails({ certData, vendorPerma }) {
   return (
-    <div className="container mx-auto font-[Lato] mt-10">
+    <div className="container mx-auto font-[Lato] p-6 mt-10">
       <div>
         <div>
-          <div>
+          <div className="border shadow-lg p-5">
             <div className="text-center">
               <h1 className="text-3xl bg-blue-500 font-semibold text-white p-5 mb-4">
                 {certData?.cert_title} Certification Details
               </h1>
             </div>
+            <div className="flex justify-between">
             <div className="mb-6">
-              <p className="text-lg text-gray-700">
+              <p className="text-xl text-gray-700 font-[lato] mb-2">
                 <strong>Certification Title:</strong>
                 <span className="italic"> {certData?.cert_full_name}</span>
               </p>
-              <p className="text-lg text-gray-700">
+              <p className="text-xl text-gray-700 font-[lato]">
+                <span className="mr-5">
                 <strong>Exam Provider:</strong>
+                </span> 
                 <span className="uppercase italic"> {vendorPerma} </span>
               </p>
+            </div>
+            <div>
+              <button className="shadow-xl bg-blue-500 text-white px-5 py-2 rounded-lg ">Take Exam</button>
+            </div>
             </div>
             <div className="mb-4 border-b-2 pb-3">
               <h2 className="text-3xl font-semibold text-gray-800 mb-3">
@@ -31,8 +38,8 @@ function CertificationDetails({ certData, vendorPerma }) {
                 Certification Success!
               </p>
             </div>
-            <div className="mb-5">
-              <ul className="divide-y divide-gray-200 border px-5">
+            <div className="mb-5 border border-blue-500 bg-blue-50 p-5">
+              <ul className="divide-y divide-gray-200">
                 {certData?.cert_multiple_exams?.map((certification) => (
                   <li className="py-4" key={certification?.exam_id}>
                     <div className="flex justify-between">
@@ -155,7 +162,7 @@ function CertificationDetails({ certData, vendorPerma }) {
                           <div className="flex justify-end mt-3">
                             <Link
                               href={`/exam-questions/${certification?.exam_vendor_perma}/${certification?.exam_perma}`}
-                              className="flex items-center px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                              className="flex items-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
                             >
                               <svg
                                 className="w-5 h-5 mr-2"
