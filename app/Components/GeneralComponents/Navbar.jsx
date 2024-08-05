@@ -54,7 +54,7 @@ export default async function Navbar() {
             <li>
               <Link
                 className="text-gray-700 hover:text-blue-500 header-link font-medium"
-                href="#"
+                href="/video-courses"
               >
                 Video Courses
               </Link>
