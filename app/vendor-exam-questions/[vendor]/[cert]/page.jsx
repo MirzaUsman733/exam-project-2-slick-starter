@@ -1,4 +1,5 @@
 import CertificationDetails from "@/app/Components/certifications-components/CertificationDetails";
+import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
 import React from "react";
 
 const Page = async ({ params }) => {
@@ -32,7 +33,8 @@ const Page = async ({ params }) => {
         vendorPerma={vendor_perma}
         certPerma={cert_perma}
       />
-      <hr />
+        <hr />
+      <HotExam />
     </>
   );
 };
