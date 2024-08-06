@@ -1,4 +1,5 @@
 import CourseHeader from '@/app/Components/videoCourses/CourseHeader';
+import VideoCoursesDetail from '@/app/Components/videoCourses/VideoCoursesDetail';
 import React from 'react'
 
 const page = async({params}) => {
@@ -28,6 +29,8 @@ const page = async({params}) => {
   return (
     <div className='container mx-auto p-6'>
         <CourseHeader courseDetail={courseDetail}/>
+        <hr className='my-20' />
+        <VideoCoursesDetail section={courseDetail.sections} />
     </div>
   )
 }

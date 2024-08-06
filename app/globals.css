@@ -218,3 +218,18 @@
   clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
   z-index: -1; 
 } */
+
+.custom-timeline {
+  padding-left: 2rem; /* Tailwind's spacing scale */
+}
+
+.custom-timeline-content {
+  /* padding-left: 1rem; */
+  padding: auto;
+}
+
+/* Adjust the TimelineDot if it's not properly aligned or visible */
+.MuiTimelineDot-root {
+  min-width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+}

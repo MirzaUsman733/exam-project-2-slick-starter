@@ -1,10 +1,13 @@
+import Link from "next/link";
+
 const ExamCard = ({ recentlyUpdated }) => {
+  console.log(recentlyUpdated)
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-5">
         {recentlyUpdated?.map((exam) => {
           return (
-            <div
+            <Link href={`/mock-exam/${exam?.exam_vendor_perma}/${exam?.exam_perma}`}
               key={exam?.exam_code}
               className="bg-white shadow-lg rounded-lg overflow-hidden my-5 hover:translate-y-[-5px] transition-transform duration-300"
             >
@@ -30,7 +33,7 @@ const ExamCard = ({ recentlyUpdated }) => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

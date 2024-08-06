@@ -111,7 +111,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 z-0 text-left">
                         <Link
                           className="font-medium text-blue-500 hotExam-link z-0"
-                          href={`/exam-providers/${hotExam?.vendor_perma}`}
+                          href={`/mock-exam-providers/${hotExam?.vendor_perma}`}
                         >
                           {hotExam?.vendor_title}
                         </Link>
@@ -149,7 +149,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-blue-500  text-left">
                         <Link
                           className="bg-blue-500 border-0 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 text-white font-bold py-1 px-3 rounded"
-                          href={`/exam-details/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
+                          href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
                         >
                           Buy
                         </Link>

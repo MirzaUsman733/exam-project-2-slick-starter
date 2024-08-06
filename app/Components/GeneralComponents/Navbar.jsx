@@ -29,7 +29,7 @@ export default async function Navbar() {
       <nav className="relative px-6 py-0 lg:px-16 lg:py-9">
         {/* Desktop View */}
         <div className="hidden md:flex items-center justify-between">
-          <Link href="#">
+          <Link href="/">
             <img
               className="h-6"
               src="/examprince_dark_svg.svg"
@@ -41,7 +41,7 @@ export default async function Navbar() {
             <li>
               <Link
                 className="text-gray-700 hover:text-blue-500 header-link font-medium"
-                href="#"
+                href="/"
               >
                 Home
               </Link>
@@ -120,7 +120,7 @@ export default async function Navbar() {
       {/* Mobile View */}
       <div className="md:hidden">
         <nav className="md:hidden relative px-6 py-5 bg-white flex items-center justify-between">
-          <Link href="#">
+          <Link href="/">
             <img
               className="h-6"
               src="/examprince_dark_svg.svg"
@@ -141,7 +141,7 @@ export default async function Navbar() {
                 />
                 <Link
                   className="block font-medium text-black hover:bg-gray-50"
-                  href="#"
+                  href="/video-courses"
                 >
                   Video Courses
                 </Link>

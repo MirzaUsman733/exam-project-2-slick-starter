@@ -52,17 +52,17 @@ const Footer = () => {
               <div className="flex justify-center gap-16">
                 <ul className="list-none m-0 p-0">
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="/" className="text-[#878787] hover:text-blue-500">
                       Home
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="/mock-exam-providers" className="text-[#878787] hover:text-blue-500">
                       Vendors
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="/mock-certifications-providers" className="text-[#878787] hover:text-blue-500">
                       Certifications
                     </a>
                   </li>
@@ -72,7 +72,7 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="/video-courses" className="text-[#878787] hover:text-blue-500">
                       Video Courses
                     </a>
                   </li>

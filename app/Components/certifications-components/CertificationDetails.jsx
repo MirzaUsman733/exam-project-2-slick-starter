@@ -123,7 +123,7 @@ function CertificationDetails({ certData, vendorPerma }) {
                   </span>
                 </div>
                 <Link
-                  href={`/certifications/${vendorPerma}/${certData?.cert_perma}`}
+                  href={`/mock-certifications/${vendorPerma}/${certData?.cert_perma}`}
                   className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold w-[25%] text-center py-3 rounded-lg transition duration-300 shadow-lg"
                 >
                   Take Exam
@@ -198,7 +198,7 @@ function CertificationDetails({ certData, vendorPerma }) {
                         </div>
                         <div className="">
                           <Link
-                            href={`/exam-details/${certification?.exam_vendor_perma}/${certification?.exam_perma}`}
+                            href={`/mock-exam/${certification?.exam_vendor_perma}/${certification?.exam_perma}`}
                             className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition duration-300"
                           >
                             Buy Now

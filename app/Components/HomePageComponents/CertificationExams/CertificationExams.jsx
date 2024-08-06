@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 const examsData = [
   {
@@ -314,7 +315,7 @@ const CertificationExams = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5">
           {exams?.map((exam) => (
-            <div
+            <Link href={`/mock-exam-providers/${exam?.perma}`}
               className="bg-white p-4 rounded-lg shadow-md"
               key={exam?.perma}
             >
@@ -329,7 +330,7 @@ const CertificationExams = () => {
               <p className="text-xs md:text-sm text-gray-600 text-center">
                 Vendor: {exam?.vendor}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

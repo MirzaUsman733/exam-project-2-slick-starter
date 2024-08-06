@@ -15,7 +15,7 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
             {vendorData?.vendor_exams?.map((vendor) => (
               <div key={vendor?.exam_id}>
                 <Link
-                  href={`/exam-details/${vendorPerma}/${vendor?.exam_perma}`}
+                  href={`/mock-exam/${vendorPerma}/${vendor?.exam_perma}`}
                   className="block border rounded-xl hover:border-b-2"
                 >
                   <div className="p-4 bg-blue-500 clip-path-polygon-vendorDetails rounded-t-xl">
@@ -153,7 +153,7 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
                   className="mx-3 py-3 border-b last:border-b-0"
                 >
                   <Link
-                    href={`/vendor-exam-questions/${vendorPerma}/${certs.cert_perma}`}
+                    href={`/mock-exam-certification/${vendorPerma}/${certs.cert_perma}`}
                     className="flex"
                   >
                     <span className="text-blue-500 mr-1.5">▶</span>

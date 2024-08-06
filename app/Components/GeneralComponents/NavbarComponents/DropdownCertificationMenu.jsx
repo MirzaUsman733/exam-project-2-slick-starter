@@ -47,14 +47,14 @@ export default function DropdownMenu({ title, certifications }) {
             <Link
               className="block vendor-link-header mx-5 py-2 text-sm"
               key={certification.vendor_id}
-              href={`/exam-providers/${certification?.vendor_perma}`}
+              href={`/mock-exam-providers/${certification?.vendor_perma}`}
             >
               {certification.vendor_title}
             </Link>
           ))}
         <Link
           className="vendor-link-header text-blue-500 flex mx-5 py-2 text-sm"
-          href={`/certifications`}
+          href={`/mock-certifications-providers`}
         >
           See All{" "}
           <svg
