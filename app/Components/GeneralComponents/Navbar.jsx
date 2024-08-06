@@ -131,7 +131,7 @@ export default async function Navbar() {
           <ToggleButton />
         </nav>
         <div id="drawer">
-          <div className="bg-white h-full overflow-y-auto">
+          <div className="bg-white h-full overflow-y-auto ">
             <div className="px-6 py-6">
               <ul className="flex flex-col space-y-2">
                 <DropdownVendorMenu title="Vendors" vendors={vendors} />

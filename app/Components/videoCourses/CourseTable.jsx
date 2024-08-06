@@ -325,6 +325,7 @@
 // export default CourseTable;
 
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const CourseTable = ({ videoData }) => {
@@ -338,7 +339,7 @@ const CourseTable = ({ videoData }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="tabs-container mb-4 space-x-2">
+      <div className="tabs-container flex flex-wrap justify-center gap-3 mb-4 space-x-2">
         {videoData.map((vendor) => (
           <button
             key={vendor.vendor_perma}
@@ -346,7 +347,7 @@ const CourseTable = ({ videoData }) => {
               selectedVendor === vendor.vendor_perma
                 ? "bg-blue-600 text-white"
                 : "text-blue-600 hover:bg-blue-600 hover:text-white"
-            } rounded-lg mx-1`}
+            } rounded-lg`}
             onClick={() => handleTabClick(vendor.vendor_perma)}
           >
             <div className="flex gap-2">
@@ -389,7 +390,7 @@ const VendorCourses = ({ courses }) => {
         }
         uniqueCourses.add(course?.exam_id);
         return (
-          <div key={course?.exam_id} className="bg-white p-4 shadow rounded-lg">
+          <Link href={`/video-courses/${course?.perma}`} key={course?.exam_id} className="bg-white p-4 shadow rounded-lg">
             <img
               src={`https://video.dumpsarena.com/img/${course?.image}`}
               alt={course?.title}
@@ -408,7 +409,7 @@ const VendorCourses = ({ courses }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>
