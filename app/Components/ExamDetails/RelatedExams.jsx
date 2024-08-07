@@ -13,6 +13,14 @@ const RelatedExams = async ({ vendorPerma }) => {
     throw new Error(`Failed to fetch data: ${res.status}`);
   }
   const relatedExamData = await res.json();
+  const uniqueExamIds = new Set();
+  const uniqueExams = relatedExamData.filter((exam) => {
+    if (!uniqueExamIds.has(exam.exam_id)) {
+      uniqueExamIds.add(exam.exam_id);
+      return true;
+    }
+    return false;
+  });
   return (
     <>
       <div className="mt-5">
@@ -31,7 +39,7 @@ const RelatedExams = async ({ vendorPerma }) => {
           Related Exams
         </h1>
       </div>
-      {relatedExamData?.slice(0, 6)?.map((examCart) => (
+      {uniqueExams?.slice(0, 6)?.map((examCart) => (
         <Link
           className="w-full lg:max-w-md border mb-5 block rounded-lg"
           href={examCart.exam_perma}

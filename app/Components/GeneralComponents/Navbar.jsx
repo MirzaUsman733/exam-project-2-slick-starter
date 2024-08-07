@@ -3,6 +3,7 @@ import AccountDropdown from "./NavbarComponents/AccountDropdown";
 import DropdownCertificationMenu from "./NavbarComponents/DropdownCertificationMenu";
 import DropdownVendorMenu from "./NavbarComponents/DropdownVendorMenu";
 import ToggleButton from "./NavbarComponents/ToggleButton";
+import SearchCard from "./NavbarComponents/SearchCard";
 export default async function Navbar() {
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -62,7 +63,7 @@ export default async function Navbar() {
             <li>
               <Link
                 className="text-gray-700 hover:text-blue-500 header-link font-medium"
-                href="#"
+                href="/unlimited-access"
               >
                 Unlimited Access
               </Link>
@@ -70,7 +71,7 @@ export default async function Navbar() {
           </ul>
           <div className="flex items-center space-x-8">
             <div className="ml-auto flex items-center">
-              <a
+              {/* <a
                 className="inline-block mr-8 text-gray-700 hover:text-blue-500 header-link"
                 href="#"
               >
@@ -89,7 +90,11 @@ export default async function Navbar() {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-              </a>
+              </a> */}
+              <div className="mr-5 mt-1">
+              <SearchCard />
+
+              </div>
               <a className="mr-8 group inline-flex items-center" href="#">
                 <span className="text-gray-700 group-hover:text-blue-500">
                   <svg
@@ -109,7 +114,7 @@ export default async function Navbar() {
                   </svg>
                 </span>
                 <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
-                  <span className="text-xs font-bold text-black">3</span>
+                  <span className="text-xs font-bold hover:text-white">3</span>
                 </span>
               </a>
               <AccountDropdown />

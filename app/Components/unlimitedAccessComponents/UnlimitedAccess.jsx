@@ -1,125 +1,566 @@
-import React from 'react'
+import React from "react";
 
 const UnlimitedAccess = () => {
   return (
     <div>
-        <section className="relative pt-28 pb-36 bg-white overflow-hidden">
-  <div className="relative z-10 container px-4 mx-auto">
-    <h2 className="mb-6 text-6xl md:text-8xl xl:text-10xl font-bold font-heading tracking-px-n leading-none md:max-w-xl mx-auto">Select, Start, Grow</h2>
-    <p className="mb-20 text-lg text-gray-900 text-center font-medium leading-normal md:max-w-lg mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elemen tum.</p>
-    <div className="md:max-w-4xl mx-auto">
-      <div className="flex flex-wrap -m-5">
-        <div className="w-full md:w-1/2 p-5">
-          <div className="bg-white bg-opacity-90 border border-blueGray-100 rounded-4xl shadow-9xl" style={{backdropFilter: "blur(46px)"}}>
-            <div className="border-b border-blueGray-100">
-              <div className="py-7 px-9">
-                <h3 className="mb-3 text-xl text-gray-900 font-bold leading-snug">Standard</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Lorem ipsum dolor sit amet, consect etur adipiscing maror.</p>
+      <section className="py-24 overflow-hidden">
+        <div className="container px-4 mx-auto">
+          <div className="mb-20 md:max-w-2xl text-center mx-auto">
+            <span className="inline-block mb-4 text-sm text-blue-400 border p-3 rounded-full font-bold tracking-tighter">
+              Pricing Plans
+            </span>
+            <h2 className="font-heading mb-8 text-7xl lg:text-6xl text-gray-800 font-bold tracking-7xl lg:tracking-8xl">
+              Unlimited Download Access
+            </h2>
+            <p className="mb-2 text-gray-600 mx-auto">
+              Get Unlimited Access to the all DumpsArena PREMIUM files!
+            </p>
+            <p className="mb-12 text-gray-600 mx-auto">
+              Take advantage of premium Files which are Latest and valid by
+              DumpsArena!
+            </p>
+          </div>
+          <div className="flex flex-wrap -m-4">
+            <div className="w-full md:w-1/2 p-4">
+              <div
+                className="blue-cut px-8 pt-12 pb-12 h-full bg-gradient-radial-dark  overflow-hidden rounded-3xl"
+                style={{
+                  boxShadow: "1px 2px 4px 6px rgba(0, 0, 0, 0.05)",
+                }}
+              >
+                <div className="flex flex-wrap items-center -m-2 mb-7">
+                  <div className="w-full md:w-1/2 p-2">
+                    <p className="mb-2 text-3xl text-blue-600 font-bold">
+                      Test Engine
+                    </p>
+                    <p className="text-gray-600">
+                      During this phase the design is developed to meet the
+                      required technical standards to
+                    </p>
+                  </div>
+                  <div className="w-full md:w-1/2 p-2">
+                    <div className="max-w-max md:ml-auto">
+                      <p className="flex flex-col items-end">
+                        <span className="mb-1.5  text-gray-700 font-black text-4xl">
+                        $203.99
+                        </span>{" "}
+                        <span className="line-through text-red-500 text-xl">
+                        $339.99
+                        </span>
+                        <span className="text-base font-medium text-gray-700">
+                          / month
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <p className="mb-6 text-xs text-gray-800 font-light uppercase">
+                  What's includes
+                </p>
+                <ul className="grid md:grid-cols-2 gap-3 mb-10">
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">1 Month Duration</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">
+                        1 Activation Key for Each Exam
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">
+                        Activation Valid for 3 Months
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Monthly 15 Downloads</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">No Daily Download Limit</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Free Updates</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">
+                        24/7 Email and Chat Support
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">All New Exams for FREE</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Priority Updates</p>
+                    </div>
+                  </li>
+                </ul>
+                <a
+                  className="relative z-10 block px-14 py-4 text-center tracking-2xl border-2 border-blue-500 bg-blue-500 hover:bg-blue-600 text-white font-bold focus:ring-4 focus:ring-green-500 focus:ring-opacity-40 rounded-full transition duration-300"
+                  href="#"
+                >
+                  Start now
+                </a>
               </div>
             </div>
-            <div className="pt-8 pb-9 px-9">
-              <p className="mb-6 text-gray-600 font-medium leading-relaxed">Features included:</p>
-              <ul className="mb-11">
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">3 Team Members</p>
-                </li>
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">1200+ UI Blocks</p>
-                </li>
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">10 GB Cloud Storage</p>
-                </li>
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">Individual Email Account</p>
-                </li>
-                <li className="flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">Premium Support</p>
-                </li>
-              </ul>
-              <p className="mb-6 text-xl text-gray-500 font-semibold leading-normal">
-                <span>Starting from</span>
-                <span className="text-gray-900">$49/mo</span>
-              </p>
-              <div className="md:inline-block">
-                <button className="py-4 px-10 w-full text-white font-semibold rounded-xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200" type="button">Start 14 days free trial</button>
+            <div className="w-full md:w-1/2 p-4">
+              <div
+                className="px-8 pt-12 pb-12 h-full bg-gradient-radial-dark overflow-hidden rounded-3xl"
+                style={{
+                  boxShadow: "0px 1px 3px 5px rgba(0, 0, 0, 0.05)",
+                }}
+              >
+                <div className="flex flex-wrap items-center -m-2 mb-7">
+                  <div className="w-full md:w-1/2 p-2">
+                    <p className="mb-2 text-3xl text-green-600 font-bold">PDF</p>
+                    <p className="text-gray-600">
+                      During this phase the design is developed to meet the
+                      required technical standards to
+                    </p>
+                  </div>
+                  <div className="w-full md:w-1/2 p-2">
+                    <div className="max-w-max md:ml-auto">
+                      <p className="flex flex-col items-end">
+                        {/* <div> */}
+                        <span className="mb-1.5 text-gray-700 font-black text-4xl">
+                          $227.99
+                        </span>{" "}
+                        <span className="line-through text-red-500 text-xl">
+                          $379.99
+                        </span>
+                        {/* </div> */}
+                        <span className="text-base font-medium text-gray-800">
+                          / month
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <p className="mb-6 text-xs text-gray-700 font-light uppercase">
+                  What's includes
+                </p>
+                <ul className="grid md:grid-cols-2 gap-3 mb-10">
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">1 Month Duration</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Monthly 15 Downloads</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">No Daily Download Limit</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Free Updates</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">
+                        24/7 Email and Chat Support
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">All New Exams for FREE</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Priority Updates</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center w-full">
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Printable PDF File</p>
+                    </div>
+                  </li>
+                  <li
+                    className="flex items-center w-full"
+                    style={{ visibility: "hidden" }}
+                  >
+                    <div className="w-auto">
+                      <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M20 6L9 17l-5-5"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800">Printable PDF File</p>
+                    </div>
+                  </li>
+                </ul>
+                <a
+                  className="relative z-10 block px-14 py-4 text-center tracking-2xl border-2 border-green-500 bg-green-500 hover:bg-green-600 text-white font-bold focus:ring-4 focus:ring-green-500 focus:ring-opacity-40 rounded-full transition duration-300"
+                  href="#"
+                >
+                  Start now
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 p-5">
-          <div className="bg-white bg-opacity-90 border border-blueGray-100 rounded-4xl shadow-9xl" style={{backdropFilter: "blur(46px)"}}>
-            <div className="border-b border-blueGray-100">
-              <div className="py-7 px-9">
-                <h3 className="mb-3 text-xl text-gray-900 font-bold leading-snug">Pro</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Lorem ipsum dolor sit amet, consect etur adipiscing maror.</p>
-              </div>
-            </div>
-            <div className="pt-8 pb-9 px-9">
-              <p className="mb-6 text-gray-600 font-medium leading-relaxed">Features included:</p>
-              <ul className="mb-11">
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">3 Team Members</p>
-                </li>
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">1200+ UI Blocks</p>
-                </li>
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">10 GB Cloud Storage</p>
-                </li>
-                <li className="mb-4 flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">Individual Email Account</p>
-                </li>
-                <li className="flex items-center">
-                  <svg className="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <p className="font-semibold leading-normal">Premium Support</p>
-                </li>
-              </ul>
-              <p className="mb-6 text-xl text-gray-500 font-semibold leading-normal">
-                <span>Starting from</span>
-                <span className="text-gray-900">$99/mo</span>
-              </p>
-              <div className="md:inline-block">
-                <button className="py-4 px-10 w-full text-white font-semibold rounded-xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200" type="button">Start 14 days free trial</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-  </div>
-  <div className="absolute bottom-0 left-0 w-full py-64 bg-blue-600"></div>
-</section>
-    </div>
-  )
-}
+  );
+};
 
-export default UnlimitedAccess
+export default UnlimitedAccess;
