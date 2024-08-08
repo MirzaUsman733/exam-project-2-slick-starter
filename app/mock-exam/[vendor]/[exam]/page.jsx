@@ -42,7 +42,6 @@ const Page = ({ params }) => {
       month: "long",
       day: "numeric",
     });
-    console.log(examData);
     return (
       <div>
         <ExamDetail

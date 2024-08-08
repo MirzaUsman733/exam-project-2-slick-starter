@@ -4,7 +4,6 @@ import React from 'react'
 
 const page = async({params}) => {
     const courseId = params.id;
-    console.log(courseId)
     const fetchCourseDetail = async () => {
         try {
           const res = await fetch(

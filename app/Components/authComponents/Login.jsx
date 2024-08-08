@@ -104,7 +104,7 @@ const Login = () => {
                 />
                 <img
                   className="hidden lg:block absolute top-0 left-72 mt-24"
-                  src="https://static.shuffle.dev/components/preview/0888ef30-c554-4436-a0b4-ea41a62b8bd4/assets/public/coleos-assets/sign-in/pink-icon-bg.png"
+                  src="/below-arrow.png"
                   alt=""
                 />
                 <img

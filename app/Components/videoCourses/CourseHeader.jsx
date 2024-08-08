@@ -4,9 +4,7 @@ import Image from "next/image";
 import { FaClock, FaPlayCircle } from "react-icons/fa"; // Import icons from 'react-icons' library
 
 const CourseHeader = ({ courseDetail }) => {
-  console.log(courseDetail);
   const courseImage = courseDetail.image;
-  console.log("Course Image", courseImage);
   return (
     <div className="overflow-hidden my-4 grid grid-cols-3 gap-28 font-[lato]">
       <div className="col-span-1">
