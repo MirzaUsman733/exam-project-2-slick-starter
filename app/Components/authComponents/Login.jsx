@@ -103,7 +103,7 @@ const Login = () => {
                   alt=""
                 />
                 <img
-                  className="hidden lg:block absolute top-0 left-72 mt-24"
+                  className="hidden lg:block absolute top-0 left-72 mt-24 w-24"
                   src="/below-arrow.png"
                   alt=""
                 />
