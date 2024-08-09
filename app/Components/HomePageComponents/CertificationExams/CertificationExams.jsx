@@ -315,7 +315,8 @@ const CertificationExams = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5">
           {exams?.map((exam) => (
-            <Link href={`/mock-exam-providers/${exam?.perma}`}
+            <Link
+              href={`/mock-exam-certification/${exam.vendor}/${exam?.perma}`}
               className="bg-white p-4 rounded-lg shadow-md"
               key={exam?.perma}
             >
