@@ -17,9 +17,9 @@ export default function Home() {
       <HotExam />
       <hr className=" border-gray-300 mx-auto" />
       <HowItWorks />
-      <hr className="lg:max-w-[75%] border-gray-300 my-5 mx-auto" />
+      <hr className="container border-gray-300 my-5 mx-auto" />
       <CertificationExams />
-      <hr className="lg:max-w-[75%] border-gray-300 my-5 mx-auto" />
+      <hr className="contaienr border-gray-300 my-5 mx-auto" />
     </main>
   );
 }
