@@ -32,8 +32,8 @@ export default async function Navbar() {
         <div className="hidden md:flex items-center justify-between">
           <Link href="/">
             <img
-              className="h-6"
-              src="/examprince_dark_svg.svg"
+              className="w-32 my-0 py-0"
+              src="/Dumps-Collections-logo.png"
               alt="Logo"
               width="auto"
             />
