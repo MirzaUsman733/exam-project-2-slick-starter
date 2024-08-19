@@ -1,5 +1,6 @@
 "use client";
-import withAuth from "../auth/RouterAuth";
+
+import withAuth from "../Components/authComponents/ProfileProtector";
 
 const layout = ({ children }) => {
   return children;

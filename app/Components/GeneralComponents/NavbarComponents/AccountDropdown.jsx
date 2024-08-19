@@ -91,22 +91,44 @@ function AccountDropdown() {
             {isOpen && (
               <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md border shadow-xl z-20 animate-dropdown">
                 <Link
-                  className="block mx-4 py-2 text-sm text-gray-700 vendor-link-header"
-                  href="/profile"
+                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  href="/personal/products"
                 >
-                  Profile
+                  <span className="text-gray-700 hover:text-blue-500 header-link">Products</span>
                 </Link>
                 <Link
-                  className="block mx-4 py-2 text-sm text-gray-700 vendor-link-header"
-                  href="/settings"
+                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  href="/personal/invoices"
                 >
-                  Settings
+                  <span className="text-gray-700 hover:text-blue-500 header-link">Invoice</span>
                 </Link>
+                <Link
+                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  href="/personal/setting"
+                >
+                  <span className="text-gray-700 hover:text-blue-500 header-link">Setting</span>
+                </Link>
+                <Link
+                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  href="/personal/download-history"
+                >
+                  <span className="text-gray-700 hover:text-blue-500 header-link">Download History</span>
+                </Link>
+                <Link
+                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  href="/personal/login-history"
+                >
+                  <span className="text-gray-700 hover:text-blue-500 header-link">Login History</span>
+                </Link>
+                <hr className="container w-[80%] mx-auto" />
                 <button
-                  className="block mx-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   onClick={handleSignOut}
                 >
+                  <span className="text-gray-700 hover:text-blue-500 header-link">
+
                   Logout
+                  </span>
                 </button>
               </div>
             )}

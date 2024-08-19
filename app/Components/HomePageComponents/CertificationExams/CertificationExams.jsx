@@ -313,7 +313,7 @@ const CertificationExams = () => {
             ))}
           </select>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
           {exams?.map((exam) => (
             <Link
               href={`/mock-exam-certification/${exam.vendor}/${exam?.perma}`}
