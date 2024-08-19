@@ -1,6 +1,6 @@
 const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto px-6">
       <h1 className="text-center text-blue-600 text-4xl font-bold mb-10">
         NEW {examVendorTitle} {examCode} Exam has the Following topics covered
         as:
@@ -24,7 +24,7 @@ const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
         </div>
         <div className="col-span-1">
           <img
-            src="/exam-topics.jpg"
+            src="/Dumps-Topics.png"
             alt="ExamTopics"
             className="w-full h-auto"
           />

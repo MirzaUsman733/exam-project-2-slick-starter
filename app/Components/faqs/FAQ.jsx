@@ -185,7 +185,7 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <div className="container mx-auto p-5 my-8 shadow-lg md:my-16">
+    <div className="container mx-auto p-5 my-8 md:my-16">
       <h1 className="text-4xl text-center font-bold mb-10">
         Frequently Asked Questions
       </h1>
@@ -195,10 +195,10 @@ const FAQ = () => {
           style={{ maxHeight: "60vh" }}
         >
           {faqData.map((section, index) => (
-            <li key={index}>
+            <li key={index} className="border-b border-white last:border-b-0">
               <a
                 href={`#`}
-                className={`block px-6 py-3 border-b border-white `}
+                className={`block px-6 py-3 `}
               >
                 {section.category}
               </a>
@@ -211,7 +211,7 @@ const FAQ = () => {
             <div
               id={section.category.replace(/ /g, "-")}
               key={index}
-              className="border-b mb-3"
+              className="border-b mb-3 last:border-b-0"
             >
               <div className="cd-faq-title">
                 <h2 className="text-2xl font-bold mb-4">{section.category}</h2>

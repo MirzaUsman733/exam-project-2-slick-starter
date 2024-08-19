@@ -39,7 +39,7 @@ const LimitedOfferCountdown = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto px-6">
       <div className="grid grid-cols-4">
         <div className="col-span-1">
           <img src="/girlLimitedOffer.png" alt="" />

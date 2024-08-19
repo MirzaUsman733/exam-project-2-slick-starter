@@ -108,12 +108,6 @@ export default Page;
 export async function generateMetadata({ params }) {
   const vendor_perma = params.vendor;
   const exam_perma = params.exam;
-  console.log("Exam Perma", exam_perma);
-  // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/exam/${exam_perma}?coupon=MEGASALE-30`, {
-  //   headers: {
-  //     "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-  //   },
-  // });
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/exam/${exam_perma}?coupon=MEGASALE-30`,
     {

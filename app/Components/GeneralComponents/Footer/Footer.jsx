@@ -2,19 +2,19 @@ const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="container mx-auto p-6">
-        <div className="py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="pt-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="w-full mb-12">
-              <div className="mb-8">
+              <div className="mb-3">
                 <a href="index.html">
                   <img
                     src="/Dumps-Collections-logo.png"
-                    className="w-72"
+                    className="w-40"
                     alt="logo"
                   />
                 </a>
               </div>
-              <p className="text-[#7e7e7e] text-base leading-7">
+              <p className="text-gray-700 text-xs leading-6">
                 ExamCollection does not provide genuine Microsoft exam
                 questions. Similarly, ExamCollection does not offer authentic
                 Amazon exam questions. The materials provided by ExamCollection
@@ -54,17 +54,17 @@ const Footer = () => {
                   Useful Links
                 </h3>
               </div>
-              <div className="flex justify-center gap-16">
+              <div className="flex justify-center gap-16 w-full">
                 <ul className="list-none m-0 p-0">
                   <li className="mb-3">
-                    <a href="/" className="text-[#878787] hover:text-blue-500">
+                    <a href="/" className="text-gray-700 hover:text-blue-500">
                       Home
                     </a>
                   </li>
                   <li className="mb-3">
                     <a
                       href="/mock-exam-providers"
-                      className="text-[#878787] hover:text-blue-500"
+                      className="text-gray-700 hover:text-blue-500"
                     >
                       Vendors
                     </a>
@@ -72,20 +72,20 @@ const Footer = () => {
                   <li className="mb-3">
                     <a
                       href="/mock-certifications-providers"
-                      className="text-[#878787] hover:text-blue-500"
+                      className="text-gray-700 hover:text-blue-500"
                     >
                       Certifications
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="#" className="text-gray-700 hover:text-blue-500">
                       Unlimited Access
                     </a>
                   </li>
                   <li className="mb-3">
                     <a
                       href="/video-courses"
-                      className="text-[#878787] hover:text-blue-500"
+                      className="text-gray-700 hover:text-blue-500"
                     >
                       Video Courses
                     </a>
@@ -95,22 +95,27 @@ const Footer = () => {
                   <li className="mb-3">
                     <a
                       href="/test"
-                      className="text-[#878787] hover:text-blue-500"
+                      className="text-gray-700 hover:text-blue-500"
                     >
                       Test Engine Player
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="/faq" className="text-[#878787] hover:text-blue-500">
+                    <a
+                      href="/faq"
+                      className="text-gray-700 hover:text-blue-500"
+                    >
                       FAQ
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="refund-policy" className="text-[#878787] hover:text-blue-500">
+                    <a
+                      href="refund-policy"
+                      className="text-gray-700 hover:text-blue-500"
+                    >
                       Refund Exam
                     </a>
                   </li>
-                  {/* <li className="mb-3"><a href="#" className="text-[#878787] hover:text-blue-500">Latest News</a></li> */}
                 </ul>
               </div>
             </div>
@@ -119,10 +124,11 @@ const Footer = () => {
                 <h3 className="text-black text-xl font-semibold mb-6">
                   Subscribe
                 </h3>
-                <p className="text-[#7e7e7e] mb-6">
-                  Do not miss to subscribe to our new feeds, kindly fill the form
-                  below.
+                <p className="text-gray-700 mb-6">
+                  Do not miss to subscribe to our new feeds, kindly fill the
+                  form below.
                 </p>
+
               </div>
               <div className="relative">
                 <form action="#" className="flex">
@@ -139,14 +145,18 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
+              <div className="flex justify-center mt-5">
+                <img src="/safe_checkout_optimized.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-[#202020] py-6">
+      <hr />
+      <div className="bg-white py-6">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           <div className="text-center lg:text-left">
-            <p className="text-[#878787] text-base">
+            <p className="text-gray-700 text-base">
               Copyright &copy; 2024, All Right Reserved
             </p>
           </div>
@@ -155,7 +165,7 @@ const Footer = () => {
               <li className="ml-5">
                 <a
                   href="/"
-                  className="text-[#878787] hover:text-blue-500 text-base"
+                  className="text-gray-700 hover:text-blue-500 text-base"
                 >
                   Home
                 </a>
@@ -163,7 +173,7 @@ const Footer = () => {
               <li className="ml-5">
                 <a
                   href="/terms"
-                  className="text-[#878787] hover:text-blue-500 text-base"
+                  className="text-gray-700 hover:text-blue-500 text-base"
                 >
                   Terms
                 </a>
@@ -171,7 +181,7 @@ const Footer = () => {
               <li className="ml-5">
                 <a
                   href="/privacy-policy"
-                  className="text-[#878787] hover:text-blue-500 text-base"
+                  className="text-gray-700 hover:text-blue-500 text-base"
                 >
                   Privacy
                 </a>
@@ -179,7 +189,7 @@ const Footer = () => {
               <li className="ml-5">
                 <a
                   href="refund-policy"
-                  className="text-[#878787] hover:text-blue-500 text-base"
+                  className="text-gray-700 hover:text-blue-500 text-base"
                 >
                   Refund
                 </a>
@@ -187,7 +197,7 @@ const Footer = () => {
               <li className="ml-5">
                 <a
                   href="/contact-us"
-                  className="text-[#878787] hover:text-blue-500 text-base"
+                  className="text-gray-700 hover:text-blue-500 text-base"
                 >
                   Contact
                 </a>
