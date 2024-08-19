@@ -94,31 +94,41 @@ function AccountDropdown() {
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/products"
                 >
-                  <span className="text-gray-700 hover:text-blue-500 header-link">Products</span>
+                  <span className="text-gray-700 hover:text-blue-500 header-link">
+                    Products
+                  </span>
                 </Link>
                 <Link
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/invoices"
                 >
-                  <span className="text-gray-700 hover:text-blue-500 header-link">Invoice</span>
+                  <span className="text-gray-700 hover:text-blue-500 header-link">
+                    Invoice
+                  </span>
                 </Link>
                 <Link
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/setting"
                 >
-                  <span className="text-gray-700 hover:text-blue-500 header-link">Setting</span>
+                  <span className="text-gray-700 hover:text-blue-500 header-link">
+                    Setting
+                  </span>
                 </Link>
                 <Link
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/download-history"
                 >
-                  <span className="text-gray-700 hover:text-blue-500 header-link">Download History</span>
+                  <span className="text-gray-700 hover:text-blue-500 header-link">
+                    Download History
+                  </span>
                 </Link>
                 <Link
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/login-history"
                 >
-                  <span className="text-gray-700 hover:text-blue-500 header-link">Login History</span>
+                  <span className="text-gray-700 hover:text-blue-500 header-link">
+                    Login History
+                  </span>
                 </Link>
                 <hr className="container w-[80%] mx-auto" />
                 <button
@@ -126,8 +136,7 @@ function AccountDropdown() {
                   onClick={handleSignOut}
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
-
-                  Logout
+                    Logout
                   </span>
                 </button>
               </div>

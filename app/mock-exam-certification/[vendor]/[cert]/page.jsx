@@ -70,19 +70,18 @@ const Page = async ({ params }) => {
 
 export default Page;
 
-
-
-
-
 export async function generateMetadata({ params }) {
   const vendor_perma = params.vendor;
   const cert_perma = params.cert;
-  
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/certification/${cert_perma}`, {
-    headers: {
-      "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-    },
-  });
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/certification/${cert_perma}`,
+    {
+      headers: {
+        "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+      },
+    }
+  );
 
   const data = await response.json();
   let shouldIndex = true;

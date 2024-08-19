@@ -16,9 +16,8 @@ const CourseHeader = ({ courseDetail }) => {
           //   objectFit="cover"
         />
         <div className="text-center p-5 pb-0">
-        Become a certified Project Management Professional with this
-        comprehensive course.
-
+          Become a certified Project Management Professional with this
+          comprehensive course.
         </div>
       </div>
       <div className="px-6 flex-grow col-span-2">

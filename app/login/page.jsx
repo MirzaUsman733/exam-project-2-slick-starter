@@ -5,10 +5,10 @@ import loginPageProtector from "../Components/authComponents/loginPageProtector"
 
 const page = () => {
   return (
-  <div>
-    <Login />
-  </div>
-)
+    <div>
+      <Login />
+    </div>
+  );
 };
 
 export default loginPageProtector(page);

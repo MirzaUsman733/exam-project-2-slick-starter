@@ -49,7 +49,7 @@ const HeaderCard = ({
         <div className="col-span-3">
           <div className="mb-4">
             <h1 className="text-3xl font-semibold mb-5">
-            {examCode} - {examTitle} - Questions Answers
+              {examCode} - {examTitle} - Questions Answers
             </h1>
             <div className="text-lg flex py-1">
               <span className="mr-3"> Exam Code: </span>{" "}

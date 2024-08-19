@@ -20,7 +20,7 @@ const Footer = () => {
                 Amazon exam questions. The materials provided by ExamCollection
                 do not contain actual questions and answers from certification
                 exams. The CFA Institute does not endorse or confirm the
-                accuracy or quality of ExamCollection's content. CFA® and
+                accuracy or quality of ExamCollection content. CFA® and
                 Chartered Financial Analyst® are registered trademarks owned by
                 the CFA Institute.
               </p>
@@ -93,7 +93,10 @@ const Footer = () => {
                 </ul>
                 <ul>
                   <li className="mb-3">
-                    <a href="/test" className="text-[#878787] hover:text-blue-500">
+                    <a
+                      href="/test"
+                      className="text-[#878787] hover:text-blue-500"
+                    >
                       Test Engine Player
                     </a>
                   </li>

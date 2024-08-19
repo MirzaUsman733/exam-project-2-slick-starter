@@ -52,25 +52,26 @@ export default function DropdownMenu({ title, vendors }) {
               {vendor.vendor_title}
             </Link>
           ))}
-          <Link
-              className="vendor-link-header text-blue-500 flex mx-5 py-2 text-sm"
-              href={`/mock-exam-providers`}
-            >
-              See All   <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 ml-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-            </Link>
+        <Link
+          className="vendor-link-header text-blue-500 flex mx-5 py-2 text-sm"
+          href={`/mock-exam-providers`}
+        >
+          See All{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 ml-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </Link>
       </div>
     </li>
   );

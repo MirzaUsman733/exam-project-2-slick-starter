@@ -42,10 +42,10 @@ const UnlimitedAccess = () => {
                     <div className="max-w-max md:ml-auto">
                       <p className="flex flex-col items-end">
                         <span className="mb-1.5  text-gray-700 font-black text-4xl">
-                        $203.99
+                          $203.99
                         </span>{" "}
                         <span className="line-through text-red-500 text-xl">
-                        $339.99
+                          $339.99
                         </span>
                         <span className="text-base font-medium text-gray-700">
                           / month
@@ -55,7 +55,7 @@ const UnlimitedAccess = () => {
                   </div>
                 </div>
                 <p className="mb-6 text-xs text-gray-800 font-light uppercase">
-                  What's includes
+                  What is includes
                 </p>
                 <ul className="grid md:grid-cols-2 gap-3 mb-10">
                   <li className="flex items-center w-full">
@@ -298,7 +298,9 @@ const UnlimitedAccess = () => {
               >
                 <div className="flex flex-wrap items-center -m-2 mb-7">
                   <div className="w-full md:w-1/2 p-2">
-                    <p className="mb-2 text-3xl text-green-600 font-bold">PDF</p>
+                    <p className="mb-2 text-3xl text-green-600 font-bold">
+                      PDF
+                    </p>
                     <p className="text-gray-600">
                       During this phase the design is developed to meet the
                       required technical standards to
@@ -323,7 +325,7 @@ const UnlimitedAccess = () => {
                   </div>
                 </div>
                 <p className="mb-6 text-xs text-gray-700 font-light uppercase">
-                  What's includes
+                  What is includes
                 </p>
                 <ul className="grid md:grid-cols-2 gap-3 mb-10">
                   <li className="flex items-center w-full">

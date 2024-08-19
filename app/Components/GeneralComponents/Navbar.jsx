@@ -92,8 +92,7 @@ export default async function Navbar() {
                 </svg>
               </a> */}
               <div className="mr-5 mt-1">
-              <SearchCard />
-
+                <SearchCard />
               </div>
               <a className="mr-8 group inline-flex items-center" href="#">
                 <span className="text-gray-700 group-hover:text-blue-500">

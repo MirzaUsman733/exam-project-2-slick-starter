@@ -21,6 +21,6 @@ export default function loginPageProtector(Component) {
       return <Component {...props} />;
     }
 
-    return null; 
+    return null;
   };
 }

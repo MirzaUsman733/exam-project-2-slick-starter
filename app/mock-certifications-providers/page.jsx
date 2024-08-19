@@ -36,11 +36,6 @@ const Page = async () => {
 
 export default Page;
 
-
-
-
-
-
 export async function generateMetadata() {
   return {
     title: `Updated Mock Exam by IT Professionals`,

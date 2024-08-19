@@ -3,7 +3,7 @@ import CourseTable from "../Components/videoCourses/CourseTable";
 
 const page = async () => {
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
-  
+
   const fetchRelatedExamData = async () => {
     try {
       const res = await fetch(
@@ -27,7 +27,7 @@ const page = async () => {
   const videoData = await fetchRelatedExamData();
   return (
     <div className="container mx-auto font-[Lato] my-10">
-          <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -62,7 +62,6 @@ const page = async () => {
 
 export default page;
 
-
 export async function generateMetadata() {
   return {
     title: `Updated Mock Exam by IT Professionals`,
@@ -80,4 +79,3 @@ export async function generateMetadata() {
     },
   };
 }
-

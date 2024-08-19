@@ -70,18 +70,6 @@
 
 // export default CertificationsComponent;
 
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -172,7 +160,10 @@ const CertificationsComponent = ({ certifications }) => {
                   <div className="flex justify-end items-center gap-1 mt-6 transition-colors duration-300">
                     <span className="text-lg font-semibold text-blue-500">
                       {/* View Details */}
-                      <span> {certification?.vendor_certs} Certifications </span>
+                      <span>
+                        {" "}
+                        {certification?.vendor_certs} Certifications{" "}
+                      </span>
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

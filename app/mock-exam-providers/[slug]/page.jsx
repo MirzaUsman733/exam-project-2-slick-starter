@@ -26,7 +26,7 @@ const Page = async ({ params }) => {
   const vendorData = await fetchRelatedExamData();
   return (
     <>
-          <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -61,14 +61,16 @@ const Page = async ({ params }) => {
 
 export default Page;
 
-
 export async function generateMetadata({ params }) {
   const vendorPerma = params.slug;
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendor/${vendorPerma}`, {
-    headers: {
-      "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-    },
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendor/${vendorPerma}`,
+    {
+      headers: {
+        "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+      },
+    }
+  );
 
   const metaDATA = await response.json();
   return {

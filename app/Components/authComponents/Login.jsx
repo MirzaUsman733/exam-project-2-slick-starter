@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import { IconButton, InputAdornment, Snackbar } from "@mui/material";
@@ -9,7 +9,7 @@ import axios from "axios";
 import Link from "next/link";
 
 const Login = () => {
-    const router = useRouter();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -192,7 +192,7 @@ const Login = () => {
                         className="group text-sm text-center block"
                         href="/register"
                       >
-                        Don't have an account? Sign Up
+                        Do not have an account? Sign Up
                       </Link>
                     </form>
                   </div>

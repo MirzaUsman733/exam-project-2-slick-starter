@@ -1,8 +1,4 @@
 "use client";
-import { X_API_Key } from "@/app/URL's/Api_X_Key";
-import { Base_URL } from "@/app/URL's/Base_URL";
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable @next/next/no-img-element */
 import { Alert, Snackbar } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
@@ -16,9 +12,9 @@ const ForgotForm = () => {
 
   const fetchIP = async () => {
     try {
-      const response = await axios.get(`${Base_URL}/v1/my-ip`, {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/my-ip`, {
         headers: {
-          "x-api-key": X_API_Key
+          "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
         },
       });
       setIp(response.data); // Assuming response.data contains an 'ip' field
@@ -77,7 +73,9 @@ const ForgotForm = () => {
       >
         <Alert
           onClose={() => setOpenSnackbar(false)}
-          severity={responseMessage.includes("successful") ? "success" : "error"}
+          severity={
+            responseMessage.includes("successful") ? "success" : "error"
+          }
           variant="filled"
           sx={{ width: "100%" }}
         >
@@ -139,7 +137,7 @@ const ForgotForm = () => {
               </p>
               <p className="text-center">
                 <span className="text-xs font-medium">
-                  Don't have an Account?
+                  Do not have an Account?
                 </span>{" "}
                 <Link
                   className="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline"

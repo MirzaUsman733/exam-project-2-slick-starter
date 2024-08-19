@@ -6,11 +6,10 @@ import LogoCloud from "./Components/HomePageComponents/LogoCloud";
 import RecentlyUpdated from "./Components/HomePageComponents/RecentlyUpdatedExams/RecentlyUpdated";
 
 export default function Home() {
-  
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <main>
-       <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -54,13 +53,11 @@ export default function Home() {
   );
 }
 
-
-
 export async function generateMetadata() {
   return {
     title: `Dumps Collections`,
     description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
-   robots: {
+    robots: {
       index: true,
     },
   };

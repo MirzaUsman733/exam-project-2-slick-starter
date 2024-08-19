@@ -19,4 +19,3 @@ export default function withAuth(Component) {
     return loginResponse ? <Component {...props} /> : null;
   };
 }
-

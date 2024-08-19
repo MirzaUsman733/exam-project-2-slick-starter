@@ -17,7 +17,7 @@ const Page = async () => {
   const vendors = await res.json();
   return (
     <>
-          <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -55,8 +55,6 @@ const Page = async () => {
 
 export default Page;
 
-
-
 export async function generateMetadata() {
   return {
     title: `Updated Mock Exam by IT Professionals`,
@@ -74,4 +72,3 @@ export async function generateMetadata() {
     },
   };
 }
-

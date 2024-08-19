@@ -1,12 +1,12 @@
-import React from 'react'
-import UnlimitedAccess from '../Components/unlimitedAccessComponents/UnlimitedAccess'
-import HotExam from '../Components/HomePageComponents/HotExams/HotExam'
+import React from "react";
+import UnlimitedAccess from "../Components/unlimitedAccessComponents/UnlimitedAccess";
+import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 
 const page = () => {
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <div>
-            <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -34,15 +34,14 @@ const page = () => {
           }),
         }}
       />
-        <UnlimitedAccess />
-        <hr className='container mx-auto' />
-        <HotExam />
+      <UnlimitedAccess />
+      <hr className="container mx-auto" />
+      <HotExam />
     </div>
-  )
-}
+  );
+};
 
-export default page
-
+export default page;
 
 export async function generateMetadata() {
   return {
