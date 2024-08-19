@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-white">
       <div className="container mx-auto p-6">
         <div className="py-16">
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="w-full mb-12">
               <div className="mb-8">
                 <a href="index.html">
@@ -15,9 +15,14 @@ const Footer = () => {
                 </a>
               </div>
               <p className="text-[#7e7e7e] text-base leading-7">
-                Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed
-                do eiusmod tempor incididuntut consec tetur adipisicing
-                elit,Lorem ipsum dolor sit amet.
+                ExamCollection does not provide genuine Microsoft exam
+                questions. Similarly, ExamCollection does not offer authentic
+                Amazon exam questions. The materials provided by ExamCollection
+                do not contain actual questions and answers from certification
+                exams. The CFA Institute does not endorse or confirm the
+                accuracy or quality of ExamCollection's content. CFA® and
+                Chartered Financial Analyst® are registered trademarks owned by
+                the CFA Institute.
               </p>
               <div className="mt-5">
                 <span className="text-black text-lg font-semibold block mb-5">
@@ -57,12 +62,18 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="/mock-exam-providers" className="text-[#878787] hover:text-blue-500">
+                    <a
+                      href="/mock-exam-providers"
+                      className="text-[#878787] hover:text-blue-500"
+                    >
                       Vendors
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="/mock-certifications-providers" className="text-[#878787] hover:text-blue-500">
+                    <a
+                      href="/mock-certifications-providers"
+                      className="text-[#878787] hover:text-blue-500"
+                    >
                       Certifications
                     </a>
                   </li>
@@ -72,14 +83,17 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="/video-courses" className="text-[#878787] hover:text-blue-500">
+                    <a
+                      href="/video-courses"
+                      className="text-[#878787] hover:text-blue-500"
+                    >
                       Video Courses
                     </a>
                   </li>
                 </ul>
                 <ul>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="/test" className="text-[#878787] hover:text-blue-500">
                       Test Engine Player
                     </a>
                   </li>

@@ -281,7 +281,7 @@ const CertificationExams = () => {
     <>
       <div className="container mx-auto p-6 my-8">
         <header className="text-center mb-8">
-          <h1 className="text-4xl uppercase font-extrabold font-[poppins]">
+          <h1 className="text-3xl uppercase font-extrabold font-[poppins]">
             Certification Exams
           </h1>
         </header>
@@ -313,7 +313,7 @@ const CertificationExams = () => {
             ))}
           </select>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {exams?.map((exam) => (
             <Link
               href={`/mock-exam-certification/${exam.vendor}/${exam?.perma}`}
