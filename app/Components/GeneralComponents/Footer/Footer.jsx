@@ -8,7 +8,7 @@ const Footer = () => {
               <div className="mb-8">
                 <a href="index.html">
                   <img
-                    src="/examprince_dark_svg.svg"
+                    src="/Dumps-Collections-logo.png"
                     className="w-72"
                     alt="logo"
                   />
@@ -101,12 +101,12 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="/faq" className="text-[#878787] hover:text-blue-500">
                       FAQ
                     </a>
                   </li>
                   <li className="mb-3">
-                    <a href="#" className="text-[#878787] hover:text-blue-500">
+                    <a href="refund-policy" className="text-[#878787] hover:text-blue-500">
                       Refund Exam
                     </a>
                   </li>
@@ -120,7 +120,7 @@ const Footer = () => {
                   Subscribe
                 </h3>
                 <p className="text-[#7e7e7e] mb-6">
-                  Don’t miss to subscribe to our new feeds, kindly fill the form
+                  Do not miss to subscribe to our new feeds, kindly fill the form
                   below.
                 </p>
               </div>
@@ -154,7 +154,7 @@ const Footer = () => {
             <ul className="flex">
               <li className="ml-5">
                 <a
-                  href="#"
+                  href="/"
                   className="text-[#878787] hover:text-blue-500 text-base"
                 >
                   Home
@@ -162,7 +162,7 @@ const Footer = () => {
               </li>
               <li className="ml-5">
                 <a
-                  href="#"
+                  href="/terms"
                   className="text-[#878787] hover:text-blue-500 text-base"
                 >
                   Terms
@@ -170,7 +170,7 @@ const Footer = () => {
               </li>
               <li className="ml-5">
                 <a
-                  href="#"
+                  href="/privacy-policy"
                   className="text-[#878787] hover:text-blue-500 text-base"
                 >
                   Privacy
@@ -178,15 +178,15 @@ const Footer = () => {
               </li>
               <li className="ml-5">
                 <a
-                  href="#"
+                  href="refund-policy"
                   className="text-[#878787] hover:text-blue-500 text-base"
                 >
-                  Policy
+                  Refund
                 </a>
               </li>
               <li className="ml-5">
                 <a
-                  href="#"
+                  href="/contact-us"
                   className="text-[#878787] hover:text-blue-500 text-base"
                 >
                   Contact
