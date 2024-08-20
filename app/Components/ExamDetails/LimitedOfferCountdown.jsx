@@ -40,50 +40,50 @@ const LimitedOfferCountdown = () => {
 
   return (
     <div className="container mx-auto px-6">
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-3 md:grid-cols-4">
         <div className="col-span-1">
-          <img src="/girlLimitedOffer.png" alt="" />
+          <img src="/girlLimitedOffer.png" alt="" className="w-full" />
         </div>
 
-        <div className="text-center py-8 px-4 col-span-2">
-          <div className="text-2xl font-bold mb-2">Limited Offer</div>
-          <div className="text-lg mb-6">
+        <div className="text-center py-2 lg:py-8 px-2 lg:px-4 col-span-2">
+          <div className="text-lg lg:text-2xl font-bold mb-1 lg:mb-2">Limited Offer</div>
+          <div className="text-sm lg:text-lg mb-3 lg:mb-6">
             Pass Your IT Certifications In First Attempt!
           </div>
-          <div className="flex justify-center gap-4 mb-6">
-            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg p-4 w-40">
-              <span className="block text-4xl text-blue-500 font-bold">
+          <div className="flex justify-center gap-3 mb-2">
+            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg px-3 py-2 lg:p-4 w-40">
+              <span className="block text-xl lg:text-4xl text-blue-500 font-semibold lg:font-bold">
                 {timeLeft.days}
               </span>
-              <small className="block text-sm text-gray-600">days</small>
+              <small className="block text-xs lg:text-sm text-gray-600">days</small>
             </div>
-            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg p-4 w-40">
-              <span className="block text-4xl text-blue-500 font-bold">
+            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg  px-3 py-2 lg:p-4 w-40">
+              <span className="block text-xl lg:text-4xl text-blue-500 font-semibold lg:font-bold">
                 {timeLeft.hours}
               </span>
-              <small className="block text-sm text-gray-600">hours</small>
+              <small className="block text-xs lg:text-sm text-gray-600">hours</small>
             </div>
-            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg p-4 w-40">
-              <span className="block text-4xl text-blue-500 font-bold">
+            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg  px-3 py-2 lg:p-4 w-40">
+              <span className="block text-xl lg:text-4xl text-blue-500 font-semibold lg:font-bold">
                 {timeLeft.minutes}
               </span>
-              <small className="block text-sm text-gray-600">minutes</small>
+              <small className="block text-xs lg:text-sm text-gray-600">minutes</small>
             </div>
-            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg p-4 w-40">
-              <span className="block text-4xl text-blue-500 font-bold">
+            <div className="bg-blue-100 border-2 border-blue-200 rounded-lg  px-3 py-2 lg:p-4 w-40">
+              <span className="block text-xl lg:text-4xl text-blue-500 font-semibold lg:font-bold">
                 {timeLeft.seconds}
               </span>
-              <small className="block text-sm text-gray-600">seconds</small>
+              <small className="block text-xs lg:text-sm text-gray-600">seconds</small>
             </div>
           </div>
           <a
             href="#"
-            className="inline-block bg-blue-500 text-white py-3 px-10 rounded-full text-lg font-bold hover:bg-blue-600"
+            className="inline-block bg-blue-500 text-white py-1 lg:py-3 px-5 lg:px-10 rounded-full text-lg font-semibold lg:font-bold hover:bg-blue-600"
           >
             Get Special Offers
           </a>
         </div>
-        <div className="col-span-1">
+        <div className="hidden md:col-span-1 md:block">
           <img src="/boyLimitedOffer.png" alt="" />
         </div>
       </div>

@@ -5,7 +5,7 @@ const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
         NEW {examVendorTitle} {examCode} Exam has the Following topics covered
         as:
       </h1>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-4">
         <div className="col-span-2">
           {examTopics.map((topic, index) => (
             <div
@@ -22,7 +22,7 @@ const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
             </div>
           ))}
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 hidden md:block">
           <img
             src="/Dumps-Topics.png"
             alt="ExamTopics"

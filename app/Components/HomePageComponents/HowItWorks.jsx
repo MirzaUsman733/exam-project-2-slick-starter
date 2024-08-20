@@ -34,7 +34,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </section>
-      <div className=" px-4  mt-[-2rem] z-0 bg-blue-500  clip-path-polygon-howItWorks pb-10 ">
+      <div className=" px-4  mt-[-2rem] z-0 bg-blue-500 py-5 clip-path-polygon-howItWorks pb-10 ">
         <div className="container mx-auto flex flex-wrap justify-center gap-4">
           {steps.map((step, index) => (
             <div

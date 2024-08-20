@@ -69,7 +69,6 @@ const Login = () => {
           },
         }
       );
-      console.log("Sign In successful:", response.data);
       setIsLogin(response.data);
       if (response.data.is_logged_in) {
         const currentTime = Date.now();
@@ -80,8 +79,8 @@ const Login = () => {
           "loginResponse",
           JSON.stringify({ ...response.data, expiryTime })
         );
-        router.push("/");
-        window.location.reload();
+        // window.location.reload();
+        router.replace("/");
       } else {
         router.push("/login");
       }

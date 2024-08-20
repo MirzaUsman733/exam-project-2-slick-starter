@@ -79,10 +79,20 @@
   min-height: 120px;
   clip-path: polygon(0 0, 100% 0%, 100% 65%, 0 100%);
 }
-.clip-path-polygon-howItWorks{
+.clip-path-polygon-howItWorks {
   padding-top: 10%;
   clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0 100%);
 }
+
+/* Media query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  .clip-path-polygon-howItWorks {
+    padding-top: 10%;
+    /* Changed clip-path for demonstration */
+    clip-path: polygon(0 00%, 100% 0%, 100% 100%, 0 100%);
+  }
+}
+
 
 .clip-polygon-exam-provider{
   position: relative;
@@ -98,7 +108,7 @@
   bottom: 0;
   background: #3b83f6eb; 
   clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
-  z-index: -1; 
+  z-index: -1;
 }
 
 

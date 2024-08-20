@@ -1,4 +1,8 @@
+"use client";
+import React from "react";
 import Link from "next/link";
+import AddToCartButton from "../add-to-cart/AddToCartButton";
+import Notification from "../add-to-cart/Notification";
 
 const HeaderCard = ({
   examTitle,
@@ -10,10 +14,15 @@ const HeaderCard = ({
   examPrices,
   examCerts,
 }) => {
+  let notification = "";
+  const handleAddToCartSuccess = () => {
+    notification =
+      "Your item was successfully added to the cart. Please see our cart.";
+  };
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-5 gap-10">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <div className="col-span-1 lg:col-span-2">
           <div className="flex justify-center mb-4">
             <img
               src="https://exam-hero.netlify.app/product2.png"
@@ -46,7 +55,7 @@ const HeaderCard = ({
           </div>
         </div>
 
-        <div className="col-span-3">
+        <div className="col-span-1 lg:col-span-3">
           <div className="mb-4">
             <h1 className="text-3xl font-semibold mb-5">
               {examCode} - {examTitle} - Questions Answers
@@ -93,13 +102,15 @@ const HeaderCard = ({
                    }
                 `}
               >
-                <div className="flex gap-3">
-                  <p className="font-semibold">{item.title}</p>
+                <div className="flex gap-1 md:gap-2 lg:gap-3 items-center">
+                  <p className="font-semibold text-sm md:text-md">
+                    {item.title}
+                  </p>
                   <div
-                    className={`bg-gray-100 py-1 text-sm font-bold ${
+                    className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
                       item.off >= 70
-                        ? "text-red-800 bg-red-200 rounded-3xl px-2"
-                        : "text-blue-500 bg-blue-200 rounded-3xl px-2"
+                        ? "text-red-800 bg-red-200 rounded-3xl px-1 md:px-2"
+                        : "text-blue-500 bg-blue-200 rounded-3xl px-1 md:px-2"
                     } `}
                   >
                     {item.off}% Off
@@ -107,18 +118,20 @@ const HeaderCard = ({
                 </div>
                 <div className="flex items-center">
                   <p className="text-blue-600 font-bold mr-2">${item.price}</p>
-                  <p className="text-red-600 text-sm line-through">
+                  <p className="text-red-600 text-xs align-super line-through">
                     ${item.full_price}
                   </p>
-                  <button className="bg-green-500 text-white text-xs px-4 py-2 ml-4 rounded">
-                    ADD TO CART
-                  </button>
+                  <AddToCartButton
+                    item={item}
+                    onAddToCart={handleAddToCartSuccess}
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+      <Notification message={notification} />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const Features = () => {
                     <div>
                       <div className="flex flex-wrap -m-2">
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1 text-blue-500">
                               <svg
                                 width="13"
@@ -67,7 +67,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
@@ -113,7 +113,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"

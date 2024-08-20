@@ -287,13 +287,13 @@ const CertificationExams = () => {
         </header>
         <div className="flex justify-center space-x-4 mb-4">
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-green-800"
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             onClick={() => handleSort("name")}
           >
             Sort by Name
           </button>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-green-800"
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             onClick={() => handleSort("vendor")}
           >
             Sort by Vendor

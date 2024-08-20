@@ -31,10 +31,10 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
         <div className="container mx-auto p-6">
           <div className="pt-6 bg-white overflow-hidden rounded-md shadow-dashboard">
             <div className="flex justify-between items-center pb-3 border-b">
-              <h2 className="px-6 text-xl text-coolGray-900 font-bold">
+              <h2 className="pe-6 text-xl text-coolGray-900 font-bold">
                 Hot Exams
               </h2>
-              <div className="flex items-center gap-3 me-5">
+              <div className="flex items-center gap-3">
                 <button
                   className={`bg-blue-500 text-white px-3 py-1 font-bold rounded-lg ${
                     selectedTab === "week" ? "bg-blue-700" : ""
@@ -53,11 +53,11 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                 </button>
               </div>
             </div>
-            <div>
+            <div className="overflow-x-auto">
               <table className="w-full">
                 <tbody>
                   <tr className="whitespace-nowrap h-11 bg-coolGray-50 sticky top-0 bg-white z-100">
-                    <th className="px-4 font-semibold text-sm text-coolGray-500 uppercase text-left rounded-l-md">
+                    <th className="pe-4 font-semibold text-sm text-coolGray-500 uppercase text-left rounded-l-md">
                       <p>Exam Title</p>
                     </th>
                     <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left">
@@ -72,7 +72,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                     <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left">
                       Rating
                     </th>
-                    <th className="whitespace-nowrap px-4 font-bold text-sm text-coolGray-500 uppercase text-left rounded-r-md">
+                    <th className="whitespace-nowrap ps-4 font-bold text-sm text-coolGray-500 uppercase text-left rounded-r-md">
                       Buy Now
                     </th>
                   </tr>
@@ -83,10 +83,10 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                         index % 2 ? "bg-gray-100" : "bg-white"
                       }`}
                     >
-                      <th className="whitespace-nowrap px-4 py-3 bg-white text-left">
+                      <th className="whitespace-nowrap py-3 bg-white text-left">
                         <div className="flex items-center -m-2">
-                          <div className="w-auto p-2">
-                            <div className="flex items-center justify-center w-9 h-9 text-base font-medium bg-blue-500 rounded-md">
+                          <div className="w-auto py-2 ps-2">
+                            <div className="flex items-center justify-center lg:w-8 lg:h-8 2xl:w-9 2xl:h-9 text-base font-medium bg-blue-500 rounded-md">
                               <svg
                                 width="24"
                                 height="24"
@@ -146,7 +146,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                           <span> 4.5 </span>
                         </div>
                       </th>
-                      <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-blue-500  text-left">
+                      <th className="whitespace-nowrap ps-4 bg-white text-sm font-medium text-blue-500 text-left">
                         <Link
                           className="bg-blue-500 border-0 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 text-white font-bold py-1 px-3 rounded"
                           href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}

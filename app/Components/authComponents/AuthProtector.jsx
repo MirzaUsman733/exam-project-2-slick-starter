@@ -10,7 +10,7 @@ export const AuthProtector = ({ children }) => {
     expiredTimer = setTimeout(() => {
       alert("Token expired");
       localStorage.removeItem("loginResponse");
-      router.push("/sign-in");
+      router.push("/login");
     }, timeLeft);
   };
 

@@ -12,7 +12,7 @@ export default function withAuth(Component) {
 
     useEffect(() => {
       if (!loginResponse?.is_logged_in) {
-        router.push("/sign-in"); // Redirect to the login page if not authenticated
+        router.push("/login"); // Redirect to the login page if not authenticated
       }
     }, [loginResponse?.is_logged_in, router]);
 
