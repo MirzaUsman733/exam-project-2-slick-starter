@@ -10,7 +10,6 @@ function useCart() {
 
   useEffect(() => {
       if (typeof window !== "undefined") {
-    // Update localStorage whenever the cart changes
     if (cart) {
       localStorage.setItem("cart", JSON.stringify(cart));
     } else {
@@ -20,7 +19,6 @@ function useCart() {
   }, [cart]);
 
   const addToCart = (item) => {
-    // Replace the cart item with the new one
     setCart(item);
   };
 

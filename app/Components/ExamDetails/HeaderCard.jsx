@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import AddToCartButton from "../add-to-cart/AddToCartButton";
 import Notification from "../add-to-cart/Notification";
@@ -14,10 +14,12 @@ const HeaderCard = ({
   examPrices,
   examCerts,
 }) => {
-  let notification = "";
+  const [notificationMessage, setNotificationMessage] = useState('');
+
   const handleAddToCartSuccess = () => {
-    notification =
-      "Your item was successfully added to the cart. Please see our cart.";
+    setNotificationMessage(
+      'Your item was successfully added to the cart. Please see our cart.'
+    );
   };
   return (
     <div className="container mx-auto p-4">
@@ -131,7 +133,7 @@ const HeaderCard = ({
           </div>
         </div>
       </div>
-      <Notification message={notification} />
+      <Notification message={notificationMessage} />
     </div>
   );
 };

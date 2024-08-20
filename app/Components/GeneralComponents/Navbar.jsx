@@ -4,6 +4,7 @@ import DropdownCertificationMenu from "./NavbarComponents/DropdownCertificationM
 import DropdownVendorMenu from "./NavbarComponents/DropdownVendorMenu";
 import ToggleButton from "./NavbarComponents/ToggleButton";
 import SearchCard from "./NavbarComponents/SearchCard";
+import CartIcon from "../add-to-cart/CartIcon";
 export default async function Navbar() {
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -91,6 +92,7 @@ export default async function Navbar() {
                   ></path>
                 </svg>
               </a> */}
+              
               <div className="mr-5 mt-1">
                 <SearchCard />
               </div>
@@ -112,9 +114,9 @@ export default async function Navbar() {
                     ></path>
                   </svg>
                 </span>
-                <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
+                {/* <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
                   <span className="text-xs font-bold hover:text-white">3</span>
-                </span>
+                </span> */}
               </a>
               <AccountDropdown />
             </div>
