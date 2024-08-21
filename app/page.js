@@ -8,7 +8,7 @@ import RecentlyUpdated from "./Components/HomePageComponents/RecentlyUpdatedExam
 export default function Home() {
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -49,7 +49,7 @@ export default function Home() {
       <hr className="border-gray-300 my-5 mx-auto" />
       <CertificationExams />
       <hr className="border-gray-300 my-5 mx-auto" />
-    </main>
+    </>
   );
 }
 
