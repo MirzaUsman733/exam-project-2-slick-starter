@@ -8,6 +8,7 @@ const AddToCartButton = ({ item, onAddToCart  }) => {
   const handleAddToCart = () => {
     addToCart(item); 
     onAddToCart(); 
+    window.location.reload();
   };
 
   return (

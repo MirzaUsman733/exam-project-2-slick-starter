@@ -87,15 +87,15 @@ const SearchCard = () => {
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
-    router.push(`/exam-questions/${exam.vendor}/${exam.slug}`);
+    router.push(`/mock-exam/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
-    router.push(`/exam-provider/${exam}`);
+    router.push(`/mock-exam-providers/${exam}`);
     setSearchValue("");
   };
   const handleCertificationPage = (exam) => {
-    router.push(`/vendor-exam-questions/${exam.vendor}/${exam.slug}`);
+    router.push(`/mock-exam-certification/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
 

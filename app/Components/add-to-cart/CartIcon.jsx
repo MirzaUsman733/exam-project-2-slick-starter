@@ -1,21 +1,21 @@
-'use client';
-import useCart from '@/app/hooks/useCart';
-import React, { useState, useEffect } from 'react';
+"use client";
+import useCart from "@/app/hooks/useCart";
+import React, { useState, useEffect } from "react";
 
 const CartIcon = () => {
-    const [cartItems, setCartItems] = useState(0);
-    const { cart } = useCart();
-console.log(cart)
-    useEffect(() => {
-        if (cart) {
-            setCartItems(1);
-        } else {
-            setCartItems(0);
-        }
-    }, [cart]);
+  const [cartItems, setCartItems] = useState(0);
+  const { cart } = useCart();
+  console.log(cart);
+  useEffect(() => {
+    if (cart) {
+      setCartItems(1);
+    } else {
+      setCartItems(0);
+    }
+  }, [cart]);
 
   return (
-    <a className="mr-8 group inline-flex items-center" href="#">
+    <div className="mr-8 relative group inline-flex items-center">
       <span className="text-gray-700 group-hover:text-blue-500">
         <svg
           width="16"
@@ -33,10 +33,14 @@ console.log(cart)
           ></path>
         </svg>
       </span>
-      <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
-        <span className="text-xs font-bold hover:text-white">{cartItems}</span> {/* Display the cart count */}
-      </span>
-    </a>
+      {cartItems ? (
+        <span className="-ml-2 absolute top-0 -right-2 flex items-center justify-center h-4 w-4 p-1 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
+          <span className="text-[10px] font-bold text-white">{cartItems}</span>
+        </span>
+      ) : (
+        ""
+      )}
+    </div>
   );
 };
 

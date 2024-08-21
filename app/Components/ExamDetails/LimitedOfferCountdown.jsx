@@ -50,7 +50,7 @@ const LimitedOfferCountdown = () => {
           <div className="text-sm lg:text-lg mb-3 lg:mb-6">
             Pass Your IT Certifications In First Attempt!
           </div>
-          <div className="flex justify-center gap-3 mb-2">
+          <div className="flex justify-center gap-3 mb-2 lg:mb-5">
             <div className="bg-blue-100 border-2 border-blue-200 rounded-lg px-3 py-2 lg:p-4 w-40">
               <span className="block text-xl lg:text-4xl text-blue-500 font-semibold lg:font-bold">
                 {timeLeft.days}

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Breadcrumbs = ({ breadcrumbData }) => {
   return (
-    <nav className="bg-gray-100 text-gray-500 px-5 py-5 text-md container mx-auto mt-20">
+    <nav className="bg-gray-100 text-gray-500 px-5 py-5 text-md container mx-auto mt-10">
       <ul className="flex">
         {breadcrumbData?.map((crumb, index) => (
           <li key={index} className="flex items-center">

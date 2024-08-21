@@ -96,7 +96,7 @@ export default async function Navbar() {
               <div className="mr-5 mt-1">
                 <SearchCard />
               </div>
-              <a className="mr-8 group inline-flex items-center" href="#">
+              {/* <a className="mr-8 group inline-flex items-center" href="#">
                 <span className="text-gray-700 group-hover:text-blue-500">
                   <svg
                     width="16"
@@ -114,10 +114,11 @@ export default async function Navbar() {
                     ></path>
                   </svg>
                 </span>
-                {/* <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
+                <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
                   <span className="text-xs font-bold hover:text-white">3</span>
-                </span> */}
-              </a>
+                </span>
+              </a> */}
+              <CartIcon />
               <AccountDropdown />
             </div>
           </div>
