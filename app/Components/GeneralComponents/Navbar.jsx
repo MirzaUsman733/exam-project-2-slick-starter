@@ -30,7 +30,7 @@ export default async function Navbar() {
     <section>
       <nav className="relative px-6 py-0 lg:px-16 lg:py-9">
         {/* Desktop View */}
-        <div className="hidden md:flex items-center justify-between">
+        <div className="hidden lg:flex items-center justify-between">
           <Link href="/">
             <img
               className="w-32 my-0 py-0"
@@ -125,8 +125,8 @@ export default async function Navbar() {
         </div>
       </nav>
       {/* Mobile View */}
-      <div className="md:hidden">
-        <nav className="md:hidden relative px-6 py-5 bg-white flex items-center justify-between">
+      <div className="lg:hidden">
+        <nav className="lg:hidden relative px-6 py-5 bg-white flex items-center justify-between">
           <Link href="/">
             <img
               className="h-6"

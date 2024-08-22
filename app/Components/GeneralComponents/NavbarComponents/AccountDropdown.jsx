@@ -56,7 +56,7 @@ function AccountDropdown() {
       <div>
         {!loginResponse?.is_logged_in ? (
           <>
-            <Link href={"/login"}>
+            <Link className="my-4 lg:my-0 " href={"/login"}>
               <b
                 style={{
                   padding: "10px 20px",
@@ -66,13 +66,13 @@ function AccountDropdown() {
                 Log In
               </b>
             </Link>
-            <Link
+            <Link 
               href={"/register"}
               style={{
                 padding: "10px 20px",
                 marginLeft: "4px",
               }}
-              className="hover:text-blue-500 rounded-full bg-blue-500 border-blue-500 border-2 text-white hover:bg-white"
+              className="hover:text-blue-500 rounded-full bg-blue-500 border-blue-500 border-2 my-4 lg:my-0 text-white hover:bg-white"
             >
               <b>Register Now</b>
             </Link>
