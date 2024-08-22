@@ -3,8 +3,9 @@
 import { useRouter } from "next/navigation";
 import loginPageProtector from "../Components/authComponents/loginPageProtector";
 import { useEffect } from "react";
+import Login from "../Components/authComponents/Login";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   let loginResponse;
 
@@ -19,4 +20,4 @@ const page = () => {
   return <Login />;
 };
 
-export default loginPageProtector(page);
+export default loginPageProtector(Page);
