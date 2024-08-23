@@ -56,13 +56,13 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData }) => {
       )}
       <hr className="my-4 container mx-auto" />
       <div className="container mx-auto p-6">
-        <div className="grid grid-cols-4">
-          <div className="col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-4">
+          <div className="lg:col-span-3">
             {examData && examData.exam_faqs.length > 0 && (
               <FAQS exam_faqs={examData?.exam_faqs} />
             )}
           </div>
-          <div className="col-span-1">
+          <div className="lg:col-span-1">
             {examData && examData.question_types && (
               <RelatedAndPremium
                 questionTypes={examData?.question_types}

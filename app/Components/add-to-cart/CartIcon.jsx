@@ -1,5 +1,6 @@
 "use client";
 import useCart from "@/app/hooks/useCart";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const CartIcon = () => {
@@ -7,15 +8,11 @@ const CartIcon = () => {
   const { cart } = useCart();
   console.log(cart);
   useEffect(() => {
-    if (cart) {
-      setCartItems(1);
-    } else {
-      setCartItems(0);
-    }
+   setCartItems(cart.length)
   }, [cart]);
 
   return (
-    <div className="mr-8 relative group inline-flex items-center">
+    <Link href="/cart" className="mr-8 relative group inline-flex items-center">
       <span className="text-gray-700 group-hover:text-blue-500">
         <svg
           width="16"
@@ -40,7 +37,7 @@ const CartIcon = () => {
       ) : (
         ""
       )}
-    </div>
+    </Link>
   );
 };
 
