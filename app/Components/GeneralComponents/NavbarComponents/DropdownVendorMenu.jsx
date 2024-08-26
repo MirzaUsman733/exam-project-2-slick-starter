@@ -38,7 +38,7 @@ export default function DropdownMenu({ title, vendors }) {
         {title} {isOpen ? <DropupIcon /> : <DropdownIcon />}
       </Link>
       <div
-        className={`absolute top-full left-16 bg-white min-w-max z-50 border shadow-xl rounded-lg overflow-hidden py-2
+        className={`absolute top-full left-16 bg-white min-w-max z-50 border shadow-xl rounded-lg xl:overflow-hidden overflow-auto h-32 xl:h-auto py-2
           ${isOpen ? "block" : "hidden"}`}
         style={{ transition: "opacity 0.3s ease-out, transform 0.3s ease-out" }}
       >

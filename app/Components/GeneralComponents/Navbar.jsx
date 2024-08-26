@@ -28,9 +28,9 @@ export default async function Navbar() {
   const certifications = await certRes.json();
   return (
     <section>
-      <nav className="relative px-6 py-0 lg:px-16 lg:py-9">
+      <nav className="relative px-6 py-0 xl:px-16 xl:py-9">
         {/* Desktop View */}
-        <div className="hidden lg:flex items-center justify-between">
+        <div className="hidden xl:flex items-center justify-between">
           <Link href="/">
             <img
               className="w-32 my-0 py-0"
@@ -125,8 +125,8 @@ export default async function Navbar() {
         </div>
       </nav>
       {/* Mobile View */}
-      <div className="lg:hidden">
-        <nav className="lg:hidden relative px-6 py-5 bg-white flex items-center justify-between">
+      <div className="xl:hidden">
+        <nav className="xl:hidden relative px-6 py-5 bg-white flex items-center justify-between">
           <Link href="/">
             <img
               className="h-6"
@@ -135,30 +135,44 @@ export default async function Navbar() {
               width="auto"
             />
           </Link>
-          <ToggleButton />
+          {/* <div className="flex items-start md:gap-2 lg:gap-5 xl:hidden"> */}
+            <ToggleButton />
+          {/* </div> */}
         </nav>
-        <div id="drawer">
+        <div id="drawer" className="hidden xl:hidden">
           <div className="bg-white h-full overflow-y-auto ">
             <div className="px-6 py-6">
               <ul className="flex flex-col space-y-2">
+              <li>
+              <Link
+                className="text-gray-700 hover:text-blue-500 header-link font-medium"
+                href="/"
+              >
+                Home
+              </Link>
+            </li>
                 <DropdownVendorMenu title="Vendors" vendors={vendors} />
                 <DropdownCertificationMenu
                   title="Certifications"
                   certifications={certifications}
                 />
+
                 <Link
                   className="block font-medium text-black hover:bg-gray-50"
                   href="/video-courses"
-                >
+                  >
                   Video Courses
                 </Link>
                 <Link
                   className="block font-medium text-black hover:bg-gray-50"
                   href="#"
-                >
+                  >
                   Unlimited Access
                 </Link>
+                <div className="pt-5">
                 <AccountDropdown />
+
+                </div>
               </ul>
             </div>
           </div>

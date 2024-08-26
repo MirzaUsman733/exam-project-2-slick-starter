@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
 .header-link {
   position: relative;
   /* display: inline-block; */
@@ -85,7 +89,7 @@
 }
 
 /* Media query for screens with a maximum width of 768px */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .clip-path-polygon-howItWorks {
     padding-top: 10%;
     /* Changed clip-path for demonstration */
