@@ -1,11 +1,11 @@
 const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
   return (
-    <div className="container mx-auto px-6">
+    <div>
       <h1 className="text-center text-blue-600 text-4xl font-bold mb-10">
         NEW {examVendorTitle} {examCode} Exam has the Following topics covered
         as:
       </h1>
-      <div className="grid md:grid-cols-3 gap-4">
+      <div>
         <div className="col-span-2">
           {examTopics.map((topic, index) => (
             <div
@@ -22,13 +22,13 @@ const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
             </div>
           ))}
         </div>
-        <div className="col-span-1 hidden md:block">
+        {/* <div className="col-span-1 hidden md:block">
           <img
             src="/Dumps-Topics.png"
             alt="ExamTopics"
             className="w-full h-auto"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

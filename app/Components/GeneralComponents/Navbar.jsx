@@ -40,14 +40,14 @@ export default async function Navbar() {
             />
           </Link>
           <ul className="flex space-x-12">
-            <li>
+            {/* <li>
               <Link
                 className="text-gray-700 hover:text-blue-500 header-link font-medium"
                 href="/"
               >
                 Home
               </Link>
-            </li>
+            </li> */}
             <DropdownVendorMenu title="Vendors" vendors={vendors} />
             <DropdownCertificationMenu
               title="Certifications"

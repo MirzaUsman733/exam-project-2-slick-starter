@@ -1,3 +1,4 @@
+import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
 import CourseHeader from "@/app/Components/videoCourses/CourseHeader";
 import VideoCoursesDetail from "@/app/Components/videoCourses/VideoCoursesDetail";
 import React from "react";
@@ -59,6 +60,8 @@ const page = async ({ params }) => {
       <CourseHeader courseDetail={courseDetail} />
       <hr className="my-20" />
       <VideoCoursesDetail section={courseDetail.sections} />
+      <hr className="my-5" />
+      <HotExam />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import HotExam from "../HomePageComponents/HotExams/HotExam";
 import Breadcrumbs from "./Breadcrumbs";
+import Comments from "./Comments";
 import ExamBanner from "./ExamBanner";
 import FAQS from "./FAQS";
 import HeaderCard from "./HeaderCard";
@@ -10,7 +11,7 @@ import RelatedAndPremium from "./RelatedAndPremium";
 import RelatedExams from "./RelatedExams";
 import TopicsCovered from "./TopicsCovered";
 
-const ExamDetail = ({ examData, formattedDate, breadcrumbData }) => {
+const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
   return (
     <div>
       {breadcrumbData && <Breadcrumbs breadcrumbData={breadcrumbData} />}
@@ -37,17 +38,31 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData }) => {
           examCode={examData?.exam_code}
         />
       )}
-      <LimitedOfferCountdown />
+      {/* <LimitedOfferCountdown /> */}
+      <hr className="my-4 container mx-auto" />
+      <div className="container mx-auto p-6">
+        <div className="grid md:grid-cols-3 gap-5">
+          <div className="col-span-2">
+            {examData && examData.exam_topics.length > 0 && (
+              <TopicsCovered
+                examTopics={examData?.exam_topics}
+                examVendorTitle={examData?.exam_vendor_title}
+                examCode={examData?.exam_code}
+              />
+            )}
+          </div>
+          <div className="col-span-1">
+            <RelatedAndPremium
+              questionTypes={examData?.question_types}
+              examCode={examData?.exam_code}
+            />
+          </div>
+        </div>
+      </div>
+      <hr className="mb-4 container mx-auto max-w-[70%]" />
+      <Comments examPerma={examPerma} />
       <hr className="mb-4 container mx-auto max-w-[70%]" />
       <HotExam />
-      <hr className="my-4 container mx-auto" />
-      {examData && examData.exam_topics.length > 0 && (
-        <TopicsCovered
-          examTopics={examData?.exam_topics}
-          examVendorTitle={examData?.exam_vendor_title}
-          examCode={examData?.exam_code}
-        />
-      )}
       {examData && examData.exam_topics.length > 0 && (
         <hr className="mb-4 container mx-auto" />
       )}
@@ -63,12 +78,12 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData }) => {
             )}
           </div>
           <div className="lg:col-span-1">
-            {examData && examData.question_types && (
+            {/* {examData && examData.question_types && (
               <RelatedAndPremium
                 questionTypes={examData?.question_types}
                 examCode={examData?.exam_code}
               />
-            )}
+            )} */}
             {examData && examData.exam_vendor_perma && (
               <RelatedExams vendorPerma={examData?.exam_vendor_perma} />
             )}

@@ -3,7 +3,7 @@ const FAQS = ({ exam_faqs }) => {
     <div className="container mx-auto p-6">
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-white rounded-lg shadow-md py-5 pe-5 w-full">
-          <h2 className="text-center text-4xl font-semibold text-blue-700">
+          <h2 className="text-center text-4xl font-bold text-blue-700">
             Frequently Asked Questions
           </h2>
           <hr className="border-4 my-5 w-1/4 mx-auto" />
