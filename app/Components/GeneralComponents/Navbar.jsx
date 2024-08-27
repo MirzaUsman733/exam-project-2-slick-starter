@@ -28,7 +28,7 @@ export default async function Navbar() {
   const certifications = await certRes.json();
   return (
     <section>
-      <nav className="relative px-6 py-0 xl:px-16 xl:py-9">
+      <nav className="relative px-6 py-0 xl:px-16 xl:py-5">
         {/* Desktop View */}
         <div className="hidden xl:flex items-center justify-between">
           <Link href="/">

@@ -14,11 +14,11 @@ const HeaderCard = ({
   examPrices,
   examCerts,
 }) => {
-  const [notificationMessage, setNotificationMessage] = useState('');
+  const [notificationMessage, setNotificationMessage] = useState("");
 
   const handleAddToCartSuccess = () => {
     setNotificationMessage(
-      'Your item was successfully added to the cart. Please see our cart.'
+      "Your item was successfully added to the cart. Please see our cart."
     );
   };
   return (

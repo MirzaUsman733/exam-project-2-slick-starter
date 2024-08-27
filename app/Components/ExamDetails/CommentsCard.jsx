@@ -18,12 +18,15 @@ const CommentCard = ({ name, location, date, content }) => {
   const decodedHtml = decodeHtml(content);
 
   return (
-    <div className="rounded-2xl" style={{
+    <div
+      className="rounded-2xl"
+      style={{
         boxShadow: "1px 3px 5px 5px rgba(0, 0, 0, 0.08)",
-      }}  >
+      }}
+    >
       <div className="bg-blue-500 text-white py-4 px-3 mb-3 flex justify-between rounded-t-2xl items-center">
         <div className="font-bold flex items-center gap-3 relative">
-          <Avatar sx={{bgcolor: '#1877F2'}} >{getInitial(name)}</Avatar>
+          <Avatar sx={{ bgcolor: "#1877F2" }}>{getInitial(name)}</Avatar>
           <span className="mx-2 h-full border-l border-white"></span>
           {name}
         </div>
