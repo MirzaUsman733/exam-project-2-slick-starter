@@ -43,7 +43,7 @@ export default function DropdownMenu({ title, vendors }) {
         style={{ transition: "opacity 0.3s ease-out, transform 0.3s ease-out" }}
       >
         {Array.isArray(vendors) &&
-          vendors.slice(0, 15).map((vendor) => (
+          vendors.slice(0, 10).map((vendor) => (
             <Link
               className="block vendor-link-header mx-5 py-2 text-sm"
               key={vendor.vendor_id}
