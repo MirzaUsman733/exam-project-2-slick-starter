@@ -1,7 +1,8 @@
+import DownloadHistory from "@/app/Components/personalPages/DownloadHistory";
 import React from "react";
 
 const page = () => {
-  return <div>Download History</div>;
+  return <div> <DownloadHistory/> </div>;
 };
 
 export default page;

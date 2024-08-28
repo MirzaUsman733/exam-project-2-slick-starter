@@ -1,3 +1,188 @@
+// "use client";
+// import {
+//   Alert,
+//   Snackbar,
+//   TextField,
+//   Button,
+//   InputAdornment,
+//   IconButton,
+// } from "@mui/material";
+// import { Visibility, VisibilityOff } from "@mui/icons-material";
+// import axios from "axios";
+// import { useRouter } from "next/navigation";
+// import { useEffect, useState } from "react";
+
+// const Setting = () => {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     password: "",
+//     confirmPassword: "",
+//   });
+//   const [showPassword, setShowPassword] = useState(false);
+//   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+//   const [errors, setErrors] = useState({});
+//   const [openSnackbar, setOpenSnackbar] = useState(false);
+//   const [apiResponse, setApiResponse] = useState({});
+//   const [user, setUser] = useState({});
+//   const router = useRouter();
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//     setErrors({ ...errors, [e.target.name]: "" });
+//   };
+
+//   useEffect(() => {
+//     const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+//     setUser(loginResponse);
+//   }, []);
+
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     setErrors({}); // Reset errors
+
+//     if (formData.password.length < 8) {
+//       setErrors({ password: "Password must be at least 8 characters long" });
+//       return;
+//     }
+
+//     if (formData.password !== formData.confirmPassword) {
+//       setErrors({ confirmPassword: "Passwords do not match" });
+//       return;
+//     }
+
+//     const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+//     try {
+//       const response = await axios.post(
+//         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/update-profile`,
+//         {
+//           name: user?.name,
+//           password: formData.password,
+//         },
+//         {
+//           headers: {
+//             "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+//             Authorization: `Bearer ${loginResponse._token}`,
+//           },
+//         }
+//       );
+//       setApiResponse(response.data);
+//       setFormData({ name: "", password: "", confirmPassword: "" });
+//       setOpenSnackbar(true);
+//       router.push("/");
+//     } catch (error) {
+//       console.error("Error:", error);
+//       alert("Something went wrong. Please try again later.");
+//     }
+//   };
+
+//   const togglePasswordVisibility = () => {
+//     setShowPassword(!showPassword);
+//   };
+
+//   const toggleConfirmPasswordVisibility = () => {
+//     setShowConfirmPassword(!showConfirmPassword);
+//   };
+
+//   return (
+//     <div className="flex justify-center items-center my-20">
+//       <div>
+//         <div>
+//           <h1 className="text-4xl mx-auto font-extrabold font-[lato] text-center mt-5">
+//             Update Profile Settings
+//           </h1>
+//         </div>
+//         <form
+//           onSubmit={handleSubmit}
+//           className="m-auto max-w-4xl px-4 py-8 space-y-5"
+//         >
+//           <TextField
+//             label="Name"
+//             variant="outlined"
+//             fullWidth
+//             name="name"
+//             disabled
+//             value={user?.name || ""}
+//             onChange={handleChange}
+//             error={!!errors.name}
+//             helperText={errors.name}
+//             className="mb-4"
+//           />
+//           <TextField
+//             type={showPassword ? "text" : "password"}
+//             label="Password"
+//             variant="outlined"
+//             fullWidth
+//             name="password"
+//             value={formData.password}
+//             onChange={handleChange}
+//             error={!!errors.password}
+//             helperText={errors.password}
+//             className="mb-4"
+//             InputProps={{
+//               endAdornment: (
+//                 <InputAdornment position="end">
+//                   <IconButton
+//                     aria-label="toggle password visibility"
+//                     onClick={togglePasswordVisibility}
+//                   >
+//                     {showPassword ? <VisibilityOff /> : <Visibility />}
+//                   </IconButton>
+//                 </InputAdornment>
+//               ),
+//             }}
+//           />
+//           <TextField
+//             type={showConfirmPassword ? "text" : "password"}
+//             label="Confirm Password"
+//             variant="outlined"
+//             fullWidth
+//             name="confirmPassword"
+//             value={formData.confirmPassword}
+//             onChange={handleChange}
+//             error={!!errors.confirmPassword}
+//             helperText={errors.confirmPassword}
+//             className="mb-6"
+//             InputProps={{
+//               endAdornment: (
+//                 <InputAdornment position="end">
+//                   <IconButton
+//                     aria-label="toggle confirm password visibility"
+//                     onClick={toggleConfirmPasswordVisibility}
+//                   >
+//                     {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+//                   </IconButton>
+//                 </InputAdornment>
+//               ),
+//             }}
+//           />
+//           <Button type="submit" variant="contained" color="primary" fullWidth>
+//             Update Profile
+//           </Button>
+//         </form>
+//         <Snackbar
+//           open={openSnackbar}
+//           autoHideDuration={6000}
+//           onClose={() => setOpenSnackbar(false)}
+//           anchorOrigin={{
+//             vertical: "top",
+//             horizontal: "right",
+//           }}
+//         >
+//           <Alert
+//             onClose={() => setOpenSnackbar(false)}
+//             severity={apiResponse?.is_active ? "success" : "error"}
+//             variant="filled"
+//           >
+//             {apiResponse.message}
+//           </Alert>
+//         </Snackbar>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Setting;
+
 "use client";
 import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
@@ -6,20 +191,35 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const [activeSlide, setActiveSlide] = useState(1);
   const [snackbar, setSnackbar] = useState({ open: false, message: "" });
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    name: "",
     password: "",
     confirmPassword: "",
   });
   const [ip, setIp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [apiResponse, setApiResponse] = useState({});
+  const [errors, setErrors] = useState({});
+  const [user, setUser] = useState({});
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  useEffect(() => {
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    setUser(loginResponse);
+  }, []);
+
   const fetchIP = async () => {
     try {
       const response = await axios.get(
@@ -40,13 +240,13 @@ const Register = () => {
     fetchIP();
   }, []);
 
-  const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+  //   const handleChange = (event) => {
+  //     const { name, value, type, checked } = event.target;
+  //     setFormData((prev) => ({
+  //       ...prev,
+  //       [name]: type === "checkbox" ? checked : value,
+  //     }));
+  //   };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -56,207 +256,63 @@ const Register = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
-      setSnackbar({ open: true, message: "All fields are required." });
-      return;
-    }
-    if (formData.password !== formData.confirmPassword) {
-      setSnackbar({ open: true, message: "Passwords do not match!" });
-      return;
-    }
-
-    const payload = {
-      name: `${formData.firstName} ${formData.lastName}`,
-      email: formData.email,
-      password: formData.password,
-      ip: ip,
-    };
-
-    try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/register`,
-        payload,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        }
-      );
-      console.log("Registration successful:", response.data);
-      if (response.data) {
-        window.location.href = "/login";
-      }
-    } catch (error) {
-      console.error("Error during registration:", error.response.data.message);
-      setSnackbar({ open: true, message: error.response.data.message });
-    }
-  };
-
   const handleCloseSnackbar = () => {
     setSnackbar({ open: false, message: "" });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setErrors({}); // Reset errors
 
+    if (formData.password.length < 8) {
+      setErrors({ password: "Password must be at least 8 characters long" });
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      setErrors({ confirmPassword: "Passwords do not match" });
+      return;
+    }
+
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/update-profile`,
+        {
+          name: user?.name,
+          password: formData.password,
+        },
+        {
+          headers: {
+            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+            Authorization: `Bearer ${loginResponse._token}`,
+          },
+        }
+      );
+      setApiResponse(response.data);
+      setFormData({ name: "", password: "", confirmPassword: "" });
+      setOpenSnackbar(true);
+      router.push("/");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  };
   return (
     <div>
-      <Snackbar open={snackbar.open} autoHideDuration={6000} onClose={handleCloseSnackbar}>
-        <Alert onClose={handleCloseSnackbar} severity="error" sx={{ width: '100%' }}>
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
           {snackbar.message}
         </Alert>
       </Snackbar>
-      {/* <section className="relative overflow-hidden">
-        <div className="relative flex flex-wrap">
-          <div className="w-full lg:w-9/12 xl:w-2/3 relative bg-blue-700 pt-24 pb-64 lg:py-32 h-full lg:min-h-screen flex items-center">
-            <img
-              className="absolute top-0 left-0"
-              src="https://static.shuffle.dev/components/preview/0888ef30-c554-4436-a0b4-ea41a62b8bd4/assets/public/coleos-assets/sign-in/yellow-circle-part.png"
-              alt=""
-            />
-            <img
-              className="hidden lg:block absolute top-0 left-72 mt-24 w-24"
-              src="/below-arrow.png"
-              alt=""
-            />
-            <img
-              className="absolute top-1/2 left-36"
-              src="https://static.shuffle.dev/components/preview/0888ef30-c554-4436-a0b4-ea41a62b8bd4/assets/public/coleos-assets/sign-in/pink-dot-small.png"
-              alt=""
-            />
-            <img
-              className="absolute bottom-0 left-0 bg-opacity-20 w-full h-full"
-              src="https://static.shuffle.dev/components/preview/0888ef30-c554-4436-a0b4-ea41a62b8bd4/assets/public/coleos-assets/sign-in/bg-gradient.png"
-              alt=""
-            />
-            <img
-              className="absolute right-0 top-0 h-full"
-              src="https://static.shuffle.dev/components/preview/0888ef30-c554-4436-a0b4-ea41a62b8bd4/assets/public/coleos-assets/sign-in/blue-circle-half.png"
-              alt=""
-            />
-            <div className="relative z-10 px-4 mx-auto lg:ml-12 xl:mr-0 xl:ml-20 max-w-md xl:max-w-lg">
-              <h1 className="text-white text-4xl xl:text-5xl font-semibold mb-9 font-heading max-w-lg">
-                Join over 2,500,000 community and explore the world
-              </h1>
-              <p className="text-gray-300 max-w-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan
-                aliquet orci.
-              </p>
-            </div>
-          </div>
-          <div className="relative w-full lg:w-3/12 xl:w-1/3 px-4 lg:min-h-screen bg-white">
-            <div className="lg:absolute top-0 right-0 w-full h-full py-12 lg:py-0 max-w-lg lg:max-w-none mx-auto -mt-40 lg:-mt-0 lg:mx-0 lg:min-w-max flex items-center z-50">
-              <div className="transform lg:-ml-64 xl:-ml-0 xl:-translate-x-1/2 lg:max-w-lg bg-gray-50 shadow-2xl text-black rounded-lg py-12 px-6 lg:px-8">
-                <p className="uppercase text-rhino-300 text-xs font-bold tracking-widest mb-1 text-center">
-                  <span className="border border-blue-500 rounded-full px-4 py-1 text-blue-600">
-                    {" "}
-                    SIGN UP{" "}
-                  </span>
-                </p>
-                <h1 className="font-heading font-semibold text-4xl text-rhino-700 text-center my-4">
-                  Create new account
-                </h1>
-                <form className="flex flex-col" onSubmit={handleSubmit}>
-                  <div className="flex gap-5">
-                    <TextField
-                      id="first-name"
-                      label="First Name"
-                      variant="outlined"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      fullWidth
-                    />
-                    <TextField
-                      id="last-name"
-                      label="Last Name"
-                      variant="outlined"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      fullWidth
-                    />
-                  </div>
-                  <TextField
-                    id="email"
-                    label="Email"
-                    variant="outlined"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    fullWidth
-                    className="my-5"
-                  />
-                  <TextField
-                    id="password"
-                    label="Password"
-                    variant="outlined"
-                    type={showPassword ? "text" : "password"}
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    fullWidth
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            onClick={togglePasswordVisibility}
-                            edge="end"
-                          >
-                            {showPassword ? (
-                              <VisibilityOffIcon />
-                            ) : (
-                              <VisibilityIcon />
-                            )}
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                  <TextField
-                    id="confirm-password"
-                    label="Confirm Password"
-                    variant="outlined"
-                    type={showConfirmPassword ? "text" : "password"}
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    fullWidth
-                    className="my-5"
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            onClick={toggleConfirmPasswordVisibility}
-                            edge="end"
-                          >
-                            {showConfirmPassword ? (
-                              <VisibilityOffIcon />
-                            ) : (
-                              <VisibilityIcon />
-                            )}
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    className="rounded-xl py-3 px-4 bg-blue-800 shadow-2xl text-white font-medium text-sm w-full mb-4 block text-center hover:bg-blue-900 transition duration-200"
-                  >
-                    Sign Up
-                  </button>
-                  <a className="group text-sm text-center block" href="/login">
-                    Already have an account? Sign In
-                  </a>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section>
         <div className="flex flex-wrap">
@@ -273,15 +329,15 @@ const Register = () => {
                 </a>
                 <Link
                   className="py-2 px-6 text-xs rounded-l-xl rounded-t-xl bg-blue-100 hover:bg-blue-200 text-blue-600 font-bold transition duration-200"
-                  href="/login"
+                  href="/"
                 >
-                  Sign In
+                  Home
                 </Link>
               </div>
               <div>
                 <div className="mb-6 px-3">
-                  <span className="text-gray-500">Sign Up</span>
-                  <h3 className="text-2xl font-bold">Create an account</h3>
+                  <span className="text-gray-500">Update Profile</span>
+                  <h3 className="text-2xl font-bold">Change the Password</h3>
                 </div>
                 <form className="flex flex-col" onSubmit={handleSubmit}>
                   <div className="flex flex-wrap">
@@ -289,43 +345,13 @@ const Register = () => {
                       <input
                         className="w-full p-4 text-xs bg-gray-50 outline-none rounded"
                         type="text"
-                        name="firstName"
-                        value={formData.firstName}
+                        name="name"
+                        disabled
+                        value={user?.name || ""}
                         onChange={handleChange}
                         placeholder="First Name"
                       />
                     </div>
-                    <div className="mb-3 w-full lg:w-1/2 px-2">
-                      <input
-                        className="w-full p-4 text-xs bg-gray-50 outline-none rounded"
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        placeholder="Last Name"
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex p-4 mx-2 bg-gray-50 rounded">
-                    <input
-                      className="w-full text-xs bg-gray-50 outline-none"
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="name@email.com"
-                    />
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1.3em"
-                      height="1.3em"
-                      viewBox="0 0 32 32"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z"
-                      ></path>
-                    </svg>
                   </div>
                   <div className="mb-2 flex p-4 mx-2 bg-gray-50 rounded">
                     <input
@@ -369,23 +395,8 @@ const Register = () => {
                       type="submit"
                       className="mb-2 w-full py-4 bg-blue-600 hover:bg-blue-700 rounded text-sm font-bold text-gray-50 transition duration-200"
                     >
-                      Sign Up
+                      Update Profile
                     </button>
-                    <span className="text-gray-400 text-xs">
-                      <span>Already have an account?</span> {" "}
-                      <Link className="text-blue-600 hover:underline" href="/login">
-                        Sign In
-                      </Link>
-                    </span>
-                    <p className="mt-16 text-xs text-gray-400">
-                      <Link className="underline hover:text-gray-500" href="/privacy-policy">
-                        Policy privacy
-                      </Link>{" "}
-                      and{" "}
-                      <Link className="underline hover:text-gray-500" href="/terms">
-                        Terms of Use
-                      </Link>
-                    </p>
                   </div>
                 </form>
               </div>

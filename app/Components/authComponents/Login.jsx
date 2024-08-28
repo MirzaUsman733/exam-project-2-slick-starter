@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { Alert, Snackbar } from "@mui/material";
 
 const Login = () => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -16,6 +17,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState("");
   const [ip, setIp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [snackbar, setSnackbar] = useState({ open: false, message: "" });
   const fetchIP = async () => {
     try {
       const response = await axios.get(
@@ -53,8 +55,52 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   const payload = {
+  //     email: formData.email,
+  //     password: formData.password,
+  //     ip: ip,
+  //   };
+
+  //   try {
+  //     const response = await axios.post(
+  //       `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/login`,
+  //       payload,
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+  //         },
+  //       }
+  //     );
+  //     setIsLogin(response.data);
+  //     if (response.data.is_logged_in) {
+  //       const currentTime = Date.now();
+  //       const twoHoursInMillis = 2 * 60 * 60 * 1000;
+  //       const expiryTime = currentTime + twoHoursInMillis;
+
+  //       localStorage.setItem(
+  //         "loginResponse",
+  //         JSON.stringify({ ...response.data, expiryTime })
+  //       );
+  //       router.push("/");
+  //       window.location.reload();
+  //     } else {
+  //       router.push("/login");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error during registration:", error);
+  //   }
+  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (!formData.email || !formData.password) {
+      setSnackbar({ open: true, message: "Please fill all fields" });
+      return;
+    }
 
     const payload = {
       email: formData.email,
@@ -73,12 +119,11 @@ const Login = () => {
           },
         }
       );
-      setIsLogin(response.data);
+      setIsLogin(response.data.is_logged_in);
       if (response.data.is_logged_in) {
         const currentTime = Date.now();
         const twoHoursInMillis = 2 * 60 * 60 * 1000;
         const expiryTime = currentTime + twoHoursInMillis;
-
         localStorage.setItem(
           "loginResponse",
           JSON.stringify({ ...response.data, expiryTime })
@@ -86,17 +131,36 @@ const Login = () => {
         router.push("/");
         window.location.reload();
       } else {
-        router.push("/login");
+        setSnackbar({ open: true, message: "Login failed. Check your Email and Password." });
       }
     } catch (error) {
-      console.error("Error during registration:", error);
+      console.error("Login error:", error);
+      setSnackbar({ open: true, message: "Login error: " + error.response });
     }
   };
+
+  const handleCloseSnackbar = () => {
+    setSnackbar({ open: false, message: "" });
+  };
+
   if (isLogin?.is_logged_in && ip === "") {
     return null;
   } else if (!isLogin?.is_logged_in && ip != "") {
     return (
       <section>
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={6000}
+          onClose={handleCloseSnackbar}
+        >
+          <Alert
+            onClose={handleCloseSnackbar}
+            severity="error"
+            sx={{ width: "100%" }}
+          >
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
         <div className="flex flex-wrap">
           <div className="pt-6 lg:pt-16 pb-6 w-full lg:w-1/2">
             <div className="max-w-md mx-auto">
