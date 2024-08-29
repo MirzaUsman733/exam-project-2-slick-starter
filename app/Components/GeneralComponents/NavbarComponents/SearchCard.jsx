@@ -97,7 +97,7 @@ const SearchCard = () => {
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
-    router.push(`/mock-exam-providers/${exam}`);
+    router.push(`/mock-exam-provider/${exam}`);
     setSearchValue("");
   };
   const handleCertificationPage = (exam) => {
@@ -175,7 +175,7 @@ const SearchCard = () => {
               position: "absolute",
               top: "100%",
               left: 0,
-              width: "100%",
+              width: "180%",
               borderRadius: "0px",
               zIndex: 1000,
             }}

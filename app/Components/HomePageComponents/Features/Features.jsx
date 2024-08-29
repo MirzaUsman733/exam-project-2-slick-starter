@@ -7,21 +7,22 @@ const Features = () => {
             <div className="flex flex-wrap -mx-4">
               <div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
                 <div className="w-full text-center lg:text-left">
-                  <div className="max-w-lg mx-auto lg:mx-0">
-                    <h2 className="mb-3 text-4xl lg:text-5xl text-black font-extrabold font-heading">
+                  <div className="max-w-2xl mx-auto lg:mx-0">
+                    <h2 className="mb-3 text-4xl lg:text-5xl text-black font-extrabold">
                       <span>Pass Your Next Certification Exam Fast!</span>
                     </h2>
                   </div>
-                  <div className="max-w-lg mx-auto lg:mx-0">
+                  <div className="max-w-2xl  mx-auto lg:mx-0">
                     <p className="mb-6 text-gray-600 leading-loose">
-                      Everything you need to prepare, learn & pass your
-                      certification exam easily. 90 days free updates. First
-                      attempt 100% success.
+                      Get everything you need to study and pass your
+                      certification exam with ease. Enjoy 90 days of free
+                      updates to keep your materials fresh. With our help, you
+                      can aim for a 100% success rate on your first attempt!
                     </p>
                     <div>
                       <div className="flex flex-wrap -m-2">
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap pe-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap md:pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1 text-blue-500">
                               <svg
                                 width="13"
@@ -44,7 +45,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap md:px-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
@@ -67,7 +68,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap pe-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap md:pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
@@ -90,7 +91,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap ps-0 md:pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
@@ -113,7 +114,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap pe-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap md:pe-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"
@@ -136,7 +137,7 @@ const Features = () => {
                           </div>
                         </div>
                         <div className="w-auto p-2">
-                          <div className="flex flex-wrap px-3 py-2 bg-gray-50 rounded-full">
+                          <div className="flex flex-wrap md:px-3 py-2 bg-gray-50 rounded-full">
                             <div className="w-auto mr-2 pt-1  text-blue-500">
                               <svg
                                 width="13"

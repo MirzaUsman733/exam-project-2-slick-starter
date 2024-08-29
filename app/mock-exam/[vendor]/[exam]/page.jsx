@@ -31,8 +31,8 @@ const Page = ({ params }) => {
       { label: "Home", path: "/" },
       { label: `${examData?.exam_vendor_title}`, path: `/${vendor_perma}` },
       {
-        label: `${examData?.exam_code} - ${examData?.exam_title}`,
-        path: `/${examData?.exam_vendor_title}/${examData?.exam_code}`,
+        label: `${examData?.exam_code}`,
+        path: `/${examData?.exam_code}`,
       },
     ];
     const vendorPerma = vendor_perma;

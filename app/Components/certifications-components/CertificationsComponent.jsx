@@ -121,7 +121,7 @@ const CertificationsComponent = ({ certifications }) => {
           {filteredCertifications?.map((certification) => (
             <Link
               key={certification?.vendor_id}
-              href={`/mock-exam-providers/${certification?.vendor_perma}`}
+              href={`/mock-exam-provider/${certification?.vendor_perma}`}
             >
               <div className="group relative p-6 transform hover:scale-10 transition-transform duration-300 ease-in-out">
                 <div

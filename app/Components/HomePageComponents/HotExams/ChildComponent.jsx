@@ -1,12 +1,83 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+const countries = [
+  "US",
+  "IND", 
+  "IND", 
+  "RUS",
+  "UK", 
+  "BRA", 
+  "FRA",
+  "ITA", 
+  "FRA",
+  "US",
+  "SPA", 
+  "CAN", 
+  "UK", 
+  "GER", 
+  "MEX", 
+  "SAU", 
+  "US",
+  "AUS", 
+  "SAF", 
+  "JAP", 
+  "US", 
+  "UK",
+  "ITA",
+  "GER",
+  "IND",
+  "US",
+  "US",
+  "IND", 
+  "IND", 
+  "RUS",
+  "UK", 
+  "BRA", 
+  "FRA",
+  "ITA", 
+  "FRA",
+  "US",
+  "SPA", 
+  "CAN", 
+  "UK", 
+  "GER", 
+  "MEX", 
+  "SAU", 
+  "US",
+  "AUS", 
+  "SAF", 
+  "JAP", 
+  "US", 
+  "UK",
+  "ITA",
+  "GER",
+  "IND",
+  "US",
+];
+const generateCountryPairs = (countries) => {
+  // Shuffle the countries array
+  const shuffledCountries = [...countries].sort(() => 0.5 - Math.random());
 
+  // Create pairs
+  const pairs = [];
+  for (let i = 0; i < shuffledCountries.length - 1; i += 2) {
+    pairs.push([shuffledCountries[i], shuffledCountries[i + 1]]);
+  }
+
+  // If the number of countries is odd, add the last country as a single element pair
+  if (shuffledCountries.length % 2 !== 0) {
+    pairs.push([shuffledCountries[shuffledCountries.length - 1]]);
+  }
+
+  return pairs;
+};
+const countryPairs = generateCountryPairs(countries);
 const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [selectedTab, setSelectedTab] = useState("week");
-
+  const [topCountryPairs, setTopCountryPairs] = useState([]);
   const paginate = (exams, pageNumber) => {
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -21,6 +92,12 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
     setSelectedTab(tab);
     setCurrentPage(1);
   };
+
+  useEffect(() => {
+    // Set the pairs when the component mounts
+    setTopCountryPairs(countryPairs);
+  }, []);
+  
 
   const currentExams = selectedTab === "week" ? hotExamsWeek : hotExamMonthly;
   const paginatedExams = paginate(currentExams || [], currentPage);
@@ -101,9 +178,9 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                               </svg>
                             </div>
                           </div>
-                          <div className="w-auto p-2">
-                            <p className="text-sm font-medium text-coolGray-800">
-                              {hotExam?.exam_title}
+                          <div className="w-[70%] p-2">
+                            <p className="text-sm font-medium text-coolGray-800 text-wrap">
+                            {hotExam?.vendor_title} - {hotExam?.exam_code} - {hotExam?.exam_title}
                             </p>
                           </div>
                         </div>
@@ -111,7 +188,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 z-0 text-left">
                         <Link
                           className="font-medium text-blue-500 hotExam-link z-0"
-                          href={`/mock-exam-providers/${hotExam?.vendor_perma}`}
+                          href={`/mock-exam-provider/${hotExam?.vendor_perma}`}
                         >
                           {hotExam?.vendor_title}
                         </Link>
@@ -120,7 +197,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                         {hotExam?.exam_code}
                       </th>
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 text-left">
-                        US | UK
+                      {topCountryPairs[index] ? topCountryPairs[index].join(" | ") : "US | UK"}
                       </th>
                       <th className="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 text-left">
                         <div className="flex items-center gap-1">

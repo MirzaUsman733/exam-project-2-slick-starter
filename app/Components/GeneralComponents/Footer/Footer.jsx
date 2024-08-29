@@ -63,7 +63,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-3">
                     <a
-                      href="/mock-exam-providers"
+                      href="/mock-exam-provider"
                       className="text-gray-700 hover:text-blue-500"
                     >
                       Vendors

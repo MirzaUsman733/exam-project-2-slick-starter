@@ -3,19 +3,20 @@ import Link from "next/link";
 const ExamCard = ({ recentlyUpdated }) => {
   return (
     <div>
+      <div className="text-2xl font-bold">Recently Updated: </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-5">
         {recentlyUpdated?.map((exam) => {
           return (
             <Link
               href={`/mock-exam/${exam?.exam_vendor_perma}/${exam?.exam_perma}`}
               key={exam?.exam_code}
-              className="bg-white shadow-lg rounded-lg overflow-hidden my-5 hover:translate-y-[-5px] transition-transform duration-300"
+              className="bg-white shadow-lg rounded-lg overflow-hidden my-2 hover:translate-y-[-5px] transition-transform duration-300"
             >
               <div className="p-4 bg-blue-500 clip-path-polygon">
-                <h3 className="text-white text-lg font-semibold">
-                  {exam.exam_title}
+                <h3 className="text-white text-md font-semibold">
+                {exam.exam_vendor_title} - {exam?.exam_code}
                 </h3>
-                <p className="text-white mt-2">Code: {exam.exam_code}</p>
+                <p className="text-white mt-2">{exam.exam_title}</p>
               </div>
               <div className="flex items-center p-4">
                 <img

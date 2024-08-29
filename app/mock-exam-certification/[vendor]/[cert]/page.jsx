@@ -99,7 +99,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://dumps-collection.com/mock-exam-providers/${params?.vendor_perma}`,
+          url: `https://dumps-collection.com/mock-exam-provider/${vendor_perma}/${cert_perma}`,
         },
       ],
     },

@@ -433,7 +433,7 @@ const ExamProvider = ({ vendors }) => {
           {filteredVendors?.map((vendor) => (
             <Link
               key={vendor?.vendor_id}
-              href={`/mock-exam-providers/${vendor?.vendor_perma}`}
+              href={`/mock-exam-provider/${vendor?.vendor_perma}`}
             >
               <div className="group relative p-6 transform hover:scale-10 transition-transform duration-300 ease-in-out">
                 <div

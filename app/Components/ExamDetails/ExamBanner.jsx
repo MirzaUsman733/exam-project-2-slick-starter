@@ -1,6 +1,6 @@
 const ExamBanner = () => {
   return (
-    <div className="bg-blue-500 text-white flex justify-between items-center p-4 rounded-lg my-5 container mx-auto">
+    <div className="bg-blue-500 text-white flex-wrap flex justify-between items-center p-4 rounded-lg my-5 container mx-auto">
       <div>
         <h1 className="text-lg font-bold">
           The Ultimate Cisco Advantage: All 207 Exams, One Package,

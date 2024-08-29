@@ -1,20 +1,29 @@
 import React from "react";
-import ExamProvider from "../Components/exam-provider-components/ExamProvider";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
-const Page = async () => {
+import VendorDetails from "../../Components/exam-provider-components/VendorDetails";
+const Page = async ({ params }) => {
+  const vendorPerma = params.slug;
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendors`,
-    {
-      headers: {
-        "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-      },
+  const fetchRelatedExamData = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendor/${vendorPerma}`,
+        {
+          headers: {
+            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+          },
+        }
+      );
+      if (!res.ok) {
+        throw new Error(`Failed to fetch data: ${res.status}`);
+      }
+      const relatedExamData = await res.json();
+      return relatedExamData;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
     }
-  );
-  if (!res.ok) {
-    throw new Error(`Failed to fetch data: ${res.status}`);
-  }
-  const vendors = await res.json();
+  };
+  const vendorData = await fetchRelatedExamData();
   return (
     <>
       <script
@@ -45,20 +54,29 @@ const Page = async () => {
           }),
         }}
       />
-      <ExamProvider vendors={vendors} />
-      <div className="mt-10">
-        <HotExam />
-      </div>
+      <VendorDetails vendorData={vendorData} vendorPerma={vendorPerma} />
     </>
   );
 };
 
 export default Page;
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }) {
+  const vendorPerma = params.slug;
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendor/${vendorPerma}`,
+    {
+      headers: {
+        "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+      },
+    }
+  );
+
+  const metaDATA = await response.json();
   return {
-    title: `Updated Mock Exam by IT Professionals`,
+    title: `Updated ${params?.slug} Mock Exam by IT Professionals`,
     description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
+
     robots: {
       index: true,
     },
@@ -66,7 +84,7 @@ export async function generateMetadata() {
       other: [
         {
           rel: "canonical",
-          url: `https://dumps-collection.com/mock-exam-providers`,
+          url: `https://dumps-collection.com/mock-exam-provider/${params?.slug}`,
         },
       ],
     },
