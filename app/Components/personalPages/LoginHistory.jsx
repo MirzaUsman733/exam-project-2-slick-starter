@@ -13,12 +13,15 @@ const LoginHistory = () => {
   const fetchData = async () => {
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-      const response = await axios.get(`${process?.env?.NEXT_PUBLIC_API_BASE_URL}/v1/account/login-history`, {
-        headers: {
-          "x-api-key": process.env.NEXT_PUBLIC_API_KEY ,
-          Authorization: `Bearer ${loginResponse._token}`,
-        },
-      });
+      const response = await axios.get(
+        `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/v1/account/login-history`,
+        {
+          headers: {
+            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+            Authorization: `Bearer ${loginResponse._token}`,
+          },
+        }
+      );
       setData(response.data.history);
       setLoading(false);
     } catch (error) {
@@ -40,32 +43,32 @@ const LoginHistory = () => {
   };
 
   return (
-    <div className="container max-w-5xl mx-auto p-6">
-        <h1 className="text-3xl text-center font-bold mb-10">Login History</h1>
-      <div className="relative overflow-x-auto shadow-sm sm:rounded-lg">
-        <table className="w-full text-sm text-left rtl:text-right text-white">
-          <thead className="text-xs uppercase bg-gradient-to-r from-blue-500 to-blue-500">
+    <div className="container mx-auto p-6 max-w-4xl">
+      <h1 className="text-4xl text-center font-bold text-gray-800 mb-8">
+        Login History
+      </h1>
+      <div className="overflow-x-auto shadow-lg rounded-lg border border-gray-200">
+        <table className="w-full text-sm text-gray-700">
+          <thead className="text-xs font-semibold uppercase text-gray-600 bg-gray-100">
             <tr>
-              <th scope="col" className="px-10 py-3">
-                Ip Address
+              <th scope="col" className="px-6 py-3 text-left">
+                IP Address
               </th>
               <th scope="col" className="px-6 py-3 text-right">
-                Date of login session
+                Date of Login Session
               </th>
             </tr>
           </thead>
           <tbody>
             {loading
-              ? // Render Skeleton placeholders when loading
-                Array.from(Array(5)).map((_, index) => (
-                  <tr key={index}>
-                    <td colSpan="2">
-                      <Skeleton animation="wave" />
+              ? Array.from(Array(5)).map((_, index) => (
+                  <tr key={index} className="bg-white">
+                    <td colSpan="2" className="px-6 py-4">
+                      <Skeleton animation="wave" height={24} />
                     </td>
                   </tr>
                 ))
-              : // Render actual data when not loading
-                (rowsPerPage > 0
+              : (rowsPerPage > 0
                   ? data.slice(
                       page * rowsPerPage,
                       page * rowsPerPage + rowsPerPage
@@ -73,39 +76,33 @@ const LoginHistory = () => {
                   : data
                 ).map((item, index) => (
                   <tr
-                    className="bg-white border-b hover:bg-gray-50"
                     key={index}
+                    className={`${
+                      index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                    } hover:bg-gray-100`}
                   >
-                    <td className="px-6 py-4 text-gray-900 whitespace-nowrap ">
-                      <div className="ps-3">
-                        <div className="text-base text-gray-700 font-semibold ">
-                          {item.ip}
-                        </div>
-                      </div>
+                    <td className="px-6 py-4 font-medium">
+                      {item.ip}
                     </td>
-                    <td className="px-6 py-4 text-gray-900 whitespace-nowrap text-right">
-                      <div className="ps-3">
-                        <div className="text-base text-gray-700 font-semibold ">
-                          {moment
-                            .utc(item.date)
-                            .format("MMM DD yyyy : hh:mm A")}
-                        </div>
-                      </div>
+                    <td className="px-6 py-4 text-right">
+                      {moment.utc(item.date).format("MMM DD, YYYY | hh:mm A")}
                     </td>
                   </tr>
                 ))}
-            <TablePagination
-              sx={{ bgcolor: "white" }}
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-              colSpan={12}
-              count={data.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
           </tbody>
         </table>
+        <div className="bg-white p-4">
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+            component="div"
+            count={data.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            className="text-gray-600"
+          />
+        </div>
       </div>
     </div>
   );

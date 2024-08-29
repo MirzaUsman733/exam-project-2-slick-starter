@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const DownloadHistory = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(6);
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
@@ -44,75 +44,57 @@ const DownloadHistory = () => {
 
   return (
     <div className="container max-w-5xl mx-auto p-6 my-10">
-      <div className="relative overflow-x-auto shadow-lg sm:rounded-lg">
-        <table className="w-full text-sm text-left rtl:text-right text-white">
-          <thead className="text-xs uppercase bg-gradient-to-r from-blue-500 to-blue-500">
-            <tr>
-              <th scope="col" className="px-10 py-3">
-                Download Products History
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {loading
-              ? Array.from(Array(5)).map((_, index) => (
-                  <tr key={index}>
-                    <td colSpan="2">
-                      <Skeleton animation="wave" />
-                    </td>
-                  </tr>
-                ))
-              : (rowsPerPage > 0
-                  ? data.slice(
-                      page * rowsPerPage,
-                      page * rowsPerPage + rowsPerPage
-                    )
-                  : data
-                ).map((item, index) => (
-                  <tr
-                    className="bg-white border-b hover:bg-gray-50"
-                    key={index}
-                  >
-                    <td className="px-6 py-4 text-gray-900 whitespace-nowrap ">
-                      <div className="ps-3 flex justify-between">
-                        <div className="text-base text-blue-700 font-bold ">
-                          {item.title}
-                        </div>
-                        <div className="font-bold">({item.type})</div>    
-                      </div>
-                      <div className="ps-3">
-                        <div className="text-base text-green-700 font-semibold ">
-                          {item.name}
-                          
-                        </div>
-                      </div>
-                      <div className="ps-3">
-                        <div className="text-base text-gray-700 font-semibold ">
-                          IP: {item.ip}
-                        </div>
-                      </div>
-                      <div className="ps-3">
-                        <div className="text-base text-right text-gray-700 font-semibold ">
-                          {moment
-                            .utc(item.date)
-                            .format("MMM DD yyyy : hh:mm A")}
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-            <TablePagination
-              sx={{ bgcolor: "white" }}
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-              colSpan={12}
-              count={data.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </tbody>
-        </table>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+        Download Products History
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {loading
+          ? Array.from(Array(5)).map((_, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow">
+                <Skeleton variant="rectangular" height={150} />
+              </div>
+            ))
+          : (rowsPerPage > 0
+              ? data.slice(
+                  page * rowsPerPage,
+                  page * rowsPerPage + rowsPerPage
+                )
+              : data
+            ).map((item, index) => (
+              <div
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                key={index}
+              >
+                <h3 className="text-lg font-semibold text-blue-600 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500 mb-2">
+                  <strong>Type:</strong> {item.type}
+                </p>
+                <p className="text-sm text-green-600 mb-2">
+                  <strong>Name:</strong> {item.name}
+                </p>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>IP:</strong> {item.ip}
+                </p>
+                <p className="text-sm text-right text-gray-500">
+                  {moment.utc(item.date).format("MMM DD yyyy : hh:mm A")}
+                </p>
+              </div>
+            ))}
+      </div>
+      <div className="mt-6">
+        <TablePagination
+          sx={{ bgcolor: "white" }}
+          rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+          colSpan={12}
+          count={data.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          component="div"
+        />
       </div>
     </div>
   );

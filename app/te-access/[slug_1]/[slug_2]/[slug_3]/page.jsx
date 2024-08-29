@@ -202,7 +202,7 @@ const Page = ({ params }) => {
 
                 <Box sx={{ mt: 4, textAlign: "center" }}>
                   {teAccess.te_file && (
-                    <Link href={`https://certsgang.com${teAccess.te_file}`} passHref>
+                    <Link href={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${teAccess.te_file}`} passHref>
                       <Button
                         variant="contained"
                         sx={{
@@ -221,7 +221,7 @@ const Page = ({ params }) => {
                       </Button>
                     </Link>
                   )}
-                  {teAccess.te_file_zip && (
+                  {/* {teAccess.te_file_zip && (
                     <Link href={`https://certsgang.com${teAccess.te_file_zip}`} passHref>
                       <Button
                         variant="contained"
@@ -239,7 +239,7 @@ const Page = ({ params }) => {
                         Download .zip File
                       </Button>
                     </Link>
-                  )}
+                  )} */}
                 </Box>
 
                 <Box
