@@ -43,8 +43,8 @@ const DownloadHistory = () => {
   };
 
   return (
-    <div className=" container max-w-5xl mx-auto p-6 my-10">
-      <div className="relative overflow-x-auto shadow-sm sm:rounded-lg">
+    <div className="container max-w-5xl mx-auto p-6 my-10">
+      <div className="relative overflow-x-auto shadow-lg sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-white">
           <thead className="text-xs uppercase bg-gradient-to-r from-blue-500 to-blue-500">
             <tr>
@@ -75,10 +75,10 @@ const DownloadHistory = () => {
                   >
                     <td className="px-6 py-4 text-gray-900 whitespace-nowrap ">
                       <div className="ps-3 flex justify-between">
-                        <div className="text-base text-blue-700 font-semibold ">
+                        <div className="text-base text-blue-700 font-bold ">
                           {item.title}
                         </div>
-                        <div style={{ color: "purple" }}>({item.type})</div>    
+                        <div className="font-bold">({item.type})</div>    
                       </div>
                       <div className="ps-3">
                         <div className="text-base text-green-700 font-semibold ">

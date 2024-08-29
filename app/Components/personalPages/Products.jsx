@@ -3,6 +3,7 @@
 import {
   Box,
   Collapse,
+  Icon,
   IconButton,
   Paper,
   Table,
@@ -12,7 +13,7 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  Typography
+  Typography,
 } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
@@ -25,27 +26,42 @@ function Row({ row }) {
   return (
     <>
       <TableRow hover sx={{ "& > *": { borderBottom: "unset" } }}>
-        <TableCell component="th" scope="row">
+        <TableCell component="th" scope="row" sx={{fontWeight: 'bold'}}>
           <IconButton
             aria-label="expand row"
             size="small"
             onClick={() => setOpen(!open)}
           >
-            {/* {open ? (
-              <Icon
-                icon="icon-park-outline:up"
-                width="1.2em"
-                height="1.2em"
-                style={{ color: "gray" }}
-              />
+            {open ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13 7.828V20h-2V7.828l-5.364 5.364l-1.414-1.414L12 4l7.778 7.778l-1.414 1.414z"
+                ></path>
+              </svg>
             ) : (
-              <Icon
-                icon="icon-park-outline:down"
-                width="1.2em"
-                height="1.2em"
-                style={{ color: "gray" }}
-              />
-            )} */}
+              <svg
+                className="text-gray-500"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="m12 19l6-6m-6 6l-6-6m6 6V5"
+                ></path>
+              </svg>
+            )}
           </IconButton>{" "}
           {row.product_vendor ? row.product_vendor : row.product_type_detail}
         </TableCell>
@@ -91,9 +107,9 @@ function Row({ row }) {
                       <TableCell>
                         {product.type === "download_pdf" ? (
                           <Link
-                            href={`https://api.dumpsboss.com${product.url}`}
+                            href={`https://certsgang.com${product.url}`}
                           >
-                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white ">
+                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-blue-500 group-hover:from-blue-700 group-hover:to-blue-700 hover:text-white dark:text-white ">
                               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
                                 {product.anchor}
                               </span>
@@ -103,7 +119,7 @@ function Row({ row }) {
                           <Link
                             href={`/te-access/${product.prams.payment_id}/${product.prams.exam_id}/${product.prams.rel_id}`}
                           >
-                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white ">
+                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-blue-500 group-hover:from-blue-700 group-hover:to-blue-700 hover:text-white dark:text-white ">
                               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
                                 {product.anchor}
                               </span>
@@ -113,7 +129,7 @@ function Row({ row }) {
                           <Link
                             href={`/sc-access/${product.prams.payment_id}/${product.prams.exam_id}`}
                           >
-                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white ">
+                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-blue-500 group-hover:from-blue-700 group-hover:to-blue-700 hover:text-white dark:text-white ">
                               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
                                 {product.anchor}
                               </span>
@@ -123,7 +139,7 @@ function Row({ row }) {
                           <Link
                             href={`/unlimited-te-access/${product.prams.payment_id}/${product.prams.rel_id}`}
                           >
-                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white ">
+                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-blue-500 group-hover:from-blue-700 group-hover:to-blue-700 hover:text-white dark:text-white ">
                               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
                                 {product.anchor}
                               </span>
@@ -133,7 +149,7 @@ function Row({ row }) {
                           <Link
                             href={`/unlimited-pdf-access/${product.prams.payment_id}/${product.prams.rel_id}`}
                           >
-                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white ">
+                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-blue-500 group-hover:from-blue-700 group-hover:to-blue-700 hover:text-white dark:text-white ">
                               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
                                 {product.anchor}
                               </span>
@@ -171,12 +187,15 @@ const Products = () => {
           return;
         }
 
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/products`, {
-          headers: {
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-            Authorization: `Bearer ${loginResponse._token}`,
-          },
-        });
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/products`,
+          {
+            headers: {
+              "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+              Authorization: `Bearer ${loginResponse._token}`,
+            },
+          }
+        );
         setProducts(response.data);
       } catch (error) {
         console.error("Error:", error.message);
@@ -196,10 +215,16 @@ const Products = () => {
   };
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className="max-w-5xl mx-auto mt-10">
+      <div>
+        <h1 className="text-4xl text-center font-bold mb-5 font-[lato]" >Products</h1>
+      </div>
       <Table aria-label="collapsible table">
         <TableHead>
-          <TableRow className="text-white bg-gradient-to-br from-gray-800 to-blue-400">
+          <TableRow
+            className="text-white bg-gradient-to-br from-blue-500 to-blue-500 rounded-full"
+            sx={{ borderRadius: "50px" }}
+          >
             <TableCell align="left" sx={{ color: "white" }}>
               <b>Vendor Name</b>
             </TableCell>
