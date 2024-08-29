@@ -71,7 +71,21 @@ function Row({ row }) {
                   {row?.product_access?.map((product) => (
                     <TableRow key={product.anchor}>
                       <TableCell>
-                        <Link href={product.url.startsWith("http") ? product.url : `https://certsgang.com${product.url}`}>
+                      <Link
+                          href={
+                            product.type === "download_pdf"
+                              ? `https://certsgang.com${product.url}`
+                              : product.type === "te_access"
+                              ? `/te-access/${product.prams.payment_id}/${product.prams.exam_id}/${product.prams.rel_id}`
+                              : product.type === "sc_access"
+                              ? `/sc-access/${product.prams.payment_id}/${product.prams.exam_id}`
+                              : product.type === "unlimited_te_access"
+                              ? `/unlimited-te-access/${product.prams.payment_id}/${product.prams.rel_id}`
+                              : product.type === "unlimited_pdf_access"
+                              ? `/unlimited-pdf-access/${product.prams.payment_id}/${product.prams.rel_id}`
+                              : "#"
+                          }
+                        >
                           <button className="relative inline-flex items-center justify-center p-1.5 mb-2 me-2 overflow-hidden text-sm font-medium text-blue-700 border border-blue-700 rounded-lg hover:bg-blue-700 hover:text-white transition">
                             {product.anchor}
                           </button>
