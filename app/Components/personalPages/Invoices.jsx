@@ -68,7 +68,7 @@ const Invoices = () => {
               ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : data
             ).map((item) => (
-              <tr className="bg-white border-b hover:bg-gray-50">
+              <tr className="bg-white border-b hover:bg-gray-50" key={item.invoice_id}>
                 <th
                   scope="row"
                   className="flex items-center px-6 py-2 text-gray-900 whitespace-nowrap dark:text-white"

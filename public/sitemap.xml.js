@@ -13,7 +13,7 @@ export default async function sitemap() {
   
 
   return data.map((item) => ({
-    url: `https://examprince.com/mockup-exam-providers/${item.vendor_perma}`,
+    url: `https://dumps-collection.com/mockup-exam-providers/${item.vendor_perma}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));

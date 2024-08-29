@@ -22,7 +22,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ExpandMore, FileCopyOutlined, DownloadOutlined } from '@mui/icons-material';
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const [teAccess, setTeAccess] = useState({});
   const [copiedKeyIndex, setCopiedKeyIndex] = useState(-1);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -89,7 +89,7 @@ const page = ({ params }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "50px 20px",
+        //   padding: "50px 20px",
         }}
       >
         <Container maxWidth="md">
@@ -144,7 +144,7 @@ const page = ({ params }) => {
                         }}
                       >
                         <AccordionSummary
-                          expandIcon={<ExpandMore style={{ color: "#ffffff" }} />}
+                          expandIcon={<ExpandMore style={{ color: "#000" }} />}
                           sx={{
                             background: "rgba(255, 255, 255, 0.3)",
                             backdropFilter: "blur(8px)",
@@ -173,7 +173,7 @@ const page = ({ params }) => {
                                     )
                                   }
                                 >
-                                  <FileCopyOutlined style={{ color: "#ffffff" }} />
+                                  <FileCopyOutlined style={{ color: "#000" }} />
                                 </IconButton>
                               ),
                             }}
@@ -206,28 +206,28 @@ const page = ({ params }) => {
                       <Button
                         variant="contained"
                         sx={{
-                          background: "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
-                          color: "black",
+                          background: "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
+                          color: "white",
                           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                           borderRadius: "8px",
                           "&:hover": {
-                            background: "linear-gradient(135deg, #0072ff 0%, #00c6ff 100%)",
+                            background: "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
                           },
                           mr: 2,
                         }}
                         startIcon={<DownloadOutlined />}
                       >
-                        Download .ExamPrinceFile
+                        Download .dumpscollections
                       </Button>
                     </Link>
                   )}
                   {teAccess.te_file_zip && (
-                    <Link href={`https://api.dumpsboss.com${teAccess.te_file_zip}`} passHref>
+                    <Link href={`https://certsgang.com${teAccess.te_file_zip}`} passHref>
                       <Button
                         variant="contained"
                         sx={{
-                          background: "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
-                          color: "black",
+                            background: "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
+                            color: "white",
                           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                           borderRadius: "8px",
                           "&:hover": {
@@ -258,9 +258,9 @@ const page = ({ params }) => {
                     How To Use?
                   </Typography>
                   <Typography variant="body1">
-                    Download the ExamPrinceTest Engine Simulator and install it. Then, download the premium
-                    .ExamPrincefile using the buttons above. You will receive a .zip file. Unzip it and
-                    add it to the ExamPrinceTest Engine Simulator. Activate the premium .ExamPrincefile
+                    Download the DumpsCollectionTest Engine Simulator and install it. Then, download the premium
+                    .dumpscollectionfile using the buttons above. You will receive a .zip file. Unzip it and
+                    add it to the DumpsCollectionTest Engine Simulator. Activate the premium .dumpscollectionfile
                     with the provided purchase and activation keys.
                   </Typography>
                 </Box>
@@ -273,4 +273,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
