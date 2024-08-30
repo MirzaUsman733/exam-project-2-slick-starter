@@ -3,7 +3,12 @@
 import withAuth from "../Components/authComponents/ProfileProtector";
 
 const layout = ({ children }) => {
-  return children;
+  return(
+<div>
+  {children}
+</div>
+  ) 
+  
 };
 
 export default withAuth(layout);
