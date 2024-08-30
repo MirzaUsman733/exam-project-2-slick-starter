@@ -152,37 +152,34 @@ const HeaderCard = ({
 
           <div className="bg-blue-50 border rounded-2xl p-5">
             {examPrices?.map((item, index) => (
+            <div
+            key={item.type}
+            className="flex items-center justify-between flex-wrap py-2 text-lg border-b border-gray-300 last:border-b-0"
+          >
+            <div className="flex flex-wrap justify-between w-full md:w-auto md:justify-normal gap-2 md:gap-2 lg:gap-3 items-center mb-1 md:mb-0 ">
+              <p className="font-semibold text-sm md:text-md whitespace-nowrap">
+                {item.title}
+              </p>
               <div
-                key={item.type}
-                className={`flex items-center flex-wrap justify-between py-2 text-lg ${
-                  index !== examPrices.length - 1 ? "" : ""
+                className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
+                  item.off >= 70
+                    ? "text-red-800 bg-red-200 rounded-full px-1 md:px-2"
+                    : "text-blue-500 bg-blue-200 rounded-full px-1 md:px-2"
                 }`}
               >
-                <div className="flex flex-wrap gap-1 md:gap-2 lg:gap-3 items-center">
-                  <p className="font-semibold text-sm md:text-md">
-                    {item.title}
-                  </p>
-                  <div
-                    className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
-                      item.off >= 70
-                        ? "text-red-800 bg-red-200 rounded-3xl px-1 md:px-2"
-                        : "text-blue-500 bg-blue-200 rounded-3xl px-1 md:px-2"
-                    }`}
-                  >
-                    {item.off}% Off
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <p className="text-blue-600 font-bold mr-2">${item.price}</p>
-                  <p className="text-red-600 text-xs align-super line-through">
-                    ${item.full_price}
-                  </p>
-                  <AddToCartButton
-                    item={item}
-                    onAddToCart={handleAddToCartSuccess}
-                  />
-                </div>
+                {item.off}% Off
               </div>
+            </div>
+            <div className="w-full md:w-auto flex items-center justify-between md:justify-normal">
+              <p className="text-blue-600 font-bold mr-2">${item.price}</p>
+              <p className="text-red-600 text-xs line-through">${item.full_price}</p>
+              <AddToCartButton
+                item={item}
+                onAddToCart={handleAddToCartSuccess}
+              />
+            </div>
+          </div>
+          
             ))}
           </div>
         </div>
