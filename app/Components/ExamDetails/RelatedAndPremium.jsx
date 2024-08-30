@@ -1,6 +1,6 @@
 const RelatedAndPremium = ({ questionTypes, examCode }) => {
   return (
-    <div>
+    <div className="w-full">
       <h1 className="text-center text-blue-600 text-4xl font-bold mb-20">
         What is in Premium File
       </h1>

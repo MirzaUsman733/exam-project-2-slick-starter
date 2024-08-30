@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import AddToCartButton from "../add-to-cart/AddToCartButton";
 import Notification from "../add-to-cart/Notification";
+import axios from "axios";
 
 const HeaderCard = ({
+  examPerma,
   examTitle,
   examCode,
   lastUpdate,
@@ -17,6 +19,8 @@ const HeaderCard = ({
   const [notificationMessage, setNotificationMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
+  const [downloadLinks, setDownloadLinks] = useState([]);
 
   const handleAddToCartSuccess = () => {
     setNotificationMessage(
@@ -31,17 +35,44 @@ const HeaderCard = ({
   const handleModalClose = () => {
     setIsModalOpen(false);
     setEmail("");
+    setIsEmailSubmitted(false);
   };
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    // Handle email submission logic here (e.g., API call)
-    handleModalClose();
-    alert(`Email ${email} submitted successfully!`);
+    if (email) {
+      try {
+        const response = await axios.post(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/demo`,
+          {
+            email,
+            exam_perma: examPerma,
+          },
+          {
+            headers: {
+              "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+            },
+          }
+        );
+  
+        if (response && response.data) {
+          setIsEmailSubmitted(true);
+          setDownloadLinks(response.data); // Store the links in state
+          alert(`Email ${email} submitted successfully!`);
+        } else {
+          alert("Failed to submit email. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error submitting email:", error);
+        alert("An error occurred. Please try again.");
+      }
+    }
   };
-
   return (
     <div className="container mx-auto p-4">
+      <h1 className="text-xl md:text-left text-center md:text-3xl font-bold md:hidden block md:mb-5">
+        {examVendorTitle} - {examCode} - {examTitle} - Questions Answers
+      </h1>
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
         <div className="col-span-1 lg:col-span-2">
           <div className="flex justify-center mb-4">
@@ -81,7 +112,7 @@ const HeaderCard = ({
 
         <div className="col-span-1 lg:col-span-3">
           <div className="mb-4">
-            <h1 className="text-3xl font-semibold mb-5">
+            <h1 className="text-3xl font-semibold hidden md:block mb-5">
               {examVendorTitle} - {examCode} - {examTitle} - Questions Answers
             </h1>
             <div className="text-lg flex py-1">
@@ -123,11 +154,11 @@ const HeaderCard = ({
             {examPrices?.map((item, index) => (
               <div
                 key={item.type}
-                className={`flex items-center justify-between py-2 text-lg ${
+                className={`flex items-center flex-wrap justify-between py-2 text-lg ${
                   index !== examPrices.length - 1 ? "" : ""
                 }`}
               >
-                <div className="flex gap-1 md:gap-2 lg:gap-3 items-center">
+                <div className="flex flex-wrap gap-1 md:gap-2 lg:gap-3 items-center">
                   <p className="font-semibold text-sm md:text-md">
                     {item.title}
                   </p>
@@ -136,7 +167,7 @@ const HeaderCard = ({
                       item.off >= 70
                         ? "text-red-800 bg-red-200 rounded-3xl px-1 md:px-2"
                         : "text-blue-500 bg-blue-200 rounded-3xl px-1 md:px-2"
-                    } `}
+                    }`}
                   >
                     {item.off}% Off
                   </div>
@@ -156,38 +187,83 @@ const HeaderCard = ({
           </div>
         </div>
       </div>
-
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full relative">
-            <h2 className="text-2xl font-semibold mb-4 text-center">Download Demo</h2>
-            <p className="mb-4 text-center">
-              Please enter your email to receive the demo download link.
-            </p>
-            <form onSubmit={handleEmailSubmit}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full p-2 border border-gray-300 rounded mb-4"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 text-white px-4 py-2 rounded w-full"
-              >
-                Submit
-              </button>
-            </form>
-
-            <div className="mt-6">
-              <ul className="space-y-2">
+          <div className="bg-gradient-to-r from-white to-blue-100 p-8 rounded-xl shadow-2xl max-w-lg w-full relative">
+            <h2 className="text-3xl font-bold mb-4 text-center text-blue-600">
+              Get Download Demo
+            </h2>
+            {!isEmailSubmitted ? (
+              <>
+                <p className="mb-6 text-center text-gray-700">
+                  Please enter your email to receive the demo download link.
+                </p>
+                <form onSubmit={handleEmailSubmit} className="mb-6">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full p-3 border border-blue-400 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg w-full mb-4 hover:from-blue-600 hover:to-blue-800 transition-all duration-300 flex justify-center items-center gap-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"
+                      ></path>
+                    </svg>
+                    <span>Get Demo Downloads</span>
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="space-y-4">
+    {downloadLinks.map((link, index) => (
+      <a
+        key={index}
+        href={`${process.env.NEXT_PUBLIC_API_BASE_URL}${link.link}`}
+        download
+        className={`bg-green-500 text-white px-4 py-3 rounded-lg w-full hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-2`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 32 32"
+        >
+          <path
+            fill="currentColor"
+            d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"
+          ></path>
+        </svg>
+        <span>Download {link.type.toUpperCase()} Demo</span>
+      </a>
+    ))}
+    {/* <button
+      className="bg-gray-600 text-white px-4 py-3 rounded-lg w-full hover:bg-gray-700 transition-all duration-300"
+      onClick={handleModalClose}
+    >
+      Close
+    </button> */}
+  </div>
+            )}
+            <div className="flex justify-between items-center mt-5">
+              <ul className="space-y-3 text-gray-800">
                 <li className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                    className="w-5 h-5 text-green-500 mr-2"
+                    className="w-6 h-6 text-blue-500 mr-3"
                     viewBox="0 0 24 24"
                   >
                     <path d="M10 15l-5.5-5.5 1.414-1.414L10 12.172l8.086-8.086L19.5 5.5z" />
@@ -198,29 +274,29 @@ const HeaderCard = ({
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                    className="w-5 h-5 text-green-500 mr-2"
+                    className="w-6 h-6 text-blue-500 mr-3"
                     viewBox="0 0 24 24"
                   >
                     <path d="M10 15l-5.5-5.5 1.414-1.414L10 12.172l8.086-8.086L19.5 5.5z" />
                   </svg>
-                  Hassle Free Refund
+                  Hassle-Free Refund
                 </li>
                 <li className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                    className="w-5 h-5 text-green-500 mr-2"
+                    className="w-6 h-6 text-blue-500 mr-3"
                     viewBox="0 0 24 24"
                   >
                     <path d="M10 15l-5.5-5.5 1.414-1.414L10 12.172l8.086-8.086L19.5 5.5z" />
-                    </svg>
+                  </svg>
                   Instant Downloads
                 </li>
                 <li className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                    className="w-5 h-5 text-green-500 mr-2"
+                    className="w-6 h-6 text-blue-500 mr-3"
                     viewBox="0 0 24 24"
                   >
                     <path d="M10 15l-5.5-5.5 1.414-1.414L10 12.172l8.086-8.086L19.5 5.5z" />
@@ -231,7 +307,7 @@ const HeaderCard = ({
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                    className="w-5 h-5 text-green-500 mr-2"
+                    className="w-6 h-6 text-blue-500 mr-3"
                     viewBox="0 0 24 24"
                   >
                     <path d="M10 15l-5.5-5.5 1.414-1.414L10 12.172l8.086-8.086L19.5 5.5z" />
@@ -239,13 +315,28 @@ const HeaderCard = ({
                   Secure Shopping
                 </li>
               </ul>
+              <img
+                src="https://exam-hero.netlify.app/product2.png"
+                alt="Marks4Sure"
+                className="w-32 h-28"
+              />
             </div>
 
             <button
               onClick={handleModalClose}
-              className="mt-6 text-blue-600 underline absolute top-4 right-4"
+              className="absolute top-4 right-4 text-blue-600 underline hover:text-blue-800 transition-all duration-300"
             >
-              Close
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
+                ></path>
+              </svg>
             </button>
           </div>
         </div>

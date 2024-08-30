@@ -39,7 +39,7 @@ const RelatedExams = async ({ vendorPerma }) => {
           Related Exams
         </h1>
       </div>
-      {uniqueExams?.slice(0, 6)?.map((examCart) => (
+      {uniqueExams?.slice(0, 8)?.map((examCart) => (
         <Link
           className="w-full lg:max-w-md border mb-5 block rounded-lg"
           href={examCart.exam_perma}

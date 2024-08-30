@@ -18,6 +18,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
       <ExamBanner />
       {examData && examData.exam_title && (
         <HeaderCard
+        examPerma= {examPerma}
           examTitle={examData?.exam_title}
           examCode={examData?.exam_code}
           lastUpdate={formattedDate}
@@ -63,17 +64,17 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
       <Comments examPerma={examPerma} />
       <hr className="mb-4 container mx-auto max-w-[70%]" />
       <HotExam />
-      {examData && examData.exam_topics.length > 0 && (
+      {examData && examData?.exam_topics?.length > 0 && (
         <hr className="mb-4 container mx-auto" />
       )}
-      {examData && examData.exam_vendor_perma && (
+      {examData && examData?.exam_vendor_perma && (
         <OtherRelatedExam vendorPerma={examData?.exam_vendor_perma} />
       )}
       <hr className="my-4 container mx-auto" />
       <div className="container mx-auto p-6">
         <div className="grid grid-cols-1 lg:grid-cols-4">
           <div className="lg:col-span-3">
-            {examData && examData.exam_faqs.length > 0 && (
+            {examData && examData?.exam_faqs?.length > 0 && (
               <FAQS exam_faqs={examData?.exam_faqs} />
             )}
           </div>
@@ -84,7 +85,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
                 examCode={examData?.exam_code}
               />
             )} */}
-            {examData && examData.exam_vendor_perma && (
+            {examData && examData?.exam_vendor_perma && (
               <RelatedExams vendorPerma={examData?.exam_vendor_perma} />
             )}
           </div>

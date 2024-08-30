@@ -24,29 +24,6 @@ const Footer = () => {
                 Chartered Financial Analyst® are registered trademarks owned by
                 the CFA Institute.
               </p>
-              <div className="mt-5">
-                <span className="text-black text-lg font-semibold block mb-5">
-                  Follow us
-                </span>
-                <a
-                  href="#"
-                  className="text-white text-lg mr-4 bg-[#3B5998] h-10 w-10 text-center leading-10 rounded-full inline-block"
-                >
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="#"
-                  className="text-white text-lg mr-4 bg-[#55ACEE] h-10 w-10 text-center leading-10 rounded-full inline-block"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#"
-                  className="text-white text-lg bg-[#DD4B39] h-10 w-10 text-center leading-10 rounded-full inline-block"
-                >
-                  <i className="fab fa-google-plus-g"></i>
-                </a>
-              </div>
             </div>
             <div className="w-full mb-12">
               <div className="mb-10 text-center">
