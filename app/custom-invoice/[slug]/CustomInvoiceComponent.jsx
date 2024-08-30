@@ -51,7 +51,6 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
       cart_items: formattedCartItems,
     };
 
-    console.log("Sendin g data to payment API:", payload);
     try {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/payment`,
@@ -67,7 +66,6 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
       setSnackbarMessage("Redrect to the Payment Page");
       setSnackbarSeverity("success");
       setSnackbarOpen(true);
-      console.log(response)
       router.push(response?.data?.redirect_link);
       // Redirect to payment gateway or display success message
     } catch (error) {

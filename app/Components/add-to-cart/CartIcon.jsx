@@ -6,7 +6,6 @@ import React, { useState, useEffect } from "react";
 const CartIcon = () => {
   const [cartItems, setCartItems] = useState(0);
   const { cart } = useCart();
-  console.log(cart);
   useEffect(() => {
    setCartItems(cart.length)
   }, [cart]);

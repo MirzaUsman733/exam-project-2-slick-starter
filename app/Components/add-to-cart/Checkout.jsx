@@ -18,8 +18,6 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("info");
-
-  console.log("Response Data : ", responseData);
   const calculateTotals = () => {
     const subtotal = responseData?.reduce(
       (acc, item) => acc + parseFloat(item.full_price),
@@ -84,7 +82,6 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
       cart_items: formattedCartItems,
     };
 
-    console.log("Sending data to payment API:", payload);
     try {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/payment`,

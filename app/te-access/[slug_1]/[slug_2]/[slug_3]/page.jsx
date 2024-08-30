@@ -53,7 +53,6 @@ const Page = ({ params }) => {
                 },
               }
             );
-            console.log(response.data)
             setTeAccess(response.data);
           } catch (error) {
             console.error("Error fetching data:", error);

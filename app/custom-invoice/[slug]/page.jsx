@@ -24,7 +24,6 @@ const Page = async({ params }) => {
     }
   };
   const CustomInvoiceData = await fetchCustomInvoice();
-  console.log(CustomInvoiceData)
   return (
     <div>
       <CustomInvoiceComponent

@@ -23,7 +23,6 @@ const Invoices = () => {
           },
         }
       );
-      console.log("Response Data: ", response.data);
       setData(response.data);
       setLoading(false);
     } catch (error) {

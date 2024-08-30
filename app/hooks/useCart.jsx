@@ -47,13 +47,9 @@ function useCart() {
   const removeFromCart = (itemCartIdentifier) => {
     const itemPrefix =
       itemCartIdentifier.split("_").slice(0, 5).join("_") + "_";
-    console.log(itemPrefix);
     setCart((prevCart) => {
       return prevCart.filter((cartItem) => {
-        console.log(
-          "CArt Item Cart : ",
-          cartItem.cart.split("_").slice(0, 5).join("_") + "_"
-        );
+
         return (
           cartItem.cart.split("_").slice(0, 5).join("_") + "_" !== itemPrefix
         );

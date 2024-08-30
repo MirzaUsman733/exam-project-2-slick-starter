@@ -85,7 +85,6 @@ const Register = () => {
           },
         }
       );
-      console.log("Registration successful:", response.data);
       if (response.data) {
         window.location.href = "/login";
       }
