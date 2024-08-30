@@ -71,26 +71,6 @@ export default page;
 
 export async function generateMetadata({ params }) {
   const courseId = params.id;
-  const fetchCourseDetail = async () => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/training-course/${courseId}`,
-        {
-          headers: {
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        }
-      );
-      if (!res.ok) {
-        throw new Error(`Failed to fetch data: ${res.status}`);
-      }
-      const courseDetail = await res.json();
-      return courseDetail;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      return [];
-    }
-  };
   return {
     title: `Updated ${courseId} Mock Exam by IT Professionals`,
     description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,

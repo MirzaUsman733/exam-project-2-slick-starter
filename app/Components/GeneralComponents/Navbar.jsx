@@ -40,14 +40,6 @@ export default async function Navbar() {
             />
           </Link>
           <ul className="flex space-x-12">
-            {/* <li>
-              <Link
-                className="text-gray-700 hover:text-blue-500 header-link font-medium"
-                href="/"
-              >
-                Home
-              </Link>
-            </li> */}
             <DropdownVendorMenu title="Vendors" vendors={vendors} />
             <DropdownCertificationMenu
               title="Certifications"
@@ -72,52 +64,9 @@ export default async function Navbar() {
           </ul>
           <div className="flex items-center space-x-8">
             <div className="ml-auto flex items-center">
-              {/* <a
-                className="inline-block mr-8 text-gray-700 hover:text-blue-500 header-link"
-                href="#"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.5 16.5L11.5 11.5M13.1667 7.33333C13.1667 10.555 10.555 13.1667 7.33333 13.1667C4.11167 13.1667 1.5 10.555 1.5 7.33333C1.5 4.11167 4.11167 1.5 7.33333 1.5C10.555 1.5 13.1667 4.11167 13.1667 7.33333Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </a> */}
-              
               <div className="mr-5 mt-1">
                 <SearchCard />
               </div>
-              {/* <a className="mr-8 group inline-flex items-center" href="#">
-                <span className="text-gray-700 group-hover:text-blue-500">
-                  <svg
-                    width="16"
-                    height="18"
-                    viewBox="0 0 16 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.3334 8.16667V4.83333C11.3334 2.99238 9.84099 1.5 8.00004 1.5C6.15909 1.5 4.66671 2.99238 4.66671 4.83333V8.16667M2.16671 6.5H13.8334L14.6667 16.5H1.33337L2.16671 6.5Z"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></path>
-                  </svg>
-                </span>
-                <span className="-ml-2 flex items-center justify-center h-5 w-5 border-2 border-blueGray-800 bg-blue-500 group-hover:bg-blue-500 rounded-full">
-                  <span className="text-xs font-bold hover:text-white">3</span>
-                </span>
-              </a> */}
               <CartIcon />
               <AccountDropdown />
             </div>
@@ -129,28 +78,32 @@ export default async function Navbar() {
         <nav className="xl:hidden relative px-6 py-5 bg-white flex items-center justify-between">
           <Link href="/">
             <img
-              className="h-6"
-              src="/examprince_dark_svg.svg"
+              className="h-9 my-0 py-0"
+              src="/Dumps-Collections-logo.png"
               alt="Logo"
               width="auto"
             />
           </Link>
-          {/* <div className="flex items-start md:gap-2 lg:gap-5 xl:hidden"> */}
+          <div className="flex items-center">
+            <div className="mr-3 mt-1">
+              <SearchCard />
+            </div>
+            <CartIcon />
             <ToggleButton />
-          {/* </div> */}
+          </div>
         </nav>
         <div id="drawer" className="hidden xl:hidden">
           <div className="bg-white h-full overflow-y-auto ">
             <div className="px-6 py-6">
               <ul className="flex flex-col space-y-2">
-              <li>
-              <Link
-                className="text-gray-700 hover:text-blue-500 header-link font-medium"
-                href="/"
-              >
-                Home
-              </Link>
-            </li>
+                <li>
+                  <Link
+                    className="text-gray-700 hover:text-blue-500 header-link font-medium"
+                    href="/"
+                  >
+                    Home
+                  </Link>
+                </li>
                 <DropdownVendorMenu title="Vendors" vendors={vendors} />
                 <DropdownCertificationMenu
                   title="Certifications"
@@ -160,18 +113,17 @@ export default async function Navbar() {
                 <Link
                   className="block font-medium text-black hover:bg-gray-50"
                   href="/video-courses"
-                  >
+                >
                   Video Courses
                 </Link>
                 <Link
                   className="block font-medium text-black hover:bg-gray-50"
-                  href="#"
-                  >
+                  href="/unlimited-access"
+                >
                   Unlimited Access
                 </Link>
                 <div className="pt-5">
-                <AccountDropdown />
-
+                  <AccountDropdown />
                 </div>
               </ul>
             </div>

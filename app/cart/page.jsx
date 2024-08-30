@@ -5,16 +5,15 @@ import useCart from "../hooks/useCart";
 
 const Page = () => {
   const [responseData, setResponseData] = useState(null);
-  const { cart, removeFromCart  } = useCart();
+  const { cart } = useCart();
   const [coupon, setCoupon] = useState("MEGASALE");
-  
-  console.log("Cart Data : ",cart)
+  const formattedCartItems = cart.map((item) => item.cart);
   const handleApplyCoupon = (couponCode) => {
     setCoupon(couponCode);
   };
   useEffect(() => {
+    const formattedCartItems = cart.map((item) => item.cart);
     if (cart) {
-      const formattedCartItems = cart.map(item => item.cart);
       const requestData = {
         coupon: `${coupon}-30`,
         cart_items: formattedCartItems,
@@ -36,11 +35,14 @@ const Page = () => {
           console.error("Error:", error);
         });
     }
-  }, [coupon]);
-
+  }, [coupon, cart]);
   return (
     <div>
-      <Checkout responseData={responseData} onApplyCoupon={handleApplyCoupon} />
+      <Checkout
+        formattedCartItems={formattedCartItems}
+        responseData={responseData}
+        onApplyCoupon={handleApplyCoupon}
+      />
     </div>
   );
 };

@@ -12,8 +12,8 @@ const SearchCard = () => {
   const [certificationData, setCertificationData] = useState([]);
   const [isInputVisible, setIsInputVisible] = useState(false);
 
-  const normalizeText = (text) => {
-    return text.replace(/[-_\s]/g, "").toLowerCase();
+  const normalizeText = (value) => {
+    return value.replace(/[-_*$!@#$%^&()\s]/g, "").toLowerCase();
   };
 
   const fetchData = async () => {
@@ -76,19 +76,19 @@ const SearchCard = () => {
 
   const filteredData = searchData
     .filter((item) =>
-      normalizeText(item.code).startsWith(normalizedSearchValue)
+      normalizeText(item.code).includes(normalizedSearchValue)
     )
     .slice(0, 30);
 
   const filteredVendors = vendorData
     .filter((item) =>
-      normalizeText(item.slug).startsWith(normalizedSearchValue)
+      normalizeText(item.slug).includes(normalizedSearchValue)
     )
     .slice(0, 10);
 
   const filteredCertifications = certificationData
     .filter((item) =>
-      normalizeText(item.slug).startsWith(normalizedSearchValue)
+      normalizeText(item.slug).includes(normalizedSearchValue)
     )
     .slice(0, 10);
 
