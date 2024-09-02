@@ -5,9 +5,11 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
-  Button,
+  Tabs,
+  Tab,
+  IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 const ScAccessAccordian = ({ data }) => {
   const [selectedLecture, setSelectedLecture] = useState(null);
@@ -15,22 +17,11 @@ const ScAccessAccordian = ({ data }) => {
 
   const handleLectureClick = (lecture) => {
     setSelectedLecture(lecture);
+    setCurrentVideoIndex(0); // Reset to the first video when a lecture is selected
   };
 
-  const handleVideoNext = () => {
-    setCurrentVideoIndex((prevIndex) =>
-      prevIndex === selectedLecture?.lecture_videos.length - 1
-        ? 0
-        : prevIndex + 1
-    );
-  };
-
-  const handleVideoPrev = () => {
-    setCurrentVideoIndex((prevIndex) =>
-      prevIndex === 0
-        ? selectedLecture?.lecture_videos.length - 1
-        : prevIndex - 1
-    );
+  const handleTabChange = (event, newValue) => {
+    setCurrentVideoIndex(newValue);
   };
 
   const handleCloseDialog = () => {
@@ -49,7 +40,8 @@ const ScAccessAccordian = ({ data }) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {lectures.map((lecture, index) => {
-                const { lecture_seq, lecture_title, lecture_duration } = lecture;
+                const { lecture_seq, lecture_title, lecture_duration } =
+                  lecture;
                 return (
                   <div
                     key={index}
@@ -68,11 +60,18 @@ const ScAccessAccordian = ({ data }) => {
                           {lecture_title}
                         </h3>
                       </div>
-                      <span className="text-sm font-medium text-gray-500">
-                        {lecture_duration}
-                      </span>
                     </div>
-                    <div className="text-sm text-gray-600">Lecture {lecture_seq}</div>
+                    <div className="flex justify-between">
+                      <div className="text-sm text-gray-600">
+                        Lecture {lecture_seq}
+                      </div>
+                      <div>
+                        {" "}
+                        <span className="text-sm font-medium text-gray-500">
+                          {lecture_duration}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 );
               })}
@@ -85,54 +84,60 @@ const ScAccessAccordian = ({ data }) => {
         <Dialog
           open={!!selectedLecture}
           onClose={handleCloseDialog}
-          className="rounded-xl"
+          PaperProps={{
+            style: {
+              borderRadius: 16,
+              backgroundColor: "#f4f4f5",
+              padding: "16px",
+              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+              maxWidth: "70%",
+              margin: "auto",
+            },
+          }}
           maxWidth="md"
           fullWidth
         >
-          <DialogTitle className="bg-blue-600 text-white">
-            {selectedLecture?.lecture_title} - Video ({currentVideoIndex + 1} /{" "}
-            {selectedLecture?.lecture_videos.length})
-          </DialogTitle>
-          <DialogContent className="bg-gray-900">
-            <div className="relative">
+          <div className="flex justify-between items-center">
+            <DialogTitle className="text-gray-800 font-semibold text-xl">
+              {selectedLecture?.lecture_title}
+            </DialogTitle>
+            <IconButton onClick={handleCloseDialog}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          <DialogContent>
+            <Tabs
+              value={currentVideoIndex}
+              onChange={handleTabChange}
+              indicatorColor="primary"
+              textColor="primary"
+              variant="scrollable"
+              scrollButtons="auto"
+              className="-mt-5"
+            >
+              {selectedLecture?.lecture_videos.map((video, index) => (
+                <Tab key={index} label={`Server ${index + 1}`} />
+              ))}
+            </Tabs>
+            <div className="mt-4">
               {selectedLecture?.lecture_videos.map((video, index) => (
                 <div
                   key={index}
-                  className={`${
-                    index === currentVideoIndex ? "" : "hidden"
-                  } duration-700 ease-in-out`}
+                  className={index === currentVideoIndex ? "" : "hidden"}
                 >
-                  <video controls width="100%" height="auto" className="rounded-lg">
+                  <video
+                    controls
+                    width="100%"
+                    height="80%"
+                    className="rounded-lg border border-gray-300"
+                  >
                     <source src={video.source} type={`video/${video.type}`} />
                     Your browser does not support the video tag.
                   </video>
                 </div>
               ))}
-              <button
-                type="button"
-                className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-white bg-blue-600 hover:bg-blue-800 p-2 rounded-full focus:outline-none"
-                onClick={handleVideoPrev}
-              >
-                <Icon icon="mdi:chevron-left" width="1.5em" height="1.5em" />
-              </button>
-              <button
-                type="button"
-                className="absolute top-1/2 -right-4 transform -translate-y-1/2 text-white bg-blue-600 hover:bg-blue-800 p-2 rounded-full focus:outline-none"
-                onClick={handleVideoNext}
-              >
-                <Icon icon="mdi:chevron-right" width="1.5em" height="1.5em" />
-              </button>
             </div>
           </DialogContent>
-          <DialogActions className="bg-blue-500">
-            <Button
-              variant="contained"
-              onClick={handleCloseDialog}
-              className="bg-blue-500 hover:bg-blue-800 text-white"
-            >
-              Close
-            </Button>
-          </DialogActions>
         </Dialog>
       )}
     </div>

@@ -63,7 +63,7 @@ const Page = ({ params }) => {
 
     fetchData();
   }, [params.id_one, params.id_two, params.id_three]);
-
+  console.log(teAccess)
   return (
     <>
       <Snackbar
@@ -84,11 +84,9 @@ const Page = ({ params }) => {
       <Box
         sx={{
           minHeight: "100vh",
-        //   background: "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-        //   padding: "50px 20px",
         }}
       >
         <Container maxWidth="md">
@@ -151,7 +149,10 @@ const Page = ({ params }) => {
                             color: "black",
                           }}
                         >
+                          <div className="flex flex-col">
                           <Typography variant="h6">Activation Key {i + 1}</Typography>
+                          <Typography variant="body" sx={{color: 'rgb(185 28 28)'}}> {item.activation_key_used === true ? '' : 'Activication Key is Already used' } </Typography>
+                          </div>
                         </AccordionSummary>
                         <AccordionDetails sx={{ background: "rgba(255, 255, 255, 0.1)", padding: 2 }}>
                           <TextField

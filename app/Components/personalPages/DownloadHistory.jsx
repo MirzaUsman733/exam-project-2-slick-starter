@@ -43,7 +43,7 @@ const DownloadHistory = () => {
   };
 
   return (
-    <div className="container max-w-5xl mx-auto p-6 my-10">
+    <div className="container mx-auto p-6 my-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">
         Download Products History
       </h2>
@@ -65,12 +65,15 @@ const DownloadHistory = () => {
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 key={index}
               >
+                <div className="flex justify-between">
+
                 <h3 className="text-lg font-semibold text-blue-600 mb-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-500 mb-2">
                   <strong>Type:</strong> {item.type}
                 </p>
+                </div>
                 <p className="text-sm text-green-600 mb-2">
                   <strong>Name:</strong> {item.name}
                 </p>

@@ -60,7 +60,7 @@ const ScPriceCard = ({ data }) => {
             </ul>
           </div>
         </div>
-        <div className="mt-8 lg:mt-0 lg:w-1/3 flex flex-col items-center bg-blue-600 rounded-2xl p-6 shadow-lg border-t-4 border-indigo-500">
+        {/* <div className="mt-8 lg:mt-0 lg:w-1/3 flex flex-col items-center bg-blue-600 rounded-2xl p-6 shadow-lg border-t-4 border-indigo-500">
           <img
             src="/video-file-formats.svg"
             alt="video-file-formats"
@@ -75,7 +75,7 @@ const ScPriceCard = ({ data }) => {
               <span className="ml-2">BEST SELLER</span>
             </div>
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

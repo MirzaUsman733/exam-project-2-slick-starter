@@ -27,8 +27,7 @@ export default function DropdownMenu({ title, certifications }) {
 
   return (
     <li className="relative group dropdown-menu">
-      <Link
-        href="#"
+      <div
         onClick={(e) => {
           e.preventDefault();
           toggleDropdown();
@@ -36,7 +35,7 @@ export default function DropdownMenu({ title, certifications }) {
         className="inline-flex items-center text-gray-700 hover:text-blue-500 focus:text-blue-500 font-medium cursor-pointer"
       >
         {title} {isOpen ? <DropupIcon /> : <DropdownIcon />}
-      </Link>
+      </div>
       <div
         className={`absolute top-full left-24 bg-white min-w-max z-50 border shadow-xl rounded-lg xl:overflow-hidden overflow-auto h-32 xl:h-auto py-2
           ${isOpen ? "block" : "hidden"}`}
