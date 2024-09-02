@@ -116,6 +116,7 @@ const Products = () => {
       try {
         const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
         if (!loginResponse?._token) {
+          router.push("/login");
           return;
         }
 

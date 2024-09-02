@@ -1,3 +1,4 @@
+import Banner from "@/app/Components/Banner";
 import CertificationDetails from "@/app/Components/certifications-components/CertificationDetails";
 import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
 import React from "react";
@@ -57,6 +58,7 @@ const Page = async ({ params }) => {
           }),
         }}
       />
+      <Banner />
       <CertificationDetails
         certData={certData}
         vendorPerma={vendor_perma}

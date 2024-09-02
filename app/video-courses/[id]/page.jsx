@@ -1,3 +1,4 @@
+import Banner from "@/app/Components/Banner";
 import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
 import CourseHeader from "@/app/Components/videoCourses/CourseHeader";
 import VideoCoursesDetail from "@/app/Components/videoCourses/VideoCoursesDetail";
@@ -57,6 +58,7 @@ const page = async ({ params }) => {
           }),
         }}
       />
+      <Banner />
       <CourseHeader courseDetail={courseDetail} />
       <hr className="my-20" />
       <VideoCoursesDetail section={courseDetail.sections} />

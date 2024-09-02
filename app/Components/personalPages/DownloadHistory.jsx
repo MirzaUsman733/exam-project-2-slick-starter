@@ -13,6 +13,10 @@ const DownloadHistory = () => {
   const fetchData = async () => {
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+      if (!loginResponse?._token) {
+        router.push("/login");
+        return;
+      }
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/download-history`,
         {
@@ -55,10 +59,7 @@ const DownloadHistory = () => {
               </div>
             ))
           : (rowsPerPage > 0
-              ? data.slice(
-                  page * rowsPerPage,
-                  page * rowsPerPage + rowsPerPage
-                )
+              ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : data
             ).map((item, index) => (
               <div
@@ -66,13 +67,12 @@ const DownloadHistory = () => {
                 key={index}
               >
                 <div className="flex justify-between">
-
-                <h3 className="text-lg font-semibold text-blue-600 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-500 mb-2">
-                  <strong>Type:</strong> {item.type}
-                </p>
+                  <h3 className="text-lg font-semibold text-blue-600 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-nowrap text-gray-500 mb-2">
+                    <strong>Type:</strong> {item.type}
+                  </p>
                 </div>
                 <p className="text-sm text-green-600 mb-2">
                   <strong>Name:</strong> {item.name}

@@ -15,26 +15,25 @@ const Page = ({ params }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [selectedLetter, setSelectedLetter] = useState('A');
-  
 
   const handleCopyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     setSnackbarMessage("Copied to clipboard!");
     setSnackbarOpen(true);
   };
+
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
 
   const fetchActivationKeys = async (exam) => {
     setDialogOpen(true);
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    if (!loginResponse?._token) {
+      router.push("/login");
+      return;
+    }
     try {
-      const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        if (!loginResponse?._token) {
-          router.push("/login");
-          return;
-        }
-      console.log("Exam Activation URL: ", exam?.activation_keys_url);
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}${exam?.activation_keys_url}`,
         {
@@ -45,7 +44,6 @@ const Page = ({ params }) => {
         }
       );
       setActivationKeys(response.data);
-      console.log(response?.data);
     } catch (error) {
       console.error("Error fetching activation keys:", error.message);
     }
@@ -54,10 +52,10 @@ const Page = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        if (!loginResponse?._token) {
-          router.push("/login");
-          return;
-        }
+      if (!loginResponse?._token) {
+        router.push("/login");
+        return;
+      }
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/te-unlimited-access/${params.slug_1}/${params.slug_2}/${selectedLetter}`,
         {
@@ -73,25 +71,27 @@ const Page = ({ params }) => {
   }, [router, params.slug_1, params.slug_2, selectedLetter]);
 
   const handleLetterSelect = (letter) => {
-    console.log("Selected Letter:", letter);
     setSelectedLetter(letter); // Update the selected letter, triggering a re-fetch
   };
+
   return (
     <div className="container mx-auto px-4 py-8">
-        {unlimitedTeAccess?.vendors?.length ? (
+        <div className="text-center bg-blue-100 p-4 rounded-md shadow space-y-2">
+        <h2 className="text-xl font-semibold">Unlimited Test Engine Access</h2>
+        <p>You have unlimited access to Test Engine Dumps files.</p>
+        <p>You have downloaded: {unlimitedTeAccess?.total_downloaded}</p>
+        <p>Monthly Download Limit: {unlimitedTeAccess?.total_limit}</p>
+        <p>Each download of a different or the same Test Engine file will affect the download limit.</p>
+        <p className="text-red-600 font-semibold">For Activation Key. Must have to download TEST ENGINE file first.</p>
+      </div>
+      {unlimitedTeAccess?.vendors?.length ? (
         <AlphabetPagination onSelect={handleLetterSelect} />
-        ) : ''}
-         {/* Snackbar Component */}
+      ) : ''}
+      {/* Snackbar Component */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={1000}
         onClose={handleCloseSnackbar}
-        message={snackbarMessage}
-        action={
-          <button onClick={handleCloseSnackbar} className="text-white">
-            Close
-          </button>
-        }
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
         <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
@@ -100,7 +100,7 @@ const Page = ({ params }) => {
       </Snackbar>   
       {dialogOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md transform transition-transform duration-300 scale-100 hover:scale-105">
+          <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
             <h3 className="text-2xl font-bold text-gray-700 text-center mb-4">
               Activation Keys
             </h3>
@@ -115,10 +115,10 @@ const Page = ({ params }) => {
                   value={`${key?.purchase_key || ""} | ${
                     key?.activation_key || ""
                   }`}
-                  className="flex-1 text-gray-800 bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                  className="flex-1 text-gray-800 bg-white border border-gray-300 rounded-lg px-3 py-2 focus:outline-none"
                 />
                 <button
-                  className="ml-4 bg-gradient-to-r from-blue-500 to-blue-500 text-white py-2 px-4 rounded-lg hover:opacity-90 transition-opacity duration-200"
+                  className="ml-4 bg-blue-500 text-white py-2 px-4 rounded-lg"
                   onClick={() =>
                     handleCopyToClipboard(
                       `${key?.purchase_key || ""} | ${
@@ -133,7 +133,7 @@ const Page = ({ params }) => {
             ))}
 
             <button
-              className="mt-4 w-full py-2 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-300"
+              className="mt-4 w-full py-2 bg-red-500 text-white rounded-lg"
               onClick={() => setDialogOpen(false)}
             >
               Close
@@ -149,7 +149,7 @@ const Page = ({ params }) => {
           unlimitedTeAccess.vendors.map((vendor) => (
             <div
               key={vendor?.exam_id}
-              className="mb-8 p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="mb-8 p-6 bg-gray-100 rounded-lg shadow-md"
             >
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                 {vendor?.vendor_title}
@@ -169,7 +169,7 @@ const Page = ({ params }) => {
                   <div className="flex items-center justify-end">
                     <Link
                       href={`${process?.env?.NEXT_PUBLIC_API_BASE_URL}${exam?.download_url}`}
-                      className="text-blue-500 underline hover:text-blue-700 transition-colors duration-300"
+                      className="text-blue-500 underline"
                     >
                       Download Unlimited File
                     </Link>

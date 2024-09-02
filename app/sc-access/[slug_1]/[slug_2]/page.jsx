@@ -27,6 +27,10 @@ const Page = ({ params }) => {
     const fetchData = async () => {
       try {
         const loginResponse = JSON.parse(localStorage.getItem('loginResponse'));
+        if (!loginResponse?._token) {
+          router.push("/login");
+          return;
+        }
         if (loginResponse && loginResponse._token) {
           const response = await axios.get(
             `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/sc-access/${params.slug_1}/${params.slug_2}`,

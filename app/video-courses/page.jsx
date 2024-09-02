@@ -1,6 +1,7 @@
 import React from "react";
 import CourseTable from "../Components/videoCourses/CourseTable";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
+import Banner from "../Components/Banner";
 
 const page = async () => {
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
@@ -56,6 +57,8 @@ const page = async () => {
           }),
         }}
       />
+      <Banner />
+      <div className="mt-5"></div>
       <CourseTable videoData={videoData} />
       <hr className="my-5" />
       <HotExam />

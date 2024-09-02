@@ -1,3 +1,4 @@
+import Banner from "@/app/Components/Banner";
 import ExamDetail from "@/app/Components/ExamDetails/ExamDetail";
 
 const Page = ({ params }) => {
@@ -90,6 +91,7 @@ const Page = ({ params }) => {
             }),
           }}
         />
+        <Banner />
         <ExamDetail
           examData={examData}
           formattedDate={formattedDate}

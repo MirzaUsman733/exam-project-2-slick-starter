@@ -1,197 +1,11 @@
-// "use client";
-// import {
-//   Alert,
-//   Snackbar,
-//   TextField,
-//   Button,
-//   InputAdornment,
-//   IconButton,
-// } from "@mui/material";
-// import { Visibility, VisibilityOff } from "@mui/icons-material";
-// import axios from "axios";
-// import { useRouter } from "next/navigation";
-// import { useEffect, useState } from "react";
-
-// const Setting = () => {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     password: "",
-//     confirmPassword: "",
-//   });
-//   const [showPassword, setShowPassword] = useState(false);
-//   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-//   const [errors, setErrors] = useState({});
-//   const [openSnackbar, setOpenSnackbar] = useState(false);
-//   const [apiResponse, setApiResponse] = useState({});
-//   const [user, setUser] = useState({});
-//   const router = useRouter();
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//     setErrors({ ...errors, [e.target.name]: "" });
-//   };
-
-//   useEffect(() => {
-//     const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-//     setUser(loginResponse);
-//   }, []);
-
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     setErrors({}); // Reset errors
-
-//     if (formData.password.length < 8) {
-//       setErrors({ password: "Password must be at least 8 characters long" });
-//       return;
-//     }
-
-//     if (formData.password !== formData.confirmPassword) {
-//       setErrors({ confirmPassword: "Passwords do not match" });
-//       return;
-//     }
-
-//     const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-//     try {
-//       const response = await axios.post(
-//         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/update-profile`,
-//         {
-//           name: user?.name,
-//           password: formData.password,
-//         },
-//         {
-//           headers: {
-//             "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-//             Authorization: `Bearer ${loginResponse._token}`,
-//           },
-//         }
-//       );
-//       setApiResponse(response.data);
-//       setFormData({ name: "", password: "", confirmPassword: "" });
-//       setOpenSnackbar(true);
-//       router.push("/");
-//     } catch (error) {
-//       console.error("Error:", error);
-//       alert("Something went wrong. Please try again later.");
-//     }
-//   };
-
-//   const togglePasswordVisibility = () => {
-//     setShowPassword(!showPassword);
-//   };
-
-//   const toggleConfirmPasswordVisibility = () => {
-//     setShowConfirmPassword(!showConfirmPassword);
-//   };
-
-//   return (
-//     <div className="flex justify-center items-center my-20">
-//       <div>
-//         <div>
-//           <h1 className="text-4xl mx-auto font-extrabold font-[lato] text-center mt-5">
-//             Update Profile Settings
-//           </h1>
-//         </div>
-//         <form
-//           onSubmit={handleSubmit}
-//           className="m-auto max-w-4xl px-4 py-8 space-y-5"
-//         >
-//           <TextField
-//             label="Name"
-//             variant="outlined"
-//             fullWidth
-//             name="name"
-//             disabled
-//             value={user?.name || ""}
-//             onChange={handleChange}
-//             error={!!errors.name}
-//             helperText={errors.name}
-//             className="mb-4"
-//           />
-//           <TextField
-//             type={showPassword ? "text" : "password"}
-//             label="Password"
-//             variant="outlined"
-//             fullWidth
-//             name="password"
-//             value={formData.password}
-//             onChange={handleChange}
-//             error={!!errors.password}
-//             helperText={errors.password}
-//             className="mb-4"
-//             InputProps={{
-//               endAdornment: (
-//                 <InputAdornment position="end">
-//                   <IconButton
-//                     aria-label="toggle password visibility"
-//                     onClick={togglePasswordVisibility}
-//                   >
-//                     {showPassword ? <VisibilityOff /> : <Visibility />}
-//                   </IconButton>
-//                 </InputAdornment>
-//               ),
-//             }}
-//           />
-//           <TextField
-//             type={showConfirmPassword ? "text" : "password"}
-//             label="Confirm Password"
-//             variant="outlined"
-//             fullWidth
-//             name="confirmPassword"
-//             value={formData.confirmPassword}
-//             onChange={handleChange}
-//             error={!!errors.confirmPassword}
-//             helperText={errors.confirmPassword}
-//             className="mb-6"
-//             InputProps={{
-//               endAdornment: (
-//                 <InputAdornment position="end">
-//                   <IconButton
-//                     aria-label="toggle confirm password visibility"
-//                     onClick={toggleConfirmPasswordVisibility}
-//                   >
-//                     {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-//                   </IconButton>
-//                 </InputAdornment>
-//               ),
-//             }}
-//           />
-//           <Button type="submit" variant="contained" color="primary" fullWidth>
-//             Update Profile
-//           </Button>
-//         </form>
-//         <Snackbar
-//           open={openSnackbar}
-//           autoHideDuration={6000}
-//           onClose={() => setOpenSnackbar(false)}
-//           anchorOrigin={{
-//             vertical: "top",
-//             horizontal: "right",
-//           }}
-//         >
-//           <Alert
-//             onClose={() => setOpenSnackbar(false)}
-//             severity={apiResponse?.is_active ? "success" : "error"}
-//             variant="filled"
-//           >
-//             {apiResponse.message}
-//           </Alert>
-//         </Snackbar>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Setting;
-
 "use client";
-import React, { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import { Alert, IconButton, InputAdornment, Snackbar } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { Alert, Snackbar } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Register = () => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -217,18 +31,17 @@ const Register = () => {
 
   useEffect(() => {
     const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    if (!loginResponse?._token) {
+      router.push("/login");
+      return;
+    }
     setUser(loginResponse);
   }, []);
 
   const fetchIP = async () => {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/my-ip`,
-        {
-          headers: {
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        }
+        `/api/my-ip`
       );
       setIp(response.data);
     } catch (error) {

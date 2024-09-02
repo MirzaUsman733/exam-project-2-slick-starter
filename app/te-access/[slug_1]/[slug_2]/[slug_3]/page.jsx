@@ -41,7 +41,10 @@ const Page = ({ params }) => {
     const fetchData = async () => {
       if (typeof window !== "undefined") {
         const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-
+        if (!loginResponse?._token) {
+          router.push("/login");
+          return;
+        }
         if (loginResponse) {
           try {
             const response = await axios.get(

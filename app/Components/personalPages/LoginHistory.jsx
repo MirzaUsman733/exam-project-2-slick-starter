@@ -13,6 +13,10 @@ const LoginHistory = () => {
   const fetchData = async () => {
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+      if (!loginResponse?._token) {
+        router.push("/login");
+        return;
+      }
       const response = await axios.get(
         `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/v1/account/login-history`,
         {

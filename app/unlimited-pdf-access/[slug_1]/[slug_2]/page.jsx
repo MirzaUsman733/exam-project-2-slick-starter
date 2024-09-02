@@ -37,12 +37,20 @@ const Page = ({ params }) => {
   };
   return (
     <div className="container mx-auto px-4 py-8">
+       <div className="text-center bg-blue-100 p-4 rounded-md shadow space-y-2">
+        <h2 className="text-xl font-semibold">Unlimited PDF Access</h2>
+        <p>You have unlimited access to Test Engine Dumps files.</p>
+        <p>You have downloaded: {unlimitedTeAccess?.total_downloaded}</p>
+        <p>Monthly Download Limit: {unlimitedTeAccess?.total_limit}</p>
+        <p>Each download of a different or the same Test Engine file will affect the download limit.</p>
+        <p className="text-red-600 font-semibold">For Activation Key. Must have to download TEST ENGINE file first.</p>
+      </div>
        {unlimitedTeAccess?.vendors?.length ? (
         <AlphabetPagination onSelect={handleLetterSelect} />
         ) : ''}
-      <div className="bg-white shadow-lg rounded-lg p-6">
+      <div className="bg-white shadow-lg rounded-lg p-6 mt-5">
         <h2 className="text-3xl font-bold text-teal-600 mb-8">
-          Unlimited TE Access
+          Unlimited PDF Access
         </h2>
         {unlimitedTeAccess?.vendors?.length ? (
           unlimitedTeAccess.vendors.map((vendor) => (

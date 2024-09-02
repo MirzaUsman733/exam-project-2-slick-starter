@@ -1,6 +1,7 @@
 import React from "react";
 import UnlimitedAccess from "../Components/unlimitedAccessComponents/UnlimitedAccess";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
+import Banner from "../Components/Banner";
 
 const page = () => {
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
@@ -34,6 +35,7 @@ const page = () => {
           }),
         }}
       />
+      <Banner />
       <UnlimitedAccess />
       <hr className="container mx-auto" />
       <HotExam />

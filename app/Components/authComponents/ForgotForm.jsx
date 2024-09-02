@@ -12,11 +12,7 @@ const ForgotForm = () => {
 
   const fetchIP = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/my-ip`, {
-        headers: {
-          "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data); // Assuming response.data contains an 'ip' field
     } catch (error) {
       console.error("Error fetching IP:", error);

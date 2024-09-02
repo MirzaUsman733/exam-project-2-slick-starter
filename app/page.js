@@ -64,7 +64,7 @@ export async function generateMetadata() {
       other: [
         {
           rel: "canonical",
-          url: `https://dumps-collection.com`,
+          url: `https://dumps-collection.com/`,
         },
       ],
     },

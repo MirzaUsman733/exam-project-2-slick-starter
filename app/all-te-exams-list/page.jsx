@@ -1,8 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import AllTeExamList from './AllTeExamList';
-import AlphabetPagination from './AlphabetPagination'; // Ensure you have this component created and imported
-
+import Banner from '../Components/Banner';
 const Page = () => {
   const [data, setData] = useState([]);
   const [selectedLetter, setSelectedLetter] = useState('A'); // Default letter to start with
@@ -35,6 +34,7 @@ const Page = () => {
   return (
     <div>
       {/* <AlphabetPagination onSelect={handleLetterSelect} /> */}
+      <Banner />
       <AllTeExamList data={data} onLetterSelect={handleLetterSelect} />
     </div>
   );

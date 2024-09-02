@@ -23,12 +23,7 @@ const Register = () => {
   const fetchIP = async () => {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/my-ip`,
-        {
-          headers: {
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        }
+        `/api/my-ip`
       );
       setIp(response.data);
     } catch (error) {
