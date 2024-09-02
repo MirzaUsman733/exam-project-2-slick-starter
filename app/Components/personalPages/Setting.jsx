@@ -40,9 +40,7 @@ const Register = () => {
 
   const fetchIP = async () => {
     try {
-      const response = await axios.get(
-        `/api/my-ip`
-      );
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);

@@ -1,6 +1,5 @@
 import Avatar from "@mui/material/Avatar";
 import he from "he";
-import React from "react";
 const CommentCard = ({ name, location, date, content }) => {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",

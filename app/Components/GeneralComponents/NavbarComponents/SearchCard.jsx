@@ -75,21 +75,15 @@ const SearchCard = () => {
   const normalizedSearchValue = normalizeText(searchValue);
 
   const filteredData = searchData
-    .filter((item) =>
-      normalizeText(item.code).includes(normalizedSearchValue)
-    )
+    .filter((item) => normalizeText(item.code).includes(normalizedSearchValue))
     .slice(0, 30);
 
   const filteredVendors = vendorData
-    .filter((item) =>
-      normalizeText(item.slug).includes(normalizedSearchValue)
-    )
+    .filter((item) => normalizeText(item.slug).includes(normalizedSearchValue))
     .slice(0, 10);
 
   const filteredCertifications = certificationData
-    .filter((item) =>
-      normalizeText(item.slug).includes(normalizedSearchValue)
-    )
+    .filter((item) => normalizeText(item.slug).includes(normalizedSearchValue))
     .slice(0, 10);
 
   const handleExamPage = (exam) => {

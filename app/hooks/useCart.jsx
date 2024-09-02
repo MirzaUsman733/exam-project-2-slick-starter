@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function useCart() {
   // Initialize the cart as an empty array if no cart is stored in local storage
@@ -49,7 +49,6 @@ function useCart() {
       itemCartIdentifier.split("_").slice(0, 5).join("_") + "_";
     setCart((prevCart) => {
       return prevCart.filter((cartItem) => {
-
         return (
           cartItem.cart.split("_").slice(0, 5).join("_") + "_" !== itemPrefix
         );

@@ -5,7 +5,6 @@ import ExamBanner from "./ExamBanner";
 import FAQS from "./FAQS";
 import HeaderCard from "./HeaderCard";
 import LastWeekResults from "./LastWeekResults";
-import LimitedOfferCountdown from "./LimitedOfferCountdown";
 import OtherRelatedExam from "./OtherRelatedExam";
 import RelatedAndPremium from "./RelatedAndPremium";
 import RelatedExams from "./RelatedExams";
@@ -18,7 +17,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
       <ExamBanner />
       {examData && examData.exam_title && (
         <HeaderCard
-        examPerma= {examPerma}
+          examPerma={examPerma}
           examTitle={examData?.exam_title}
           examCode={examData?.exam_code}
           lastUpdate={formattedDate}

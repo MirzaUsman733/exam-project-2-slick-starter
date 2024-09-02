@@ -1,7 +1,6 @@
-import React from "react";
-import RefundPolicy from "../Components/refund-policy/RefundPolicy";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import Banner from "../Components/Banner";
+import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
+import RefundPolicy from "../Components/refund-policy/RefundPolicy";
 
 const page = () => {
   return (

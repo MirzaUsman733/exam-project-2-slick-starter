@@ -1,10 +1,10 @@
 "use client";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 
 const VideoCoursesDetail = ({ section }) => {
   const [expanded, setExpanded] = useState(false);

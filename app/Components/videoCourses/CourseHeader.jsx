@@ -1,6 +1,4 @@
 // Importing React and any other required dependencies
-import React from "react";
-import Image from "next/image";
 import { FaClock, FaPlayCircle } from "react-icons/fa"; // Import icons from 'react-icons' library
 
 const CourseHeader = ({ courseDetail }) => {
@@ -11,9 +9,6 @@ const CourseHeader = ({ courseDetail }) => {
         <img
           src={`https://video.dumpsarena.com/img/${courseDetail.image}`}
           alt="PMP Course Image"
-          //   width={700}  // Adjust according to your layout
-          //   height={500}  // Adjust according to your layout
-          //   objectFit="cover"
         />
         <div className="text-center p-5 pb-0">
           Become a certified Project Management Professional with this

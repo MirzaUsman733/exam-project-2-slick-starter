@@ -1,9 +1,9 @@
 "use client";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import Alert from "@mui/material/Alert";
+import { useEffect, useState } from "react";
 
 const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
   const router = useRouter();
@@ -22,9 +22,7 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
   };
   const fetchIP = async () => {
     try {
-      const response = await axios.get(
-        `/api/my-ip`,
-      );
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
@@ -33,7 +31,9 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
   useEffect(() => {
     fetchIP();
   }, []);
-  const formattedCartItems = responseData?.invoice_items?.map((item) => item.cart);
+  const formattedCartItems = responseData?.invoice_items?.map(
+    (item) => item.cart
+  );
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = {
@@ -93,7 +93,9 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
             Complete Your Purchase
           </h1>
           <div>
-            <div className="bg-yellow-500 py-1 px-2 text-white  rounded-lg">{responseData?.invoice_paid === true ? 'Paid': 'UnPaid' }</div>
+            <div className="bg-yellow-500 py-1 px-2 text-white  rounded-lg">
+              {responseData?.invoice_paid === true ? "Paid" : "UnPaid"}
+            </div>
           </div>
         </div>
         <div className="p-6">
@@ -115,8 +117,8 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xl font-bold">
-                        {cartDetail.title} - {cartDetail?.sub_title}{" "}
-                        - {cartDetail?.exam_title}{" "}
+                        {cartDetail.title} - {cartDetail?.sub_title} -{" "}
+                        {cartDetail?.exam_title}{" "}
                       </span>
                       <span className="text-lg font-semibold mb-1">
                         {" "}

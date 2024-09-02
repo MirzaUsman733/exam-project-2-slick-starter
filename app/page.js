@@ -55,18 +55,14 @@ export default function Home() {
 
 export async function generateMetadata() {
   return {
-    title: `Updated Mock Exams by IT Professionals`,
-    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
+    title: "Updated Mock Exams by IT Professionals",
+    description:
+      "Dumps Collection is a leading provider of real and valid mock exams for IT certification. Achieve certification success with our comprehensive PDF and test engine dumps in 2024.",
     robots: {
       index: true,
     },
-    icons: {
-      other: [
-        {
-          rel: "canonical",
-          url: `https://dumps-collection.com/`,
-        },
-      ],
+    alternates: {
+      canonical: "https://dumps-collection.com",
     },
   };
 }

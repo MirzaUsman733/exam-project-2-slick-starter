@@ -22,13 +22,6 @@ const TopicsCovered = ({ examTopics, examVendorTitle, examCode }) => {
             </div>
           ))}
         </div>
-        {/* <div className="col-span-1 hidden md:block">
-          <img
-            src="/Dumps-Topics.png"
-            alt="ExamTopics"
-            className="w-full h-auto"
-          />
-        </div> */}
       </div>
     </div>
   );

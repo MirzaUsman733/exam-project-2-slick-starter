@@ -1,5 +1,3 @@
-import React from "react";
-
 const RefundPolicy = () => {
   return (
     <div className="container p-5 md:p-10 text-gray-800 mx-auto">

@@ -2,7 +2,6 @@ import Banner from "@/app/Components/Banner";
 import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
 import CourseHeader from "@/app/Components/videoCourses/CourseHeader";
 import VideoCoursesDetail from "@/app/Components/videoCourses/VideoCoursesDetail";
-import React from "react";
 
 const page = async ({ params }) => {
   const courseId = params.id;
@@ -69,7 +68,6 @@ const page = async ({ params }) => {
 };
 
 export default page;
-
 
 export async function generateMetadata({ params }) {
   const courseId = params.id;

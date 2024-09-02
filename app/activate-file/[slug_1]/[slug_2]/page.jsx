@@ -1,18 +1,18 @@
 "use client";
+import { ContentCopy } from "@mui/icons-material";
+import {
+  Alert,
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Paper,
+  Snackbar,
+  TextField,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  Button,
-  TextField,
-  Snackbar,
-  Typography,
-  Container,
-  Box,
-  Paper,
-  CircularProgress,
-  Alert,
-} from "@mui/material";
-import { ContentCopy } from "@mui/icons-material";
 
 function ActivationPage({ params }) {
   const [activationData, setActivationData] = useState({
@@ -26,9 +26,7 @@ function ActivationPage({ params }) {
 
   const fetchIP = async () => {
     try {
-      const response = await axios.get(
-        `/api/my-ip`
-      );
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
@@ -91,8 +89,13 @@ function ActivationPage({ params }) {
       }}
     >
       <Paper elevation={3} style={{ padding: "2rem", borderRadius: "12px" }}>
-        <Typography variant="h4" fontWeight={'bold'} textAlign={'center'} gutterBottom>
-        Get Master Key to Activate Test Engine File.
+        <Typography
+          variant="h4"
+          fontWeight={"bold"}
+          textAlign={"center"}
+          gutterBottom
+        >
+          Get Master Key to Activate Test Engine File.
         </Typography>
         <Box display="flex" flexDirection="column" alignItems="center">
           {activationData.status === null ? (
@@ -109,7 +112,11 @@ function ActivationPage({ params }) {
             </Button>
           ) : activationData.status ? (
             <>
-              <Typography variant="h5" gutterBottom style={{ marginTop: "1rem" }}>
+              <Typography
+                variant="h5"
+                gutterBottom
+                style={{ marginTop: "1rem" }}
+              >
                 Activation Successful
               </Typography>
               <TextField
@@ -133,7 +140,10 @@ function ActivationPage({ params }) {
               </Button>
             </>
           ) : (
-            <Alert severity="error" style={{ marginTop: "1rem", width: "100%" }}>
+            <Alert
+              severity="error"
+              style={{ marginTop: "1rem", width: "100%" }}
+            >
               {activationData.message}
             </Alert>
           )}

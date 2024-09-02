@@ -1,7 +1,7 @@
-'use client'
-import React, { useEffect, useState } from "react";
-import Snackbar from "@mui/material/Snackbar";
+"use client";
 import MuiAlert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import React, { useEffect, useState } from "react";
 
 // Alert component wrapper
 const Alert = React.forwardRef(function Alert(props, ref) {

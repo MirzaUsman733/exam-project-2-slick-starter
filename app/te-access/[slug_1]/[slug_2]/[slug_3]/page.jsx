@@ -2,25 +2,29 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import {
+  DownloadOutlined,
+  ExpandMore,
+  FileCopyOutlined,
+} from "@mui/icons-material";
+import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
   Box,
+  Button,
   Card,
   Container,
   Grid,
   IconButton,
+  Paper,
   Snackbar,
   SnackbarContent,
   TextField,
   Typography,
-  Button,
-  Paper,
 } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ExpandMore, FileCopyOutlined, DownloadOutlined } from '@mui/icons-material';
 
 const Page = ({ params }) => {
   const [teAccess, setTeAccess] = useState({});
@@ -66,7 +70,7 @@ const Page = ({ params }) => {
 
     fetchData();
   }, [params.id_one, params.id_two, params.id_three]);
-  console.log(teAccess)
+  console.log(teAccess);
   return (
     <>
       <Snackbar
@@ -110,20 +114,16 @@ const Page = ({ params }) => {
                     variant="h3"
                     fontWeight={700}
                     sx={{
-                    //   background: "linear-gradient(to right, #30cfd0 0%, #330867 100%)",
+                      //   background: "linear-gradient(to right, #30cfd0 0%, #330867 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "#2196F3",
                     }}
                   >
                     Test Engine Access
                   </Typography>
-                  <Typography
-                    variant="h5"
-                    fontWeight={500}
-                    mt={2}
-                  >
+                  <Typography variant="h5" fontWeight={500} mt={2}>
                     {teAccess.exam_code} {teAccess.exam_vendor}{" "}
-                   {teAccess?.exam_name &&  <span>"{teAccess.exam_name}"</span>}
+                    {teAccess?.exam_name && <span>"{teAccess.exam_name}"</span>}
                   </Typography>
                 </Box>
               </Grid>
@@ -153,11 +153,26 @@ const Page = ({ params }) => {
                           }}
                         >
                           <div className="flex flex-col">
-                          <Typography variant="h6">Activation Key {i + 1}</Typography>
-                          <Typography variant="body" sx={{color: 'rgb(185 28 28)'}}> {item.activation_key_used === true ? '' : 'Activication Key is Already used' } </Typography>
+                            <Typography variant="h6">
+                              Activation Key {i + 1}
+                            </Typography>
+                            <Typography
+                              variant="body"
+                              sx={{ color: "rgb(185 28 28)" }}
+                            >
+                              {" "}
+                              {item.activation_key_used === true
+                                ? ""
+                                : "Activication Key is Already used"}{" "}
+                            </Typography>
                           </div>
                         </AccordionSummary>
-                        <AccordionDetails sx={{ background: "rgba(255, 255, 255, 0.1)", padding: 2 }}>
+                        <AccordionDetails
+                          sx={{
+                            background: "rgba(255, 255, 255, 0.1)",
+                            padding: 2,
+                          }}
+                        >
                           <TextField
                             size="small"
                             variant="outlined"
@@ -180,7 +195,11 @@ const Page = ({ params }) => {
                                 </IconButton>
                               ),
                             }}
-                            sx={{ mt: 1, backgroundColor: "rgba(255, 255, 255, 0.2)", borderRadius: "8px" }}
+                            sx={{
+                              mt: 1,
+                              backgroundColor: "rgba(255, 255, 255, 0.2)",
+                              borderRadius: "8px",
+                            }}
                           />
                         </AccordionDetails>
                       </Accordion>
@@ -205,16 +224,21 @@ const Page = ({ params }) => {
 
                 <Box sx={{ mt: 4, textAlign: "center" }}>
                   {teAccess.te_file && (
-                    <Link href={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${teAccess.te_file}`} passHref>
+                    <Link
+                      href={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${teAccess.te_file}`}
+                      passHref
+                    >
                       <Button
                         variant="contained"
                         sx={{
-                          background: "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
+                          background:
+                            "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
                           color: "white",
                           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                           borderRadius: "8px",
                           "&:hover": {
-                            background: "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
+                            background:
+                              "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
                           },
                           mr: 2,
                         }}
@@ -254,17 +278,19 @@ const Page = ({ params }) => {
                     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
                     backdropFilter: "blur(10px)",
                     textAlign: "justify",
-                    color: "black"
+                    color: "black",
                   }}
                 >
                   <Typography variant="h5" fontWeight={600} gutterBottom>
                     How To Use?
                   </Typography>
                   <Typography variant="body1">
-                    Download the DumpsCollectionTest Engine Simulator and install it. Then, download the premium
-                    .dumpscollectionfile using the buttons above. You will receive a .zip file. Unzip it and
-                    add it to the DumpsCollectionTest Engine Simulator. Activate the premium .dumpscollectionfile
-                    with the provided purchase and activation keys.
+                    Download the DumpsCollectionTest Engine Simulator and
+                    install it. Then, download the premium .dumpscollectionfile
+                    using the buttons above. You will receive a .zip file. Unzip
+                    it and add it to the DumpsCollectionTest Engine Simulator.
+                    Activate the premium .dumpscollectionfile with the provided
+                    purchase and activation keys.
                   </Typography>
                 </Box>
               </Grid>

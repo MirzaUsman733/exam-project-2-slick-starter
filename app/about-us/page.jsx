@@ -1,7 +1,6 @@
-import React from "react";
 import AboutUs from "../Components/about-us/AboutUs";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import Banner from "../Components/Banner";
+import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 
 const page = () => {
   return (

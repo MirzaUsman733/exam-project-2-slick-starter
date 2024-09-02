@@ -71,7 +71,7 @@ const Footer = () => {
                 <ul>
                   <li className="mb-3">
                     <a
-                      href="/test"
+                      href="/test-engine-simulator"
                       className="text-gray-700 hover:text-blue-500"
                     >
                       Test Engine Player
@@ -105,7 +105,6 @@ const Footer = () => {
                   Do not miss to subscribe to our new feeds, kindly fill the
                   form below.
                 </p>
-
               </div>
               <div className="relative">
                 <form action="#" className="flex">

@@ -1,9 +1,7 @@
 import Link from "next/link";
-import React from "react";
 
 const VendorDetails = ({ vendorData, vendorPerma }) => {
   return (
-    // <div>
     <div className="container mx-auto font-[Lato] p-6 mt-10">
       <div className="grid grid-cols-3 gap-10">
         {/* Grid 1 */}

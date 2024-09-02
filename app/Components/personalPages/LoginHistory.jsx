@@ -85,9 +85,7 @@ const LoginHistory = () => {
                       index % 2 === 0 ? "bg-gray-50" : "bg-white"
                     } hover:bg-gray-100`}
                   >
-                    <td className="px-6 py-4 font-medium">
-                      {item.ip}
-                    </td>
+                    <td className="px-6 py-4 font-medium">{item.ip}</td>
                     <td className="px-6 py-4 text-right">
                       {moment.utc(item.date).format("MMM DD, YYYY | hh:mm A")}
                     </td>

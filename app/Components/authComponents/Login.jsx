@@ -1,11 +1,11 @@
 "use client";
-import axios from "axios";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Alert, Snackbar } from "@mui/material";
+import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Login = () => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -20,11 +20,9 @@ const Login = () => {
   const [snackbar, setSnackbar] = useState({ open: false, message: "" });
   const fetchIP = async () => {
     try {
-      const response = await axios.get(
-        `/api/my-ip`
-      );
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data.ip);
-      console.log('IP : ',response.data)
+      console.log("IP : ", response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
     }
@@ -127,7 +125,10 @@ const Login = () => {
         router.push("/");
         window.location.reload();
       } else {
-        setSnackbar({ open: true, message: "Login failed. Check your Email and Password." });
+        setSnackbar({
+          open: true,
+          message: "Login failed. Check your Email and Password.",
+        });
       }
     } catch (error) {
       console.error("Login error:", error);

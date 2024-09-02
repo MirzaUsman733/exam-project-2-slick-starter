@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import loginPageProtector from "../Components/authComponents/loginPageProtector";
 import { useEffect } from "react";
 import Login from "../Components/authComponents/Login";
+import loginPageProtector from "../Components/authComponents/loginPageProtector";
 
 const Page = () => {
   const router = useRouter();

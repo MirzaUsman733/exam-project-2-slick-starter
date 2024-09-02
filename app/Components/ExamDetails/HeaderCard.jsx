@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import axios from "axios";
 import Link from "next/link";
+import { useState } from "react";
 import AddToCartButton from "../add-to-cart/AddToCartButton";
 import Notification from "../add-to-cart/Notification";
-import axios from "axios";
 
 const HeaderCard = ({
   examPerma,
@@ -54,7 +54,7 @@ const HeaderCard = ({
             },
           }
         );
-  
+
         if (response && response.data) {
           setIsEmailSubmitted(true);
           setDownloadLinks(response.data); // Store the links in state
@@ -152,34 +152,35 @@ const HeaderCard = ({
 
           <div className="bg-blue-50 border rounded-2xl p-5">
             {examPrices?.map((item, index) => (
-            <div
-            key={item.type}
-            className="flex items-center justify-between flex-wrap py-2 text-lg border-b border-gray-300 last:border-b-0"
-          >
-            <div className="flex flex-wrap justify-between w-full md:w-auto md:justify-normal gap-2 md:gap-2 lg:gap-3 items-center mb-1 md:mb-0 ">
-              <p className="font-semibold text-sm md:text-md whitespace-nowrap">
-                {item.title}
-              </p>
               <div
-                className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
-                  item.off >= 70
-                    ? "text-red-800 bg-red-200 rounded-full px-1 md:px-2"
-                    : "text-blue-500 bg-blue-200 rounded-full px-1 md:px-2"
-                }`}
+                key={item.type}
+                className="flex items-center justify-between flex-wrap py-2 text-lg border-b border-gray-300 last:border-b-0"
               >
-                {item.off}% Off
+                <div className="flex flex-wrap justify-between w-full md:w-auto md:justify-normal gap-2 md:gap-2 lg:gap-3 items-center mb-1 md:mb-0 ">
+                  <p className="font-semibold text-sm md:text-md whitespace-nowrap">
+                    {item.title}
+                  </p>
+                  <div
+                    className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
+                      item.off >= 70
+                        ? "text-red-800 bg-red-200 rounded-full px-1 md:px-2"
+                        : "text-blue-500 bg-blue-200 rounded-full px-1 md:px-2"
+                    }`}
+                  >
+                    {item.off}% Off
+                  </div>
+                </div>
+                <div className="w-full md:w-auto flex items-center justify-between md:justify-normal">
+                  <p className="text-blue-600 font-bold mr-2">${item.price}</p>
+                  <p className="text-red-600 text-xs line-through">
+                    ${item.full_price}
+                  </p>
+                  <AddToCartButton
+                    item={item}
+                    onAddToCart={handleAddToCartSuccess}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="w-full md:w-auto flex items-center justify-between md:justify-normal">
-              <p className="text-blue-600 font-bold mr-2">${item.price}</p>
-              <p className="text-red-600 text-xs line-through">${item.full_price}</p>
-              <AddToCartButton
-                item={item}
-                onAddToCart={handleAddToCartSuccess}
-              />
-            </div>
-          </div>
-          
             ))}
           </div>
         </div>
@@ -225,34 +226,34 @@ const HeaderCard = ({
               </>
             ) : (
               <div className="space-y-4">
-    {downloadLinks.map((link, index) => (
-      <a
-        key={index}
-        href={`${process.env.NEXT_PUBLIC_API_BASE_URL}${link.link}`}
-        download
-        className={`bg-green-500 text-white px-4 py-3 rounded-lg w-full hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-2`}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 32 32"
-        >
-          <path
-            fill="currentColor"
-            d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"
-          ></path>
-        </svg>
-        <span>Download {link.type.toUpperCase()} Demo</span>
-      </a>
-    ))}
-    {/* <button
+                {downloadLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={`${process.env.NEXT_PUBLIC_API_BASE_URL}${link.link}`}
+                    download
+                    className={`bg-green-500 text-white px-4 py-3 rounded-lg w-full hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-2`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"
+                      ></path>
+                    </svg>
+                    <span>Download {link.type.toUpperCase()} Demo</span>
+                  </a>
+                ))}
+                {/* <button
       className="bg-gray-600 text-white px-4 py-3 rounded-lg w-full hover:bg-gray-700 transition-all duration-300"
       onClick={handleModalClose}
     >
       Close
     </button> */}
-  </div>
+              </div>
             )}
             <div className="flex justify-between items-center mt-5">
               <ul className="space-y-3 text-gray-800">

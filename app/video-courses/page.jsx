@@ -1,7 +1,6 @@
-import React from "react";
-import CourseTable from "../Components/videoCourses/CourseTable";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import Banner from "../Components/Banner";
+import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
+import CourseTable from "../Components/videoCourses/CourseTable";
 
 const page = async () => {
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;

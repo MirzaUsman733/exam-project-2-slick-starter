@@ -1,10 +1,10 @@
 "use client";
 import useCart from "@/app/hooks/useCart";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import Alert from "@mui/material/Alert";
+import { useEffect, useState } from "react";
 
 const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
   const { removeFromCart } = useCart();
@@ -53,9 +53,7 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
   };
   const fetchIP = async () => {
     try {
-      const response = await axios.get(
-        `/api/my-ip`
-      );
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);

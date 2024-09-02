@@ -14,7 +14,7 @@ const ExamCard = ({ recentlyUpdated }) => {
             >
               <div className="p-4 bg-blue-500 clip-path-polygon">
                 <h3 className="text-white text-md font-semibold">
-                {exam.exam_vendor_title} - {exam?.exam_code}
+                  {exam.exam_vendor_title} - {exam?.exam_code}
                 </h3>
                 <p className="text-white mt-2">{exam.exam_title}</p>
               </div>

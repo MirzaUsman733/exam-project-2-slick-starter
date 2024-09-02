@@ -6,13 +6,12 @@ export default function withAuth(Component) {
     let loginResponse;
 
     if (typeof window !== "undefined") {
-      // Check if running in a browser environment
       loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
     }
 
     useEffect(() => {
       if (!loginResponse?.is_logged_in) {
-        router.push("/login"); // Redirect to the login page if not authenticated
+        router.push("/login");
       }
     }, [loginResponse?.is_logged_in, router]);
 

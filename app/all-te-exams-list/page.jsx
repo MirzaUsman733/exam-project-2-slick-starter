@@ -1,10 +1,10 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import AllTeExamList from './AllTeExamList';
-import Banner from '../Components/Banner';
+"use client";
+import { useEffect, useState } from "react";
+import Banner from "../Components/Banner";
+import AllTeExamList from "./AllTeExamList";
 const Page = () => {
   const [data, setData] = useState([]);
-  const [selectedLetter, setSelectedLetter] = useState('A'); // Default letter to start with
+  const [selectedLetter, setSelectedLetter] = useState("A"); // Default letter to start with
 
   useEffect(() => {
     const fetchData = async (letter) => {
@@ -24,16 +24,14 @@ const Page = () => {
     };
 
     fetchData(selectedLetter);
-  }, [selectedLetter]); // Fetch data when `selectedLetter` changes
-
+  }, [selectedLetter]);
   const handleLetterSelect = (letter) => {
     console.log("Selected Letter:", letter);
-    setSelectedLetter(letter); // Update the selected letter, triggering a re-fetch
+    setSelectedLetter(letter);
   };
 
   return (
     <div>
-      {/* <AlphabetPagination onSelect={handleLetterSelect} /> */}
       <Banner />
       <AllTeExamList data={data} onLetterSelect={handleLetterSelect} />
     </div>

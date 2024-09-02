@@ -1,8 +1,8 @@
 import CustomInvoiceComponent from "./CustomInvoiceComponent";
 
-const Page = async({ params }) => {
+const Page = async ({ params }) => {
   const customInvoicePerma = params?.slug;
-  
+
   const fetchCustomInvoice = async () => {
     try {
       const res = await fetch(
@@ -27,7 +27,6 @@ const Page = async({ params }) => {
   return (
     <div>
       <CustomInvoiceComponent
-        // formattedCartItems={formattedCartItems}
         responseData={CustomInvoiceData}
         customInvoicePerma={customInvoicePerma}
       />

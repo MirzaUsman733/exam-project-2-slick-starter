@@ -196,10 +196,7 @@ const FAQ = () => {
         >
           {faqData.map((section, index) => (
             <li key={index} className="border-b border-white last:border-b-0">
-              <a
-                href={`#`}
-                className={`block px-6 py-3 `}
-              >
+              <a href={`#`} className={`block px-6 py-3 `}>
                 {section.category}
               </a>
             </li>

@@ -71,8 +71,8 @@
 // export default CertificationsComponent;
 
 "use client";
-import React, { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 const CertificationsComponent = ({ certifications }) => {
   const [searchTerm, setSearchTerm] = useState("");

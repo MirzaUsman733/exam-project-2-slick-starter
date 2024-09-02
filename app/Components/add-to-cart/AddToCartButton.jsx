@@ -1,13 +1,12 @@
-'use client'
+"use client";
 import useCart from "@/app/hooks/useCart";
-import React from "react";
 
-const AddToCartButton = ({ item, onAddToCart  }) => {
-  const { addToCart } = useCart(); 
+const AddToCartButton = ({ item, onAddToCart }) => {
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart(item); 
-    onAddToCart(); 
+    addToCart(item);
+    onAddToCart();
     window.location.reload();
   };
 

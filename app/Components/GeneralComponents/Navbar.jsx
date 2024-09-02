@@ -1,10 +1,10 @@
 import Link from "next/link";
+import CartIcon from "../add-to-cart/CartIcon";
 import AccountDropdown from "./NavbarComponents/AccountDropdown";
 import DropdownCertificationMenu from "./NavbarComponents/DropdownCertificationMenu";
 import DropdownVendorMenu from "./NavbarComponents/DropdownVendorMenu";
-import ToggleButton from "./NavbarComponents/ToggleButton";
 import SearchCard from "./NavbarComponents/SearchCard";
-import CartIcon from "../add-to-cart/CartIcon";
+import ToggleButton from "./NavbarComponents/ToggleButton";
 export default async function Navbar() {
   const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;

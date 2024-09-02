@@ -1,6 +1,5 @@
-import React from "react";
-import FAQ from "../Components/faqs/FAQ";
 import Banner from "../Components/Banner";
+import FAQ from "../Components/faqs/FAQ";
 
 const page = () => {
   return (

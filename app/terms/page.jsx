@@ -1,6 +1,5 @@
-import React from "react";
-import TermsOfUse from "../Components/terms/TermsOfUse";
 import Banner from "../Components/Banner";
+import TermsOfUse from "../Components/terms/TermsOfUse";
 
 const page = () => {
   return (

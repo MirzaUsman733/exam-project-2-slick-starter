@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import AlphabetPagination from "@/app/all-te-exams-list/AlphabetPagination";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
 import axios from "axios";
 import Link from "next/link";
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
-import AlphabetPagination from "@/app/all-te-exams-list/AlphabetPagination";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Page = ({ params }) => {
   const router = useRouter();
@@ -14,7 +14,7 @@ const Page = ({ params }) => {
   const [unlimitedTeAccess, setUnlimitedTeAccess] = useState(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [selectedLetter, setSelectedLetter] = useState('A');
+  const [selectedLetter, setSelectedLetter] = useState("A");
 
   const handleCopyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
@@ -76,28 +76,39 @@ const Page = ({ params }) => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-        <div className="text-center bg-blue-100 p-4 rounded-md shadow space-y-2">
+      <div className="text-center bg-blue-100 p-4 rounded-md shadow space-y-2">
         <h2 className="text-xl font-semibold">Unlimited Test Engine Access</h2>
         <p>You have unlimited access to Test Engine Dumps files.</p>
         <p>You have downloaded: {unlimitedTeAccess?.total_downloaded}</p>
         <p>Monthly Download Limit: {unlimitedTeAccess?.total_limit}</p>
-        <p>Each download of a different or the same Test Engine file will affect the download limit.</p>
-        <p className="text-red-600 font-semibold">For Activation Key. Must have to download TEST ENGINE file first.</p>
+        <p>
+          Each download of a different or the same Test Engine file will affect
+          the download limit.
+        </p>
+        <p className="text-red-600 font-semibold">
+          For Activation Key. Must have to download TEST ENGINE file first.
+        </p>
       </div>
       {unlimitedTeAccess?.vendors?.length ? (
         <AlphabetPagination onSelect={handleLetterSelect} />
-      ) : ''}
+      ) : (
+        ""
+      )}
       {/* Snackbar Component */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={1000}
         onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
       >
-        <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
           {snackbarMessage}
         </Alert>
-      </Snackbar>   
+      </Snackbar>
       {dialogOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
           <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
@@ -180,7 +191,10 @@ const Page = ({ params }) => {
           ))
         ) : (
           <div className="text-red-600">
-            Your Unlimited PDF access is not approved yet. We are checking your payment so this might take a few hours. Please contact our sales chat support or send an email to sales@examprince.com for fast approval. Thank you.
+            Your Unlimited PDF access is not approved yet. We are checking your
+            payment so this might take a few hours. Please contact our sales
+            chat support or send an email to sales@examprince.com for fast
+            approval. Thank you.
           </div>
         )}
       </div>

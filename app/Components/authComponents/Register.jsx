@@ -1,11 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import { Alert, IconButton, InputAdornment, Snackbar } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { Alert, Snackbar } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Register = () => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -22,9 +21,7 @@ const Register = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const fetchIP = async () => {
     try {
-      const response = await axios.get(
-        `/api/my-ip`
-      );
+      const response = await axios.get(`/api/my-ip`);
       setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
@@ -53,7 +50,13 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
       setSnackbar({ open: true, message: "All fields are required." });
       return;
     }
@@ -93,11 +96,18 @@ const Register = () => {
     setSnackbar({ open: false, message: "" });
   };
 
-
   return (
     <div>
-      <Snackbar open={snackbar.open} autoHideDuration={6000} onClose={handleCloseSnackbar}>
-        <Alert onClose={handleCloseSnackbar} severity="error" sx={{ width: '100%' }}>
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
           {snackbar.message}
         </Alert>
       </Snackbar>
@@ -366,17 +376,26 @@ const Register = () => {
                       Sign Up
                     </button>
                     <span className="text-gray-400 text-xs">
-                      <span>Already have an account?</span> {" "}
-                      <Link className="text-blue-600 hover:underline" href="/login">
+                      <span>Already have an account?</span>{" "}
+                      <Link
+                        className="text-blue-600 hover:underline"
+                        href="/login"
+                      >
                         Sign In
                       </Link>
                     </span>
                     <p className="mt-16 text-xs text-gray-400">
-                      <Link className="underline hover:text-gray-500" href="/privacy-policy">
+                      <Link
+                        className="underline hover:text-gray-500"
+                        href="/privacy-policy"
+                      >
                         Policy privacy
                       </Link>{" "}
                       and{" "}
-                      <Link className="underline hover:text-gray-500" href="/terms">
+                      <Link
+                        className="underline hover:text-gray-500"
+                        href="/terms"
+                      >
                         Terms of Use
                       </Link>
                     </p>

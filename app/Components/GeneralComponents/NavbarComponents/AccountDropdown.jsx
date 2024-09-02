@@ -66,7 +66,7 @@ function AccountDropdown() {
                 Log In
               </b>
             </Link>
-            <Link 
+            <Link
               href={"/register"}
               style={{
                 padding: "10px 20px",

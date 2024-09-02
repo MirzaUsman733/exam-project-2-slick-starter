@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-async-client-component */
 "use client";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Box,
+  Chip,
   Collapse,
   IconButton,
   Paper,
@@ -13,14 +16,11 @@ import {
   TablePagination,
   TableRow,
   Typography,
-  Chip,
 } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { useEffect, useState } from "react";
 
 function Row({ row }) {
   const [open, setOpen] = useState(false);
@@ -34,7 +34,9 @@ function Row({ row }) {
               {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </IconButton>
             <Typography variant="subtitle1" sx={{ ml: 1 }}>
-              {row.product_vendor ? row.product_vendor : row.product_type_detail}
+              {row.product_vendor
+                ? row.product_vendor
+                : row.product_type_detail}
             </Typography>
           </Box>
         </TableCell>
@@ -71,7 +73,7 @@ function Row({ row }) {
                   {row?.product_access?.map((product) => (
                     <TableRow key={product.anchor}>
                       <TableCell>
-                      <Link
+                        <Link
                           href={
                             product.type === "download_pdf"
                               ? `https://certsgang.com${product.url}`
@@ -148,25 +150,42 @@ const Products = () => {
   };
 
   return (
-    <TableContainer component={Paper} sx={{ maxWidth: 900, mx: "auto", mt: 5, p: 3, boxShadow: 3 }}>
-      <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: "bold", mb: 4 }}>
+    <TableContainer
+      component={Paper}
+      sx={{ maxWidth: 900, mx: "auto", mt: 5, p: 3, boxShadow: 3 }}
+    >
+      <Typography
+        variant="h4"
+        align="center"
+        gutterBottom
+        sx={{ fontWeight: "bold", mb: 4 }}
+      >
         Products
       </Typography>
       <Table>
         <TableHead>
           <TableRow>
             <TableCell align="left">
-              <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: "#1976d2" }}>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontWeight: "bold", color: "#1976d2" }}
+              >
                 Vendor Name
               </Typography>
             </TableCell>
             <TableCell align="center">
-              <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: "#1976d2" }}>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontWeight: "bold", color: "#1976d2" }}
+              >
                 Invoice Id
               </Typography>
             </TableCell>
             <TableCell align="right">
-              <Typography variant="subtitle1" sx={{ fontWeight: "bold", color: "#1976d2" }}>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontWeight: "bold", color: "#1976d2" }}
+              >
                 Status
               </Typography>
             </TableCell>
@@ -174,7 +193,10 @@ const Products = () => {
         </TableHead>
         <TableBody>
           {(rowsPerPage > 0
-            ? products.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            ? products.slice(
+                page * rowsPerPage,
+                page * rowsPerPage + rowsPerPage
+              )
             : products
           ).map((row) => (
             <Row key={row.product_invoice_id} row={row} />

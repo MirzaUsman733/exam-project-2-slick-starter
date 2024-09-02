@@ -1,15 +1,15 @@
 "use client";
-import React, { useState } from "react";
 import { Icon } from "@iconify/react";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Dialog,
-  DialogTitle,
   DialogContent,
-  Tabs,
-  Tab,
+  DialogTitle,
   IconButton,
+  Tab,
+  Tabs,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
 
 const ScAccessAccordian = ({ data }) => {
   const [selectedLecture, setSelectedLecture] = useState(null);

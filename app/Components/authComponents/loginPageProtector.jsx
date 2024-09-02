@@ -13,12 +13,12 @@ export default function loginPageProtector(Component) {
 
     useEffect(() => {
       if (loginResponse?.is_logged_in) {
-        router.push("/");  
+        router.push("/");
       }
     }, [loginResponse, router]);
 
     if (!loginResponse?.is_logged_in) {
-      return <Component {...props} />
+      return <Component {...props} />;
     }
 
     return null;

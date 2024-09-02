@@ -160,7 +160,9 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                       }`}
                     >
                       <th className="whitespace-nowrap py-3 bg-white text-left">
-                        <Link href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}>
+                        <Link
+                          href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
+                        >
                           <div className="flex items-center -m-2">
                             <div className="w-auto py-2 ps-2">
                               <div className="flex items-center justify-center lg:w-8 lg:h-8 2xl:w-9 2xl:h-9 text-base font-medium bg-blue-500 rounded-md">

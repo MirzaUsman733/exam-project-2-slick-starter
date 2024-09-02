@@ -1,6 +1,5 @@
-import React from "react";
-import VendorDetails from "../../Components/exam-provider-components/VendorDetails";
 import Banner from "@/app/Components/Banner";
+import VendorDetails from "../../Components/exam-provider-components/VendorDetails";
 const Page = async ({ params }) => {
   const vendorPerma = params.slug;
   const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;

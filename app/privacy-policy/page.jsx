@@ -1,7 +1,6 @@
-import React from "react";
-import PrivacyPolicy from "../Components/privacy-policy/PrivacyPolicy";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import Banner from "../Components/Banner";
+import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
+import PrivacyPolicy from "../Components/privacy-policy/PrivacyPolicy";
 
 const page = () => {
   return (

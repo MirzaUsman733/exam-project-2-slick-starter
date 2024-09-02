@@ -1,16 +1,7 @@
 "use client";
-import React from "react";
-import {
-  Typography,
-  Button,
-  List,
-  ListItem,
-  Box,
-  Grid,
-  Paper,
-} from "@mui/material";
-import Carousel from "react-material-ui-carousel";
+import { Box, Grid, List, ListItem, Paper, Typography } from "@mui/material";
 import Link from "next/link";
+import Carousel from "react-material-ui-carousel";
 import Banner from "../Components/Banner";
 
 function SectionComponent() {
@@ -33,7 +24,7 @@ function SectionComponent() {
 
   return (
     <div className="container mx-auto p-6">
-        <Banner />
+      <Banner />
       <Box>
         <Typography
           variant="h4"
