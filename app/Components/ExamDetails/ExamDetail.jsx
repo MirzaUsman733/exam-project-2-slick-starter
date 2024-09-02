@@ -8,6 +8,7 @@ import LastWeekResults from "./LastWeekResults";
 import OtherRelatedExam from "./OtherRelatedExam";
 import RelatedAndPremium from "./RelatedAndPremium";
 import RelatedExams from "./RelatedExams";
+import SendComment from "./SendComment";
 import TopicsCovered from "./TopicsCovered";
 
 const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
@@ -89,6 +90,9 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
             )}
           </div>
         </div>
+      </div>
+      <div>
+        <SendComment examPerma={examPerma} />
       </div>
     </div>
   );
