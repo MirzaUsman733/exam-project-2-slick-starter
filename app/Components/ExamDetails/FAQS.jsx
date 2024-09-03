@@ -2,7 +2,7 @@ const FAQS = ({ exam_faqs }) => {
   return (
     <div>
       <div className="flex justify-center items-center min-h-screen">
-        <div className="bg-white rounded-lg shadow-md py-5 md:pe-5 w-full">
+        <div className="bg-white rounded-lg shadow-md p-2 py-5 md:pe-5 w-full">
           <h2 className="text-center text-2xl md:text-4xl font-bold text-blue-700">
             Frequently Asked Questions
           </h2>

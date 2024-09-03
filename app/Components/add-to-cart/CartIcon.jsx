@@ -11,7 +11,7 @@ const CartIcon = () => {
   }, [cart]);
 
   return (
-    <Link href="/cart" className="mr-3 md:mr-8 relative group inline-flex items-center">
+    <a href="/cart" className="mr-3 md:mr-8 relative group inline-flex items-center">
       <span className="text-gray-700 group-hover:text-blue-500">
         <svg
           width="16"
@@ -36,7 +36,7 @@ const CartIcon = () => {
       ) : (
         ""
       )}
-    </Link>
+    </a>
   );
 };
 

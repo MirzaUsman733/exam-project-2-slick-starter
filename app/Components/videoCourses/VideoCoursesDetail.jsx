@@ -20,12 +20,12 @@ const VideoCoursesDetail = ({ section }) => {
           className="bg-white shadow-md rounded-md overflow-hidden px-4"
         >
           <Accordion
-            expanded={expanded === `panel${section.section_id}`}
-            onChange={handleChange(`panel${section.section_id}`)}
+            expanded={expanded === `panel${section?.section_id}`}
+            onChange={handleChange(`panel${section?.section_id}`)}
           >
             <AccordionSummary
               expandIcon={
-                expanded === `panel${section.section_id}` ? (
+                expanded === `panel${section?.section_id}` ? (
                   <FaChevronUp className="text-white" />
                 ) : (
                   <FaChevronDown className="text-white" />
