@@ -13,11 +13,11 @@ const VideoCoursesDetail = ({ section }) => {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <div className="space-y-4 mt-20">
+    <div className="space-y-4 mt-10 md:mt-20">
       {section.map((section) => (
         <div
           key={section.section_id}
-          className="bg-white shadow-md rounded-md overflow-hidden"
+          className="bg-white shadow-md rounded-md overflow-hidden px-4"
         >
           <Accordion
             expanded={expanded === `panel${section.section_id}`}
@@ -35,7 +35,7 @@ const VideoCoursesDetail = ({ section }) => {
               id={`panel${section.section_id}bh-header`}
               className="bg-blue-500 text-white"
             >
-              <div className="flex justify-between items-center w-full">
+              <div className="flex flex-wrap justify-between items-center w-full">
                 <Typography
                   variant="h6"
                   component="div"

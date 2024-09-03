@@ -28,7 +28,7 @@ const page = async ({ params }) => {
   };
   const courseDetail = await fetchCourseDetail();
   return (
-    <div className="container mx-auto p-6">
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -59,7 +59,7 @@ const page = async ({ params }) => {
       />
       <Banner />
       <CourseHeader courseDetail={courseDetail} />
-      <hr className="my-20" />
+      <hr className="mt-5 md:my-20" />
       <VideoCoursesDetail section={courseDetail.sections} />
       <hr className="my-5" />
       <HotExam />
