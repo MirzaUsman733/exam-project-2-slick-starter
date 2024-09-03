@@ -56,7 +56,7 @@ function AccountDropdown() {
       <div>
         {!loginResponse?.is_logged_in ? (
           <>
-            <Link className="my-4 lg:my-0 " href={"/login"}>
+            <a className="my-4 lg:my-0 " href={"/login"}>
               <b
                 style={{
                   padding: "10px 20px",
@@ -65,8 +65,8 @@ function AccountDropdown() {
               >
                 Log In
               </b>
-            </Link>
-            <Link
+            </a>
+            <a
               href={"/register"}
               style={{
                 padding: "10px 20px",
@@ -75,7 +75,7 @@ function AccountDropdown() {
               className="hover:text-blue-500 rounded-full bg-blue-500 border-blue-500 border-2 my-4 lg:my-0 text-white hover:bg-white"
             >
               <b>Register Now</b>
-            </Link>
+            </a>
           </>
         ) : (
           <div className="relative">
@@ -90,46 +90,46 @@ function AccountDropdown() {
             </button>
             {isOpen && (
               <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md border shadow-xl z-20 animate-dropdown">
-                <Link
+                <a
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/products"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
                     Products
                   </span>
-                </Link>
-                <Link
+                </a>
+                <a
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/invoices"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
                     Invoice
                   </span>
-                </Link>
-                <Link
+                </a>
+                <a
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/setting"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
                     Setting
                   </span>
-                </Link>
-                <Link
+                </a>
+                <a
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/download-history"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
                     Download History
                   </span>
-                </Link>
-                <Link
+                </a>
+                <a
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/login-history"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
                     Login History
                   </span>
-                </Link>
+                </a>
                 <hr className="container w-[80%] mx-auto" />
                 <button
                   className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
