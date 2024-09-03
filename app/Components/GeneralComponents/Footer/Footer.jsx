@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="bg-white">
@@ -6,13 +8,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="w-full mb-12">
               <div className="mb-3">
-                <a href="index.html">
+                <Link href="/">
                   <img
                     src="/Dumps-Collections-logo.png"
                     className="w-40"
                     alt="logo"
                   />
-                </a>
+                </Link>
               </div>
               <p className="text-gray-700 text-xs leading-6">
                 ExamCollection does not provide genuine Microsoft exam
@@ -136,9 +138,9 @@ const Footer = () => {
               Copyright &copy; 2024, All Right Reserved
             </p>
           </div>
-          <div className="hidden lg:block">
+          <div className="block">
             <ul className="flex">
-              <li className="ml-5">
+              <li className="ml-2 md:ml-5">
                 <a
                   href="/"
                   className="text-gray-700 hover:text-blue-500 text-base"
@@ -146,7 +148,7 @@ const Footer = () => {
                   Home
                 </a>
               </li>
-              <li className="ml-5">
+              <li className="ml-3 md:ml-5">
                 <a
                   href="/terms"
                   className="text-gray-700 hover:text-blue-500 text-base"
@@ -154,7 +156,7 @@ const Footer = () => {
                   Terms
                 </a>
               </li>
-              <li className="ml-5">
+              <li className="ml-3 md:ml-5">
                 <a
                   href="/privacy-policy"
                   className="text-gray-700 hover:text-blue-500 text-base"
@@ -162,7 +164,7 @@ const Footer = () => {
                   Privacy
                 </a>
               </li>
-              <li className="ml-5">
+              <li className="ml-3 md:ml-5">
                 <a
                   href="refund-policy"
                   className="text-gray-700 hover:text-blue-500 text-base"
@@ -170,7 +172,7 @@ const Footer = () => {
                   Refund
                 </a>
               </li>
-              <li className="ml-5">
+              <li className="ml-3 md:ml-5">
                 <a
                   href="/contact-us"
                   className="text-gray-700 hover:text-blue-500 text-base"

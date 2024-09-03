@@ -9,16 +9,16 @@ const FAQS = ({ exam_faqs }) => {
           <hr className="border-4 my-5 w-1/4 mx-auto" />
           {exam_faqs.map((faq) => (
             <div
-              key={faq.faq_q}
+              key={faq?.faq_q}
               className="border-b border-gray-200 last:border-b-0 mb-3 pb-3"
             >
               <div className="flex justify-between items-center cursor-pointer">
                 <h3 className="text-md md:text-xl font-semibold font-[lato] text-blue-500">
-                  {faq.faq_q}
+                  {faq?.faq_q}
                 </h3>
               </div>
               <div className="pt-2.5 text-gray-600">
-                <p className="text-sm md:text-base leading-relaxed">{faq.faq_a}</p>
+                <p className="text-sm md:text-base leading-relaxed">{faq?.faq_a}</p>
               </div>
             </div>
           ))}
