@@ -39,7 +39,7 @@ const SearchCard = () => {
           setSearchData(JSON.parse(storedExamData));
         } else {
           const examResponse = await axios.get(
-            `https://dumpsarena.com/exam-search`
+            `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/exam-search`
           );
           setSearchData(examResponse.data);
           localStorage.setItem("searchData", JSON.stringify(examResponse.data));
@@ -50,7 +50,7 @@ const SearchCard = () => {
           setVendorData(JSON.parse(storedVendorData));
         } else {
           const vendorResponse = await axios.get(
-            `https://dumpsarena.com/vendor-search`
+            `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/vendor-search`
           );
           setVendorData(vendorResponse.data);
           localStorage.setItem(
@@ -65,7 +65,7 @@ const SearchCard = () => {
           setCertificationData(JSON.parse(storedCertificationData));
         } else {
           const certificationResponse = await axios.get(
-            `https://dumpsarena.com/certification-search`
+            `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/certification-search`
           );
           setCertificationData(certificationResponse.data);
           localStorage.setItem(
