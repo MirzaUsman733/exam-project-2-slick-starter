@@ -12,19 +12,19 @@ const CourseTable = ({ videoData }) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="tabs-container flex flex-wrap justify-center gap-3 mb-4 space-x-2">
+    <div className="flex flex-col items-center container p-4 ">
+      <div className="tabs-container grid grid-cols-2 md:flex flex-wrap justify-center mb-4 gap-2">
         {videoData.map((vendor) => (
           <button
-            key={vendor.vendor_perma}
-            className={`tab-item px-5 py-2.5 text-sm font-medium text-center uppercase transition-colors border border-blue-500 duration-300 ease-in-out ${
-              selectedVendor === vendor.vendor_perma
+            key={vendor?.vendor_perma}
+            className={`tab-item px-2 md:px-4 py-2 md:py-2.5 text-xs md:text-sm font-medium text-center uppercase transition-colors border border-blue-500 duration-300 ease-in-out ${
+              selectedVendor === vendor?.vendor_perma
                 ? "bg-blue-600 text-white"
                 : "text-blue-600 hover:bg-blue-600 hover:text-white"
             } rounded-lg`}
-            onClick={() => handleTabClick(vendor.vendor_perma)}
+            onClick={() => handleTabClick(vendor?.vendor_perma)}
           >
-            <div className="flex gap-2">
+            <div className="flex justify-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.5em"
@@ -53,7 +53,7 @@ const CourseTable = ({ videoData }) => {
                   d="M24.2 43.7c1.3 4.7 3.2 9.1 6.6 12.8c1.8 2 2.2 4.8.1 6.4c10.4-8 20.8-16.1 31.2-24.1c2.1-1.6 2.3-3.9 1-5.4c-2.4-2.6-3.8-5.8-4.7-9.1c-15.9 9-27.2 15.4-34.2 19.4"
                 />
               </svg>
-              {vendor.vendor_title}
+              {vendor?.vendor_title}
             </div>
           </button>
         ))}

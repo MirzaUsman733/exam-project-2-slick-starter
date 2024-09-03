@@ -136,19 +136,19 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                     <th className="pe-1 md:pe-4 font-semibold text-xs md:text-sm text-coolGray-500 uppercase text-left rounded-l-md">
                       <p>Exam Title</p>
                     </th>
-                    <th className="whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Vendor
                     </th>
-                    <th className="whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Exam Code
                     </th>
-                    <th className="whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Top country
                     </th>
-                    <th className="whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Rating
                     </th>
-                    <th className="whitespace-nowrap px-2 md:ps-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left rounded-r-md">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:ps-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left rounded-r-md">
                       Buy Now
                     </th>
                   </tr>
@@ -159,7 +159,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                         index % 2 ? "bg-gray-100" : "bg-white"
                       }`}
                     >
-                      <th className="whitespace-nowrap py-3 bg-white text-left">
+                      <th className="whitespace-nowrap w-full overflow-hidden text-wrap py-3 bg-white text-left">
                         <Link
                           href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
                         >
@@ -180,7 +180,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                                 </svg>
                               </div>
                             </div>
-                            <div className="w-[50vw] md:w-[70vw] p-2">
+                            <div className="max-w-full overflow-hidden md:w-[40vw] p-2">
                               <p className="text-wrap text-xs md:text-sm font-medium hover:underline hover:text-blue-700 text-coolGray-800">
                                 {hotExam?.vendor_title} - {hotExam?.exam_code} -{" "}
                                 {hotExam?.exam_title}
@@ -189,7 +189,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                           </div>
                         </Link>
                       </th>
-                      <th className="whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 z-0 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 z-0 text-left">
                         <Link
                           className="font-medium text-blue-500 hotExam-link z-0"
                           href={`/mock-exam-provider/${hotExam?.vendor_perma}`}
@@ -197,15 +197,15 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                           {hotExam?.vendor_title}
                         </Link>
                       </th>
-                      <th className="whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
                         {hotExam?.exam_code}
                       </th>
-                      <th className="whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
                         {topCountryPairs[index]
                           ? topCountryPairs[index].join(" | ")
                           : "US | UK"}
                       </th>
-                      <th className="whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
                         <div className="flex items-center gap-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +229,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                           <span> 4.5 </span>
                         </div>
                       </th>
-                      <th className="whitespace-nowrap ps-1 md:ps-4 bg-white text-xs md:text-sm font-medium text-blue-500 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap ps-1 md:ps-4 bg-white text-xs md:text-sm font-medium text-blue-500 text-left">
                         <Link
                           className="bg-blue-500 border-0 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 text-white font-bold py-1 px-3 rounded"
                           href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}

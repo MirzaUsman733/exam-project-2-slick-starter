@@ -32,7 +32,7 @@ const CourseHeader = ({ courseDetail }) => {
           <span className="flex items-center">
             <FaClock className="mr-2" />
             <span className="font-bold"> Duration:</span> &nbsp;{" "}
-            <span className="italic"> {courseDetail.duration} </span>
+            <span className="italic"> {courseDetail?.duration} </span>
           </span>
           <span className="flex items-center">
             <FaPlayCircle className="mr-2" />
