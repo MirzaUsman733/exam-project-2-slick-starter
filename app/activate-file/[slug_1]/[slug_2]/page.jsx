@@ -45,7 +45,7 @@ function ActivationPage({ params }) {
         {
           key1: params.slug_1,
           key2: params.slug_2,
-          ip: ip,
+          ip: ip.ip,
         },
         {
           headers: {

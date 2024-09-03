@@ -39,7 +39,7 @@ const CustomInvoiceComponent = ({ customInvoicePerma, responseData }) => {
     const payload = {
       name: customerDetails.name,
       email: customerDetails.email,
-      ip: ip,
+      ip: ip.ip,
       coupon: "", // Adjust the coupon code if needed
       IsInvoice: true,
       invoice_perma: customInvoicePerma,

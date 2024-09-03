@@ -40,7 +40,7 @@ export default function SendComment(examPerma) {
       name: name,
       comment: comment,
       email: email,
-      ip: ip,
+      ip: ip.ip,
     });
     const config = {
       method: "post",

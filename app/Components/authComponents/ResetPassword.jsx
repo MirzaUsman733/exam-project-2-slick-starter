@@ -4,37 +4,30 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Alert, Snackbar } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const Login = () => {
+const ResetPassword = ({ email, token }) => {
   const [activeSlide, setActiveSlide] = useState(1);
-  const router = useRouter();
+  const [snackbar, setSnackbar] = useState({ open: false, message: "" });
   const [formData, setFormData] = useState({
-    email: "",
+    email: email,
     password: "",
+    confirmPassword: "",
   });
-  const [isLogin, setIsLogin] = useState("");
   const [ip, setIp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [snackbar, setSnackbar] = useState({ open: false, message: "" });
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const fetchIP = async () => {
     try {
       const response = await axios.get(`/api/my-ip`);
-      setIp(response.data.ip);
-      console.log("IP : ", response.data);
+      setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
     }
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      fetchIP();
-    }, 500);
-
-    // Cleanup the timer if the component unmounts before the delay
-    return () => clearTimeout(timer);
+    fetchIP();
   }, []);
 
   const handleChange = (event) => {
@@ -49,62 +42,33 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
 
-  //   const payload = {
-  //     email: formData.email,
-  //     password: formData.password,
-  //     ip: ip,
-  //   };
 
-  //   try {
-  //     const response = await axios.post(
-  //       `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/login`,
-  //       payload,
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-  //         },
-  //       }
-  //     );
-  //     setIsLogin(response.data);
-  //     if (response.data.is_logged_in) {
-  //       const currentTime = Date.now();
-  //       const twoHoursInMillis = 2 * 60 * 60 * 1000;
-  //       const expiryTime = currentTime + twoHoursInMillis;
-
-  //       localStorage.setItem(
-  //         "loginResponse",
-  //         JSON.stringify({ ...response.data, expiryTime })
-  //       );
-  //       router.push("/");
-  //       window.location.reload();
-  //     } else {
-  //       router.push("/login");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error during registration:", error);
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (!formData.email || !formData.password) {
-      setSnackbar({ open: true, message: "Please fill all fields" });
+    if (!formData.email || !formData.password || !formData.confirmPassword) {
+      setSnackbar({ open: true, message: "All fields are required." });
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      setSnackbar({ open: true, message: "Passwords do not match!" });
       return;
     }
 
     const payload = {
       email: formData.email,
-      password: formData.password,
-      ip: ip,
+      reset_token: token,
+      new_password: formData.password,
+    //   ip: ip.ip,
     };
+    console.log(payload);
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/login`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/reset-password`,
         payload,
         {
           headers: {
@@ -113,114 +77,97 @@ const Login = () => {
           },
         }
       );
-      setIsLogin(response.data.is_logged_in);
-      if (response.data.is_logged_in) {
-        const currentTime = Date.now();
-        const twoHoursInMillis = 2 * 60 * 60 * 1000;
-        const expiryTime = currentTime + twoHoursInMillis;
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify({ ...response.data, expiryTime })
-        );
-        router.push("/");
-        window.location.reload();
-      } else {
-        setSnackbar({
-          open: true,
-          message: "Login failed. Check your Email and Password.",
+      console.log('Response Data : ',response.data)
+      if (response.data) {
+        setFormData({
+          email: "",
+          password: "",
+          confirmPassword: "",
         });
+        window.location.href = "/login";
       }
     } catch (error) {
-      console.error("Login error:", error);
-      setSnackbar({ open: true, message: "Login error: " + error.response });
+      console.error("Error during password reset:", error.response.data.message);
+      setSnackbar({ open: true, message: error.response.data.message });
     }
   };
 
   const handleCloseSnackbar = () => {
     setSnackbar({ open: false, message: "" });
   };
-
-  if (isLogin?.is_logged_in && ip === "") {
-    return null;
-  } else if (!isLogin?.is_logged_in && ip != "") {
-    return (
-      <section>
-        <Snackbar
-          open={snackbar.open}
-          autoHideDuration={6000}
+  return (
+    <div>
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
           onClose={handleCloseSnackbar}
+          severity="error"
+          sx={{ width: "100%" }}
         >
-          <Alert
-            onClose={handleCloseSnackbar}
-            severity="error"
-            sx={{ width: "100%" }}
-          >
-            {snackbar.message}
-          </Alert>
-        </Snackbar>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
+      <section>
         <div className="flex flex-wrap">
           <div className="pt-6 lg:pt-16 pb-6 w-full lg:w-1/2">
             <div className="max-w-md mx-auto">
               <div className="mb-6 lg:mb-20 w-full px-3 flex items-center justify-between">
-                <Link className="text-3xl font-bold leading-none" href="/">
+                <a className="text-3xl font-bold leading-none" href="/">
                   <img
                     className="h-12"
                     src="/Dumps-Collections-logo.png"
                     alt=""
                     width="auto"
                   />
-                </Link>
+                </a>
                 <Link
                   className="py-2 px-6 text-xs rounded-l-xl rounded-t-xl bg-blue-100 hover:bg-blue-200 text-blue-600 font-bold transition duration-200"
-                  href="/register"
+                  href="/login"
                 >
-                  Sign Up
+                  Sign In
                 </Link>
               </div>
               <div>
                 <div className="mb-6 px-3">
-                  <span className="text-gray-500">Sign In</span>
-                  <h3 className="text-2xl font-bold">Login Your account</h3>
+                  <span className="text-gray-500">Sign Up</span>
+                  <h3 className="text-2xl font-bold">Create an account</h3>
                 </div>
-                <form action="" onSubmit={handleSubmit}>
+                <form className="flex flex-col" onSubmit={handleSubmit}>
                   <div className="mb-3 flex p-4 mx-2 bg-gray-50 rounded">
                     <input
                       className="w-full text-xs bg-gray-50 outline-none"
                       type="email"
                       name="email"
+                      readOnly
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@email.com"
                     />
                     <svg
-                      className="h-6 w-6 ml-4 my-auto text-gray-300"
                       xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                      width="1.3em"
+                      height="1.3em"
+                      viewBox="0 0 32 32"
                     >
                       <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                      />
+                        fill="currentColor"
+                        d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z"
+                      ></path>
                     </svg>
                   </div>
-                  <div className="mb-6 flex p-4 mx-2 bg-gray-50 rounded">
+                  <div className="mb-2 flex p-4 mx-2 bg-gray-50 rounded">
                     <input
                       className="w-full text-xs bg-gray-50 outline-none"
                       type={showPassword ? "text" : "password"}
-                      placeholder="Enter your password"
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
+                      placeholder="Enter your password"
                     />
-                    <button
-                      type="button"
-                      className="ml-4"
-                      onClick={togglePasswordVisibility}
-                    >
+                    <button type="button" onClick={togglePasswordVisibility}>
                       {showPassword ? (
                         <VisibilityOffIcon />
                       ) : (
@@ -228,41 +175,56 @@ const Login = () => {
                       )}
                     </button>
                   </div>
-                  <div className="flex justify-end mb-3">
-                    <span className="text-gray-400 text-xs w-full text-end">
-                      <span>Forgot Your account Password?</span>{" "}
-                      <Link
-                        className="text-blue-600 hover:underline"
-                        href="/forgot-password"
-                      >
-                        Click here
-                      </Link>
-                    </span>
+                  <div className="mb-6 flex p-4 mx-2 bg-gray-50 rounded">
+                    <input
+                      className="w-full text-xs bg-gray-50 outline-none"
+                      type={showConfirmPassword ? "text" : "password"}
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Enter your Confirm password"
+                    />
+                    <button
+                      type="button"
+                      onClick={toggleConfirmPasswordVisibility}
+                    >
+                      {showConfirmPassword ? (
+                        <VisibilityOffIcon />
+                      ) : (
+                        <VisibilityIcon />
+                      )}
+                    </button>
                   </div>
                   <div className="px-3 text-center">
                     <button
                       type="submit"
                       className="mb-2 w-full py-4 bg-blue-600 hover:bg-blue-700 rounded text-sm font-bold text-gray-50 transition duration-200"
                     >
-                      Sign In
+                      Reset Password
                     </button>
                     <span className="text-gray-400 text-xs">
-                      <span>Do not have an account?</span>{" "}
+                      <span>Already have an account?</span>{" "}
                       <Link
                         className="text-blue-600 hover:underline"
-                        href="/register"
+                        href="/login"
                       >
-                        Sign Up
+                        Sign In
                       </Link>
                     </span>
                     <p className="mt-16 text-xs text-gray-400">
-                      <a className="underline hover:text-gray-500" href="#">
+                      <Link
+                        className="underline hover:text-gray-500"
+                        href="/privacy-policy"
+                      >
                         Policy privacy
-                      </a>{" "}
+                      </Link>{" "}
                       and{" "}
-                      <a className="underline hover:text-gray-500" href="#">
+                      <Link
+                        className="underline hover:text-gray-500"
+                        href="/terms"
+                      >
                         Terms of Use
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </form>
@@ -413,8 +375,8 @@ const Login = () => {
           </div>
         </div>
       </section>
-    );
-  }
+    </div>
+  );
 };
 
-export default Login;
+export default ResetPassword;

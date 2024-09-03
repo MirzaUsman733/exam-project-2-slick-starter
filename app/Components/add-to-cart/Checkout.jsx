@@ -74,7 +74,7 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
     const payload = {
       name: customerDetails.name,
       email: customerDetails.email,
-      ip: ip,
+      ip: ip.ip,
       coupon: couponCode + "-30", // Adjust the coupon code if needed
       IsInvoice: false,
       invoice_perma: "",

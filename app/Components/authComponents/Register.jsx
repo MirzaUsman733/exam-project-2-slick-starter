@@ -69,8 +69,9 @@ const Register = () => {
       name: `${formData.firstName} ${formData.lastName}`,
       email: formData.email,
       password: formData.password,
-      ip: ip,
+      ip: ip.ip,
     };
+    console.log(payload)
 
     try {
       const response = await axios.post(
@@ -84,6 +85,13 @@ const Register = () => {
         }
       );
       if (response.data) {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        })
         window.location.href = "/login";
       }
     } catch (error) {
