@@ -2,7 +2,7 @@
 import loginPageProtector from "../Components/authComponents/loginPageProtector";
 import { useSearchParams } from 'next/navigation'
 import ResetPassword from "../Components/authComponents/ResetPassword";
-const page = () => {
+const Page = () => {
     const searchParams = useSearchParams()
     const email = searchParams.get('email')
     const token = searchParams.get('token')
@@ -13,4 +13,4 @@ const page = () => {
   );
 };
 
-export default loginPageProtector(page);
+export default loginPageProtector(Page);
