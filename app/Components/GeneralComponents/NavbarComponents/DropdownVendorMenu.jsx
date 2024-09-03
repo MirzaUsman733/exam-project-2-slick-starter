@@ -43,15 +43,15 @@ export default function DropdownMenu({ title, vendors }) {
       >
         {Array.isArray(vendors) &&
           vendors.slice(0, 10).map((vendor) => (
-            <Link
+            <a
               className="block vendor-link-header mx-5 py-2 text-sm"
               key={vendor.vendor_id}
               href={`/mock-exam-provider/${vendor.vendor_perma}`}
             >
               {vendor.vendor_title}
-            </Link>
+            </a>
           ))}
-        <Link
+        <a
           className="vendor-link-header text-blue-500 flex mx-5 py-2 text-sm"
           href={`/mock-exam-provider`}
         >
@@ -70,7 +70,7 @@ export default function DropdownMenu({ title, vendors }) {
               d="M13 7l5 5m0 0l-5 5m5-5H6"
             />
           </svg>
-        </Link>
+        </a>
       </div>
     </li>
   );

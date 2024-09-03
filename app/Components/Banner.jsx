@@ -12,14 +12,14 @@ const Banner = async () => {
   const data = await response.json();
 
   return (
-    <div className="container mx-auto mt-5">
+    <div className="container mx-auto mt-5 px-6">
       {" "}
       {data ? (
         <Link href={data?.banner_link} className="w-full flex justify-center">
           <img
             src={data?.banner_src}
             alt={data?.banner_website}
-            className=" h-auto"
+            className="h-auto"
           />
         </Link>
       ) : (

@@ -70,8 +70,8 @@ const HeaderCard = ({
   };
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-xl md:text-left text-center md:text-3xl font-bold md:hidden block md:mb-5">
-        {examVendorTitle} - {examCode} - {examTitle} - Questions Answers
+      <h1 className="text-base text-left md:text-3xl font-bold md:hidden block md:mb-5">
+        {examVendorTitle} - {examCode} - {examTitle}
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
         <div className="col-span-1 lg:col-span-2">
@@ -135,7 +135,7 @@ const HeaderCard = ({
               <div> {lastUpdate} </div>{" "}
             </div>
             <div className="text-lg flex py-1">
-              <div className="mr-3">Exam Certifications:</div>
+              <div className="mr-3 text-nowrap">Exam Certifications:</div>
               <div>
                 {examCerts?.map((cert) => (
                   <Link

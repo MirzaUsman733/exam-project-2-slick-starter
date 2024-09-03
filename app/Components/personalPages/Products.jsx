@@ -16,6 +16,8 @@ import {
   TablePagination,
   TableRow,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
@@ -28,34 +30,41 @@ function Row({ row }) {
   return (
     <>
       <TableRow hover>
-        <TableCell component="th" scope="row" sx={{ fontWeight: "bold" }}>
+        <TableCell component="th" scope="row" sx={{ fontWeight: "bold", margin: '0', paddingX: '0' }}>
           <Box display="flex" alignItems="center">
-            <IconButton size="small" onClick={() => setOpen(!open)}>
+            <IconButton onClick={() => setOpen(!open)}>
+            <div className="text-xs md:text-md">
               {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            </div>
             </IconButton>
-            <Typography variant="subtitle1" sx={{ ml: 1 }}>
+            <div className="text-xs md:text-md">
               {row.product_vendor
                 ? row.product_vendor
                 : row.product_type_detail}
-            </Typography>
+            </div>
           </Box>
         </TableCell>
         <TableCell align="center" sx={{ fontWeight: "bold" }}>
-          #{row.product_invoice_id}
+          <div className="text-xs md:text-md">#{row.product_invoice_id}</div>
         </TableCell>
         <TableCell align="right">
-          <Chip
-            label={row.product_expired ? "Expired" : "Active"}
-            color={row.product_expired ? "error" : "success"}
-          />
+          <div className="text-xs md:text-base">
+            <span
+              className={`inline-block px-3 py-1 text-sm font-semibold text-white rounded-full ${
+                row.product_expired ? "bg-red-500" : "bg-green-500"
+              }`}
+            >
+              {row.product_expired ? "Expired" : "Active"}
+            </span>
+          </div>
         </TableCell>
       </TableRow>
 
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={3}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 2, borderLeft: "4px solid #1976d2", pl: 2 }}>
-              <Typography variant="h6" gutterBottom>
+            <Box sx={{ borderLeft: "4px solid #1976d2" }}>
+              <Typography className="text-xs md:text-md ps-2 py-3" gutterBottom>
                 {row.product_name}
               </Typography>
               <Table size="small" aria-label="product details">
@@ -112,7 +121,8 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   useEffect(() => {
     async function fetchData() {
       try {
@@ -152,10 +162,10 @@ const Products = () => {
   return (
     <TableContainer
       component={Paper}
-      sx={{ maxWidth: 900, mx: "auto", mt: 5, p: 3, boxShadow: 3 }}
+      sx={{ maxWidth: "100%", mx: "auto", mt: 5, p: 3, boxShadow: 3 }}
     >
       <Typography
-        variant="h4"
+        variant={isMobile ? "h5" : "h4"}
         align="center"
         gutterBottom
         sx={{ fontWeight: "bold", mb: 4 }}
@@ -165,7 +175,7 @@ const Products = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="left">
+            <TableCell align="left" sx={{ pr: isMobile ? 1 : undefined }}>
               <Typography
                 variant="subtitle1"
                 sx={{ fontWeight: "bold", color: "#1976d2" }}
@@ -173,7 +183,10 @@ const Products = () => {
                 Vendor Name
               </Typography>
             </TableCell>
-            <TableCell align="center">
+            <TableCell
+              align="center"
+              sx={{ display: isMobile ? "none" : "table-cell" }}
+            >
               <Typography
                 variant="subtitle1"
                 sx={{ fontWeight: "bold", color: "#1976d2" }}
@@ -199,7 +212,7 @@ const Products = () => {
               )
             : products
           ).map((row) => (
-            <Row key={row.product_invoice_id} row={row} />
+            <Row key={row.product_invoice_id} row={row} isMobile={isMobile} />
           ))}
         </TableBody>
       </Table>

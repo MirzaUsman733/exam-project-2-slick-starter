@@ -45,7 +45,7 @@ const RelatedExams = async ({ vendorPerma }) => {
           href={examCart.exam_perma}
           key={examCart.exam_id}
         >
-          <div className="p-4 bg-blue-500 clip-path-polygon rounded-t">
+          <div className="p-3 md:p-4 bg-blue-500 clip-path-polygon rounded-t">
             <h3 className="text-white text-lg font-semibold">
               {examCart.exam_title}
             </h3>

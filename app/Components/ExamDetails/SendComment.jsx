@@ -74,7 +74,7 @@ export default function SendComment(examPerma) {
           </h2>
         </div>
         <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-white">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label
                 htmlFor="name"

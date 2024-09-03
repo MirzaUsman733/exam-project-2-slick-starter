@@ -3,13 +3,13 @@ import Link from "next/link";
 const VendorDetails = ({ vendorData, vendorPerma }) => {
   return (
     <div className="container mx-auto font-[Lato] p-6 mt-10">
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-10">
         {/* Grid 1 */}
         <div className="col-span-2">
-          <h2 className="bg-blue-500 text-white p-5 mb-3 text-center text-3xl font-semibold">
+          <h2 className="bg-blue-500 text-white p-2 md:p-5 mb-3 text-center text-3xl font-semibold">
             Exams
           </h2>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-5">
             {vendorData?.vendor_exams?.map((vendor) => (
               <div key={vendor?.exam_id}>
                 <Link
@@ -17,10 +17,10 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
                   className="block border rounded-xl hover:border-b-2"
                 >
                   <div className="p-4 bg-blue-500 clip-path-polygon-vendorDetails rounded-t-xl">
-                    <h3 className="text-white text-lg font-semibold">
+                    <h3 className="text-white text-md md:text-lg font-semibold">
                       {vendor?.exam_title}
                     </h3>
-                    <p className="text-white mt-2">{vendor?.exam_code}</p>
+                    <p className="text-white text-sm md:text-md mt-1 md:mt-2">{vendor?.exam_code}</p>
                   </div>
                   <div className="flex items-center p-4">
                     <img
@@ -29,7 +29,7 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
                       alt=""
                     />
                     <div>
-                      <p className="text-gray-800 text-lg font-bold">
+                      <p className="text-gray-800 text-md md:text-lg font-bold">
                         {vendor?.exam_questions} Questions and Answers
                       </p>
                       <div className="flex items-center gap-0.5">
@@ -132,9 +132,9 @@ const VendorDetails = ({ vendorData, vendorPerma }) => {
           </div>
         </div>
         {/* Grid 2 */}
-        <div className="col-span-1">
-          <div className="border">
-            <h2 className="bg-blue-500 text-white p-5 mb-3 text-center text-3xl font-semibold">
+        <div className="col-span-1 mt-5 md:mt-0 w-full md:w-auto">
+          <div className="border w-full ">
+            <h2 className="bg-blue-500 text-white p-2 md:p-5 mb-3 text-center text-xl md:text-3xl font-semibold">
               Certifications
             </h2>
             <ul className="list-none p-1 m-0">

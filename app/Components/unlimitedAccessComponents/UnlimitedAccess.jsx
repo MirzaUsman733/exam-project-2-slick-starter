@@ -1,13 +1,13 @@
 const UnlimitedAccess = () => {
   return (
     <div>
-      <section className="py-24 overflow-hidden">
+      <section className="py-10 md:py-24 overflow-hidden">
         <div className="container px-4 mx-auto">
-          <div className="mb-20 md:max-w-2xl text-center mx-auto">
+          <div className="mb-10 md:mb-20 md:max-w-2xl text-center mx-auto">
             <span className="inline-block mb-4 text-sm text-blue-400 border p-3 rounded-full font-bold tracking-tighter">
               Pricing Plans
             </span>
-            <h2 className="font-heading mb-8 text-7xl lg:text-6xl text-gray-800 font-bold tracking-7xl lg:tracking-8xl">
+            <h2 className="font-medium md:font-heading mb-8 text-2xl md:text-7xl lg:text-6xl text-gray-800 tracking-7xl lg:tracking-8xl">
               Unlimited Download Access
             </h2>
             <p className="mb-2 text-gray-600 mx-auto">
@@ -21,7 +21,7 @@ const UnlimitedAccess = () => {
           <div className="flex flex-wrap -m-4">
             <div className="w-full md:w-1/2 p-4">
               <div
-                className="blue-cut px-8 pt-12 pb-12 h-full bg-gradient-radial-dark  overflow-hidden rounded-3xl"
+                className="blue-cut px-5 md:px-8 py-5 md:pt-12 md:pb-12 h-full bg-gradient-radial-dark  overflow-hidden rounded-3xl"
                 style={{
                   boxShadow: "1px 2px 4px 6px rgba(0, 0, 0, 0.05)",
                 }}
@@ -37,7 +37,7 @@ const UnlimitedAccess = () => {
                     </p>
                   </div>
                   <div className="w-full md:w-1/2 p-2">
-                    <div className="max-w-max md:ml-auto">
+                    <div className="max-w-full md:ml-auto">
                       <p className="flex flex-col items-end">
                         <span className="mb-1.5  text-gray-700 font-black text-4xl">
                           $203.99
@@ -289,7 +289,7 @@ const UnlimitedAccess = () => {
             </div>
             <div className="w-full md:w-1/2 p-4">
               <div
-                className="px-8 pt-12 pb-12 h-full bg-gradient-radial-dark overflow-hidden rounded-3xl"
+                className="px-5 md:px-8 py-5 md:pt-12 md:pb-12 h-full bg-gradient-radial-dark overflow-hidden rounded-3xl"
                 style={{
                   boxShadow: "0px 1px 3px 5px rgba(0, 0, 0, 0.05)",
                 }}
@@ -305,7 +305,7 @@ const UnlimitedAccess = () => {
                     </p>
                   </div>
                   <div className="w-full md:w-1/2 p-2">
-                    <div className="max-w-max md:ml-auto">
+                    <div className="max-w-full md:ml-auto">
                       <p className="flex flex-col items-end">
                         {/* <div> */}
                         <span className="mb-1.5 text-gray-700 font-black text-4xl">
@@ -325,7 +325,7 @@ const UnlimitedAccess = () => {
                 <p className="mb-6 text-xs text-gray-700 font-light uppercase">
                   What is includes
                 </p>
-                <ul className="grid md:grid-cols-2 gap-3 mb-10">
+                <ul className="grid md:grid-cols-2 gap-3 mb-5 md:mb-10">
                   <li className="flex items-center w-full">
                     <div className="w-auto">
                       <div className="flex items-center justify-center w-5 h-5 mr-4 border text-green-500 border-green-400 rounded-full">

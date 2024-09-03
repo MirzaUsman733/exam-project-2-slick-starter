@@ -34,30 +34,30 @@ const OtherRelatedExam = async ({ vendorPerma }) => {
   const shuffledData = shuffleArray(relatedExamData?.vendor_exams);
   return (
     <div className="container mx-auto p-6 mt-10">
-      <h2 className="text-3xl font-bold border-b-2 pb-4 mb-5 text-blue-600">
+      <h2 className="text-xl md:text-3xl font-bold border-b-2 pb-4 mb-5 text-blue-600">
         OTHER USEFUL RELATED EXAMS BY -
         <span className="uppercase"> ({vendorPerma}) </span>
       </h2>
       {shuffledData?.slice(0, 5)?.map((examCart) => (
         <Link
-          className="block hover:bg-gray-100 p-5"
+          className="block hover:bg-gray-100 px-0 py-3 md:p-5"
           href={examCart.exam_perma}
           key={examCart.exam_id}
         >
           <ul className="divide-y divide-gray-300">
             <li className="">
-              <div className="flex justify-between">
+              <div className="flex justify-between flex-wrap md:flex-nowrap">
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-blue-500">
+                  <h3 className="text-sm md:text-xl font-semibold mb-2 text-blue-500">
                     {examCart?.exam_title}
                   </h3>
-                  <p className="text-md ">
+                  <p className="text-xs md:text-md">
                     Prepare for the {examCart?.vendor_perma}
                     {examCart?.exam_code} exam with this comprehensive course.
                   </p>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <p className="text-sm text-end font-bold italic">
+                <div className="flex flex-col items-end w-full md:w-auto gap-1">
+                  <p className="text-xs md:text-sm text-end font-bold italic">
                     {examCart?.exam_questions} Questions And Answers
                   </p>
                   <div className="flex items-center justify-end gap-0.5">
@@ -154,7 +154,7 @@ const OtherRelatedExam = async ({ vendorPerma }) => {
                     &nbsp; <span className="text-xs"> (4.5) </span>
                   </div>
                   <div className="flex justify-end">
-                    <button className="border bg-blue-500 text-white px-2 py-1 rounded-md">
+                    <button className="border bg-blue-500 text-white px-2 text-xs md:text-md py-1 rounded-md">
                       Buy Now
                     </button>
                   </div>

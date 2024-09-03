@@ -75,17 +75,17 @@ export default async function Navbar() {
       </nav>
       {/* Mobile View */}
       <div className="xl:hidden">
-        <nav className="xl:hidden relative px-6 py-5 bg-white flex items-center justify-between">
-          <Link href="/">
+        <nav className="xl:hidden relative px-3 md:px-6 py-5 bg-white flex items-center justify-between">
+          <a href="/">
             <img
-              className="h-9 my-0 py-0"
+              className="h-8 my-0 py-0"
               src="/Dumps-Collections-logo.png"
               alt="Logo"
               width="auto"
             />
-          </Link>
+          </a>
           <div className="flex items-center">
-            <div className="mr-3 mt-1">
+            <div className="mx-3 mt-1">
               <SearchCard />
             </div>
             <CartIcon />
@@ -97,12 +97,12 @@ export default async function Navbar() {
             <div className="px-6 py-6">
               <ul className="flex flex-col space-y-2">
                 <li>
-                  <Link
+                  <a
                     className="text-gray-700 hover:text-blue-500 header-link font-medium"
                     href="/"
                   >
                     Home
-                  </Link>
+                  </a>
                 </li>
                 <DropdownVendorMenu title="Vendors" vendors={vendors} />
                 <DropdownCertificationMenu
@@ -110,18 +110,18 @@ export default async function Navbar() {
                   certifications={certifications}
                 />
 
-                <Link
+                <a
                   className="block font-medium text-black hover:bg-gray-50"
                   href="/video-courses"
                 >
                   Video Courses
-                </Link>
-                <Link
+                </a>
+                <a
                   className="block font-medium text-black hover:bg-gray-50"
                   href="/unlimited-access"
                 >
                   Unlimited Access
-                </Link>
+                </a>
                 <div className="pt-5">
                   <AccountDropdown />
                 </div>

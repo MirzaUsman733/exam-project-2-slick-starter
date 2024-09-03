@@ -5,19 +5,19 @@ function CertificationDetails({ certData, vendorPerma }) {
     <div className="py-8">
       <div className="container mx-auto px-4">
         <div className="overflow-hidden">
-          <div className="px-6 py-6 bg-blue-500 rounded-lg text-white">
-            <h1 className="text-4xl font-extrabold text-center">
+          <div className="px-3 md:px-6 py-6 bg-blue-500 rounded-lg text-white">
+            <h1 className="text-xl font-medium md:text-4xl md:font-extrabold text-center">
               {certData?.cert_title} Certification Details
             </h1>
           </div>
-          <div className="px-6 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
               <div>
-                <p className="text-lg text-gray-800">
+                <p className="text-sm md:text-lg text-gray-800">
                   <strong>Certification Title:</strong>{" "}
                   <span className="italic">{certData?.cert_full_name}</span>
                 </p>
-                <p className="text-lg text-gray-800 mt-4">
+                <p className="text-sm md:text-lg text-gray-800 mt-2 md:mt-4">
                   <strong>Exam Provider:</strong>{" "}
                   <span className="uppercase italic">{vendorPerma}</span>
                 </p>
@@ -123,18 +123,18 @@ function CertificationDetails({ certData, vendorPerma }) {
                 </div>
                 <Link
                   href={`/mock-certifications/${vendorPerma}/${certData?.cert_perma}`}
-                  className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold w-[25%] text-center py-3 rounded-lg transition duration-300 shadow-lg"
+                  className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold w-[50%] md:w-[25%] text-center py-2 md:py-3 rounded-lg transition duration-300 shadow-lg"
                 >
                   Take Exam
                 </Link>
               </div>
             </div>
           </div>
-          <div className="py-6 px-6">
-            <h2 className="text-3xl font-bold text-blue-500 mb-4">
+          <div className="py-6">
+            <h2 className="text-xl md:text-3xl font-bold text-blue-500 mb-4">
               Exams for {certData?.cert_title} Certification :
             </h2>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
               {certData?.cert_multiple_exams?.map((certification) => (
                 <div
                   key={certification?.exam_id}
@@ -151,7 +151,7 @@ function CertificationDetails({ certData, vendorPerma }) {
                     </div>
                   )}
 
-                  <div className="p-6 flex gap-10">
+                  <div className="p-4 md:p-6 flex flex-wrap md:flex-nowrap gap-10">
                     <div>
                       <img
                         src="https://dumpsarena.com/media/package-small-min_optimized.png"

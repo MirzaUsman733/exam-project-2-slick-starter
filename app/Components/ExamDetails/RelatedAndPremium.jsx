@@ -1,7 +1,7 @@
 const RelatedAndPremium = ({ questionTypes, examCode }) => {
   return (
     <div className="w-full">
-      <h1 className="text-center text-blue-600 text-4xl font-bold mb-20">
+      <h1 className="text-center text-blue-600 text-xl md:text-4xl font-bold mb-5 md:mb-20">
         What is in Premium File
       </h1>
       <div className="py-5 border rounded-lg col-span-1 transform hover:scale-105 transition-transform duration-500">

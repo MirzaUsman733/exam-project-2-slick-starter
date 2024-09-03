@@ -90,7 +90,8 @@ const Page = ({ params }) => {
 
       <Box
         sx={{
-          minHeight: "100vh",
+          // minHeight: "100vh",
+          mt: 2,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -100,7 +101,7 @@ const Page = ({ params }) => {
           <Paper
             elevation={6}
             sx={{
-              p: 4,
+              p: 3,
               background: "rgba(255, 255, 255, 0.1)",
               backdropFilter: "blur(10px)",
               borderRadius: "15px",
@@ -121,10 +122,10 @@ const Page = ({ params }) => {
                   >
                     Test Engine Access
                   </Typography>
-                  <Typography variant="h5" fontWeight={500} mt={2}>
+                  {/* <Typography variant="h5" fontWeight={500} mt={2}>
                     {teAccess.exam_code} {teAccess.exam_vendor}{" "}
                     {teAccess?.exam_name && <span>"{teAccess.exam_name}"</span>}
-                  </Typography>
+                  </Typography> */}
                 </Box>
               </Grid>
 
@@ -248,31 +249,11 @@ const Page = ({ params }) => {
                       </Button>
                     </Link>
                   )}
-                  {/* {teAccess.te_file_zip && (
-                    <Link href={`https://certsgang.com${teAccess.te_file_zip}`} passHref>
-                      <Button
-                        variant="contained"
-                        sx={{
-                            background: "linear-gradient(135deg, #2196F3 0%, #2196F3 100%)",
-                            color: "white",
-                          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                          borderRadius: "8px",
-                          "&:hover": {
-                            background: "linear-gradient(135deg, #0072ff 0%, #00c6ff 100%)",
-                          },
-                        }}
-                        startIcon={<DownloadOutlined />}
-                      >
-                        Download .zip File
-                      </Button>
-                    </Link>
-                  )} */}
                 </Box>
-
                 <Box
                   sx={{
                     mt: 5,
-                    p: 4,
+                    p: 3,
                     borderRadius: "15px",
                     background: "rgba(255, 255, 255, 0.2)",
                     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
@@ -284,14 +265,14 @@ const Page = ({ params }) => {
                   <Typography variant="h5" fontWeight={600} gutterBottom>
                     How To Use?
                   </Typography>
-                  <Typography variant="body1">
+                  <div className="text-sm">
                     Download the DumpsCollectionTest Engine Simulator and
                     install it. Then, download the premium .dumpscollectionfile
                     using the buttons above. You will receive a .zip file. Unzip
                     it and add it to the DumpsCollectionTest Engine Simulator.
                     Activate the premium .dumpscollectionfile with the provided
                     purchase and activation keys.
-                  </Typography>
+                  </div>
                 </Box>
               </Grid>
             </Grid>
