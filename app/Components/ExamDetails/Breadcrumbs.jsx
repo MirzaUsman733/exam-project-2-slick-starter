@@ -9,7 +9,7 @@ const Breadcrumbs = ({ breadcrumbData }) => {
         {breadcrumbData?.map((crumb, index) => (
           <li key={index} className="flex items-center">
             {index !== 0 && <span className="mx-2">/</span>}
-            <Link className="hover:text-blue-500" href={crumb.path}>
+            <Link className="hover:text-blue-500 text-xs md:text-base" href={crumb.path}>
               {crumb.label}
             </Link>
           </li>

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
-  const { removeFromCart } = useCart();
+  const { removeFromCart, clearCart } = useCart();
   const router = useRouter();
   const [couponCode, setCouponCode] = useState("MEGASALE");
   const [customerDetails, setCustomerDetails] = useState({
@@ -42,7 +42,13 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
       onApplyCoupon(couponCode);
     }
   };
-
+  const handleClearCart = () => {
+    clearCart();
+    setSnackbarMessage("Your cart has been cleared.");
+    setSnackbarSeverity("info");
+    setSnackbarOpen(true);
+    window.location.reload();
+  };
   const handleRemoveClick = (examId) => {
     removeFromCart(examId);
     window.location.reload();
@@ -101,7 +107,7 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 py-10">
+    <div className="flex justify-center items-center bg-gray-100 px-4 py-10">
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={6000}
@@ -115,48 +121,83 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
           {snackbarMessage}
         </Alert>
       </Snackbar>
-
+      {responseData && responseData.length > 0 ? (
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg">
-        <div className="p-6 border-b border-gray-300">
-          <h1 className="text-2xl font-semibold text-gray-800">
+        <div className="p-3 md:p-6 border-b border-gray-300 flex justify-between items-center">
+          <h1 className="text-sm md:text-2xl font-semibold text-gray-800">
             Complete Your Purchase
           </h1>
+          <button
+            onClick={handleClearCart}
+            className="bg-red-500 hover:bg-red-700 text-xs md:text-md text-white font-bold py-2 px-4 rounded float-right"
+          >
+            Clear Cart
+          </button>
         </div>
-        <div className="p-6">
+        <div className="p-3 md:p-6">
           <section className="mb-5">
             <h2 className="text-xl text-gray-800">Order Summary</h2>
+            <img
+              src="https://exam-hero.netlify.app/product2.png"
+              alt=""
+              className=" md:h-28 md:hidden w-1/2 mx-auto"
+            />
             {responseData &&
               responseData?.map((cartDetail) => (
                 <div
                   key={cartDetail?.exam_id}
-                  className="flex justify-between items-center py-3 border-b border-gray-300"
+                  className="flex justify-between items-center flex-wrap md:flex-nowrap py-3 border-b border-gray-300"
                 >
-                  <div className="flex gap-8 items-center">
+                  <div className="flex flex-wrap md:flex-nowrap gap-8 items-center">
                     <div>
+                      <div className="flex md:hidden items-start">
+                        <span className="text-xs md:hidden block font-bold">
+                          {cartDetail.exam_vendor_title} -{" "}
+                          {cartDetail?.exam_code} - {cartDetail?.exam_title}{" "}
+                        </span>
+                        <button
+                          onClick={() => handleRemoveClick(cartDetail.cart)}
+                          className="text-red-500 hover:text-red-700 block md:hidden font-bold px-2 mb-2 rounded"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
                       <img
                         src="https://exam-hero.netlify.app/product2.png"
                         alt=""
-                        className="h-28"
+                        className="hidden md:block md:h-28 md:w-28"
                       />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-xl font-bold">
+                      <span className="text-xl hidden md:block font-bold">
                         {cartDetail.exam_vendor_title} - {cartDetail?.exam_code}{" "}
                         - {cartDetail?.exam_title}{" "}
                       </span>
-                      <span className="text-lg font-semibold mb-1">
+                      <span className="text-sm md:text-lg font-semibold mb-1">
                         {" "}
                         {cartDetail.title}
                       </span>
-                      <span className="text-sm text-gray-600">Quantity: 1</span>
+                      <span className="text-xs md:text-sm text-gray-600">
+                        Quantity: 1
+                      </span>
                     </div>
                   </div>
-                  <div className="text-lg text-end">
+                  <div className="text-lg text-end w-full md:w-auto">
                     <div>
                       {/* Remove item button */}
                       <button
                         onClick={() => handleRemoveClick(cartDetail.cart)}
-                        className="text-red-500 hover:text-red-700 font-bold px-2 mb-2 rounded"
+                        className="text-red-500 hover:text-red-700 hidden md:flex justify-end w-full font-bold px-2 mb-2 rounded"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -171,8 +212,11 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
                         </svg>
                       </button>
                     </div>
-                    <span className="inline-block mb-1"> 4.5 (155) </span>
-                    <span className="flex gap-1 mb-1">
+                    <span className="inline-block text-sm md:text-md mb-1">
+                      {" "}
+                      4.5 (155){" "}
+                    </span>
+                    <span className="hidden md:flex gap-1 mb-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1em"
@@ -349,7 +393,14 @@ const Checkout = ({ formattedCartItems, responseData, onApplyCoupon }) => {
           </form>
         </div>
       </div>
+       ) : (
+        <div className="p-3 md:p-6 text-center">
+          <h2 className="text-xl font-semibold">Your cart is empty!</h2>
+          <p className="text-md">Browse our products and find something you like.</p>
+        </div>
+      )}
     </div>
+    
   );
 };
 

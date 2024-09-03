@@ -27,6 +27,8 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
           examVendorPerma={examData?.exam_vendor_perma}
           examPrices={examData?.exam_prices}
           examCerts={examData?.exam_certs}
+          examRetired={examData?.exam_retired}
+          examAlternate={examData?.exam_alternate}
         />
       )}
       <hr className="my-4 container mx-auto" />

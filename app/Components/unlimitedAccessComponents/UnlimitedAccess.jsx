@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const UnlimitedAccess = () => {
   return (
     <div>
@@ -13,10 +15,11 @@ const UnlimitedAccess = () => {
             <p className="mb-2 text-gray-600 mx-auto">
               Get Unlimited Access to the all DumpsArena PREMIUM files!
             </p>
-            <p className="mb-12 text-gray-600 mx-auto">
+            <p className="mb-5 text-gray-600 mx-auto">
               Take advantage of premium Files which are Latest and valid by
               DumpsArena!
             </p>
+            <Link href='all-te-exams-list' className=" text-blue-500 underline hover:text-blue-700">All Exams List Available in Unlimited Test Engine & PDF Download Access</Link>
           </div>
           <div className="flex flex-wrap -m-4">
             <div className="w-full md:w-1/2 p-4">

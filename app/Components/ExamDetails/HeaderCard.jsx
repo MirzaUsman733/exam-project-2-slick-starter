@@ -15,6 +15,8 @@ const HeaderCard = ({
   examVendorPerma,
   examPrices,
   examCerts,
+  examRetired,
+  examAlternate,
 }) => {
   const [notificationMessage, setNotificationMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,7 +29,7 @@ const HeaderCard = ({
       "Your item was successfully added to the cart. Please see our cart."
     );
   };
-
+  console.log(examRetired);
   const handleDownloadDemoClick = () => {
     setIsModalOpen(true);
   };
@@ -182,6 +184,29 @@ const HeaderCard = ({
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-red-700 mt-2 text-md font-semibold">
+            {examRetired && (
+              <div className="flex flex-col">
+                <span>
+                  <span className="font-bold">Exam Code:</span> {examCode}{" "}
+                  (Microsoft Azure Architect Design)
+                </span>
+                <span className="mt-1">
+                  This exam will not receive any new updates.
+                </span>
+                <span className="mt-2">
+                  <span className="font-bold">New Exam Code:</span> {" "}
+                  <Link
+                    href={`/mock-exam/${examVendorPerma}/${examAlternate?.exam_alternate_perma}`}
+                    className="text-blue-500 underline hover:text-blue-700"
+                    rel="noopener noreferrer"
+                  >
+                     {examAlternate?.exam_alternate_code}
+                  </Link>
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>

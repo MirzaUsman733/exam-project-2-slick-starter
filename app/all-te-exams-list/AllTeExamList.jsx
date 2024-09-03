@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import AlphabetPagination from "./AlphabetPagination";
+import Link from "next/link";
 
 const AllTeExamList = ({ data, onLetterSelect }) => {
   const [selectedExam, setSelectedExam] = useState(null);
@@ -13,7 +14,7 @@ const AllTeExamList = ({ data, onLetterSelect }) => {
     <div className="container mx-auto p-6">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
-          Discover Your Next Mock Exam
+          Discover Your All Mock Exam
         </h1>
         <p className="text-lg text-gray-700">
           Browse through a diverse range of mock exams to find the perfect match
@@ -50,17 +51,17 @@ const AllTeExamList = ({ data, onLetterSelect }) => {
                     >
                       <div className="flex justify-between items-center">
                         <div>
-                          <h3 className="text-xl font-bold text-gray-700">
+                          <h3 className="text-sm md:text-lg font-bold text-gray-700">
                             {exam_code} - {exam_name}
                           </h3>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-xs md:text-sm text-gray-500">
                             {exam_questions} Questions And Answers
                           </p>
                         </div>
                         <div>
-                          <button className="bg-blue-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
-                            View Details
-                          </button>
+                          <Link href={`mock-exam/${vendor_perma}/${exam_perma}`} className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                            Details
+                          </Link>
                         </div>
                       </div>
                     </div>

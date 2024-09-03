@@ -12,6 +12,21 @@ const SearchCard = () => {
   const [certificationData, setCertificationData] = useState([]);
   const [isInputVisible, setIsInputVisible] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsInputVisible(true); // Open by default on small screens
+      } else {
+        setIsInputVisible(false); // Close on larger screens
+      }
+    };
+
+    handleResize(); // Call on mount to set initial state based on current window size
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const normalizeText = (value) => {
     return value.replace(/[-_*$!@#$%^&()\s]/g, "").toLowerCase();
   };
@@ -166,13 +181,10 @@ const SearchCard = () => {
               padding: "0",
               margin: "0",
               listStyle: "none",
-              position: "absolute",
-              top: "100%",
-              left: 0,
               borderRadius: "0px",
               zIndex: 1000,
             }}
-            className="w-[140%] md:w-[180%]"
+            className="absolute -left-20 md:left-0 top-[100%] w-[92vw] md:w-[180%]"
           >
             <Card
               className="bg-gary-100 text-black custom-scrollbar"

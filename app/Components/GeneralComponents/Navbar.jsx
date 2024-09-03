@@ -85,9 +85,7 @@ export default async function Navbar() {
             />
           </a>
           <div className="flex items-center">
-            <div className="mx-3 mt-1">
-              <SearchCard />
-            </div>
+           
             <CartIcon />
             <ToggleButton />
           </div>
@@ -129,6 +127,9 @@ export default async function Navbar() {
             </div>
           </div>
         </div>
+          <div className="mx-3 mt-1">
+              <SearchCard />
+            </div>
       </div>
     </section>
   );
