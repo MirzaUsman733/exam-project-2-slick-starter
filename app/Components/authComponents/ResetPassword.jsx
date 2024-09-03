@@ -77,7 +77,6 @@ const ResetPassword = ({ email, token }) => {
           },
         }
       );
-      console.log('Response Data : ',response.data)
       if (response.data) {
         setFormData({
           email: "",

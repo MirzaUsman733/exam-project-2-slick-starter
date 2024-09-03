@@ -1,11 +1,11 @@
 "use client";
-import loginPageProtector from "../Components/authComponents/loginPageProtector";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 import ResetPassword from "../Components/authComponents/ResetPassword";
+import { Suspense } from "react";
 const Page = () => {
-    const searchParams = useSearchParams()
-    const email = searchParams.get('email')
-    const token = searchParams.get('token')
+  const searchParams = useSearchParams();
+  const email = searchParams.get("email");
+  const token = searchParams.get("token");
   return (
     <div>
       <ResetPassword email={email} token={token} />
@@ -13,4 +13,4 @@ const Page = () => {
   );
 };
 
-export default loginPageProtector(Page);
+export default Page;
