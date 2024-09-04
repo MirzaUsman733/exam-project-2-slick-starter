@@ -186,18 +186,18 @@ const faqData = [
 const FAQ = () => {
   return (
     <div className="container mx-auto p-5 my-8 md:my-16">
-      <h1 className="text-4xl text-center font-bold mb-10">
+      <h1 className="text-sm md:text-4xl text-center font-bold mb-10">
         Frequently Asked Questions
       </h1>
-      <div className="flex gap-10">
+      <div className="flex flex-wrap gap-10">
         <ul
-          className={`cd-faq-categories w-full max-h-[50%]  md:w-1/5 bg-blue-500 text-white shadow-md`}
-          style={{ maxHeight: "60vh" }}
+          className={`cd-faq-categories max-h-[50%] text-xs md:text-base md:w-1/5 bg-blue-500 text-white shadow-md`}
+          style={{ maxHeight: "70vh" }}
         >
           {faqData.map((section, index) => (
             <li key={index} className="border-b border-white last:border-b-0">
-              <a href={`#`} className={`block px-6 py-3 `}>
-                {section.category}
+              <a href={`#`} className={`block px-2 md:px-6 py-2 md:py-3 `}>
+                {section?.category}
               </a>
             </li>
           ))}
@@ -211,15 +211,15 @@ const FAQ = () => {
               className="border-b mb-3 last:border-b-0"
             >
               <div className="cd-faq-title">
-                <h2 className="text-2xl font-bold mb-4">{section.category}</h2>
+                <h2 className="text-md md:text-2xl font-bold mb-4">{section.category}</h2>
               </div>
               <div>
                 {section.items.map((item, idx) => (
                   <div className="mb-4" key={idx}>
-                    <div className="cd-faq-trigger text-xl font-semibold mb-3">
+                    <div className="cd-faq-trigger text-sm md:text-xl font-semibold mb-3">
                       {idx + 1}. {item.question}
                     </div>
-                    <div className="cd-faq-content">
+                    <div className="cd-faq-content text-xs md:text-base">
                       <p>{item.answer}</p>
                     </div>
                   </div>

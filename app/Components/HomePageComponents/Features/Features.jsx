@@ -2,18 +2,18 @@ const Features = () => {
   return (
     <div className="relative overflow-hidden">
       <section className="skewed-bottom-right bg-white">
-        <div className="pt-12 lg:pt-20 pb-20 radius-for-skewed">
-          <div className="container mx-auto p-6">
+        <div className="pt-0 md:pt-12 lg:pt-20 pb-5 md:pb-20 radius-for-skewed">
+          <div className="container mx-auto px-6 py-3 md:p-6">
             <div className="flex flex-wrap -mx-4">
-              <div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
-                <div className="w-full text-center lg:text-left">
+              <div className="w-full lg:w-1/2 px-4 mb-6 md:mb-20 lg:mb-0 flex items-center">
+                <div className="w-full md:text-center lg:text-left">
                   <div className="max-w-2xl mx-auto lg:mx-0">
-                    <h2 className="mb-3 text-4xl lg:text-5xl text-black font-extrabold">
+                    <h2 className="mb-1 md:mb-3 text-sm md:text-4xl lg:text-5xl text-black font-medium md:font-extrabold">
                       <span>Pass Your Next Certification Exam Fast!</span>
                     </h2>
                   </div>
-                  <div className="max-w-2xl  mx-auto lg:mx-0">
-                    <p className="mb-6 text-gray-600 leading-loose">
+                  <div className="max-w-2xl mx-auto lg:mx-0">
+                    <p className="mb-4 md:mb-6 text-gray-600 text-xs md:text-base md:leading-loose">
                       Get everything you need to study and pass your
                       certification exam with ease. Enjoy 90 days of free
                       updates to keep your materials fresh. With our help, you
@@ -21,9 +21,9 @@ const Features = () => {
                     </p>
                     <div>
                       <div className="flex flex-wrap -m-2">
-                        <div className="w-auto p-2">
-                          <div className="flex flex-wrap md:pe-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1 text-blue-500">
+                        <div className="w-auto px-2 py-1 md:p-2">
+                          <div className="flex flex-wrap md:pe-3 py-0 md:py-2 bg-gray-50 rounded-full">
+                            <div className="w-auto mr-2 pt-0.5 md:pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -38,15 +38,15 @@ const Features = () => {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm  text-gray-800 font-bold">
+                              <p className="text-xs md:text-sm text-gray-800 font-normal md:font-bold">
                                 Latest Questions & Answers
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="w-auto p-2">
-                          <div className="flex flex-wrap md:px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-blue-500">
+                        <div className="w-auto px-2 py-1 md:p-2">
+                          <div className="flex flex-wrap md:px-3 py-0 md:py-2 bg-gray-50 rounded-full">
+                            <div className="w-auto mr-2 pt-0.5 md:pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -61,15 +61,15 @@ const Features = () => {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm text-gray-900 font-bold">
+                              <p className="text-xs md:text-sm text-gray-900 font-normal md:font-bold">
                                 High Success Rate
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="w-auto p-2">
-                          <div className="flex flex-wrap md:pe-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-blue-500">
+                        <div className="w-auto px-2 py-1 md:p-2">
+                          <div className="flex flex-wrap md:pe-3 py-0 md:py-2 bg-gray-50 rounded-full">
+                            <div className="w-auto mr-2 pt-0.5 md:pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -84,15 +84,15 @@ const Features = () => {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm text-gray-900 font-bold">
+                              <p className="text-xs md:text-sm text-gray-900 font-normal md:font-bold">
                                 Hassle Free Refund
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="w-auto p-2">
-                          <div className="flex flex-wrap ps-0 md:pe-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-blue-500">
+                        <div className="w-auto px-2 py-1 md:p-2">
+                          <div className="flex flex-wrap ps-0 md:pe-3 py-0 md:py-2 bg-gray-50 rounded-full">
+                            <div className="w-auto mr-2 pt-0.5 md:pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -107,15 +107,15 @@ const Features = () => {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm text-gray-900 font-bold">
+                              <p className="text-xs md:text-sm text-gray-900 font-normal md:font-bold">
                                 Instant Downloads
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="w-auto p-2">
-                          <div className="flex flex-wrap md:pe-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-blue-500">
+                        <div className="w-auto px-2 py-1 md:p-2">
+                          <div className="flex flex-wrap md:pe-3 py-0 md:py-2 bg-gray-50 rounded-full">
+                            <div className="w-auto mr-2 pt-0.5 md:pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -130,15 +130,15 @@ const Features = () => {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm text-gray-900 font-bold">
+                              <p className="text-xs md:text-sm text-gray-900 font-normal md:font-bold">
                                 Free Quick Updates
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="w-auto p-2">
-                          <div className="flex flex-wrap md:px-3 py-2 bg-gray-50 rounded-full">
-                            <div className="w-auto mr-2 pt-1  text-blue-500">
+                        <div className="w-auto px-2 py-1 md:p-2">
+                          <div className="flex flex-wrap md:px-3 py-0 md:py-2 bg-gray-50 rounded-full">
+                            <div className="w-auto mr-2 pt-0.5 md:pt-1 text-blue-500">
                               <svg
                                 width="13"
                                 height="13"
@@ -153,7 +153,7 @@ const Features = () => {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm text-gray-900 font-bold">
+                              <p className="text-xs md:text-sm text-gray-900 font-normal md:font-bold">
                                 Secure Shopping
                               </p>
                             </div>

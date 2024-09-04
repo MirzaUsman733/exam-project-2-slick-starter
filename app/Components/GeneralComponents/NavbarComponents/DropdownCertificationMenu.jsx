@@ -9,7 +9,7 @@ export default function DropdownMenu({ title, certifications }) {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (!event.target.closest(".dropdown-menu") && isOpen) {
+      if (!event.target.closest(".dropdown-certification-menu") && isOpen) {
         setIsOpen(false);
       }
     };
@@ -26,7 +26,7 @@ export default function DropdownMenu({ title, certifications }) {
   };
 
   return (
-    <li className="relative group dropdown-menu">
+    <li className="relative group dropdown-certification-menu">
       <div
         onClick={(e) => {
           e.preventDefault();

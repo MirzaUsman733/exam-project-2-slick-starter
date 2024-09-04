@@ -9,7 +9,11 @@ export default function DropdownMenu({ title, vendors }) {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (!event.target.closest(".dropdown-menu") && isOpen) {
+      if (
+        isOpen &&
+        !event.target.closest(".dropdown-menu") &&
+        !event.target.closest("a") // This line ensures clicks on any <a> elements also close the dropdown
+      ) {
         setIsOpen(false);
       }
     };
@@ -19,7 +23,7 @@ export default function DropdownMenu({ title, vendors }) {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isOpen]);
+  }, [isOpen, vendors]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

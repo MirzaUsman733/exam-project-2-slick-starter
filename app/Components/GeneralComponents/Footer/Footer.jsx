@@ -132,7 +132,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="bg-white py-6">
-        <div className="container mx-auto flex justify-between items-center flex-wrap">
+        <div className="container mx-auto flex justify-center md:justify-between items-center flex-wrap">
           <div className="text-center lg:text-left">
             <p className="text-gray-700 text-base">
               Copyright &copy; 2024, All Right Reserved
