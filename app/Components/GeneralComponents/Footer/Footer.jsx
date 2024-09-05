@@ -10,7 +10,7 @@ const Footer = () => {
               <div className="mb-3">
                 <Link href="/">
                   <img
-                    src="/Dumps-Collections-logo.png"
+                    src="/logo.png"
                     className="w-40"
                     alt="logo"
                   />
