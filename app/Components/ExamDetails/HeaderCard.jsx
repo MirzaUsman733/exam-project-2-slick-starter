@@ -73,25 +73,25 @@ const HeaderCard = ({
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-base text-left md:text-3xl font-bold md:hidden block md:mb-5">
-        {examVendorTitle} - {examCode} - {examTitle}
+        {examVendorTitle} {examCode} - {examTitle}
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-5 md:gap-10">
         <div className="col-span-1 lg:col-span-2">
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center my-4">
             <img
-              src="https://exam-hero.netlify.app/product2.png"
-              alt="Marks4Sure"
-              className="w-80 h-96"
+              src="/PDF-TE.png"
+              alt="Dumps Collection"
+              className="sm:w-3/12 md:w-4/12 lg:w-6/12 md:mb-2 mt-3 md:mt-0 h-20 md:h-52 lg:h-44 xl:h-52 "
             />
           </div>
 
-          <p className="text-center text-lg font-bold mb-5">
+          <p className="text-center text-sm md:text-lg font-bold mb-3 md:mb-5">
             {examQuestions} Questions Answers with Explanation
           </p>
           <div className="flex justify-center mb-4">
             <button
               onClick={handleDownloadDemoClick}
-              className="bg-blue-600 text-white px-4 py-2 rounded flex items-center"
+              className="bg-blue-600 text-white text-sm md:text-base px-4 py-2 rounded flex items-center"
             >
               <span className="mr-2">DOWNLOAD DEMO</span>
               <svg
@@ -115,13 +115,13 @@ const HeaderCard = ({
         <div className="col-span-1 lg:col-span-3">
           <div className="mb-4">
             <h1 className="text-3xl font-semibold hidden md:block mb-5">
-              {examVendorTitle} - {examCode} - {examTitle} - Questions Answers
+              {examVendorTitle} {examCode} - {examTitle} - Questions Answers
             </h1>
-            <div className="text-lg flex py-1">
+            <div className="text-sm md:text-lg flex py-1">
               <span className="mr-3"> Exam Code: </span>{" "}
               <span className="font-semibold text-start">{examCode}</span>
             </div>
-            <div className="text-lg flex py-1">
+            <div className="text-sm md:text-lg flex py-1">
               <span className="mr-3"> Exam Provider Name: </span>
               <span className="font-semibold">
                 <Link
@@ -132,11 +132,11 @@ const HeaderCard = ({
                 </Link>
               </span>
             </div>
-            <div className="text-lg flex py-1">
+            <div className="text-sm md:text-lg flex py-1">
               <div className="mr-3">Last Update: </div>{" "}
               <div> {lastUpdate} </div>{" "}
             </div>
-            <div className="text-lg flex py-1">
+            <div className="text-sm md:text-lg flex py-1">
               <div className="mr-3 text-nowrap">Exam Certifications:</div>
               <div>
                 {examCerts?.map((cert) => (
@@ -152,7 +152,7 @@ const HeaderCard = ({
             </div>
           </div>
 
-          <div className="bg-blue-50 border rounded-2xl p-5">
+          <div className="bg-blue-50 border rounded-2xl p-2 md:p-5">
             {examPrices?.map((item, index) => (
               <div
                 key={item.type}
@@ -196,13 +196,13 @@ const HeaderCard = ({
                   This exam will not receive any new updates.
                 </span>
                 <span className="mt-2">
-                  <span className="font-bold">New Exam Code:</span> {" "}
+                  <span className="font-bold">New Exam Code:</span>{" "}
                   <Link
                     href={`/mock-exam/${examVendorPerma}/${examAlternate?.exam_alternate_perma}`}
                     className="text-blue-500 underline hover:text-blue-700"
                     rel="noopener noreferrer"
                   >
-                     {examAlternate?.exam_alternate_code}
+                    {examAlternate?.exam_alternate_code}
                   </Link>
                 </span>
               </div>
@@ -272,12 +272,6 @@ const HeaderCard = ({
                     <span>Download {link.type.toUpperCase()} Demo</span>
                   </a>
                 ))}
-                {/* <button
-      className="bg-gray-600 text-white px-4 py-3 rounded-lg w-full hover:bg-gray-700 transition-all duration-300"
-      onClick={handleModalClose}
-    >
-      Close
-    </button> */}
               </div>
             )}
             <div className="flex justify-between items-center mt-5">
@@ -338,11 +332,6 @@ const HeaderCard = ({
                   Secure Shopping
                 </li>
               </ul>
-              <img
-                src="https://exam-hero.netlify.app/product2.png"
-                alt="Marks4Sure"
-                className="w-32 h-28"
-              />
             </div>
 
             <button

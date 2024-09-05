@@ -34,7 +34,7 @@ export default async function Navbar() {
           <Link href="/">
             <img
               className="w-32 my-0 py-0"
-              src="/Dumps-Collections-logo.png"
+              src="/logo.png"
               alt="Logo"
               width="auto"
             />
@@ -79,7 +79,7 @@ export default async function Navbar() {
           <a href="/">
             <img
               className="h-8 my-0 py-0"
-              src="/Dumps-Collections-logo.png"
+              src="/logo.png"
               alt="Logo"
               width="auto"
             />
