@@ -1,6 +1,7 @@
 import Banner from "../Components/Banner";
 import CertificationsComponent from "../Components/certifications-components/CertificationsComponent";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
+import Script from "../Components/scripts/Script";
 const Page = async () => {
   const fetchCertificationData = async () => {
     try {
@@ -26,6 +27,7 @@ const Page = async () => {
   const certifications = await fetchCertificationData();
   return (
     <>
+      <Script />
       <Banner />
       <CertificationsComponent certifications={certifications} />
       <div className="mt-10">

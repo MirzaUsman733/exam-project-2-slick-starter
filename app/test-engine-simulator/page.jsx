@@ -3,6 +3,7 @@ import { Box, Grid, List, ListItem, Paper, Typography } from "@mui/material";
 import Link from "next/link";
 import Carousel from "react-material-ui-carousel";
 import Banner from "../Components/Banner";
+import Script from "../Components/scripts/Script";
 
 function SectionComponent() {
   const points = [
@@ -24,6 +25,7 @@ function SectionComponent() {
 
   return (
     <div className="container mx-auto p-6">
+      <Script />
       <Banner />
       <Box>
         <Typography

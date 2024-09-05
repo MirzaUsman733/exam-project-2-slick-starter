@@ -24,20 +24,22 @@ function useCart() {
 
   // Function to add items to the cart
   const addToCart = (item) => {
-    const newItem = {
-      cart: item.cart,
-    };
     setCart((prevCart) => {
+      // Check if the item already exists in the cart
       const existingItemIndex = prevCart.findIndex(
         (cartItem) => cartItem.cart === item.cart
       );
+
       if (existingItemIndex > -1) {
-        // If the item exists, update the quantity
-        const updatedCart = [...prevCart];
-        updatedCart[existingItemIndex].quantity += item.quantity;
-        return updatedCart;
+        // If the item already exists, don't add it again
+        console.log("Item already in the cart");
+        return prevCart;
       } else {
-        // Add new item to the cart
+        // If it's a new item, add it to the cart
+        const newItem = {
+          cart: item.cart,
+          quantity: item.quantity, // Ensure you keep the quantity property
+        };
         return [...prevCart, newItem];
       }
     });
