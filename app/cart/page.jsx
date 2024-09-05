@@ -47,7 +47,6 @@ const Page = () => {
     console.log(isValidCoupon)
     if (isValidCoupon) {
       setSnackbarMessage('Coupon code apply')
-      console.log('usman')
       setCoupon(couponCode);
     } else {
       setSnackbarMessage("Invalid coupon code.");
