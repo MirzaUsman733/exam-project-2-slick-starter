@@ -29,7 +29,6 @@ const HeaderCard = ({
       "Your item was successfully added to the cart. Please see our cart."
     );
   };
-  console.log(examRetired);
   const handleDownloadDemoClick = () => {
     setIsModalOpen(true);
   };

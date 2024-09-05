@@ -22,7 +22,6 @@ const Login = () => {
     try {
       const response = await axios.get(`/api/my-ip`);
       setIp(response.data.ip);
-      console.log("IP : ", response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
     }

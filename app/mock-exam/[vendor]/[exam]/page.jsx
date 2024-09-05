@@ -30,10 +30,10 @@ const Page = ({ params }) => {
     const examData = await fetchData();
     const breadcrumbData = [
       { label: "Home", path: "/" },
-      { label: `${examData?.exam_vendor_title}`, path: `/${vendor_perma}` },
+      { label: `${examData?.exam_vendor_title}`, path: `/mock-exam-provider/${vendor_perma}` },
       {
         label: `${examData?.exam_code}`,
-        path: `/${examData?.exam_code}`,
+        path: `${examData?.exam_code}`,
       },
     ];
     const vendorPerma = vendor_perma;

@@ -70,7 +70,6 @@ const Page = ({ params }) => {
 
     fetchData();
   }, [params.id_one, params.id_two, params.id_three]);
-  console.log(teAccess);
   return (
     <>
       <Snackbar

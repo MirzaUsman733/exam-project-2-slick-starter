@@ -62,9 +62,7 @@ const ResetPassword = ({ email, token }) => {
       email: formData.email,
       reset_token: token,
       new_password: formData.password,
-    //   ip: ip.ip,
     };
-    console.log(payload);
 
     try {
       const response = await axios.post(

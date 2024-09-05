@@ -32,7 +32,6 @@ const Page = ({ params }) => {
   }, [router, params.slug_1, params.slug_2, selectedLetter]);
 
   const handleLetterSelect = (letter) => {
-    console.log("Selected Letter:", letter);
     setSelectedLetter(letter);
   };
   return (

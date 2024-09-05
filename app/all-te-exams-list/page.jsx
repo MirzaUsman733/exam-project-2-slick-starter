@@ -28,7 +28,6 @@ const Page = () => {
   }, [selectedLetter]);
 
   const handleLetterSelect = (letter) => {
-    console.log("Selected Letter:", letter);
     setSelectedLetter(letter);
   };
 

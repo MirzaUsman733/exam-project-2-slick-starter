@@ -71,7 +71,6 @@ const Register = () => {
       password: formData.password,
       ip: ip.ip,
     };
-    console.log(payload)
 
     try {
       const response = await axios.post(
