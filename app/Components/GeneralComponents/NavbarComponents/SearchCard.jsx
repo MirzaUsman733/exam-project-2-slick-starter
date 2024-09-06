@@ -10,22 +10,7 @@ const SearchCard = () => {
   const [searchData, setSearchData] = useState([]);
   const [vendorData, setVendorData] = useState([]);
   const [certificationData, setCertificationData] = useState([]);
-  const [isInputVisible, setIsInputVisible] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsInputVisible(true); // Open by default on small screens
-      } else {
-        setIsInputVisible(false); // Close on larger screens
-      }
-    };
-
-    handleResize(); // Call on mount to set initial state based on current window size
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const [isInputVisible, setIsInputVisible] = useState(false); // Track input visibility for desktop
 
   const normalizeText = (value) => {
     return value.replace(/[-_*$!@#$%^&()\s]/g, "").toLowerCase();
@@ -39,7 +24,7 @@ const SearchCard = () => {
           setSearchData(JSON.parse(storedExamData));
         } else {
           const examResponse = await axios.get(
-            `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/exam-search`
+            `https://www.dumpsarena.com/exam-search`
           );
           setSearchData(examResponse.data);
           localStorage.setItem("searchData", JSON.stringify(examResponse.data));
@@ -50,7 +35,7 @@ const SearchCard = () => {
           setVendorData(JSON.parse(storedVendorData));
         } else {
           const vendorResponse = await axios.get(
-            `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/vendor-search`
+            `https://www.dumpsarena.com/vendor-search`
           );
           setVendorData(vendorResponse.data);
           localStorage.setItem(
@@ -65,7 +50,7 @@ const SearchCard = () => {
           setCertificationData(JSON.parse(storedCertificationData));
         } else {
           const certificationResponse = await axios.get(
-            `${process?.env?.NEXT_PUBLIC_API_BASE_URL}/certification-search`
+            `https://www.dumpsarena.com/certification-search`
           );
           setCertificationData(certificationResponse.data);
           localStorage.setItem(
@@ -115,53 +100,63 @@ const SearchCard = () => {
   };
 
   return (
-    <div style={{ position: "relative", marginBottom: 4 }}>
-      {isInputVisible ? (
-        <>
-          <input
-            type="text"
-            className="bg-gray-100 text-blue-500"
-            style={{
-              padding: "10px",
-              borderRadius: "50px",
-              color: "black",
-              width: "100%",
-              outline: "none",
-              paddingLeft: "35px",
-              border: "1px solid #D7DBE0",
-            }}
-            placeholder="Search..."
-            value={searchValue}
-            onChange={(e) => {
-              const { value } = e.target;
-              handleSearch(value);
-            }}
-          />
+    <div className="relative mb-4">
+      {/* Input always visible on mobile, toggle on larger screens */}
+      <div className="md:hidden">
+        <input
+          type="text"
+          className="bg-gray-100 text-blue-500 block p-2 rounded-full w-full outline-none border border-gray-300 pl-8"
+          placeholder="Search..."
+          value={searchValue}
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+        <svg
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+        >
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+      </div>
+
+      {/* Toggle input visibility on larger screens */}
+      <div className="hidden md:flex justify-end items-center">
+        {isInputVisible ? (
+          <div className="relative w-full mt-3">
+            <input
+              type="text"
+              className="bg-gray-100 text-blue-500 p-2 rounded-full w-full outline-none border border-gray-300 pl-8"
+              placeholder="Search..."
+              value={searchValue}
+              onChange={(e) => handleSearch(e.target.value)}
+            />
+            <svg
+              className="absolute top-1/2 left-2 transform -translate-y-1/2 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+            >
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+              <path fill="none" d="M0 0h24v24H0z" />
+            </svg>
+            {/* Button to close the input */}
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black"
+              onClick={() => {
+                setSearchValue("")
+                setIsInputVisible(false)}}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"></path></svg>
+            </button>
+          </div>
+        ) : (
           <svg
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "10px",
-              transform: "translateY(-50%)",
-              fill: "currentColor",
-            }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-            <path fill="none" d="M0 0h24v24H0z" />
-          </svg>
-        </>
-      ) : (
-        <div className="flex justify-end items-center">
-          <svg
-            style={{
-              textAlign: "end",
-              cursor: "pointer",
-              fill: "currentColor",
-            }}
+            className="text-end cursor-pointer mt-3"
+            fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -171,135 +166,62 @@ const SearchCard = () => {
             <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
             <path fill="none" d="M0 0h24v24H0z" />
           </svg>
-        </div>
-      )}
+        )}
+      </div>
+
+      {/* Search results */}
       {searchValue && (
-        <>
-          <ul
-            style={{
-              color: "white",
-              padding: "0",
-              margin: "0",
-              listStyle: "none",
-              borderRadius: "0px",
-              zIndex: 1000,
-            }}
-            className="absolute -left-20 md:left-0 top-[100%] w-[92vw] md:w-[180%]"
-          >
-            <Card
-              className="bg-gary-100 text-black custom-scrollbar"
-              sx={{ maxHeight: "500px", overflowY: "auto", padding: "10px" }}
-            >
-              <li
-                style={{
-                  padding: "5px 10px",
-                  textAlign: "center",
-                }}
+        <ul className="absolute left-0 top-full w-full 2xl:w-[250%] md:mt-5 bg-blue-50 z-50 p-2 rounded-lg shadow-lg">
+          <div className="bg-gray-100 text-black max-h-80 overflow-scroll custom-scrollbar p-2">
+            <li className="p-2 text-center">See all search results for {searchValue}</li>
+            <li className="bg-white text-gray-900 font-bold text-xl text-center p-2">
+              Exams - {filteredData.length}
+            </li>
+            {filteredData.map((item) => (
+              <div
+                key={item.code}
+                onClick={() => handleExamPage(item)}
+                className="cursor-pointer border-b border-gray-300 last:border-none hover:bg-gray-200"
               >
-                See all search for {searchValue}
-              </li>
-              <li
-                className="bg-white text-gray-700 font-bold text-xl text-center"
-                style={{
-                  padding: "5px 10px",
-                }}
+                <li className="p-2">
+                  <div className="text-black font-bold text-sm">{item.code}</div>
+                  <div className="text-xs">{item.name}</div>
+                </li>
+              </div>
+            ))}
+            <li className="bg-white text-gray-700 font-bold text-xl text-center p-2">
+              Vendors - {filteredVendors.length}
+            </li>
+            {filteredVendors.map((item) => (
+              <div
+                key={item.slug}
+                onClick={() => handleVendorPage(item.slug)}
+                className="cursor-pointer border-b border-gray-300 last:border-none hover:bg-gray-200"
               >
-                Exams - {filteredData.length}
-              </li>
-              {filteredData.map((item, index) => (
-                <div
-                  key={item.code}
-                  onClick={() => handleExamPage(item)}
-                  style={{ cursor: "pointer" }}
-                  className="border-b border-gray-500 last:border-b-0"
-                >
-                  <li
-                    style={{
-                      padding: "15px 10px",
-                    }}
-                    className="hover:bg-gray-100"
-                  >
-                    <div className="text-black font-bold text-sm">
-                      {item.code}
-                    </div>
-                    <div className="text-xs">{item.name}</div>
-                  </li>
-                </div>
-              ))}
-              <li
-                className="bg-white text-gray-700 font-bold text-xl text-center"
-                style={{
-                  padding: "5px 10px",
-                }}
+                <li className="p-2">
+                  <div className="text-black font-bold">{item.slug}</div>
+                  <div>{item.name}</div>
+                </li>
+              </div>
+            ))}
+            <li className="bg-white text-gray-700 font-bold text-xl text-center p-2">
+              Certifications - {filteredCertifications.length}
+            </li>
+            {filteredCertifications.map((item) => (
+              <div
+                key={item.slug}
+                onClick={() => handleCertificationPage(item)}
+                className="cursor-pointer border-b border-gray-300 last:border-none hover:bg-gray-200"
               >
-                Vendors - {filteredVendors.length}
-              </li>
-              {filteredVendors.map((item, index) => (
-                <div
-                  key={item.code}
-                  onClick={() => handleVendorPage(item.slug)}
-                  style={{ cursor: "pointer" }}
-                  className="border-b border-gray-500 last:border-b-0"
-                >
-                  <li
-                    style={{
-                      padding: "15px 10px",
-                    }}
-                    className="hover:bg-gray-100"
-                  >
-                    <div className="text-black font-bold">{item.slug}</div>
-                    <div>{item.name}</div>
-                  </li>
-                </div>
-              ))}
-              <li
-                className="bg-white text-gray-700 font-bold text-xl text-center"
-                style={{
-                  padding: "5px 10px",
-                }}
-              >
-                Certifications - {filteredCertifications.length}
-              </li>
-              {filteredCertifications.map((item, index) => (
-                <div
-                  key={item.code}
-                  onClick={() => handleCertificationPage(item)}
-                  style={{ cursor: "pointer" }}
-                  className="border-b border-gray-500 last:border-b-0"
-                >
-                  <li
-                    style={{
-                      padding: "15px 10px",
-                    }}
-                    className="hover:bg-gray-100 "
-                  >
-                    <div className="text-black font-bold">{item.slug}</div>
-                    <div>{item.name}</div>
-                  </li>
-                </div>
-              ))}
-            </Card>
-          </ul>
-        </>
+                <li className="p-2">
+                  <div className="text-black font-bold">{item.slug}</div>
+                  <div>{item.name}</div>
+                </li>
+              </div>
+            ))}
+          </div>
+        </ul>
       )}
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 2px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background-color: black;
-          border-radius: 10px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background-color: black;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: black;
-        }
-      `}</style>
     </div>
   );
 };

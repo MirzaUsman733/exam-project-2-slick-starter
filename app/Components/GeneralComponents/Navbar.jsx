@@ -28,9 +28,9 @@ export default async function Navbar() {
   const certifications = await certRes.json();
   return (
     <section>
-      <nav className="relative px-6 py-0 xl:px-16 xl:py-5">
+      <nav className="relative px-6 py-0 2xl:px-16 2xl:py-5">
         {/* Desktop View */}
-        <div className="hidden xl:flex items-center justify-between">
+        <div className="hidden 2xl:flex items-center justify-between">
           <Link href="/">
             <img
               className="w-32 my-0 py-0"
@@ -74,8 +74,8 @@ export default async function Navbar() {
         </div>
       </nav>
       {/* Mobile View */}
-      <div className="xl:hidden">
-        <nav className="xl:hidden relative px-3 md:px-6 py-5 bg-white flex items-center justify-between">
+      <div className="2xl:hidden">
+        <nav className="2xl:hidden relative px-3 md:px-6 py-5 bg-white flex items-center justify-between">
           <a href="/">
             <img
               className="h-8 my-0 py-0"
@@ -90,7 +90,7 @@ export default async function Navbar() {
             <ToggleButton />
           </div>
         </nav>
-        <div id="drawer" className="hidden xl:hidden">
+        <div id="drawer" className="hidden 2xl:hidden">
           <div className="bg-white h-full overflow-y-auto ">
             <div className="px-6 py-6">
               <ul className="flex flex-col space-y-2">
