@@ -1,5 +1,4 @@
 "use client";
-import { Card } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -24,7 +23,7 @@ const SearchCard = () => {
           setSearchData(JSON.parse(storedExamData));
         } else {
           const examResponse = await axios.get(
-            `https://www.dumpsarena.com/exam-search`
+            `https://dumpsarena.com/exam-search`
           );
           setSearchData(examResponse.data);
           localStorage.setItem("searchData", JSON.stringify(examResponse.data));
@@ -35,7 +34,7 @@ const SearchCard = () => {
           setVendorData(JSON.parse(storedVendorData));
         } else {
           const vendorResponse = await axios.get(
-            `https://www.dumpsarena.com/vendor-search`
+            `https://dumpsarena.com/vendor-search`
           );
           setVendorData(vendorResponse.data);
           localStorage.setItem(
@@ -50,7 +49,7 @@ const SearchCard = () => {
           setCertificationData(JSON.parse(storedCertificationData));
         } else {
           const certificationResponse = await axios.get(
-            `https://www.dumpsarena.com/certification-search`
+            `https://dumpsarena.com/certification-search`
           );
           setCertificationData(certificationResponse.data);
           localStorage.setItem(
