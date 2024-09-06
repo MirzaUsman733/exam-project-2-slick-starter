@@ -25,7 +25,6 @@ const page = async() => {
     }
   };
   const UnlimitedAccessCartData = await fetchUnlimitedAccessData();
-  console.log(UnlimitedAccessCartData)
   return (
     <div>
       <Script />

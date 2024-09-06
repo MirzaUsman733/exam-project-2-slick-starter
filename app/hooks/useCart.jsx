@@ -31,8 +31,6 @@ function useCart() {
       );
 
       if (existingItemIndex > -1) {
-        // If the item already exists, don't add it again
-        console.log("Item already in the cart");
         return prevCart;
       } else {
         // If it's a new item, add it to the cart

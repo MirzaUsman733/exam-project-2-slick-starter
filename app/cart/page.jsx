@@ -28,7 +28,6 @@ const Page = () => {
         }
   
         const data = await response.json();
-        console.log(data)
         setCoupons(data);
       } catch (error) {
         console.error("Failed to fetch coupons:", error);
@@ -44,7 +43,6 @@ const Page = () => {
   const handleApplyCoupon = (couponCode) => {
     // Check if the coupon code exists in the fetched coupons list
     const isValidCoupon = coupons?.find((c) => c.coupon === couponCode);
-    console.log(isValidCoupon)
     if (isValidCoupon) {
       setSnackbarMessage('Coupon code apply')
       setCoupon(couponCode);
@@ -58,7 +56,6 @@ const Page = () => {
   useEffect(() => {
     const formattedCartItems = cart?.map((item) => item?.cart);
     if (cart) {
-      console.log('cart:', cart)
       const requestData = {
         coupon: `${coupon}-30`,
         cart_items: formattedCartItems,
