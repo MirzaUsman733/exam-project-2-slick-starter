@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import Footer from "./Components/GeneralComponents/Footer/Footer";
 import Navbar from "./Components/GeneralComponents/Navbar";
 import "./globals.css";
+import { AuthProtector } from "./Components/authComponents/AuthProtector";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,9 +39,11 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body>
+        <AuthProtector>
         <Navbar />
+
         <hr className="w-[80%] m-auto" />
-        {children}
+          {children}</AuthProtector>
         <Footer />
       </body>
     </html>

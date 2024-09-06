@@ -1,7 +1,7 @@
 "use client";
 import useCart from "@/app/hooks/useCart";
 
-const AddToCartButton = ({ item, onAddToCart }) => {
+const AddToCartButton = ({ item, onAddToCart, text }) => {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
@@ -13,9 +13,8 @@ const AddToCartButton = ({ item, onAddToCart }) => {
   return (
     <button
       onClick={handleAddToCart}
-      className="bg-green-500 text-white text-xs px-2 md:px-3 lg:px-4 py-2 ml-2 md:ml-3 lg:ml-4 rounded"
     >
-      ADD TO CART
+      {text}
     </button>
   );
 };

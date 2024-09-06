@@ -1,4 +1,6 @@
+'use client'
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export const AuthProtector = ({ children }) => {
   const router = useRouter();
@@ -11,6 +13,7 @@ export const AuthProtector = ({ children }) => {
       alert("Token expired");
       localStorage.removeItem("loginResponse");
       router.push("/login");
+      window.location.reload()
     }, timeLeft);
   };
 

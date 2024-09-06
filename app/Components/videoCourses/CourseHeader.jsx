@@ -1,9 +1,24 @@
-// Importing React and any other required dependencies
+"use client";
 import { FaClock, FaPlayCircle } from "react-icons/fa"; // Import icons from 'react-icons' library
+import AddToCartButton from "../add-to-cart/AddToCartButton";
+import Notification from "../add-to-cart/Notification";
+import { useState } from "react";
 
 const CourseHeader = ({ courseDetail }) => {
+  const [notificationMessage, setNotificationMessage] = useState("");
+  const handleAddToCartSuccess = () => {
+    setNotificationMessage(
+      "Your item was successfully added to the cart. Please see our cart."
+    );
+  };
+
+  const cartData = {
+    cart: courseDetail?.cart,
+  };
+
   return (
-    <div className="container mx-auto px-6">
+    <div className="container mx-auto mt-20 px-6">
+      <Notification message={notificationMessage} />
       <div className="overflow-hidden my-4 grid grid-cols-1 md:grid-cols-3 w-full gap-0 md:gap-28 font-[lato]">
         <div className="col-span-1 w-full">
           <img
@@ -15,15 +30,13 @@ const CourseHeader = ({ courseDetail }) => {
             Become a certified Project Management Professional with this
             comprehensive course.
           </div>
-        <hr className="my-3" />
+          <hr className="my-3" />
         </div>
         <div className="flex-grow col-span-2">
           <h2 className="text-sm md:text-2xl font-bold text-gray-800 mb-2">
             {courseDetail?.title}
           </h2>
           <p className="text-xs md:text-lg text-gray-600 mb-4">
-            {/* Become a certified Project Management Professional with this
-          comprehensive course. */}
             Prepare for your Amazon AWS examination with our training course.
             The DAS-C01 course contains a complete batch of videos that will
             provide you with profound and thorough knowledge related to Amazon
@@ -150,9 +163,13 @@ const CourseHeader = ({ courseDetail }) => {
             </div>
           </div>
           <hr className="my-4" />
-          <button className="bg-blue-500 text-white px-4 py-3 rounded-lg w-full mx-auto hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
-            Add to Cart
-          </button>
+          <div className="bg-blue-500 text-white px-4 py-3 rounded-lg w-full mx-auto hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
+            <AddToCartButton
+              text={"Start Now"}
+              item={cartData}
+              onAddToCart={handleAddToCartSuccess}
+            />
+          </div>
         </div>
       </div>
     </div>

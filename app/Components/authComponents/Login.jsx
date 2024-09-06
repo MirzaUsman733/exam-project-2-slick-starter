@@ -28,12 +28,12 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      fetchIP();
-    }, 500);
+    // const timer = setTimeout(() => {
+    fetchIP();
+    //   }, 500);
 
-    // Cleanup the timer if the component unmounts before the delay
-    return () => clearTimeout(timer);
+    //   // Cleanup the timer if the component unmounts before the delay
+    //   return () => clearTimeout(timer);
   }, []);
 
   const handleChange = (event) => {
@@ -48,45 +48,7 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
 
-  //   const payload = {
-  //     email: formData.email,
-  //     password: formData.password,
-  //     ip: ip,
-  //   };
-
-  //   try {
-  //     const response = await axios.post(
-  //       `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/account/login`,
-  //       payload,
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-  //         },
-  //       }
-  //     );
-  //     setIsLogin(response.data);
-  //     if (response.data.is_logged_in) {
-  //       const currentTime = Date.now();
-  //       const twoHoursInMillis = 2 * 60 * 60 * 1000;
-  //       const expiryTime = currentTime + twoHoursInMillis;
-
-  //       localStorage.setItem(
-  //         "loginResponse",
-  //         JSON.stringify({ ...response.data, expiryTime })
-  //       );
-  //       router.push("/");
-  //       window.location.reload();
-  //     } else {
-  //       router.push("/login");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error during registration:", error);
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
 

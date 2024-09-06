@@ -3,12 +3,34 @@ import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import Script from "../Components/scripts/Script";
 import UnlimitedAccess from "../Components/unlimitedAccessComponents/UnlimitedAccess";
 
-const page = () => {
+const page = async() => {
+  const fetchUnlimitedAccessData = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/unlimited_access/?coupon=MEGASALE-30`,
+        {
+          headers: {
+            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+          },
+        }
+      );
+      if (!res.ok) {
+        throw new Error(`Failed to fetch data: ${res.status}`);
+      }
+      const UnlimitedAccessCartData = await res.json();
+      return UnlimitedAccessCartData;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
+  };
+  const UnlimitedAccessCartData = await fetchUnlimitedAccessData();
+  console.log(UnlimitedAccessCartData)
   return (
     <div>
       <Script />
       <Banner />
-      <UnlimitedAccess />
+      <UnlimitedAccess UnlimitedAccessCartData={UnlimitedAccessCartData} />
       <hr className="container mx-auto" />
       <HotExam />
     </div>

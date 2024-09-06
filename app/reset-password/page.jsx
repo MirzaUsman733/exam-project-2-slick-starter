@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import ResetPassword from "../Components/authComponents/ResetPassword";
-import { Suspense } from "react";
+
 const Page = () => {
   const searchParams = useSearchParams();
   const email = searchParams.get("email");

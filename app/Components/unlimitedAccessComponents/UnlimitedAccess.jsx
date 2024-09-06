@@ -1,8 +1,28 @@
+"use client";
 import Link from "next/link";
+import AddToCartButton from "../add-to-cart/AddToCartButton";
+import { useState } from "react";
+import Notification from "../add-to-cart/Notification";
 
-const UnlimitedAccess = () => {
+const UnlimitedAccess = ({ UnlimitedAccessCartData }) => {
+  const [notificationMessage, setNotificationMessage] = useState("");
+  const handleAddToCartSuccess = () => {
+    setNotificationMessage(
+      "Your item was successfully added to the cart. Please see our cart."
+    );
+  };
+
+  const pdfCartData = {
+    cart: UnlimitedAccessCartData?.pdf_cart,
+  };
+
+  const teCartData = {
+    cart: UnlimitedAccessCartData?.te_cart,
+  };
+
   return (
     <div>
+       <Notification message={notificationMessage} />
       <section className="py-10 md:py-24 overflow-hidden">
         <div className="container px-4 mx-auto">
           <div className="mb-10 md:mb-20 md:max-w-2xl text-center mx-auto">
@@ -19,7 +39,13 @@ const UnlimitedAccess = () => {
               Take advantage of premium Files which are Latest and valid by
               DumpsArena!
             </p>
-            <Link href='all-te-exams-list' className=" text-blue-500 underline hover:text-blue-700">All Exams List Available in Unlimited Test Engine & PDF Download Access</Link>
+            <Link
+              href="all-te-exams-list"
+              className=" text-blue-500 underline hover:text-blue-700"
+            >
+              All Exams List Available in Unlimited Test Engine & PDF Download
+              Access
+            </Link>
           </div>
           <div className="flex flex-wrap -m-4">
             <div className="w-full md:w-1/2 p-4">
@@ -43,10 +69,10 @@ const UnlimitedAccess = () => {
                     <div className="max-w-full md:ml-auto">
                       <p className="flex flex-col items-end">
                         <span className="mb-1.5  text-gray-700 font-black text-4xl">
-                          $203.99
+                          ${UnlimitedAccessCartData?.te_price}
                         </span>{" "}
                         <span className="line-through text-red-500 text-xl">
-                          $339.99
+                          ${UnlimitedAccessCartData?.te_full_price}
                         </span>
                         <span className="text-base font-medium text-gray-700">
                           / month
@@ -282,12 +308,13 @@ const UnlimitedAccess = () => {
                     </div>
                   </li>
                 </ul>
-                <a
-                  className="relative z-10 block px-14 py-4 text-center tracking-2xl border-2 border-blue-500 bg-blue-500 hover:bg-blue-600 text-white font-bold focus:ring-4 focus:ring-green-500 focus:ring-opacity-40 rounded-full transition duration-300"
-                  href="#"
-                >
-                  Start now
-                </a>
+                <div className="relative z-10 block px-14 py-4 text-center tracking-2xl border-2 border-blue-500 bg-blue-500 hover:bg-blue-600 text-white font-bold focus:ring-4 focus:ring-green-500 focus:ring-opacity-40 rounded-full transition duration-300">
+                  <AddToCartButton
+                    text={"Start Now"}
+                    item={teCartData}
+                    onAddToCart={handleAddToCartSuccess}
+                  />
+                </div>
               </div>
             </div>
             <div className="w-full md:w-1/2 p-4">
@@ -310,14 +337,12 @@ const UnlimitedAccess = () => {
                   <div className="w-full md:w-1/2 p-2">
                     <div className="max-w-full md:ml-auto">
                       <p className="flex flex-col items-end">
-                        {/* <div> */}
                         <span className="mb-1.5 text-gray-700 font-black text-4xl">
-                          $227.99
+                          ${UnlimitedAccessCartData?.pdf_price}
                         </span>{" "}
                         <span className="line-through text-red-500 text-xl">
-                          $379.99
+                          ${UnlimitedAccessCartData?.pdf_full_price}
                         </span>
-                        {/* </div> */}
                         <span className="text-base font-medium text-gray-800">
                           / month
                         </span>
@@ -551,12 +576,13 @@ const UnlimitedAccess = () => {
                     </div>
                   </li>
                 </ul>
-                <a
-                  className="relative z-10 block px-14 py-4 text-center tracking-2xl border-2 border-green-500 bg-green-500 hover:bg-green-600 text-white font-bold focus:ring-4 focus:ring-green-500 focus:ring-opacity-40 rounded-full transition duration-300"
-                  href="#"
-                >
-                  Start now
-                </a>
+                <div className="relative z-10 block px-14 py-4 text-center tracking-2xl border-2 border-green-500 bg-green-500 hover:bg-green-600 text-white font-bold focus:ring-4 focus:ring-green-500 focus:ring-opacity-40 rounded-full transition duration-300">
+                  <AddToCartButton
+                    text={"Start Now"}
+                    item={pdfCartData}
+                    onAddToCart={handleAddToCartSuccess}
+                  />
+                </div>
               </div>
             </div>
           </div>

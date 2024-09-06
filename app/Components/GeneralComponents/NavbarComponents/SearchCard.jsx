@@ -184,7 +184,7 @@ const SearchCard = () => {
               borderRadius: "0px",
               zIndex: 1000,
             }}
-            className="absolute sm:-left-20 md:left-0 top-[100%] w-[92vw] md:w-[180%]"
+            className="absolute -left-20 md:left-0 top-[100%] w-[92vw] md:w-[180%]"
           >
             <Card
               className="bg-gary-100 text-black custom-scrollbar"

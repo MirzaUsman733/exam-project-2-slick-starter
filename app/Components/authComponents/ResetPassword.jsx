@@ -129,8 +129,8 @@ const ResetPassword = ({ email, token }) => {
               </div>
               <div>
                 <div className="mb-6 px-3">
-                  <span className="text-gray-500">Sign Up</span>
-                  <h3 className="text-2xl font-bold">Create an account</h3>
+                  <span className="text-gray-500">Reset Password</span>
+                  <h3 className="text-2xl font-bold">Reset Your Password</h3>
                 </div>
                 <form className="flex flex-col" onSubmit={handleSubmit}>
                   <div className="mb-3 flex p-4 mx-2 bg-gray-50 rounded">
@@ -162,7 +162,7 @@ const ResetPassword = ({ email, token }) => {
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
-                      placeholder="Enter your password"
+                      placeholder="Enter Your New Password"
                     />
                     <button type="button" onClick={togglePasswordVisibility}>
                       {showPassword ? (
@@ -179,7 +179,7 @@ const ResetPassword = ({ email, token }) => {
                       name="confirmPassword"
                       value={formData.confirmPassword}
                       onChange={handleChange}
-                      placeholder="Enter your Confirm password"
+                      placeholder="Enter Your New Confirm Password"
                     />
                     <button
                       type="button"

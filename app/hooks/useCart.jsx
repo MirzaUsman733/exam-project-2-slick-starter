@@ -37,8 +37,8 @@ function useCart() {
       } else {
         // If it's a new item, add it to the cart
         const newItem = {
-          cart: item.cart,
-          quantity: item.quantity, // Ensure you keep the quantity property
+          cart: item?.cart,
+          quantity: item?.quantity, // Ensure you keep the quantity property
         };
         return [...prevCart, newItem];
       }

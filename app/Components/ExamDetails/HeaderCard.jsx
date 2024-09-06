@@ -58,7 +58,7 @@ const HeaderCard = ({
 
         if (response && response.data) {
           setIsEmailSubmitted(true);
-          setDownloadLinks(response.data); // Store the links in state
+          setDownloadLinks(response.data);
           alert(`Email ${email} submitted successfully!`);
         } else {
           alert("Failed to submit email. Please try again.");
@@ -176,10 +176,13 @@ const HeaderCard = ({
                   <p className="text-red-600 text-xs line-through">
                     ${item.full_price}
                   </p>
-                  <AddToCartButton
-                    item={item}
-                    onAddToCart={handleAddToCartSuccess}
-                  />
+                  <div className="bg-green-500 text-white text-xs px-2 md:px-3 lg:px-4 py-2 ml-2 md:ml-3 lg:ml-4 rounded">
+                    <AddToCartButton
+                      text={"ADD TO CART"}
+                      item={item}
+                      onAddToCart={handleAddToCartSuccess}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

@@ -27,6 +27,7 @@ const page = async ({ params }) => {
     }
   };
   const courseDetail = await fetchCourseDetail();
+  console.log(courseDetail)
   return (
     <div>
       <Script />
