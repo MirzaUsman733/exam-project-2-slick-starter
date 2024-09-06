@@ -142,9 +142,9 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                     <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Exam Code
                     </th>
-                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    {/* <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Top country
-                    </th>
+                    </th> */}
                     <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
                       Rating
                     </th>
@@ -200,11 +200,11 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly }) => {
                       <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
                         {hotExam?.exam_code}
                       </th>
-                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      {/* <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
                         {topCountryPairs[index]
                           ? topCountryPairs[index].join(" | ")
                           : "US | UK"}
-                      </th>
+                      </th> */}
                       <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
                         <div className="flex items-center gap-1">
                           <svg
