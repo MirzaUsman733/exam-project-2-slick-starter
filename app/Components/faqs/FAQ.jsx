@@ -3,19 +3,19 @@ const faqData = [
     category: "Products Classification",
     items: [
       {
-        question: "What products dumpsarena.com offers?",
+        question: "What products Dumps-Collection.com offers?",
         answer: `Questions and Answers: It is the main line Product provided for Exam preparation. Questions and Answers are provided in .PDF formate which can be downloaded on computer. Two weeks preparation time is recommended before you appear in Final Exam. FREE Demo for any Questions and Answer Product can be downloaded from each product page.
 
-        Customers who want to buy more than 3 exams at discounted price can request for "Custom Bundle". Forward such queries to sales@dumpsarena.com and do not forget to include the Exam codes you need access to. Our team will give you discounted quotation depending on the Exams requested.`,
+        Customers who want to buy more than 3 exams at discounted price can request for "Custom Bundle". Forward such queries to sales@Dumps-Collection.com and do not forget to include the Exam codes you need access to. Our team will give you discounted quotation depending on the Exams requested.`,
       },
       {
         question:
-          "Can I pass Exam with dumpsarena.com Questions and Answers product only?",
-        answer: `Certainly sure! Since all of dumpsarena.com products are of Latest version we feel confident about the quality of products. Just make sure that you study the Questions and Answers product of respective Exam for two weeks before you appear in actual Exam.`,
+          "Can I pass Exam with Dumps-Collection.com Questions and Answers product only?",
+        answer: `Certainly sure! Since all of Dumps-Collection.com products are of Latest version we feel confident about the quality of products. Just make sure that you study the Questions and Answers product of respective Exam for two weeks before you appear in actual Exam.`,
       },
       {
-        question: "How long my dumpsarena.com Product remain valid?",
-        answer: `dumpsarena.com products have a validity of 90 days from the date of purchase. This means that any updates to the products, including but not limited to new questions, or updates and changes by our editing team, will be automatically updated to your members area to make sure that you get latest exam prep materials during those 90 days.`,
+        question: "How long my Dumps-Collection.com Product remain valid?",
+        answer: `Dumps-Collection.com products have a validity of 90 days from the date of purchase. This means that any updates to the products, including but not limited to new questions, or updates and changes by our editing team, will be automatically updated to your members area to make sure that you get latest exam prep materials during those 90 days.`,
       },
       {
         question: "Is it possible to extend the expired product?",
@@ -29,20 +29,20 @@ const faqData = [
     category: "Version & Update",
     items: [
       {
-        question: "What is the Latest Version of my dumpsarena.com Product?",
-        answer: `dumpsarena.com Products are updated on regular basis whenever Questions are changed from our end. So it is carefully ensured that you always have fully updated Product.`,
+        question: "What is the Latest Version of my Dumps-Collection.com Product?",
+        answer: `Dumps-Collection.com Products are updated on regular basis whenever Questions are changed from our end. So it is carefully ensured that you always have fully updated Product.`,
       },
       {
         question: "How to Verify my version of Questions and Answers Product?",
-        answer: `We regular update the product Questions are changed from our end. For double fold verification you can Login to your dumpsarena.com Member's Area and download the Latest Product again.`,
+        answer: `We regular update the product Questions are changed from our end. For double fold verification you can Login to your Dumps-Collection.com Member's Area and download the Latest Product again.`,
       },
       {
         question: "How often are your products updated?",
-        answer: `There is NO FIXED DATE for the update of Exams. All dumpsarena.com Products are reviewed by Product Manager on weekly basis and if any certification vendor changes the question in exam our product will be updated accordingly.`,
+        answer: `There is NO FIXED DATE for the update of Exams. All Dumps-Collection.com Products are reviewed by Product Manager on weekly basis and if any certification vendor changes the question in exam our product will be updated accordingly.`,
       },
       {
         question: "Is your update free?",
-        answer: `We provide Free updates during the 90 day validity from date of purchase. To gain access to any update customer should have a current copy of specific exam in dumpsarena.com login. In case of Expired Products you must extend the product access for another 90 days at 30% Discount to get Updates.`,
+        answer: `We provide Free updates during the 90 day validity from date of purchase. To gain access to any update customer should have a current copy of specific exam in Dumps-Collection.com login. In case of Expired Products you must extend the product access for another 90 days at 30% Discount to get Updates.`,
       },
       {
         question: "Product is showing lesser number of Questions than before?",
@@ -59,7 +59,7 @@ const faqData = [
       },
       {
         question: "Will I get the updates for PDF Version?",
-        answer: `dumpsarena.com provide updates for PDF Version together with Questions & Answers product. If PDF file is updated, then the new version will be made available in your Member's Area and you can download the new version from there.`,
+        answer: `Dumps-Collection.com provide updates for PDF Version together with Questions & Answers product. If PDF file is updated, then the new version will be made available in your Member's Area and you can download the new version from there.`,
       },
     ],
   },
@@ -68,7 +68,7 @@ const faqData = [
     items: [
       {
         question: "I have paid for my Product when can I download my product?",
-        answer: `If the payment was successful and you have received the confirmation e-mail from dumpsarena.com, you can download the Product right away.`,
+        answer: `If the payment was successful and you have received the confirmation e-mail from Dumps-Collection.com, you can download the Product right away.`,
       },
       {
         question: "Where can I Download Product?",
@@ -87,12 +87,12 @@ const faqData = [
       {
         question:
           "After login, I am taken back to the home page, How can I login my members area?",
-        answer: `Make sure that you are filling the correct Email and Password. Otherwise the problem is with your internet browser. Restart the computer and change Internet Settings if necessary. Sometimes changing internet browser also helps. If the problem persists, please email sales@dumpsarena.com.`,
+        answer: `Make sure that you are filling the correct Email and Password. Otherwise the problem is with your internet browser. Restart the computer and change Internet Settings if necessary. Sometimes changing internet browser also helps. If the problem persists, please email sales@Dumps-Collection.com.`,
       },
       {
         question:
           "I have forgot my Password or system is not accepting password? What should I do?",
-        answer: `Please use Forgot password page and we will send you email with a reset password link, click on that to reset your Password. Alternatively E-mail sales@dumpsarena.com to resolve this issue.`,
+        answer: `Please use Forgot password page and we will send you email with a reset password link, click on that to reset your Password. Alternatively E-mail sales@Dumps-Collection.com to resolve this issue.`,
       },
     ],
   },
@@ -101,21 +101,21 @@ const faqData = [
     items: [
       {
         question: "What ways can I choose to pay for the order?",
-        answer: `dumpsarena.com is accepting payments in many ways. Most popular one is Paying instantly through Credit or Debit card. We recommend Card for faster payment.`,
+        answer: `Dumps-Collection.com is accepting payments in many ways. Most popular one is Paying instantly through Credit or Debit card. We recommend Card for faster payment.`,
       },
       {
-        question: "What kind of credit/debit cards does dumpsarena.com accept?",
-        answer: `dumpsarena.com accepts most popular credit cards and debit cards including VISA, Mastercard, American Express, Dinner Club International, Maestro, Solo, JCB, and CarteBleue.`,
+        question: "What kind of credit/debit cards does Dumps-Collection.com accept?",
+        answer: `Dumps-Collection.com accepts most popular credit cards and debit cards including VISA, Mastercard, American Express, Dinner Club International, Maestro, Solo, JCB, and CarteBleue.`,
       },
       {
         question:
           "Is my credit card information secure at your site and how secure is your website?",
-        answer: `dumpsarena.com is fully secured by Cloudflare SSL. We absolutely can make sure that your card information is secure at our website which is guaranteed by our Credit Card Processors.`,
+        answer: `Dumps-Collection.com is fully secured by Cloudflare SSL. We absolutely can make sure that your card information is secure at our website which is guaranteed by our Credit Card Processors.`,
       },
       {
         question:
           "I am trying to Pay for my product, but I always get 'unauthorized' message. How can I pay for it?",
-        answer: `Please make sure that you are filling in all the fields correctly. You may try using an alternate Payment Method for this purchase. Please e-mail sales@dumpsarena.com for support payment assistance.`,
+        answer: `Please make sure that you are filling in all the fields correctly. You may try using an alternate Payment Method for this purchase. Please e-mail sales@Dumps-Collection.com for support payment assistance.`,
       },
       {
         question: "How can I get Discount?",
@@ -123,8 +123,8 @@ const faqData = [
       },
       {
         question:
-          "I Used dumpsarena.com Questions and Answers Product and failed how can I ask for a refund?",
-        answer: `If you fail the exam at the first attempt then you can claim refund or swap exam for any two products of your Choice. Please view dumpsarena.com Guarantee for more details.`,
+          "I Used Dumps-Collection.com Questions and Answers Product and failed how can I ask for a refund?",
+        answer: `If you fail the exam at the first attempt then you can claim refund or swap exam for any two products of your Choice. Please view Dumps-Collection.com Guarantee for more details.`,
       },
       {
         question:
@@ -154,11 +154,11 @@ const faqData = [
     ],
   },
   {
-    category: "Test Engine Simulator to open .dumpsarena Files",
+    category: "Test Engine Simulator to open .Dumps-Collection Files",
     items: [
       {
         question: "Where do I get Exam Testing Engine?",
-        answer: `To open .dumpsarena files use FREE DumpsArena Exam Testing Engine, which can be downloaded from, here. Should you have any questions or concerns about using this product, please contact support team directly.`,
+        answer: `To open .Dumps-Collection files use FREE Dumps-Collection Exam Testing Engine, which can be downloaded from, here. Should you have any questions or concerns about using this product, please contact support team directly.`,
       },
     ],
   },
@@ -177,7 +177,7 @@ const faqData = [
       {
         question:
           "I took the exam today and failed how can I ask for a refund?",
-        answer: `If you fail the exam at the first attempt then you can claim refund or swap exam for any two products of your Choice including the Original. Please view dumpsarena.com Guarantee page for more details.`,
+        answer: `If you fail the exam at the first attempt then you can claim refund or swap exam for any two products of your Choice including the Original. Please view Dumps-Collection.com Guarantee page for more details.`,
       },
     ],
   },

@@ -33,11 +33,11 @@ const UnlimitedAccess = ({ UnlimitedAccessCartData }) => {
               Unlimited Download Access
             </h2>
             <p className="mb-2 text-gray-600 mx-auto">
-              Get Unlimited Access to the all DumpsArena PREMIUM files!
+              Get Unlimited Access to the all Dumps-Collection PREMIUM files!
             </p>
             <p className="mb-5 text-gray-600 mx-auto">
               Take advantage of premium Files which are Latest and valid by
-              DumpsArena!
+              Dumps-Collection!
             </p>
             <Link
               href="all-te-exams-list"

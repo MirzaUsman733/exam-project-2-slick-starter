@@ -33,7 +33,7 @@ function SectionComponent() {
           gutterBottom
           className="text-3xl text-center font-semibold text-gray-800"
         >
-          Download FREE DumpsArena Exam Test Engine Simulator
+          Download FREE Dumps-Collection Exam Test Engine Simulator
         </Typography>
       </Box>
       <Box
@@ -47,7 +47,7 @@ function SectionComponent() {
             gutterBottom
             className="text-xl font-semibold text-gray-800"
           >
-            Use DumpsArena Test Engine to open .dumpsarena files
+            Use Dumps-Collection Test Engine to open .Dumps-Collection files
           </Typography>
           <Typography paragraph className="text-base text-gray-600">
             An exam testing engine for certification exam preparation. Take
