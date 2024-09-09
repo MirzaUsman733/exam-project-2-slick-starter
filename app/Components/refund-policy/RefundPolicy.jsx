@@ -10,7 +10,7 @@ const RefundPolicy = () => {
         else after preparing from our dumps. You can just practice these
         questions and pass your exam easily.
       </p>
-      <p className="text-lg leading-relaxed mb-6">
+      <p className="text-md md:text-lg leading-relaxed mb-6">
         When people buy dumps for any exam, they demand two things: a discount
         and a 100% refund policy. We know your money is very precious and
         valuable for you, and that is why we are confident you will pass your
