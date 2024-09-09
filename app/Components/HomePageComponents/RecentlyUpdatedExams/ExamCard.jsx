@@ -16,14 +16,14 @@ const ExamCard = ({ recentlyUpdated }) => {
             >
               <div className={`p-4 ${bgColor} clip-path-polygon`}>
                 <h3 className="text-white text-lg font-semibold">
-                  {exam.exam_vendor_title} - {exam?.exam_code}
+                  {exam.exam_vendor_title} {exam?.exam_code}
                 </h3>
                 <p className="text-gray-200 mt-1">{exam.exam_title}</p>
               </div>
               <div className="flex items-center p-4">
                 <img
-                  src={exam.exam_vendor_img}
-                  alt={exam.exam_vendor_title}
+                  src={exam?.exam_vendor_img}
+                  alt={exam?.exam_vendor_title}
                   className="h-12 w-12 rounded-full mr-4"
                 />
                 <div>
