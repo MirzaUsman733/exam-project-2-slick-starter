@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="bg-white">
       <div className="container mx-auto p-6">
         <div className="pt-10 ">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="w-full mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="w-full mb-12 col-span-2">
               <div className="mb-3">
                 <Link href="/">
                   <img
@@ -16,7 +16,7 @@ const Footer = () => {
                   />
                 </Link>
               </div>
-              <p className="text-gray-700 text-xs leading-6">
+              <p className="text-gray-500 text-base text-justify">
                 ExamCollection does not provide genuine Microsoft exam
                 questions. Similarly, ExamCollection does not offer authentic
                 Amazon exam questions. The materials provided by ExamCollection
@@ -26,14 +26,58 @@ const Footer = () => {
                 Chartered Financial Analyst® are registered trademarks owned by
                 the CFA Institute.
               </p>
+              <div className="block mt-6">
+            <ul className="flex">
+              <li>
+                <a
+                  href="/"
+                  className="text-blue-500 hover:text-blue-700 hover:underline text-base"
+                >
+                  Home
+                </a>
+              </li>
+              <li className="ml-3 md:ml-5">
+                <a
+                  href="/terms"
+                  className="text-blue-500 hover:text-blue-700 hover:underline text-base"
+                >
+                  Terms
+                </a>
+              </li>
+              <li className="ml-3 md:ml-5">
+                <a
+                  href="/privacy-policy"
+                  className="text-blue-500 hover:text-blue-700 hover:underline text-base"
+                >
+                  Privacy
+                </a>
+              </li>
+              <li className="ml-3 md:ml-5">
+                <a
+                  href="refund-policy"
+                  className="text-blue-500 hover:text-blue-700 hover:underline text-base"
+                >
+                  Refund
+                </a>
+              </li>
+              <li className="ml-3 md:ml-5">
+                <a
+                  href="/contact-us"
+                  className="text-blue-500 hover:text-blue-700 hover:underline text-base"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
             </div>
             <div className="w-full mb-12">
-              <div className="mb-10 text-center">
+              <div className="mb-10 text-left">
                 <h3 className="text-black text-xl font-semibold mb-10 relative">
-                  Useful Links
+                  Pages
                 </h3>
               </div>
-              <div className="flex justify-center gap-16 w-full">
+              <div className="flex justify-start gap-16 w-full">
                 <ul className="list-none m-0 p-0">
                   <li className="mb-3">
                     <a href="/" className="text-gray-700 hover:text-blue-500">
@@ -69,30 +113,12 @@ const Footer = () => {
                       Video Courses
                     </a>
                   </li>
-                </ul>
-                <ul>
-                  <li className="mb-3">
+                  <li>
                     <a
                       href="/test-engine-simulator"
                       className="text-gray-700 hover:text-blue-500"
                     >
                       Test Engine Player
-                    </a>
-                  </li>
-                  <li className="mb-3">
-                    <a
-                      href="/faq"
-                      className="text-gray-700 hover:text-blue-500"
-                    >
-                      FAQ
-                    </a>
-                  </li>
-                  <li className="mb-3">
-                    <a
-                      href="refund-policy"
-                      className="text-gray-700 hover:text-blue-500"
-                    >
-                      Refund Exam
                     </a>
                   </li>
                 </ul>
@@ -132,56 +158,13 @@ const Footer = () => {
       </div>
       <hr />
       <div className="bg-white py-6">
-        <div className="container mx-auto flex justify-center md:justify-between items-center flex-wrap">
+        <div className="container mx-auto flex justify-center items-center flex-wrap">
           <div className="text-center lg:text-left">
             <p className="text-gray-700 text-base">
               Copyright &copy; 2024, All Right Reserved
             </p>
           </div>
-          <div className="block">
-            <ul className="flex">
-              <li className="ml-2 md:ml-5">
-                <a
-                  href="/"
-                  className="text-gray-700 hover:text-blue-500 text-base"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="ml-3 md:ml-5">
-                <a
-                  href="/terms"
-                  className="text-gray-700 hover:text-blue-500 text-base"
-                >
-                  Terms
-                </a>
-              </li>
-              <li className="ml-3 md:ml-5">
-                <a
-                  href="/privacy-policy"
-                  className="text-gray-700 hover:text-blue-500 text-base"
-                >
-                  Privacy
-                </a>
-              </li>
-              <li className="ml-3 md:ml-5">
-                <a
-                  href="refund-policy"
-                  className="text-gray-700 hover:text-blue-500 text-base"
-                >
-                  Refund
-                </a>
-              </li>
-              <li className="ml-3 md:ml-5">
-                <a
-                  href="/contact-us"
-                  className="text-gray-700 hover:text-blue-500 text-base"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+        
         </div>
       </div>
     </footer>

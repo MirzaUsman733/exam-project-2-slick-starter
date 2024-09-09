@@ -122,7 +122,7 @@ const SearchCard = () => {
       </div>
 
       {/* Toggle input visibility on larger screens */}
-      <div className="hidden md:flex justify-end items-center">
+      <div className="hidden 2xl:flex justify-end items-center">
         {isInputVisible ? (
           <div className="relative w-full mt-3">
             <input
@@ -146,10 +146,21 @@ const SearchCard = () => {
             <button
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black"
               onClick={() => {
-                setSearchValue("")
-                setIsInputVisible(false)}}
+                setSearchValue("");
+                setIsInputVisible(false);
+              }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"></path></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
+                ></path>
+              </svg>
             </button>
           </div>
         ) : (
@@ -167,12 +178,42 @@ const SearchCard = () => {
           </svg>
         )}
       </div>
-
+      <div className="flex justify-end items-center 2xl:hidden ">
+        <div className="relative w-full mt-3">
+          <input
+            type="text"
+            className="bg-gray-100 text-blue-500 p-2 rounded-full w-full outline-none border border-gray-300 pl-8"
+            placeholder="Search..."
+            value={searchValue}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+          <svg
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+          >
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            <path fill="none" d="M0 0h24v24H0z" />
+          </svg>
+          {/* Button to close the input */}
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black"
+            onClick={() => {
+              setSearchValue("");
+              setIsInputVisible(false);
+            }}
+          ></button>
+        </div>
+      </div>
       {/* Search results */}
       {searchValue && (
         <ul className="absolute left-0 top-full w-full 2xl:w-[250%] md:mt-5 bg-blue-50 z-50 p-2 rounded-lg shadow-lg">
           <div className="bg-gray-100 text-black max-h-80 overflow-scroll custom-scrollbar p-2">
-            <li className="p-2 text-center">See all search results for {searchValue}</li>
+            <li className="p-2 text-center">
+              See all search results for {searchValue}
+            </li>
             <li className="bg-white text-gray-900 font-bold text-xl text-center p-2">
               Exams - {filteredData.length}
             </li>
@@ -183,7 +224,9 @@ const SearchCard = () => {
                 className="cursor-pointer border-b border-gray-300 last:border-none hover:bg-gray-200"
               >
                 <li className="p-2">
-                  <div className="text-black font-bold text-sm">{item.code}</div>
+                  <div className="text-black font-bold text-sm">
+                    {item.code}
+                  </div>
                   <div className="text-xs">{item.name}</div>
                 </li>
               </div>
