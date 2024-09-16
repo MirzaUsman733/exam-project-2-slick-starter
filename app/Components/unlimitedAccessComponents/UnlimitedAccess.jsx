@@ -40,7 +40,7 @@ const UnlimitedAccess = ({ UnlimitedAccessCartData }) => {
               Dumps-Collection!
             </p>
             <Link
-              href="all-te-exams-list"
+              href="/all-te-exams-list"
               className=" text-blue-500 underline hover:text-blue-700"
             >
               All Exams List Available in Unlimited Test Engine & PDF Download
