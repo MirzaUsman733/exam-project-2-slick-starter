@@ -1,6 +1,5 @@
 "use client";
 import useCart from "@/app/hooks/useCart";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const CartIcon = () => {

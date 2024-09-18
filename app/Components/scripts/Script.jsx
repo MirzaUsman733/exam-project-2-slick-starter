@@ -12,7 +12,7 @@ const Script = () => {
             "@context": "https://schema.org/",
             "@type": "Product",
             name: "Dumps Collection",
-            description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
+            description: `Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2024.`,
             review: {
               "@type": "Review",
               reviewRating: {
