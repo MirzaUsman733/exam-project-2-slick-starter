@@ -31,7 +31,7 @@ const ExamCard = ({ recentlyUpdated }) => {
                 <img
                   src={`/vendors/${exam?.exam_vendor_perma}.png`}
                   alt={exam?.exam_vendor_title}
-                  className="h-12 w-28 mr-4"
+                  className="md:h-12 w-20 md:w-28 mr-4"
                 />
                 <div>
                   <p className="text-gray-800 font-semibold">
