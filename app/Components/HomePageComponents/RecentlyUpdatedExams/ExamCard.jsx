@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const ExamCard = ({ recentlyUpdated }) => {
+  console.log(recentlyUpdated)
   const bgColors = ["bg-purple-500", "bg-green-500", "bg-orange-500", "bg-blue-500", "bg-green-500", "bg-orange-500"];
   return (
     <div>
@@ -22,9 +23,9 @@ const ExamCard = ({ recentlyUpdated }) => {
               </div>
               <div className="flex items-center p-4">
                 <img
-                  src={exam?.exam_vendor_img}
+                  src={`/vendors/${exam?.exam_vendor_perma}.png`}
                   alt={exam?.exam_vendor_title}
-                  className="h-12 w-12 rounded-full mr-4"
+                  className="h-12 w-28 mr-4"
                 />
                 <div>
                   <p className="text-gray-800 font-semibold">
