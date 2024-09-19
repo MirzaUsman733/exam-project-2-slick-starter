@@ -1,7 +1,14 @@
 import Link from "next/link";
 
 const ExamCard = ({ recentlyUpdated }) => {
-  const bgColors = ["bg-purple-500", "bg-green-500", "bg-orange-500", "bg-blue-500", "bg-green-500", "bg-orange-500"];
+  const bgColors = [
+    "bg-purple-500",
+    "bg-green-500",
+    "bg-orange-500",
+    "bg-blue-500",
+    "bg-green-500",
+    "bg-orange-500",
+  ];
   return (
     <div>
       <div className="text-2xl font-bold">Recently Updated: </div>
