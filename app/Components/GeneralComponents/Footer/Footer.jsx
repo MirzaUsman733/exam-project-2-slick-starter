@@ -12,7 +12,7 @@ const Footer = () => {
                   <img src="/logo.png" className="w-40" alt="logo" />
                 </Link>
               </div>
-              <p className="text-gray-500 text-base text-justify">
+              <p className="text-gray-500 text-sm md:text-base text-justify">
                 ExamCollection does not provide genuine Microsoft exam
                 questions. Similarly, ExamCollection does not offer authentic
                 Amazon exam questions. The materials provided by ExamCollection

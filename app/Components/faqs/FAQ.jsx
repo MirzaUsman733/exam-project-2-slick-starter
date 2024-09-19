@@ -204,7 +204,7 @@ const FAQ = () => {
 
     <div className="relative flex flex-wrap md:flex-nowrap gap-10">
       {/* FAQ Categories Sidebar */}
-      <ul className="cd-faq-categories sticky top-10 max-h-[70vh] text-sm md:text-base md:w-1/5 bg-blue-500 text-white shadow-md overflow-auto">
+      <ul className="cd-faq-categories md:sticky top-10 max-h-[70vh] text-sm md:text-base md:w-1/5 bg-blue-500 text-white shadow-md overflow-auto">
         {faqData.map((section, index) => (
           <li key={index} className="border-b border-white last:border-b-0">
             <button
