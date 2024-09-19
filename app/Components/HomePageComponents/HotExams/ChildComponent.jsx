@@ -6,6 +6,22 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [selectedTab, setSelectedTab] = useState("week");
+  const [examsWithRatings, setExamsWithRatings] = useState([]);
+  
+  // Generate random ratings once for each exam
+  const generateRandomRating = () => {
+    return (Math.random() * (4.8 - 4.3) + 4.3).toFixed(1);
+  };
+
+  useEffect(() => {
+    const currentExams = selectedTab === "week" ? hotExamsWeek : hotExamMonthly;
+    const examsWithRatings = currentExams?.map(exam => ({
+      ...exam,
+      rating: generateRandomRating(),
+    }));
+    setExamsWithRatings(examsWithRatings);
+  }, [hotExamsWeek, hotExamMonthly, selectedTab]);
+
   const paginate = (exams, pageNumber) => {
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -20,12 +36,9 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
     setSelectedTab(tab);
     setCurrentPage(1);
   };
-  const generateRandomRating = () => {
-    return (Math.random() * (4.8 - 4.3) + 4.3).toFixed(1);
-  };
-  const currentExams = selectedTab === "week" ? hotExamsWeek : hotExamMonthly;
-  const paginatedExams = paginate(currentExams || [], currentPage);
-  const totalPages = Math.ceil((currentExams?.length || 0) / itemsPerPage);
+
+  const paginatedExams = paginate(examsWithRatings || [], currentPage);
+  const totalPages = Math.ceil((examsWithRatings?.length || 0) / itemsPerPage);
   return (
     <div>
       <section className="bg-coolGray-50">
@@ -168,7 +181,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                               d="M95.28 71.51L114.9 56.2c.97-.81 2.72-2.1 1.32-3.57c-1.11-1.16-4.11.51-4.11.51l-17.17 6.71c-5.12 1.77-8.52 4.39-8.82 7.69c-.39 4.4 3.56 7.79 9.16 3.97"
                             />
                           </svg>{" "}
-                          <span>   {generateRandomRating()}</span>
+                          <span>  {hotExam.rating} </span>
                         </div>
                       </th>
                       <th className="hidden md:table-cell whitespace-nowrap ps-1 md:ps-4 bg-white text-xs md:text-sm font-medium text-blue-500 text-left">

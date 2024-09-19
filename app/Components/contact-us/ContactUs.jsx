@@ -146,7 +146,7 @@ const ContactUs = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-md mx-auto py-10">
               <h3 className="mb-6 text-2xl font-bold text-center">
-                Got a question? Let’s talk about it.
+                Got a question? Let&apos;s talk about it.
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -178,7 +178,7 @@ const ContactUs = () => {
                     className="w-full p-4 text-sm font-semibold leading-none bg-white rounded outline-none border border-gray-300 focus:ring focus:border-blue-400 transition"
                     type="email"
                     name="email"
-                    value={formData.email}
+                    value={formData?.email}
                     onChange={handleChange}
                     placeholder="name@example.com"
                     aria-label="Email"
@@ -189,18 +189,18 @@ const ContactUs = () => {
                   <textarea
                     className="w-full h-32 p-4 text-sm font-semibold leading-none bg-white rounded outline-none border border-gray-300 resize-none focus:ring focus:border-blue-400 transition"
                     name="message"
-                    value={formData.message}
+                    value={formData?.message}
                     onChange={handleChange}
                     placeholder="Your Message..."
                     aria-label="Message"
                     required
                   ></textarea>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-center md:justify-end items-center">
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-pink-600 hover:bg-pink-700 text-white font-bold leading-loose transition duration-200 ${
+                    className={`inline-block py-2 px-6 w-full md:w-auto md:rounded-l-xl md:rounded-t-xl bg-blue-500 hover:bg-blue-700 text-white font-bold leading-loose transition duration-200 ${
                       loading ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                   >

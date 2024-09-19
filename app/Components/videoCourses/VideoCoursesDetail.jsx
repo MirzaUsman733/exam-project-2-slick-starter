@@ -7,13 +7,13 @@ import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const VideoCoursesDetail = ({ section }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(`panel${section[0]?.section_id}`);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <div className="space-y-4 mt-10 md:mt-20">
+    <div className="container mx-auto space-y-4 mt-10 md:mt-20">
       {section.map((section) => (
         <div
           key={section.section_id}

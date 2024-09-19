@@ -43,9 +43,9 @@ const page = async ({ params }) => {
 export default page;
 
 export async function generateMetadata({ params }) {
-  const courseId = params.id;
+  const course = params.id;
   return {
-    title: `Updated ${courseId} Mock Exam by IT Professionals`,
+    title: `Updated ${course} Mock Exam by IT Professionals`,
     description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
 
     robots: {
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://dumps-collection.com/video-courses/${courseId}`,
+          url: `https://dumps-collection.com/video-courses/${course}`,
         },
       ],
     },
