@@ -1,3 +1,6 @@
+'use client'
+import { useState } from "react";
+
 const faqData = [
   {
     category: "Products Classification",
@@ -184,53 +187,68 @@ const faqData = [
 ];
 
 const FAQ = () => {
+  const [activeCategory, setActiveCategory] = useState(faqData[0].category);
+
+  const handleScrollToCategory = (category) => {
+    setActiveCategory(category);
+    const sectionElement = document.getElementById(category.replace(/ /g, "-"));
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <div className="container mx-auto p-5 my-8 md:my-16">
-      <h1 className="text-sm md:text-4xl text-center font-bold mb-10">
-        Frequently Asked Questions
-      </h1>
-      <div className="flex flex-wrap gap-10">
-        <ul
-          className={`cd-faq-categories max-h-[50%] text-xs md:text-base md:w-1/5 bg-blue-500 text-white shadow-md`}
-          style={{ maxHeight: "70vh" }}
-        >
-          {faqData.map((section, index) => (
-            <li key={index} className="border-b border-white last:border-b-0">
-              <a href={`#`} className={`block px-2 md:px-6 py-2 md:py-3 `}>
-                {section?.category}
-              </a>
-            </li>
-          ))}
-        </ul>
+    <h1 className="text-xl md:text-4xl text-center font-bold mb-10">
+      Frequently Asked Questions
+    </h1>
 
-        <div className={`cd-faq-items w-full md:w-4/5 p-4 bg-white`}>
-          {faqData.map((section, index) => (
-            <div
-              id={section.category.replace(/ /g, "-")}
-              key={index}
-              className="border-b mb-3 last:border-b-0"
+    <div className="relative flex flex-wrap md:flex-nowrap gap-10">
+      {/* FAQ Categories Sidebar */}
+      <ul className="cd-faq-categories sticky top-10 max-h-[70vh] text-sm md:text-base md:w-1/5 bg-blue-500 text-white shadow-md overflow-auto">
+        {faqData.map((section, index) => (
+          <li key={index} className="border-b border-white last:border-b-0">
+            <button
+              className={`block text-left w-full px-4 py-3 transition-colors duration-300 ${
+                activeCategory === section.category
+                  ? 'bg-blue-700'
+                  : 'hover:bg-blue-600'
+              }`}
+              onClick={() => handleScrollToCategory(section.category)}
+              aria-label={`Go to ${section.category}`}
             >
-              <div className="cd-faq-title">
-                <h2 className="text-md md:text-2xl font-bold mb-4">{section.category}</h2>
+              {section.category}
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {/* FAQ Items Content */}
+      <div className="cd-faq-items w-full md:w-4/5 p-4 bg-white">
+        {faqData.map((section, index) => (
+          <div
+            id={section.category.replace(/ /g, "-")}
+            key={index}
+            className="border-b mb-3 last:border-b-0"
+          >
+            <h2 className="text-lg md:text-2xl font-bold mb-4">
+              {section.category}
+            </h2>
+            {section.items.map((item, idx) => (
+              <div className="mb-4" key={idx}>
+                <h3 className="text-sm md:text-xl font-semibold mb-2">
+                  {idx + 1}. {item.question}
+                </h3>
+                <p className="text-xs md:text-base leading-relaxed">
+                  {item.answer}
+                </p>
               </div>
-              <div>
-                {section.items.map((item, idx) => (
-                  <div className="mb-4" key={idx}>
-                    <div className="cd-faq-trigger text-sm md:text-xl font-semibold mb-3">
-                      {idx + 1}. {item.question}
-                    </div>
-                    <div className="cd-faq-content text-xs md:text-base">
-                      <p>{item.answer}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default FAQ;

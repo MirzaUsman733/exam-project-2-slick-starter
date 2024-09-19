@@ -286,22 +286,6 @@ const TermsOfUse = () => {
         </section>
       </main>
 
-      <footer className="mt-12">
-        <div className="flex items-center">
-          <input type="checkbox" id="agree" className="mr-2" />
-          <label htmlFor="agree" className="text-gray-800">
-            I have read and agree to the Terms of Use
-          </label>
-        </div>
-        <div className="mt-4 flex space-x-4">
-          <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
-            Agree
-          </button>
-          <button className="bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300">
-            Cancel
-          </button>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -127,7 +127,7 @@ export default async function Navbar() {
             </div>
           </div>
         </div>
-          <div className="mx-3 mt-1">
+          <div className="block 2xl:hidden mx-3 mt-1">
               <SearchCard />
             </div>
       </div>

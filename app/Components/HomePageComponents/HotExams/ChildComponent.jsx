@@ -90,7 +90,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                         >
                           <div className="flex items-center -m-2">
                             <div className="w-auto py-2">
-                              <div className="flex items-center justify-center lg:w-16 lg:h-12 2xl:w-16 2xl:h-16 text-base font-medium px-3 rounded-md">
+                              <div className="flex items-center justify-center w-16 sm:w-20 lg:w-20 2xl:w-20 2xl:h-20 text-base font-medium px-3 rounded-md">
                                 {vendors.some(
                                   (v) =>
                                     v.vendor_title === hotExam?.vendor_title
@@ -104,7 +104,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                                       )?.vendor_perma
                                     }.png`}
                                     alt={hotExam.vendor_title}
-                                    className="rounded-md"
+                                    className="rounded-sm"
                                   />
                                 ) : (
                                   <svg

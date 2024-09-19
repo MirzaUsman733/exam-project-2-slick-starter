@@ -24,10 +24,10 @@ const HowItWorks = () => {
             <span className="inline-block px-3 py-1 mb-4 text-xs font-medium uppercase bg-blue-500 text-white rounded-full">
               HOW IT WORKS
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h1 className="text-xl md:text-4xl sm:text-5xl font-bold mb-4">
               We revolutionized the way we manage digital content
             </h1>
-            <p className="text-lg">
+            <p className="text-sm md:text-lg">
               Using our platform is easy and straightforward. Here is how it
               works:
             </p>
