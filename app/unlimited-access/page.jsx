@@ -30,8 +30,8 @@ const page = async() => {
       <Script />
       <Banner />
       <UnlimitedAccess UnlimitedAccessCartData={UnlimitedAccessCartData} />
-      <hr className="container mx-auto" />
-      <HotExam />
+      {/* <hr className="container mx-auto" />
+      <HotExam /> */}
     </div>
   );
 };
