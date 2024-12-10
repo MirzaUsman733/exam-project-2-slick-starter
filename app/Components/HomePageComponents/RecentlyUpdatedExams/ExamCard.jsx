@@ -25,13 +25,13 @@ const ExamCard = ({ recentlyUpdated }) => {
                 <h3 className="text-white text-lg font-semibold">
                   {exam?.exam_vendor_title} {exam?.exam_code}
                 </h3>
-                <p className="text-gray-200 text-sm mt-1">{exam?.exam_title}</p>
+                <p className="text-white text-sm mt-1">{exam?.exam_title}</p>
               </div>
               <div className="flex items-center p-4">
                 <img
                   src={`/vendors/${exam?.exam_vendor_perma}.png`}
                   alt={exam?.exam_vendor_title}
-                  className="md:h-12 w-20 md:w-28 mr-4"
+                  className="md:h-10 w-12 md:w-16 mr-4"
                 />
                 <div>
                   <p className="text-gray-800 font-semibold">

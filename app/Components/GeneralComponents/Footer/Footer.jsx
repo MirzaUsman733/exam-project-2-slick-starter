@@ -52,6 +52,11 @@ const Footer = () => {
                       Certifications
                     </a>
                   </li>
+                  <li className="mb-3">
+                    <a href="/blog" className="text-gray-700 hover:text-blue-500">
+                      Blog
+                    </a>
+                  </li>
                 </ul>
                 <ul>
                   <li className="mb-3">
