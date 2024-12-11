@@ -11,17 +11,17 @@ export default function Home() {
     <>
       <Script />
       <Features />
-      <hr className=" border-gray-300 mx-auto" />
+      <hr className="container border-gray-300 mx-auto" />
       <LogoCloud />
-      <hr className=" border-gray-300 mx-auto" />
+      <hr className="container border-gray-300 mx-auto" />
       <RecentlyUpdated />
-      <hr className=" border-gray-300 mx-auto" />
+      <hr className="container border-gray-300 mx-auto" />
       <HotExam />
-      <hr className=" border-gray-300 mx-auto" />
+      <hr className="container border-gray-300 mx-auto" />
       <HowItWorks />
-      <hr className="border-gray-300 my-5 mx-auto" />
+      <hr className="container border-gray-300 my-5 mx-auto" />
       <CertificationExams />
-      <hr className="border-gray-300 my-5 mx-auto" />
+      <hr className="container border-gray-300 my-5 mx-auto" />
     </>
   );
 }

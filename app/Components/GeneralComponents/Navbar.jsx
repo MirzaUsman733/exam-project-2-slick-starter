@@ -27,8 +27,8 @@ export default async function Navbar() {
   }
   const certifications = await certRes.json();
   return (
-    <section>
-      <nav className="relative px-6 py-0 2xl:px-16 2xl:py-5">
+    <section className="container mx-auto px-4">
+      <nav className="relative py-0 2xl:py-5">
         {/* Desktop View */}
         <div className="hidden 2xl:flex items-center justify-between">
           <Link href="/">
@@ -85,7 +85,6 @@ export default async function Navbar() {
             />
           </a>
           <div className="flex items-center">
-           
             <CartIcon />
             <ToggleButton />
           </div>
@@ -127,9 +126,9 @@ export default async function Navbar() {
             </div>
           </div>
         </div>
-          <div className="block 2xl:hidden mx-3 mt-1">
-              <SearchCard />
-            </div>
+        <div className="block 2xl:hidden mx-3 mt-1">
+          <SearchCard />
+        </div>
       </div>
     </section>
   );

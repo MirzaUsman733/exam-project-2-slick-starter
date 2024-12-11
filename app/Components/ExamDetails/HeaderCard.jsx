@@ -4,8 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 import AddToCartButton from "../add-to-cart/AddToCartButton";
 import Notification from "../add-to-cart/Notification";
+import ExamNotify from "./ExamNotify";
 
 const HeaderCard = ({
+  exam_id,
   examPerma,
   examTitle,
   examCode,
@@ -17,6 +19,7 @@ const HeaderCard = ({
   examCerts,
   examRetired,
   examAlternate,
+  exam_preorder,
 }) => {
   const [notificationMessage, setNotificationMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -131,10 +134,12 @@ const HeaderCard = ({
                 </Link>
               </span>
             </div>
-            <div className="text-sm md:text-lg flex py-1">
-              <div className="mr-3">Last Update: </div>{" "}
-              <div> {lastUpdate} </div>{" "}
-            </div>
+            {!exam_preorder && (
+              <div className="text-sm md:text-lg flex py-1">
+                <div className="mr-3">Last Update: </div>{" "}
+                <div> {lastUpdate} </div>{" "}
+              </div>
+            )}
             <div className="text-sm md:text-lg flex py-1">
               <div className="mr-3 text-nowrap">Exam Certifications:</div>
               <div>
@@ -150,43 +155,54 @@ const HeaderCard = ({
               </div>
             </div>
           </div>
-
-          <div className="bg-blue-50 border rounded-2xl p-2 md:p-5">
-            {examPrices?.map((item, index) => (
-              <div
-                key={item.type}
-                className="flex items-center justify-between flex-wrap py-2 text-lg border-b border-gray-300 last:border-b-0"
-              >
-                <div className="flex flex-wrap justify-between w-full md:w-auto md:justify-normal gap-2 md:gap-2 lg:gap-3 items-center mb-1 md:mb-0 ">
-                  <p className="font-semibold text-sm md:text-md whitespace-nowrap">
-                    {item.title}
-                  </p>
-                  <div
-                    className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
-                      item.off >= 70
-                        ? "text-red-800 bg-red-200 rounded-full px-1 md:px-2"
-                        : "text-blue-500 bg-blue-200 rounded-full px-1 md:px-2"
-                    }`}
-                  >
-                    {item.off}% Off
+          {exam_preorder === false ? (
+            <div className="bg-blue-50 border rounded-2xl p-2 md:p-5">
+              {examPrices?.map((item, index) => (
+                <div
+                  key={item.type}
+                  className="flex items-center justify-between flex-wrap py-2 text-lg border-b border-gray-300 last:border-b-0"
+                >
+                  <div className="flex flex-wrap justify-between w-full md:w-auto md:justify-normal gap-2 md:gap-2 lg:gap-3 items-center mb-1 md:mb-0 ">
+                    <p className="font-semibold text-sm md:text-md whitespace-nowrap">
+                      {item.title}
+                    </p>
+                    <div
+                      className={`bg-gray-100 py-1 text-xs md:text-sm font-bold ${
+                        item.off >= 70
+                          ? "text-red-800 bg-red-200 rounded-full px-1 md:px-2"
+                          : "text-blue-500 bg-blue-200 rounded-full px-1 md:px-2"
+                      }`}
+                    >
+                      {item.off}% Off
+                    </div>
+                  </div>
+                  <div className="w-full md:w-auto flex items-center justify-between md:justify-normal">
+                    <p className="text-blue-600 font-bold mr-2">
+                      ${item.price}
+                    </p>
+                    <p className="text-red-600 text-xs line-through">
+                      ${item.full_price}
+                    </p>
+                    <div className="bg-green-500 text-white text-xs px-2 md:px-3 lg:px-4 py-2 ml-2 md:ml-3 lg:ml-4 rounded">
+                      <AddToCartButton
+                        text={"ADD TO CART"}
+                        item={item}
+                        onAddToCart={handleAddToCartSuccess}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="w-full md:w-auto flex items-center justify-between md:justify-normal">
-                  <p className="text-blue-600 font-bold mr-2">${item.price}</p>
-                  <p className="text-red-600 text-xs line-through">
-                    ${item.full_price}
-                  </p>
-                  <div className="bg-green-500 text-white text-xs px-2 md:px-3 lg:px-4 py-2 ml-2 md:ml-3 lg:ml-4 rounded">
-                    <AddToCartButton
-                      text={"ADD TO CART"}
-                      item={item}
-                      onAddToCart={handleAddToCartSuccess}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <ExamNotify
+                examCode={examCode}
+                examTitle={examTitle}
+                examId={exam_id}
+              />
+            </div>
+          )}
           <div className="text-red-700 mt-2 text-md font-semibold">
             {examRetired && (
               <div className="flex flex-col">

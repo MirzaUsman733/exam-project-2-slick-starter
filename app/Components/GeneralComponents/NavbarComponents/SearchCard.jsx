@@ -12,18 +12,23 @@ const SearchCard = () => {
   const [isInputVisible, setIsInputVisible] = useState(false); // Track input visibility for desktop
 
   const normalizeText = (value) => {
-    return value.replace(/[-_*$!@#$%^&()\s]/g, "").toLowerCase();
+    return value?.replace(/[-_*$!@#$%^&()\s]/g, "").toLowerCase();
   };
 
   const fetchData = async () => {
     try {
-      if (typeof window !== "undefined" && window.localStorage) {
-        const storedExamData = localStorage.getItem("searchData");
+      if (typeof window !== "undefined" && window?.localStorage) {
+        const headers = {
+          "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+        };
+
+        const storedExamData = localStorage?.getItem("searchData");
         if (storedExamData) {
           setSearchData(JSON.parse(storedExamData));
         } else {
           const examResponse = await axios.get(
-            `https://dumpsarena.com/exam-search`
+            `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/search/exams`,
+            { headers }
           );
           setSearchData(examResponse.data);
           localStorage.setItem("searchData", JSON.stringify(examResponse.data));
@@ -34,8 +39,10 @@ const SearchCard = () => {
           setVendorData(JSON.parse(storedVendorData));
         } else {
           const vendorResponse = await axios.get(
-            `https://dumpsarena.com/vendor-search`
+            `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/search/vendors`,
+            { headers }
           );
+          console.log("Vendor Search Data : ", vendorResponse?.data);
           setVendorData(vendorResponse.data);
           localStorage.setItem(
             "vendorData",
@@ -49,7 +56,8 @@ const SearchCard = () => {
           setCertificationData(JSON.parse(storedCertificationData));
         } else {
           const certificationResponse = await axios.get(
-            `https://dumpsarena.com/certification-search`
+            `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/search/certifications`,
+            { headers }
           );
           setCertificationData(certificationResponse.data);
           localStorage.setItem(
@@ -74,19 +82,25 @@ const SearchCard = () => {
   const normalizedSearchValue = normalizeText(searchValue);
 
   const filteredData = searchData
-    .filter((item) => normalizeText(item.code).includes(normalizedSearchValue))
+    .filter((item) =>
+      normalizeText(item?.code)?.includes(normalizedSearchValue)
+    )
     .slice(0, 30);
 
   const filteredVendors = vendorData
-    .filter((item) => normalizeText(item.slug).includes(normalizedSearchValue))
+    .filter((item) =>
+      normalizeText(item?.perma)?.includes(normalizedSearchValue)
+    )
     .slice(0, 10);
 
   const filteredCertifications = certificationData
-    .filter((item) => normalizeText(item.slug).includes(normalizedSearchValue))
+    .filter((item) =>
+      normalizeText(item?.perma)?.includes(normalizedSearchValue)
+    )
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
-    router.push(`/mock-exam/${exam.vendor}/${exam.slug}`);
+    router.push(`/mock-exam/${exam.vendor}/${exam.perma}`);
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
@@ -94,15 +108,12 @@ const SearchCard = () => {
     setSearchValue("");
   };
   const handleCertificationPage = (exam) => {
-    router.push(`/mock-exam-certification/${exam.vendor}/${exam.slug}`);
+    router.push(`/mock-exam-certification/${exam.vendor}/${exam.perma}`);
     setSearchValue("");
   };
 
   return (
     <div className="relative mb-4">
-      {/* Input always visible on mobile, toggle on larger screens */}
-
-      {/* Toggle input visibility on larger screens */}
       <div className="hidden 2xl:flex justify-end items-center">
         {isInputVisible ? (
           <div className="relative w-full mt-3">
@@ -123,7 +134,6 @@ const SearchCard = () => {
               <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
               <path fill="none" d="M0 0h24v24H0z" />
             </svg>
-            {/* Button to close the input */}
             <button
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black"
               onClick={() => {
@@ -198,7 +208,7 @@ const SearchCard = () => {
             <li className="bg-white text-gray-900 font-bold text-xl text-center p-2">
               Exams - {filteredData.length}
             </li>
-            {filteredData.map((item) => (
+            {filteredData?.map((item) => (
               <div
                 key={item.code}
                 onClick={() => handleExamPage(item)}
@@ -213,16 +223,16 @@ const SearchCard = () => {
               </div>
             ))}
             <li className="bg-white text-gray-700 font-bold text-xl text-center p-2">
-              Vendors - {filteredVendors.length}
+              Vendors - {filteredVendors?.length}
             </li>
-            {filteredVendors.map((item) => (
+            {filteredVendors?.map((item) => (
               <div
                 key={item.slug}
                 onClick={() => handleVendorPage(item.slug)}
                 className="cursor-pointer border-b border-gray-300 last:border-none hover:bg-gray-200"
               >
                 <li className="p-2">
-                  <div className="text-black font-bold">{item.slug}</div>
+                  <div className="text-black font-bold">{item.perma}</div>
                   <div>{item.name}</div>
                 </li>
               </div>
@@ -232,13 +242,13 @@ const SearchCard = () => {
             </li>
             {filteredCertifications.map((item) => (
               <div
-                key={item.slug}
+                key={item?.slug}
                 onClick={() => handleCertificationPage(item)}
                 className="cursor-pointer border-b border-gray-300 last:border-none hover:bg-gray-200"
               >
                 <li className="p-2">
-                  <div className="text-black font-bold">{item.slug}</div>
-                  <div>{item.name}</div>
+                  <div className="text-black font-bold">{item?.slug}</div>
+                  <div>{item?.name}</div>
                 </li>
               </div>
             ))}
