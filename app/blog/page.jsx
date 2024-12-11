@@ -1,9 +1,13 @@
-import React from 'react'
+import Banner from "../Components/Banner";
+import BlogPage from "../Components/blog/BlogPage";
 
-const page = () => {
+const page = async () => {
   return (
-    <div>Blog Page</div>
-  )
-}
+    <div>
+      <Banner />
+      <BlogPage />
+    </div>
+  );
+};
 
-export default page
+export default page;

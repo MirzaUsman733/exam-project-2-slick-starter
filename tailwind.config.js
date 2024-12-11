@@ -33,6 +33,7 @@ module.exports = {
         wiggle: 'wiggle 1s ease-in-out infinite',
         toggle: 'toggle 2s ease-in-out infinite',
       },
+      
     },
   },
   plugins: [],

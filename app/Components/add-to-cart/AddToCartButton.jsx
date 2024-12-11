@@ -10,13 +10,7 @@ const AddToCartButton = ({ item, onAddToCart, text }) => {
     window.location.reload();
   };
 
-  return (
-    <button
-      onClick={handleAddToCart}
-    >
-      {text}
-    </button>
-  );
+  return <button onClick={handleAddToCart}>{text}</button>;
 };
 
 export default AddToCartButton;

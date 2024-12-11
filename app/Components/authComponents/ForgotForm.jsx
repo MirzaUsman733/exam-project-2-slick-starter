@@ -14,7 +14,7 @@ const ForgotForm = () => {
   const fetchIP = async () => {
     try {
       const response = await axios.get(`/api/my-ip`);
-      setIp(response.data); // Assuming response.data contains an 'ip' field
+      setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
     }
@@ -47,15 +47,14 @@ const ForgotForm = () => {
           },
         }
       );
-      setEmail("")
+      setEmail("");
       setResponseMessage(response.data.message || "Request successful");
       setOpenSnackbar(true);
-      // Optionally, navigate to another page like login
     } catch (error) {
       console.error("Error:", error);
       setResponseMessage("Something went wrong. Please try again later.");
       setOpenSnackbar(true);
-      setEmail("")
+      setEmail("");
     }
   };
   return (
@@ -147,8 +146,16 @@ const ForgotForm = () => {
                 </button>
               </form>
             </div>
-            <div className="text-center" > Go to the {" "}
-            <Link className="text-blue-500 underline hover:text-blue-700 text-center" href='/login'>SignIn</Link> page
+            <div className="text-center">
+              {" "}
+              Go to the{" "}
+              <Link
+                className="text-blue-500 underline hover:text-blue-700 text-center"
+                href="/login"
+              >
+                SignIn
+              </Link>{" "}
+              page
             </div>
           </div>
         </div>

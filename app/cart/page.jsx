@@ -15,18 +15,21 @@ const Page = () => {
   useEffect(() => {
     const fetchCoupons = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/coupons`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        });
-  
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/coupons`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+            },
+          }
+        );
+
         if (!response.ok) {
-          throw new Error('Failed to fetch coupons.');
+          throw new Error("Failed to fetch coupons.");
         }
-  
+
         const data = await response.json();
         setCoupons(data);
       } catch (error) {
@@ -35,23 +38,20 @@ const Page = () => {
         setSnackbarOpen(true);
       }
     };
-  
+
     fetchCoupons();
-  }, [coupon, cart]); // Make sure the dependencies are correct. They trigger the useEffect.
-  
+  }, [coupon, cart]);
 
   const handleApplyCoupon = (couponCode) => {
-    // Check if the coupon code exists in the fetched coupons list
     const isValidCoupon = coupons?.find((c) => c.coupon === couponCode);
     if (isValidCoupon) {
-      setSnackbarMessage('Coupon code apply')
+      setSnackbarMessage("Coupon code apply");
       setCoupon(couponCode);
     } else {
       setSnackbarMessage("Invalid coupon code.");
       setSnackbarOpen(true);
     }
   };
-
 
   useEffect(() => {
     const formattedCartItems = cart?.map((item) => item?.cart);

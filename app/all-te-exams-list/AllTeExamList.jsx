@@ -1,7 +1,7 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import AlphabetPagination from "./AlphabetPagination";
-import Link from "next/link";
 
 const AllTeExamList = ({ data, onLetterSelect }) => {
   const [selectedExam, setSelectedExam] = useState(null);
@@ -59,7 +59,10 @@ const AllTeExamList = ({ data, onLetterSelect }) => {
                           </p>
                         </div>
                         <div>
-                          <Link href={`mock-exam/${vendor_perma}/${exam_perma}`} className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                          <Link
+                            href={`mock-exam/${vendor_perma}/${exam_perma}`}
+                            className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300"
+                          >
                             Details
                           </Link>
                         </div>
