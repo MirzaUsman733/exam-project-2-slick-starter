@@ -4,7 +4,7 @@ export default function BlogDisplay({ data }) {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="w-full mx-auto bg-white shadow rounded-lg blog-content">
-        <div className="p-6 border-b border-gray-200">
+        <div className="px-3 border-b border-gray-200">
           <div className="flex justify-between items-start mb-4">
             <div className="w-8/12">
               <h1 className="text-4xl font-bold mb-2">
@@ -93,32 +93,6 @@ export default function BlogDisplay({ data }) {
               </svg>
               {data.blog_views || 0} views
             </span>
-            {data.blog_perma && (
-              <span className="flex items-center gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeWidth={1.5}
-                  >
-                    <path d="M15.197 3.355c1.673-1.68 4.25-1.816 5.757-.305s1.37 4.1-.303 5.78l-2.424 2.433M10.047 14c-1.507-1.512-1.37-4.1.302-5.779L12.5 6.062"></path>
-                    <path d="M13.954 10c1.506 1.512 1.37 4.1-.303 5.779l-2.424 2.433l-2.424 2.433c-1.673 1.68-4.25 1.816-5.757.305s-1.37-4.1.303-5.78l2.424-2.433"></path>
-                  </g>
-                </svg>
-                <Link
-                  href={`/${data.blog_perma}`}
-                  className="text-blue-600 hover:underline"
-                >
-                  Permalink
-                </Link>
-              </span>
-            )}
           </div>
         </div>
         <div className="border-t border-gray-200 p-6">

@@ -16,7 +16,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
     <div>
       {breadcrumbData && <Breadcrumbs breadcrumbData={breadcrumbData} />}
       <ExamBanner />
-      {examData && examData.exam_title && (
+      {examData && examData?.exam_title && (
         <HeaderCard
           exam_id={examData?.exam_id}
           examPerma={examPerma}
@@ -36,7 +36,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
       {examData.exam_preorder === false ? (
         <>
           <hr className="my-4 container mx-auto" />
-          {examData && examData.exam_last_week_passed && (
+          {examData && examData?.exam_last_week_passed && (
             <LastWeekResults
               exam_last_week_passed={examData?.exam_last_week_passed}
               exam_last_week_average_score={
@@ -88,12 +88,6 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
                 )}
               </div>
               <div className="lg:col-span-1">
-                {/* {examData && examData.question_types && (
-              <RelatedAndPremium
-                questionTypes={examData?.question_types}
-                examCode={examData?.exam_code}
-              />
-            )} */}
                 {examData && examData?.exam_vendor_perma && (
                   <RelatedExams vendorPerma={examData?.exam_vendor_perma} />
                 )}

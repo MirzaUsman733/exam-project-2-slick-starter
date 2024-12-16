@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import DropdownIcon from "./DropdownIcon";
 import DropupIcon from "./DropupIcon";
