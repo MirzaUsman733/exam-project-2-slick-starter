@@ -110,7 +110,9 @@ const SearchCard = () => {
     router.push(`/mock-exam-certification/${exam.vendor}/${exam.perma}`);
     setSearchValue("");
   };
-
+  console.log(filteredData)
+  console.log(filteredVendors)
+  console.log(filteredCertifications)
   return (
     <div className="relative mb-4">
       <div className="hidden 2xl:flex justify-end items-center">
