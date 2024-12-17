@@ -1,14 +1,18 @@
+'use client'
 import React, { useState } from "react";
 
 const ExamNotify = ({ examCode, examTitle, examId }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const handleNotify = async () => {
     if (!email) {
       setMessage("Please enter a valid email address.");
       return;
     }
+
+    setLoading(true); // Start loading
 
     try {
       const response = await fetch(
@@ -25,6 +29,7 @@ const ExamNotify = ({ examCode, examTitle, examId }) => {
           }),
         }
       );
+
       if (response.ok) {
         const responseMessage = await response.json();
         setMessage(responseMessage?.message);
@@ -37,6 +42,8 @@ const ExamNotify = ({ examCode, examTitle, examId }) => {
       }
     } catch (error) {
       setMessage("Failed to send notification. Please try again later.");
+    } finally {
+      setLoading(false); // End loading
     }
   };
 
@@ -61,9 +68,14 @@ const ExamNotify = ({ examCode, examTitle, examId }) => {
             />
             <button
               onClick={handleNotify}
-              className="ml-4 bg-blue-500 text-white font-medium px-5 py-2 rounded-full hover:bg-blue-600 transition duration-200"
+              className={`ml-4 font-medium px-5 py-2 rounded-full transition duration-200 ${
+                loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-500 text-white hover:bg-blue-600"
+              }`}
+              disabled={loading} // Disable button while loading
             >
-              Notify Me
+              {loading ? "Sending..." : "Notify Me"}
             </button>
           </div>
           {message && <p className="text-md text-green-500 mt-4">{message}</p>}

@@ -42,7 +42,6 @@ const SearchCard = () => {
             `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/search/vendors`,
             { headers }
           );
-          console.log("Vendor Search Data : ", vendorResponse?.data);
           setVendorData(vendorResponse.data);
           localStorage.setItem(
             "vendorData",
