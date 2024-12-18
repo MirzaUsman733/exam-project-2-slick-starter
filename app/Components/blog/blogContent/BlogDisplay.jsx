@@ -94,6 +94,34 @@ export default function BlogDisplay({ data }) {
               {data.blog_views || 0} views
             </span>
           </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "SingleBlog",
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": `https://dumps-collection.com/blog/${data?.blog_perma}`,
+                },
+                headline: data?.blog_title,
+                description: data?.blog_summary,
+                image: data?.blog_image,
+                author: {
+                  "@type": "Person",
+                  name: "Fred Benson",
+                },
+                publisher: {
+                  "@type": "Organization",
+                  name: "Dumps Collection",
+                },
+                datePublished: new Date(data.blog_publish_date).toISOString(),
+                dateModified: data.blog_last_updated
+                  ? new Date(data.blog_last_updated).toISOString()
+                  : new Date(data.blog_publish_date).toISOString(),
+              }),
+            }}
+          />
         </div>
         <div className="border-t border-gray-200 p-6">
           <div className="blog-content prose blog">

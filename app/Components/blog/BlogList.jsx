@@ -65,6 +65,35 @@ export default function BlogList({ data }) {
                 </div>
               </div>
             </div>
+            <script
+              key={blog.blog_perma}
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Blogs",
+                  mainEntityOfPage: {
+                    "@type": "WebPage",
+                    "@id": `https://dumps-collection.com/blog/${blog.blog_perma}`,
+                  },
+                  headline: blog.blog_title,
+                  description: blog.blog_summary,
+                  image: blog.blog_image,
+                  author: {
+                    "@type": "Person",
+                    name: "Fred Benson",
+                  },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "Dumps Collection",
+                  },
+                  datePublished: new Date(blog.blog_publish_date).toISOString(),
+                  dateModified: blog.blog_last_updated
+                    ? new Date(blog.blog_last_updated).toISOString()
+                    : new Date(blog.blog_publish_date).toISOString(),
+                }),
+              }}
+            />
           </div>
         ))}
       </div>
