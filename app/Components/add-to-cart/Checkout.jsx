@@ -25,6 +25,7 @@ const Checkout = ({
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("info");
   const [termsAccepted, setTermsAccepted] = useState(false);
+
   const calculateTotals = () => {
     const subtotal = responseData?.reduce(
       (acc, item) => acc + parseFloat(item.full_price),
@@ -44,14 +45,40 @@ const Checkout = ({
 
   const totals = calculateTotals();
 
-  const handleCouponSubmit = () => {
-    setSnackbarMessage(snackbarCouponMessage);
-    setSnackbarSeverity("error");
-    setSnackbarOpen(snackbarCouponOpen);
-    if (couponCode.trim()) {
-      onApplyCoupon(couponCode);
+  useEffect(() => {
+    const fetchIP = async () => {
+      try {
+        const response = await axios.get(`/api/my-ip`);
+        setIp(response.data);
+      } catch (error) {
+        console.error("Error fetching IP:", error);
+      }
+    };
+    fetchIP();
+  }, []);
+
+  useEffect(() => {
+    if (snackbarCouponMessage) {
+      const messageContainsSuccess = snackbarCouponMessage
+        .toLowerCase()
+        .includes("success");
+      const severity = messageContainsSuccess ? "success" : "error";
+      setSnackbarOpen(true);
+      setSnackbarSeverity(severity);
+      setSnackbarMessage(snackbarCouponMessage);
     }
+  }, [snackbarCouponMessage]);
+
+  const handleCouponSubmit = () => {
+    if (!couponCode.trim()) {
+      setSnackbarOpen(true);
+      setSnackbarSeverity(severity);
+      setSnackbarMessage("No coupon code entered");
+      return;
+    }
+    onApplyCoupon(couponCode);
   };
+
   const handleClearCart = () => {
     clearCart();
     setSnackbarMessage("Your cart has been cleared.");
@@ -59,26 +86,16 @@ const Checkout = ({
     setSnackbarOpen(true);
     window.location.reload();
   };
+
   const handleRemoveClick = (examId) => {
     removeFromCart(examId);
     window.location.reload();
   };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCustomerDetails((prev) => ({ ...prev, [name]: value }));
   };
-  const fetchIP = async () => {
-    try {
-      const response = await axios.get(`/api/my-ip`);
-      setIp(response.data);
-    } catch (error) {
-      console.error("Error fetching IP:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchIP();
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,12 +109,11 @@ const Checkout = ({
       name: customerDetails.name,
       email: customerDetails.email,
       ip: ip.ip,
-      coupon: couponCode + "-30", // Adjust the coupon code if needed
+      coupon: couponCode + "-30",
       IsInvoice: false,
       invoice_perma: "",
       cart_items: formattedCartItems,
     };
-
     try {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/payment`,
@@ -110,12 +126,12 @@ const Checkout = ({
           },
         }
       );
-      setSnackbarMessage("Redrect to the Payment Page");
+      setSnackbarMessage("Redirect to the Payment Page");
       setSnackbarSeverity("success");
       setSnackbarOpen(true);
       router.push(response?.data?.redirect_link);
     } catch (error) {
-      console.error("Failed to Payment:", error);
+      console.error("Failed to process payment:", error);
       setSnackbarMessage("Failed to process payment.");
       setSnackbarSeverity("error");
       setSnackbarOpen(true);
