@@ -51,8 +51,20 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
           )}
           <hr className="my-4 container mx-auto" />
           <div className="container mx-auto p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="col-span-1 md:col-span-2">
+            <div
+              className={`grid gap-5 ${
+                !examData?.exam_topics?.length || !examData?.question_types
+                  ? "grid-cols-1"
+                  : "grid-cols-1 md:grid-cols-3"
+              }`}
+            >
+              <div
+                className={`col-span-1 ${
+                  examData?.exam_topics?.length > 0
+                    ? "md:col-span-2"
+                    : "md:col-span-1"
+                }`}
+              >
                 {examData && examData?.exam_topics?.length > 0 && (
                   <TopicsCovered
                     examTopics={examData?.exam_topics}
@@ -61,11 +73,17 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
                   />
                 )}
               </div>
-              <div className="w-full md:w-auto col-span-1">
-                <RelatedAndPremium
-                  questionTypes={examData?.question_types}
-                  examCode={examData?.exam_code}
-                />
+              <div
+                className={`w-full ${
+                  examData?.exam_topics?.length > 0 ? "md:w-auto" : "md:w-full"
+                } col-span-1`}
+              >
+                {examData?.question_types && (
+                  <RelatedAndPremium
+                    questionTypes={examData?.question_types}
+                    examCode={examData?.exam_code}
+                  />
+                )}
               </div>
             </div>
           </div>
