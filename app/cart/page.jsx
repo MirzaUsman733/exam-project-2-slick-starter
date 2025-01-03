@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import Checkout from "../components/add-to-cart/Checkout";
 import useCart from "../hooks/useCart";
+import Checkout from "../Components/add-to-cart/Checkout";
 
 const Page = () => {
   const { cart } = useCart();
