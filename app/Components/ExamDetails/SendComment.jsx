@@ -9,13 +9,13 @@ export default function SendComment(examPerma) {
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [ip, setIp] = useState("");
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://www.google.com/recaptcha/api.js";
+  //   script.async = true;
+  //   script.defer = true;
+  //   document.body.appendChild(script);
+  // }, []);
 
   const fetchIP = async () => {
     try {
@@ -126,12 +126,12 @@ export default function SendComment(examPerma) {
               className="w-full p-2 border border-gray-300 rounded-md min-h-[150px] shadow-sm transition duration-200 ease-in-out transform"
             />
           </div>
-          <div className="flex justify-between items-center">
-            <div
+          <div className="flex justify-center items-center">
+            {/* <div
               className="g-recaptcha"
               data-sitekey="your-site-key"
               data-callback={handleRecaptcha}
-            ></div>
+            ></div> */}
             <button
               type="submit"
               className="w-1/4 h-11 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none shadow-md transition duration-300 ease-in-out"

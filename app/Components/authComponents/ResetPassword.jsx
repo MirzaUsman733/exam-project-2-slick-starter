@@ -46,7 +46,6 @@ const ResetPassword = ({ email, token }) => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!formData.email || !formData.password || !formData.confirmPassword) {
@@ -84,7 +83,10 @@ const ResetPassword = ({ email, token }) => {
         window.location.href = "/login";
       }
     } catch (error) {
-      console.error("Error during password reset:", error.response.data.message);
+      console.error(
+        "Error during password reset:",
+        error.response.data.message
+      );
       setSnackbar({ open: true, message: error.response.data.message });
     }
   };

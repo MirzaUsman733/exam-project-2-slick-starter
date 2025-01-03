@@ -80,13 +80,13 @@ export async function generateMetadata({ params }) {
     }
   );
   const DATA = await res.json();
-  const isExamTitleAvailable = DATA && DATA.exam_title;
+  const isExamTitleAvailable = DATA.index_tag;
   return {
     title: `Updated ${vendor_perma} Mock Exam by IT Professionals`,
     description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
 
     robots: {
-      index: !!isExamTitleAvailable,
+      index: !isExamTitleAvailable,
     },
     icons: {
       other: [
