@@ -17,11 +17,10 @@ const CourseTable = ({ videoData }) => {
         {videoData.map((vendor) => (
           <button
             key={vendor?.vendor_perma}
-            className={`tab-item px-2 md:px-4 py-2 md:py-2.5 text-xs md:text-sm font-medium text-center uppercase transition-colors border border-blue-500 duration-300 ease-in-out ${
-              selectedVendor === vendor?.vendor_perma
+            className={`tab-item px-2 md:px-4 py-2 md:py-2.5 text-xs md:text-sm font-medium text-center uppercase transition-colors border border-blue-500 duration-300 ease-in-out ${selectedVendor === vendor?.vendor_perma
                 ? "bg-blue-600 text-white"
                 : "text-blue-600 hover:bg-blue-600 hover:text-white"
-            } rounded-lg`}
+              } rounded-lg`}
             onClick={() => handleTabClick(vendor?.vendor_perma)}
           >
             <div className="flex justify-center gap-2">
@@ -102,7 +101,7 @@ const VendorCourses = ({ courses }) => {
               className="w-full h-48 object-cover rounded-md mb-4"
             />
             <div className="course-info">
-              <h3 className="text-lg text-gray-800 font-semibold my-2">
+              <h3 className="text-lg text-gray-800 hover:underline hover:text-blue-500 font-semibold my-2">
                 {course?.title}
               </h3>
               <div className="flex justify-between">

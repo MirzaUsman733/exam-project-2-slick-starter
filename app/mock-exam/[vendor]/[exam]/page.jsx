@@ -51,7 +51,7 @@ const Page = ({ params }) => {
     return (
       <div>
         <Script />
-        <ScriptFaq examData={examData} />
+        {/* <ScriptFaq examData={examData} /> */}
         <Banner />
         <ExamDetail
           examData={examData}
@@ -82,8 +82,8 @@ export async function generateMetadata({ params }) {
   const DATA = await res.json();
   const isExamTitleAvailable = DATA.index_tag;
   return {
-    title: `Updated ${vendor_perma} Mock Exam by IT Professionals`,
-    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
+    title: `Updated ${DATA?.exam_title} Mock Exam by IT Professionals`,
+    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of ${DATA.exam_title} IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
 
     robots: {
       index: !isExamTitleAvailable,
