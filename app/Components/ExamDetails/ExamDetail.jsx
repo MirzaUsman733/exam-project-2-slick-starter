@@ -99,7 +99,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
           )}
           <hr className="my-4 container mx-auto" />
           <div className="container mx-auto p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-4">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
               <div className="lg:col-span-3">
                 {examData && examData?.exam_faqs?.length > 0 && (
                   <FAQS exam_faqs={examData?.exam_faqs} />
