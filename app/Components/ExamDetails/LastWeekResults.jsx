@@ -6,7 +6,7 @@ const LastWeekResults = ({
   examCode,
 }) => {
   return (
-    <div className="backgroundResultBlue text-black text-center mb-5 md:mb-20">
+    <div className="backgroundResultBlue text-black text-center mb-5">
       <div className="container mx-auto px-6">
         <h1 className="text-gray-900 font-bold text-lg md:text-4xl mb-5 md:mb-10 mt-10">
           {examVendorTitle} {examCode} Last Week Results!

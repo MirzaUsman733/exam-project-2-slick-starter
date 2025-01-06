@@ -34,12 +34,12 @@ const HowItWorks = () => {
           </div>
         </div>
       </section>
-      <div className=" px-4  mt-[-2rem] z-0 bg-blue-500 py-5 clip-path-polygon-howItWorks pb-10 ">
-        <div className="container mx-auto flex flex-wrap justify-center gap-4">
+      <div className=" mt-[2rem] lg:mt-[-2rem] z-0 bg-blue-500 py-5 clip-path-polygon-howItWorks pb-10 ">
+        <div className="w-full flex flex-wrap justify-center px-0 mx-0 gap-4">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="w-full md:w-1/4 bg-white rounded-lg shadow p-6"
+              className="w-full md:w-1/4 bg-white rounded-lg shadow p-4 lg:p-6"
             >
               <div className="flex items-center justify-center mb-4 bg-blue-600 w-10 h-10 rounded-full text-white font-bold">
                 {step.number}

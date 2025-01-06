@@ -41,11 +41,11 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
   const totalPages = Math.ceil((examsWithRatings?.length || 0) / itemsPerPage);
   return (
     <div>
-      <section className="bg-coolGray-50">
+      <section className="">
         <div className="container mx-auto p-6">
           <div className="pt-6 bg-white overflow-hidden rounded-md shadow-dashboard">
             <div className="flex justify-between items-center pb-3 border-b">
-              <h2 className="pe-6 text-md md:text-xl text-coolGray-900 font-bold">
+              <h2 className="pe-6 text-md md:text-xl text-gray-900 font-bold">
                 Hot Exams
               </h2>
               <div className="flex items-center gap-1 md:gap-3">
@@ -70,34 +70,34 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
             <div className="overflow-x-auto">
               <table className="w-full">
                 <tbody>
-                  <tr className="whitespace-nowrap h-11 bg-coolGray-50 sticky top-0 bg-white z-100">
-                    <th className="pe-1 md:pe-4 font-semibold text-xs md:text-sm text-coolGray-500 uppercase text-left rounded-l-md">
+                  <tr className="whitespace-nowrap h-11 sticky top-0 bg-white z-100">
+                    <th className="pe-1 md:pe-4 font-semibold text-xs md:text-sm text-gray-500 uppercase text-left rounded-l-md">
                       <p>Exam Title</p>
                     </th>
-                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-gray-500 uppercase text-left">
                       Vendor
                     </th>
-                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-gray-500 uppercase text-left">
                       Exam Code
                     </th>
-                    {/* <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    {/* <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-gray-500 uppercase text-left">
                       Top country
                     </th> */}
-                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 font-bold text-xs md:text-sm text-gray-500 uppercase text-left">
                       Rating
                     </th>
-                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:ps-4 font-bold text-xs md:text-sm text-coolGray-500 uppercase text-left rounded-r-md">
+                    <th className="hidden md:table-cell whitespace-nowrap px-2 md:ps-4 font-bold text-xs md:text-sm text-gray-500 uppercase text-left rounded-r-md">
                       Buy Now
                     </th>
                   </tr>
                   {paginatedExams.map((hotExam, index) => (
                     <tr
                       key={hotExam?.exam_id}
-                      className={`h-18 border-b border-coolGray-100 ${
+                      className={`h-18 border-b border-gray-100 ${
                         index % 2 ? "bg-gray-100" : "bg-white"
                       }`}
                     >
-                      <th className="whitespace-nowrap w-full overflow-hidden text-wrap py-3 bg-white text-left">
+                      <th className="whitespace-nowrap w-full overflow-hidden text-wrap py-1 bg-white text-left">
                         <Link
                           href={`/mock-exam/${hotExam?.vendor_perma}/${hotExam?.exam_perma}`}
                         >
@@ -136,7 +136,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                               </div>
                             </div>
                             <div className="max-w-full overflow-hidden md:w-[40vw] p-2">
-                              <p className="text-wrap text-xs md:text-sm font-medium hover:underline hover:text-blue-700 text-coolGray-800">
+                              <p className="text-wrap text-xs md:text-sm font-medium hover:underline hover:text-blue-500 text-gray-800">
                                 {hotExam?.vendor_title} - {hotExam?.exam_code} -{" "}
                                 {hotExam?.exam_title}
                               </p>
@@ -144,7 +144,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                           </div>
                         </Link>
                       </th>
-                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 z-0 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-gray-800 z-0 text-left">
                         <Link
                           className="font-medium text-blue-500 hotExam-link z-0"
                           href={`/mock-exam-provider/${hotExam?.vendor_perma}`}
@@ -152,15 +152,15 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                           {hotExam?.vendor_title}
                         </Link>
                       </th>
-                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-gray-800 text-left">
                         {hotExam?.exam_code}
                       </th>
-                      {/* <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      {/* <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-gray-800 text-left">
                         {topCountryPairs[index]
                           ? topCountryPairs[index].join(" | ")
                           : "US | UK"}
                       </th> */}
-                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-coolGray-800 text-left">
+                      <th className="hidden md:table-cell whitespace-nowrap px-2 md:px-4 bg-white text-xs md:text-sm font-medium text-gray-800 text-left">
                         <div className="flex items-center gap-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +199,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
             </div>
             <div className="flex flex-wrap items-center justify-between w-full lg:w-1/2 py-4 px-6 -m-2">
               <div className="w-auto p-2">
-                <p className="text-sm font-semibold text-coolGray-500">
+                <p className="text-sm font-semibold text-gray-500">
                   Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
                   {Math.min(
                     currentPage * itemsPerPage,
@@ -226,7 +226,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                         ></path>
                       </svg>
                       <select
-                        className="appearance-none py-1 px-4 w-16 text-coolGray-500 text-sm font-medium bg-white border outline-none border-coolGray-200 focus:border-yellow-500 rounded-md"
+                        className="appearance-none py-1 px-4 w-16 text-gray-500 text-sm font-medium bg-white border outline-none border-gray-200 focus:border-yellow-500 rounded-md"
                         value={itemsPerPage}
                         onChange={(e) => {
                           setCurrentPage(1);
@@ -240,7 +240,7 @@ const ChildComponent = ({ hotExamsWeek, hotExamMonthly, vendors }) => {
                     </div>
                   </div>
                   <div className="w-auto">
-                    <p className="text-sm text-coolGray-500 font-medium">
+                    <p className="text-sm text-gray-500 font-medium">
                       per page
                     </p>
                   </div>

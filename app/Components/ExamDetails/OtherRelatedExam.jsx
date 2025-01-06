@@ -56,7 +56,7 @@ const OtherRelatedExam = async ({ vendorPerma }) => {
                     {examCart?.exam_code} exam with this comprehensive course.
                   </p>
                 </div>
-                <div className="flex flex-col items-end w-full md:w-auto gap-1">
+                <div className="flex flex-col mt-1 items-end w-full md:w-auto gap-1">
                   <p className="text-xs md:text-sm text-end font-bold italic">
                     {examCart?.exam_questions} Questions And Answers
                   </p>

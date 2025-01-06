@@ -79,7 +79,7 @@ function AccountDropdown() {
         ) : (
           <div className="relative">
             <button
-              className="text-gray-700 hover:text-blue-500 font-medium flex items-center"
+              className="text-gray-700 hover:text-blue-500 font-medium xl:flex items-center hidden"
               onClick={(e) => {
                 e.preventDefault();
                 toggleDropdown();
@@ -87,10 +87,10 @@ function AccountDropdown() {
             >
               My Account {isOpen ? <DropupIcon /> : <DropdownIcon />}
             </button>
-            {isOpen && (
-              <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md border shadow-xl z-20 animate-dropdown">
+            {(isOpen || window.innerWidth < 1280) && (
+              <div className="xl:absolute right-0 xl:mt-2 xl:py-2 xl:w-48 bg-white xl:rounded-md xl:border xl:shadow-xl xl:z-20 animate-dropdown">
                 <a
-                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block xl:ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/products"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
@@ -98,7 +98,7 @@ function AccountDropdown() {
                   </span>
                 </a>
                 <a
-                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block xl:ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/invoices"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
@@ -106,7 +106,7 @@ function AccountDropdown() {
                   </span>
                 </a>
                 <a
-                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block xl:ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/setting"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
@@ -114,7 +114,7 @@ function AccountDropdown() {
                   </span>
                 </a>
                 <a
-                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block xl:ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/download-history"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
@@ -122,19 +122,19 @@ function AccountDropdown() {
                   </span>
                 </a>
                 <a
-                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block xl:ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   href="/personal/login-history"
                 >
                   <span className="text-gray-700 hover:text-blue-500 header-link">
                     Login History
                   </span>
                 </a>
-                <hr className="container w-[80%] mx-auto" />
+                <hr className="container xl:w-[80%] mx-auto" />
                 <button
-                  className="block ms-4 py-2 text-sm text-gray-700 vendor-link-header"
+                  className="block xl:ms-4 py-2 text-sm text-gray-700 vendor-link-header"
                   onClick={handleSignOut}
                 >
-                  <span className="text-gray-700 hover:text-blue-500 header-link">
+                  <span className="text-red-500 hover:text-red-700 header-link">
                     Logout
                   </span>
                 </button>

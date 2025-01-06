@@ -86,7 +86,7 @@ const LoginHistory = () => {
                     } hover:bg-gray-100`}
                   >
                     <td className="px-6 py-4 font-medium">{item.ip}</td>
-                    <td className="px-6 py-4 text-right">
+                    <td className="px-6 py-4 text-right text-nowrap">
                       {moment.utc(item.date).format("MMM DD, YYYY | hh:mm A")}
                     </td>
                   </tr>

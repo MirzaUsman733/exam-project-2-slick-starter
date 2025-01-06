@@ -106,19 +106,22 @@ export default async function Navbar() {
                   title="Certifications"
                   certifications={certifications}
                 />
-
-                <a
-                  className="block font-medium text-black hover:bg-gray-50"
-                  href="/video-courses"
-                >
-                  Video Courses
-                </a>
-                <a
-                  className="block font-medium text-black hover:bg-gray-50"
-                  href="/unlimited-access"
-                >
-                  Unlimited Access
-                </a>
+                <li>
+                  <a
+                    className="inline text-gray-700 hover:text-blue-500 header-link font-medium"
+                    href="/video-courses"
+                  >
+                    Video Courses
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-gray-700 hover:text-blue-500 header-link font-medium"
+                    href="/unlimited-access"
+                  >
+                    Unlimited Access
+                  </a>
+                </li>
                 <div className="pt-5">
                   <AccountDropdown />
                 </div>

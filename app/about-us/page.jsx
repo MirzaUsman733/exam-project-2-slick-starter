@@ -28,7 +28,7 @@ export async function generateMetadata() {
       other: [
         {
           rel: "canonical",
-          url: `https://dumps-collection.com/unlimited-access`,
+          url: `https://dumps-collection.com/about-us`,
         },
       ],
     },

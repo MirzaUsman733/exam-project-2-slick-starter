@@ -1,6 +1,6 @@
 const DropdownIcon = () => {
   return (
-    <span className="block transform rotate-180 ml-1">
+    <span className="block transform rotate-180 pb-0.5 ml-1">
       <svg
         width="12"
         height="7"

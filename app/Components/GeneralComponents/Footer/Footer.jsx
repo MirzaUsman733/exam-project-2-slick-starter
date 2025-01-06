@@ -120,7 +120,7 @@ const Footer = () => {
         <div className="container mx-auto flex justify-center md:justify-between items-center flex-wrap">
           <div className="text-center lg:text-left">
             <p className="text-gray-700 text-base">
-              Copyright &copy; 2024, All Right Reserved
+              Copyright &copy; 2025, All Right Reserved
             </p>
           </div>
           <div className="block">

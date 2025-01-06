@@ -2,20 +2,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-export default function SendComment(examPerma) {
+export default function SendComment({ examPerma }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
-  const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [ip, setIp] = useState("");
-
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "https://www.google.com/recaptcha/api.js";
-  //   script.async = true;
-  //   script.defer = true;
-  //   document.body.appendChild(script);
-  // }, []);
+  const [notification, setNotification] = useState(null);
 
   const fetchIP = async () => {
     try {
@@ -30,10 +22,6 @@ export default function SendComment(examPerma) {
     fetchIP();
   }, []);
 
-  const handleRecaptcha = (token) => {
-    setIsRecaptchaVerified(true);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = JSON.stringify({
@@ -42,6 +30,7 @@ export default function SendComment(examPerma) {
       email: email,
       ip: ip.ip,
     });
+
     const config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -54,19 +43,38 @@ export default function SendComment(examPerma) {
     };
 
     try {
-      const response = await axios.request(config);
+      await axios.request(config);
       setName("");
       setEmail("");
       setComment("");
-      setIsRecaptchaVerified(false);
-      window.grecaptcha.reset();
+      showNotification("success", "Comment submitted successfully!");
     } catch (error) {
       console.error(error);
+      showNotification(
+        "error",
+        "There was an error submitting your comment. Please try again."
+      );
     }
+  };
+
+  // Show Snackbar notification
+  const showNotification = (type, message) => {
+    setNotification({ type, message });
+    setTimeout(() => setNotification(null), 3000); // Auto-hide after 3 seconds
   };
 
   return (
     <div className="container mx-auto p-6 mb-5">
+      {/* Snackbar Notification */}
+      {notification && (
+        <div
+          className={`fixed top-5 right-5 z-50 px-4 py-2 rounded shadow-lg text-white ${notification.type === "success" ? "bg-green-500" : "bg-red-500"
+            }`}
+        >
+          {notification.message}
+        </div>
+      )}
+
       <div className="border shadow-xl rounded-xl overflow-hidden">
         <div className="w-full mx-auto bg-gradient-to-r from-blue-500 to-blue-500 p-5">
           <h2 className="text-3xl font-semibold text-white text-center">
@@ -85,11 +93,11 @@ export default function SendComment(examPerma) {
               <input
                 id="name"
                 type="text"
-                placeholder="Enter your name"
+                placeholder="Enter Your Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full p-2 border border-gray-300 rounded-md shadow-sm transition duration-200 ease-in-out transform hover:scale-105"
+                className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
             <div className="space-y-2">
@@ -102,11 +110,11 @@ export default function SendComment(examPerma) {
               <input
                 id="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Enter Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full p-2 border border-gray-300 rounded-md shadow-sm transition duration-200 ease-in-out transform hover:scale-105"
+                className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
           </div>
@@ -119,19 +127,16 @@ export default function SendComment(examPerma) {
             </label>
             <textarea
               id="comment"
-              placeholder="Enter your comment"
+              placeholder="Leave A Message"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               required
-              className="w-full p-2 border border-gray-300 rounded-md min-h-[150px] shadow-sm transition duration-200 ease-in-out transform"
+              className="w-full p-2 border border-gray-300 rounded-md min-h-[150px]"
             />
           </div>
           <div className="flex justify-center items-center">
-            {/* <div
-              className="g-recaptcha"
-              data-sitekey="your-site-key"
-              data-callback={handleRecaptcha}
-            ></div> */}
+            {/* Uncomment the below line if implementing reCAPTCHA */}
+            {/* <div className="g-recaptcha" data-sitekey="your-site-key" data-callback={handleRecaptcha}></div> */}
             <button
               type="submit"
               className="w-1/4 h-11 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none shadow-md transition duration-300 ease-in-out"

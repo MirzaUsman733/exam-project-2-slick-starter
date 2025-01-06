@@ -35,7 +35,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
       )}
       {examData.exam_preorder === false ? (
         <>
-          <hr className="my-4 container mx-auto" />
+          <hr className="container mx-auto" />
           {examData && examData?.exam_last_week_passed && (
             <LastWeekResults
               exam_last_week_passed={examData?.exam_last_week_passed}
@@ -49,20 +49,20 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
               examCode={examData?.exam_code}
             />
           )}
-          <hr className="my-4 container mx-auto" />
+          {/* <hr className="my-4 container mx-auto" /> */}
           <div className="container mx-auto p-6">
             <div
               className={`grid gap-5 ${
                 !examData?.exam_topics?.length || !examData?.question_types
                   ? "grid-cols-1"
-                  : "grid-cols-1 md:grid-cols-3"
+                  : "grid-cols-1 xl:grid-cols-3"
               }`}
             >
               <div
                 className={`col-span-1 ${
                   examData?.exam_topics?.length > 0
-                    ? "md:col-span-2"
-                    : "md:col-span-1"
+                    ? "xl:col-span-2"
+                    : "xl:col-span-1"
                 }`}
               >
                 {examData && examData?.exam_topics?.length > 0 && (
@@ -99,7 +99,7 @@ const ExamDetail = ({ examData, formattedDate, breadcrumbData, examPerma }) => {
           )}
           <hr className="my-4 container mx-auto" />
           <div className="container mx-auto p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 xl:grid-cols-4 gap-5">
               <div className="lg:col-span-3">
                 {examData && examData?.exam_faqs?.length > 0 && (
                   <FAQS exam_faqs={examData?.exam_faqs} />

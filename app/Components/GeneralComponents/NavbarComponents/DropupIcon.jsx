@@ -1,6 +1,6 @@
 const DropupIcon = () => {
   return (
-    <span className="block ml-1">
+    <span className="block ml-1 pb-0.5">
       <svg
         width="12"
         height="7"

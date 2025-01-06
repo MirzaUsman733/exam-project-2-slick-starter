@@ -87,7 +87,7 @@ const CertificationsComponent = ({ certifications }) => {
   return (
     <div className="container mx-auto p-6 mt-10">
       <div className=" relative text-white">
-        <h2 className="text-5xl font-extrabold text-gray-700 text-center mb-16 tracking-tight leading-tight relative z-10">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-700 text-center mb-16 tracking-tight leading-tight relative z-10">
           Explore Exam Providers
         </h2>
 
