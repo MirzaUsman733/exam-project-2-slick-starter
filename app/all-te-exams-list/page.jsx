@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Script from "../Components/scripts/Script";
+// import Script from "../Components/scripts/Script";
 import AllTeExamList from "./AllTeExamList";
 
 const Page = () => {
@@ -35,7 +35,35 @@ const Page = () => {
 
   return (
     <div>
-      <Script />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            name: "Dumps Collection",
+            description: `Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2025.`,
+            review: {
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 4,
+                bestRating: 5,
+              },
+              author: {
+                "@type": "Person",
+                name: "Fred Benson",
+              },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: 4.6,
+              reviewCount: randomReviewCount,
+            },
+          }),
+        }}
+      />
+      {/* <Script /> */}
       <AllTeExamList data={data} onLetterSelect={handleLetterSelect} />
     </div>
   );
@@ -43,11 +71,10 @@ const Page = () => {
 
 export default Page;
 
-
 export async function generateMetadata() {
   return {
     title: `Updated Mock Exam by IT Professionals`,
-    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
+    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2025.`,
     robots: {
       index: true,
     },

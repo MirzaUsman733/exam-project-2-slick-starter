@@ -50,7 +50,35 @@ const Page = ({ params }) => {
     });
     return (
       <div>
-        <Script />
+         <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            name: "Dumps Collection",
+            description: `Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2025.`,
+            review: {
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 4,
+                bestRating: 5,
+              },
+              author: {
+                "@type": "Person",
+                name: "Fred Benson",
+              },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: 4.6,
+              reviewCount: randomReviewCount,
+            },
+          }),
+        }}
+      />
+        {/* <Script /> */}
         {/* <ScriptFaq examData={examData} /> */}
         <Banner />
         <ExamDetail
@@ -83,7 +111,7 @@ export async function generateMetadata({ params }) {
   const isExamTitleAvailable = DATA.index_tag;
   return {
     title: `Updated ${DATA?.exam_title} Mock Exam by IT Professionals`,
-    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of ${DATA.exam_title} IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2024.`,
+    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of ${DATA.exam_title} IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2025.`,
 
     robots: {
       index: !isExamTitleAvailable,

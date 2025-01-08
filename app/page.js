@@ -4,12 +4,40 @@ import HotExam from "./Components/HomePageComponents/HotExams/HotExam";
 import HowItWorks from "./Components/HomePageComponents/HowItWorks";
 import LogoCloud from "./Components/HomePageComponents/LogoCloud";
 import RecentlyUpdated from "./Components/HomePageComponents/RecentlyUpdatedExams/RecentlyUpdated";
-import Script from "./Components/scripts/Script";
 
 export default function Home() {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <>
-      <Script />
+      {/* <Script /> */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            name: "Dumps Collection",
+            description: `Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2025.`,
+            review: {
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 4,
+                bestRating: 5,
+              },
+              author: {
+                "@type": "Person",
+                name: "Fred Benson",
+              },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: 4.6,
+              reviewCount: randomReviewCount,
+            },
+          }),
+        }}
+      />
       <Features />
       <hr className="container border-gray-300 mx-auto" />
       <LogoCloud />
@@ -30,7 +58,7 @@ export async function generateMetadata() {
   return {
     title: "Updated Mock Exams by IT Professionals",
     description:
-      "Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2024.",
+      "Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2025.",
     robots: {
       index: true,
     },

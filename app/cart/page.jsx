@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import useCart from "../hooks/useCart";
 import Checkout from "../Components/add-to-cart/Checkout";
+import useCart from "../hooks/useCart";
 
 const Page = () => {
   const { cart } = useCart();
@@ -10,18 +10,21 @@ const Page = () => {
   const [coupon, setCoupon] = useState("MEGASALE");
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const formattedCartItems = cart?.map(item => item.cart);
+  const formattedCartItems = cart?.map((item) => item.cart);
 
   useEffect(() => {
     async function fetchCoupons() {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/coupons`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-          },
-        });
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/coupons`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+            },
+          }
+        );
         if (!response.ok) throw new Error("Failed to fetch coupons.");
         const data = await response.json();
         setCoupons(data);
@@ -35,7 +38,7 @@ const Page = () => {
   }, []);
 
   const handleApplyCoupon = (couponCode) => {
-    const isValidCoupon = coupons.some(c => c.coupon === couponCode);
+    const isValidCoupon = coupons.some((c) => c.coupon === couponCode);
     if (isValidCoupon) {
       setSnackbarMessage("Coupon code applied successfully!");
       setCoupon(couponCode);
@@ -54,14 +57,17 @@ const Page = () => {
       };
       async function updateCart() {
         try {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/update-cart`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
-            },
-            body: JSON.stringify(requestData),
-          });
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/update-cart`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
+              },
+              body: JSON.stringify(requestData),
+            }
+          );
           if (!response.ok) throw new Error("Failed to update cart.");
           const data = await response.json();
           setResponseData(data);
