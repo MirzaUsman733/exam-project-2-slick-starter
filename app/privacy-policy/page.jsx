@@ -3,6 +3,7 @@ import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import PrivacyPolicy from "../Components/privacy-policy/PrivacyPolicy";
 
 const page = () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <div>
       <script

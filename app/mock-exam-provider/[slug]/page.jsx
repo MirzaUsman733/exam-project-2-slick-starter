@@ -1,6 +1,7 @@
 import Banner from "@/app/Components/Banner";
 import VendorDetails from "../../Components/exam-provider-components/VendorDetails";
 const Page = async ({ params }) => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const vendorPerma = params.slug;
   const fetchRelatedExamData = async () => {
     try {

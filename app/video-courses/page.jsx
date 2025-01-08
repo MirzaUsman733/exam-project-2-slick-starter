@@ -1,9 +1,9 @@
 import Banner from "../Components/Banner";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
-import Script from "../Components/scripts/Script";
 import CourseTable from "../Components/videoCourses/CourseTable";
 
 const page = async () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const fetchRelatedExamData = async () => {
     try {
       const res = await fetch(

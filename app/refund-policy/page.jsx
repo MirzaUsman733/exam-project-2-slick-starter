@@ -1,12 +1,12 @@
 import Banner from "../Components/Banner";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 import RefundPolicy from "../Components/refund-policy/RefundPolicy";
-import Script from "../Components/scripts/Script";
 
 const page = () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <div>
-       <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

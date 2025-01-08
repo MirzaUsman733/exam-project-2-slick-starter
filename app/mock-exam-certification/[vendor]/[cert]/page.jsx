@@ -1,9 +1,9 @@
 import Banner from "@/app/Components/Banner";
 import CertificationDetails from "@/app/Components/certifications-components/CertificationDetails";
 import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
-import Script from "@/app/Components/scripts/Script";
 
 const Page = async ({ params }) => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;s
   const vendor_perma = params.vendor;
   const cert_perma = params.cert;
   const fetchRelatedExamData = async () => {
@@ -29,7 +29,7 @@ const Page = async ({ params }) => {
   const certData = await fetchRelatedExamData();
   return (
     <>
-     <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

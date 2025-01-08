@@ -1,8 +1,8 @@
 import Banner from "../Components/Banner";
-import Script from "../Components/scripts/Script";
 import TermsOfUse from "../Components/terms/TermsOfUse";
 
 const page = () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <div>
       {/* <Script /> */}

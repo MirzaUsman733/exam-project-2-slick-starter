@@ -1,8 +1,8 @@
 import Banner from "../Components/Banner";
 import CertificationsComponent from "../Components/certifications-components/CertificationsComponent";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
-import Script from "../Components/scripts/Script";
 const Page = async () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const fetchCertificationData = async () => {
     try {
       const res = await fetch(

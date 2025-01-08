@@ -1,9 +1,8 @@
 import Banner from "@/app/Components/Banner";
 import ExamDetail from "@/app/Components/ExamDetails/ExamDetail";
-import Script from "@/app/Components/scripts/Script";
-import ScriptFaq from "@/app/Components/scripts/ScriptFaq";
 
 const Page = ({ params }) => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const vendor_perma = params.vendor;
   const exam_perma = params.exam;
 
@@ -50,34 +49,34 @@ const Page = ({ params }) => {
     });
     return (
       <div>
-         <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "Product",
-            name: "Dumps Collection",
-            description: `Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2025.`,
-            review: {
-              "@type": "Review",
-              reviewRating: {
-                "@type": "Rating",
-                ratingValue: 4,
-                bestRating: 5,
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              name: "Dumps Collection",
+              description: `Dumps Collection is a premium provider of Real and Valid Mock Exams for IT certifications. Pass your mock certification exam easily with pdf and test engine exams in 2025.`,
+              review: {
+                "@type": "Review",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: 4,
+                  bestRating: 5,
+                },
+                author: {
+                  "@type": "Person",
+                  name: "Fred Benson",
+                },
               },
-              author: {
-                "@type": "Person",
-                name: "Fred Benson",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: 4.6,
+                reviewCount: randomReviewCount,
               },
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: 4.6,
-              reviewCount: randomReviewCount,
-            },
-          }),
-        }}
-      />
+            }),
+          }}
+        />
         {/* <Script /> */}
         {/* <ScriptFaq examData={examData} /> */}
         <Banner />

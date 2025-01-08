@@ -4,6 +4,7 @@ import Checkout from "../Components/add-to-cart/Checkout";
 import useCart from "../hooks/useCart";
 
 const Page = () => {
+  
   const { cart } = useCart();
   const [responseData, setResponseData] = useState(null);
   const [coupons, setCoupons] = useState([]);

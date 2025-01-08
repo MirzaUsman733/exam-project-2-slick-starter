@@ -1,11 +1,11 @@
 import Banner from "../Components/Banner";
 import FAQ from "../Components/faqs/FAQ";
-import Script from "../Components/scripts/Script";
 
 const page = () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <div>
-       <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

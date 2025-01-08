@@ -1,9 +1,8 @@
 import Banner from "../Components/Banner";
-import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
-import Script from "../Components/scripts/Script";
 import UnlimitedAccess from "../Components/unlimitedAccessComponents/UnlimitedAccess";
 
-const page = async() => {
+const page = async () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const fetchUnlimitedAccessData = async () => {
     try {
       const res = await fetch(
@@ -27,7 +26,7 @@ const page = async() => {
   const UnlimitedAccessCartData = await fetchUnlimitedAccessData();
   return (
     <div>
-       <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

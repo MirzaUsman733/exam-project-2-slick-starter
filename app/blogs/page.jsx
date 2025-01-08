@@ -2,6 +2,7 @@ import Banner from "../Components/Banner";
 import BlogPage from "../Components/blog/BlogPage";
 
 const page = async () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   return (
     <div>
       <script

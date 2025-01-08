@@ -1,10 +1,10 @@
 import Banner from "@/app/Components/Banner";
 import HotExam from "@/app/Components/HomePageComponents/HotExams/HotExam";
-import Script from "@/app/Components/scripts/Script";
 import CourseHeader from "@/app/Components/videoCourses/CourseHeader";
 import VideoCoursesDetail from "@/app/Components/videoCourses/VideoCoursesDetail";
 
 const page = async ({ params }) => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const courseId = params.id;
   const fetchCourseDetail = async () => {
     try {

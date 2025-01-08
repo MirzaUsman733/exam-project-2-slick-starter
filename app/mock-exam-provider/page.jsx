@@ -2,6 +2,7 @@ import Banner from "../Components/Banner";
 import ExamProvider from "../Components/exam-provider-components/ExamProvider";
 import HotExam from "../Components/HomePageComponents/HotExams/HotExam";
 const Page = async () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/vendors`,
     {

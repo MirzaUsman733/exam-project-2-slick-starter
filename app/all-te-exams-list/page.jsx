@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AllTeExamList from "./AllTeExamList";
 
 const Page = () => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const [data, setData] = useState([]);
   const [selectedLetter, setSelectedLetter] = useState("A");
 
@@ -70,21 +71,3 @@ const Page = () => {
 };
 
 export default Page;
-
-export async function generateMetadata() {
-  return {
-    title: `Updated Mock Exam by IT Professionals`,
-    description: `Dumps Collection is a premium provider of Real and Valid Mock Exam of IT certification Exams. Pass your mock certification exam easily with pdf and test engine dumps in 2025.`,
-    robots: {
-      index: true,
-    },
-    icons: {
-      other: [
-        {
-          rel: "canonical",
-          url: `https://dumps-collection.com/all-te-exams-list`,
-        },
-      ],
-    },
-  };
-}

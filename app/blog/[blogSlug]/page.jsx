@@ -107,6 +107,7 @@ const decodeHTML = (html) => {
 };
 
 const Page = async ({ params }) => {
+  const randomReviewCount = Math.floor(Math.random() * (1150 - 800 + 1)) + 800;
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/blog/${params.blogSlug}`,
     {

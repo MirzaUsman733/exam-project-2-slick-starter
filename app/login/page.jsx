@@ -21,8 +21,6 @@ const Page = () => {
 
 export default Page;
 
-
-
 export async function generateMetadata() {
   return {
     title: `Updated Certified Mock Exam by IT Professionals`,
@@ -40,4 +38,3 @@ export async function generateMetadata() {
     },
   };
 }
-
